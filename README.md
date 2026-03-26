@@ -22,6 +22,22 @@ Here are some ideas to get you started:
 	
 </div>
 
+<!-- Experience -->
+<h3 align="center">💼 Experience 💼</h3>
+<div align="center">
+<a href="https://www.movvcorp.com">
+<img src="https://img.shields.io/badge/MOVV%20Corp-8871e5?style=for-the-badge&logoColor=white">
+</a>
+<br><br>
+<img src="https://img.shields.io/badge/Backend%20Engineer-6DB33F?style=flat-square&logoColor=white">
+<img src="https://img.shields.io/badge/→-gray?style=flat-square">
+<img src="https://img.shields.io/badge/QA%20Engineer-FF6B6B?style=flat-square&logoColor=white">
+<img src="https://img.shields.io/badge/→-gray?style=flat-square">
+<img src="https://img.shields.io/badge/Prompt%20Engineer-b678c4?style=flat-square&logoColor=white">
+<br><br>
+<img src="https://img.shields.io/badge/2025.06%20~%20Present-555555?style=flat-square&logoColor=white">
+</div>
+
 <h3 align="center">📚 Tech Stack 📚</h3>
 <!-- Backend -->
 <h4 align="center">Backend</h4>
