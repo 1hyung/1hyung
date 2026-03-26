@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 40" width="1200" height="40">
+  <defs>
+    <!-- Lava gradient -->
+    <linearGradient id="dividerLavaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4a1a0a;stop-opacity:0"/>
+      <stop offset="20%" style="stop-color:#ff4500"/>
+      <stop offset="50%" style="stop-color:#ff6600"/>
+      <stop offset="80%" style="stop-color:#ff4500"/>
+      <stop offset="100%" style="stop-color:#4a1a0a;stop-opacity:0"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="dividerGlow" x="-10%" y="-100%" width="120%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="40" fill="#1a0a00"/>
+
+  <!-- Main lava line -->
+  <rect x="0" y="17" width="1200" height="6" fill="url(#dividerLavaGradient)" filter="url(#dividerGlow)">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Decorative dragon scale pattern -->
+  <g fill="#ff4500" opacity="0.6">
+    <path d="M580,20 L600,10 L620,20 L600,30 Z"/>
+  </g>
+
+  <!-- Rock textures on sides -->
+  <g fill="#2d1b0e">
+    <polygon points="0,0 50,0 30,20 0,15"/>
+    <polygon points="0,40 40,40 20,25 0,30"/>
+    <polygon points="1200,0 1150,0 1170,20 1200,15"/>
+    <polygon points="1200,40 1160,40 1180,25 1200,30"/>
+  </g>
+
+  <!-- Small ember dots -->
+  <g fill="#ffd700">
+    <circle cx="300" cy="20" r="2">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="20" r="2">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
