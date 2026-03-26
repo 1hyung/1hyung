@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
   <defs>
-    <!-- Sky gradient -->
-    <linearGradient id="headerSkyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a0a00"/>
-      <stop offset="50%" style="stop-color:#2d1408"/>
-      <stop offset="100%" style="stop-color:#4a1a0a"/>
-    </linearGradient>
-
-    <!-- Lava glow gradient -->
-    <radialGradient id="lavaGlowGradient" cx="50%" cy="100%" r="60%">
-      <stop offset="0%" style="stop-color:#ff6600;stop-opacity:0.8"/>
-      <stop offset="100%" style="stop-color:#ff4500;stop-opacity:0"/>
-    </radialGradient>
-
     <!-- Text gradient -->
     <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#ffd700"/>
@@ -32,36 +19,24 @@
 
     <!-- Text shadow -->
     <filter id="textShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#ff4500" flood-opacity="0.6"/>
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#ff6b35" flood-opacity="0.6"/>
     </filter>
   </defs>
 
   <!-- Background -->
-  <rect x="0" y="0" width="1200" height="300" fill="url(#headerSkyGradient)"/>
+  <rect x="0" y="0" width="1200" height="300" fill="#0d1117"/>
 
-  <!-- Lava glow at bottom -->
-  <rect x="0" y="0" width="1200" height="300" fill="url(#lavaGlowGradient)"/>
+  <!-- Subtle border -->
+  <rect x="0" y="0" width="1200" height="300" fill="none" stroke="#30363d" stroke-width="1" opacity="0.5"/>
 
-  <!-- Distant volcanoes silhouette -->
-  <g fill="#2d1b0e">
-    <polygon points="0,300 150,100 300,300"/>
-    <polygon points="200,300 400,80 600,300"/>
-    <polygon points="500,300 750,50 1000,300"/>
-    <polygon points="900,300 1050,120 1200,300"/>
-  </g>
-
-  <!-- Volcano eruption glow -->
-  <ellipse cx="750" cy="50" rx="40" ry="20" fill="#ff4500" filter="url(#headerGlow)">
-    <animate attributeName="rx" values="40;50;40" dur="2s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
-  </ellipse>
-
-  <!-- Dragon silhouettes -->
-  <g fill="#1a0a00" opacity="0.6">
-    <!-- Left dragon silhouette -->
-    <path d="M80,180 Q100,160 120,170 L130,165 Q140,175 150,170 L165,155 Q175,165 180,160 L190,165 Q185,180 180,190 L200,195 Q190,210 170,215 L165,230 L150,220 L130,230 L125,215 L100,220 Q85,210 80,190 Z" transform="scale(1.2)"/>
-    <!-- Right dragon silhouette -->
-    <path d="M80,180 Q100,160 120,170 L130,165 Q140,175 150,170 L165,155 Q175,165 180,160 L190,165 Q185,180 180,190 L200,195 Q190,210 170,215 L165,230 L150,220 L130,230 L125,215 L100,220 Q85,210 80,190 Z" transform="translate(1050,0) scale(-1.2,1.2)"/>
+  <!-- Dragon eye decorations -->
+  <g opacity="0.3">
+    <circle cx="100" cy="150" r="20" stroke="#ff6b35" stroke-width="2" fill="none">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="150" r="20" stroke="#ff6b35" stroke-width="2" fill="none">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
   <!-- Main title text -->
@@ -72,8 +47,8 @@
     DRAGON LAIR
   </text>
 
-  <!-- Decorative embers -->
-  <g fill="#ff6600">
+  <!-- Decorative flame particles -->
+  <g fill="#ff6b35">
     <circle cx="200" cy="250" r="3">
       <animate attributeName="cy" values="250;200;250" dur="3s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
@@ -93,12 +68,12 @@
   </g>
 
   <!-- Subtitle -->
-  <text x="600" y="240" text-anchor="middle" font-family="monospace" font-size="16" fill="#f5deb3">
+  <text x="600" y="240" text-anchor="middle" font-family="monospace" font-size="16" fill="#8b949e">
     Where commits hatch into dragons
   </text>
 
-  <!-- Bottom lava line -->
-  <rect x="0" y="290" width="1200" height="10" fill="#ff4500">
-    <animate attributeName="opacity" values="0.8;1;0.8" dur="1.5s" repeatCount="indefinite"/>
+  <!-- Bottom accent line -->
+  <rect x="0" y="295" width="1200" height="5" fill="#ff6b35" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="1.5s" repeatCount="indefinite"/>
   </rect>
 </svg>
