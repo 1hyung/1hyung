@@ -15,6 +15,11 @@ const CONTRIBUTION_QUERY = `
             }
           }
         }
+        totalCommitContributions
+        totalRepositoryContributions
+        totalIssueContributions
+        totalPullRequestContributions
+        totalPullRequestReviewContributions
       }
     }
   }
@@ -34,7 +39,15 @@ export async function fetchContributions(
     username,
   });
 
-  return data.user.contributionsCollection.contributionCalendar;
+  const collection = data.user.contributionsCollection;
+  return {
+    ...collection.contributionCalendar,
+    totalCommitContributions: collection.totalCommitContributions,
+    totalRepositoryContributions: collection.totalRepositoryContributions,
+    totalIssueContributions: collection.totalIssueContributions,
+    totalPullRequestContributions: collection.totalPullRequestContributions,
+    totalPullRequestReviewContributions: collection.totalPullRequestReviewContributions,
+  };
 }
 
 export function contributionLevelToNumber(

@@ -1,10 +1,10 @@
 // Dragon-themed color palette
 
 export const DRAGON_COLORS = {
-  // Dragon body colors
-  dragonRed: '#c41e3a',
-  dragonDarkRed: '#8b1428',
-  dragonCream: '#f5deb3',
+  // Dragon body colors (enhanced contrast)
+  dragonRed: '#d32f2f',
+  dragonDarkRed: '#8b0000',
+  dragonCream: '#fff8dc',
   dragonGold: '#ffd700',
   dragonOrange: '#ff6b35',
 
@@ -16,12 +16,12 @@ export const DRAGON_COLORS = {
   eyeGold: '#ffd700',
   eyePupil: '#1a1a1a',
 
-  // Egg colors
-  eggBase: '#8b4513',
-  eggLight: '#a0522d',
-  eggSpeckle: '#d2691e',
-  eggGold: '#daa520',
-  eggCrack: '#2d1b0e',
+  // Egg colors (darker base, brighter highlights)
+  eggBase: '#6b3410',
+  eggLight: '#d2691e',
+  eggSpeckle: '#f4a460',
+  eggGold: '#ffd700',
+  eggCrack: '#1a0f08',
 
   // Shell (for hatching)
   shellWhite: '#f5f5dc',
