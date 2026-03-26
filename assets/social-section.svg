@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="1200" height="150">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="150" fill="#0d1117"/>
+
+  <!-- Subtle border -->
+  <rect x="0" y="0" width="1200" height="150" fill="none" stroke="#30363d" stroke-width="1" opacity="0.5"/>
+
+  <!-- Section Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="monospace" font-size="24" font-weight="bold" fill="#ffd700">
+    🌋 Social 🌋
+  </text>
+
+  <!-- Velog Badge -->
+  <a href="https://velog.io/@1hyung/posts/">
+    <rect x="500" y="70" width="200" height="40" rx="8" fill="#d32f2f" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="600" y="95" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="16" fill="#ffd700">
+      📝 Velog
+    </text>
+  </a>
+</svg>
