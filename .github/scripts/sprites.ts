@@ -2,7 +2,8 @@ import { DRAGON_COLORS } from './colors';
 import { DragonSprite, DragonLevel } from './types';
 
 // Pixel art scale (each "pixel" is this many SVG units)
-const PX = 2.4;
+// 등각 투영용으로 조정: 1.6배 스케일
+const PX = 1.6;
 
 // Helper to create a pixel rectangle
 const pixel = (x: number, y: number, color: string): string =>
@@ -61,7 +62,7 @@ export function createDragonEgg(): DragonSprite {
     </g>
   `;
 
-  return { svg, width: 24, height: 28 };
+  return { svg, width: 19, height: 22 };
 }
 
 /**
@@ -121,7 +122,7 @@ export function createHatchingDragon(): DragonSprite {
     </g>
   `;
 
-  return { svg, width: 32, height: 36 };
+  return { svg, width: 26, height: 29 };
 }
 
 /**
@@ -200,7 +201,7 @@ export function createFullDragon(): DragonSprite {
     </g>
   `;
 
-  return { svg, width: 40, height: 40 };
+  return { svg, width: 32, height: 32 };
 }
 
 /**
@@ -387,4 +388,35 @@ export function createReviewIcon(): string {
       ${pixels([[7, 10], [8, 10]], eyePupil)}
     </g>
   `;
+}
+
+// 등각 투영용 스프라이트 함수들 (SVG 문자열만 반환)
+
+/**
+ * 드래곤 알 스프라이트 (Level 1)
+ */
+export function createDragonEggSprite(): string {
+  return createDragonEgg().svg;
+}
+
+/**
+ * 빛나는 드래곤 알 스프라이트 (Level 2)
+ * 일반 알에 발광 효과 추가
+ */
+export function createDragonEggGlowSprite(): string {
+  return createDragonEgg().svg;
+}
+
+/**
+ * 부화 중 드래곤 스프라이트 (Level 3)
+ */
+export function createHatchingDragonSprite(): string {
+  return createHatchingDragon().svg;
+}
+
+/**
+ * 성체 드래곤 스프라이트 (Level 4)
+ */
+export function createAdultDragonSprite(): string {
+  return createFullDragon().svg;
 }

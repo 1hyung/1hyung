@@ -49,6 +49,12 @@ export const DRAGON_COLORS = {
   textGold: '#ffd700',
   textWhite: '#ffffff',
   textShadow: '#1a0a00',
+
+  // GitHub Dark 테마 색상
+  githubDark: '#0d1117',
+  githubGray: '#8b949e',
+  githubBorder: '#30363d',
+  githubAccent: '#58a6ff',
 } as const;
 
 export const GRADIENTS = {

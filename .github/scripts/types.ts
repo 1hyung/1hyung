@@ -20,6 +20,20 @@ export interface ContributionCalendar {
   totalPullRequestReviewContributions?: number;
 }
 
+export interface LanguageEdge {
+  size: number;
+  node: {
+    name: string;
+    color: string;
+  };
+}
+
+export interface Repository {
+  languages: {
+    edges: LanguageEdge[];
+  };
+}
+
 export interface ContributionData {
   user: {
     contributionsCollection: {
@@ -29,6 +43,9 @@ export interface ContributionData {
       totalIssueContributions: number;
       totalPullRequestContributions: number;
       totalPullRequestReviewContributions: number;
+    };
+    repositories: {
+      nodes: Repository[];
     };
   };
 }
@@ -52,17 +69,17 @@ export interface GridCell {
 export interface SVGConfig {
   width: number;
   height: number;
-  cellSize: number;
-  cellGap: number;
+  cellWidth: number;  // 등각 투영 셀 너비
+  cellHeight: number;  // 등각 투영 셀 높이
   gridOffsetX: number;
   gridOffsetY: number;
 }
 
 export const DEFAULT_CONFIG: SVGConfig = {
-  width: 1280,
-  height: 850,
-  cellSize: 22,
-  cellGap: 2,
-  gridOffsetX: 4,
-  gridOffsetY: 190,
+  width: 850,
+  height: 520,
+  cellWidth: 20,
+  cellHeight: 12,
+  gridOffsetX: 50,
+  gridOffsetY: 60,
 };
