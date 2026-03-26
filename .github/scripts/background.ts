@@ -30,6 +30,15 @@ export function createBackgroundGradients(): string {
     <filter id="spriteShadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="${DRAGON_COLORS.rockDark}" flood-opacity="0.5"/>
     </filter>
+
+    <!-- Glow filter for Level 4 dragons -->
+    <filter id="dragonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   `;
 }
 
@@ -82,7 +91,7 @@ export function createVolcanoes(config: SVGConfig): string {
  */
 export function createGroundLayer(config: SVGConfig): string {
   const { rockDark, rockMedium, rockLight } = DRAGON_COLORS;
-  const groundY = 180;
+  const groundY = 160;
 
   return `
     <g id="ground">
@@ -102,37 +111,68 @@ export function createGroundLayer(config: SVGConfig): string {
 }
 
 /**
+ * Create mid-ground texture (rocky floor between grid and lava)
+ */
+export function createMidGroundTexture(config: SVGConfig): string {
+  const { rockDark, rockMedium, rockLight } = DRAGON_COLORS;
+  const startY = 360;
+  const endY = 750;
+
+  return `
+    <g id="mid-ground">
+      <!-- Base layer -->
+      <rect x="0" y="${startY}" width="${config.width}" height="${endY - startY}" fill="${rockDark}"/>
+
+      <!-- Rocky texture stripes -->
+      <rect x="0" y="${startY + 50}" width="${config.width}" height="20" fill="${rockMedium}" opacity="0.3"/>
+      <rect x="0" y="${startY + 120}" width="${config.width}" height="30" fill="${rockLight}" opacity="0.2"/>
+      <rect x="0" y="${startY + 200}" width="${config.width}" height="25" fill="${rockMedium}" opacity="0.3"/>
+      <rect x="0" y="${startY + 280}" width="${config.width}" height="35" fill="${rockLight}" opacity="0.2"/>
+
+      <!-- Rock clusters -->
+      <ellipse cx="100" cy="${startY + 100}" rx="40" ry="15" fill="${rockLight}" opacity="0.4"/>
+      <ellipse cx="300" cy="${startY + 180}" rx="50" ry="20" fill="${rockMedium}" opacity="0.3"/>
+      <ellipse cx="600" cy="${startY + 250}" rx="45" ry="18" fill="${rockLight}" opacity="0.4"/>
+      <ellipse cx="900" cy="${startY + 150}" rx="55" ry="22" fill="${rockMedium}" opacity="0.3"/>
+      <ellipse cx="1150" cy="${startY + 300}" rx="48" ry="19" fill="${rockLight}" opacity="0.4"/>
+    </g>
+  `;
+}
+
+/**
  * Create lava pools and streams
  */
 export function createLavaElements(config: SVGConfig): string {
   const { lavaBright, lavaOrange, lavaGlow } = DRAGON_COLORS;
+  const lavaY = 750;
 
   return `
     <g id="lava-elements" filter="url(#lavaGlow)">
       <!-- Main lava river at bottom -->
-      <path d="M0,${config.height - 50} Q200,${config.height - 70} 400,${config.height - 50} T800,${config.height - 60} T1200,${config.height - 45} L${config.width},${config.height - 55} L${config.width},${config.height} L0,${config.height} Z" fill="url(#lavaGradient)"/>
+      <rect x="0" y="${lavaY}" width="${config.width}" height="${config.height - lavaY}" fill="url(#lavaGradient)"/>
+      <path d="M0,${lavaY} Q200,${lavaY - 20} 400,${lavaY} T800,${lavaY - 10} T1200,${lavaY + 5} L${config.width},${lavaY} L${config.width},${lavaY + 20} L0,${lavaY + 20} Z" fill="${lavaBright}"/>
 
       <!-- Lava bubbles -->
-      <circle cx="100" cy="${config.height - 40}" r="5" fill="${lavaGlow}">
+      <circle cx="100" cy="${lavaY + 40}" r="5" fill="${lavaGlow}">
         <animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="300" cy="${config.height - 55}" r="4" fill="${lavaBright}">
+      <circle cx="300" cy="${lavaY + 55}" r="4" fill="${lavaBright}">
         <animate attributeName="r" values="4;6;4" dur="1.5s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="600" cy="${config.height - 45}" r="6" fill="${lavaOrange}">
+      <circle cx="600" cy="${lavaY + 45}" r="6" fill="${lavaOrange}">
         <animate attributeName="r" values="6;9;6" dur="2.5s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="900" cy="${config.height - 50}" r="5" fill="${lavaGlow}">
+      <circle cx="900" cy="${lavaY + 50}" r="5" fill="${lavaGlow}">
         <animate attributeName="r" values="5;7;5" dur="1.8s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="1150" cy="${config.height - 42}" r="4" fill="${lavaBright}">
+      <circle cx="1150" cy="${lavaY + 42}" r="4" fill="${lavaBright}">
         <animate attributeName="r" values="4;7;4" dur="2.2s" repeatCount="indefinite"/>
       </circle>
 
-      <!-- Small lava pools -->
-      <ellipse cx="50" cy="${config.height - 100}" rx="30" ry="10" fill="url(#lavaPoolGradient)"/>
-      <ellipse cx="${config.width - 80}" cy="${config.height - 120}" rx="40" ry="12" fill="url(#lavaPoolGradient)"/>
+      <!-- Small lava pools above main river -->
+      <ellipse cx="50" cy="${lavaY - 50}" rx="30" ry="10" fill="url(#lavaPoolGradient)"/>
+      <ellipse cx="${config.width - 80}" cy="${lavaY - 30}" rx="40" ry="12" fill="url(#lavaPoolGradient)"/>
     </g>
   `;
 }
@@ -183,6 +223,7 @@ export function createVolcanicBackground(config: SVGConfig): string {
       ${createSkyBackground(config)}
       ${createVolcanoes(config)}
       ${createGroundLayer(config)}
+      ${createMidGroundTexture(config)}
       ${createLavaElements(config)}
       ${createDecorations(config)}
     </g>

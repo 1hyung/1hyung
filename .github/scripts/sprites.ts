@@ -2,7 +2,7 @@ import { DRAGON_COLORS } from './colors';
 import { DragonSprite, DragonLevel } from './types';
 
 // Pixel art scale (each "pixel" is this many SVG units)
-const PX = 2;
+const PX = 2.4;
 
 // Helper to create a pixel rectangle
 const pixel = (x: number, y: number, color: string): string =>
@@ -258,4 +258,133 @@ export function getSpriteSymbolId(level: DragonLevel): string {
     default:
       return 'dragon-egg';
   }
+}
+
+/**
+ * Create commit icon (flame)
+ * 16×16px dragon-themed icon for commit statistics
+ */
+export function createCommitIcon(): string {
+  const { dragonOrange, lavaBright, lavaGlow } = DRAGON_COLORS;
+
+  return `
+    <g class="commit-icon">
+      <!-- Flame base -->
+      ${pixels([[7, 15], [8, 15]], dragonOrange)}
+      ${pixels([[6, 14], [7, 14], [8, 14], [9, 14]], dragonOrange)}
+      ${pixels([[6, 13], [7, 13], [8, 13], [9, 13]], lavaBright)}
+      ${pixels([[5, 12], [6, 12], [7, 12], [8, 12], [9, 12], [10, 12]], lavaBright)}
+      ${pixels([[5, 11], [6, 11], [7, 11], [8, 11], [9, 11], [10, 11]], lavaGlow)}
+      ${pixels([[6, 10], [7, 10], [8, 10], [9, 10]], lavaGlow)}
+      ${pixels([[6, 9], [7, 9], [8, 9], [9, 9]], lavaGlow)}
+      ${pixels([[7, 8], [8, 8]], '#ffff00')}
+      ${pixels([[7, 7], [8, 7]], '#ffff00')}
+      ${pixels([[7, 6]], '#ffffff')}
+    </g>
+  `;
+}
+
+/**
+ * Create repository icon (treasure chest)
+ * 16×16px dragon-themed icon for repository statistics
+ */
+export function createRepoIcon(): string {
+  const { eggBase, eggGold, dragonGold } = DRAGON_COLORS;
+
+  return `
+    <g class="repo-icon">
+      <!-- Chest body -->
+      ${pixels([[4, 9], [5, 9], [6, 9], [7, 9], [8, 9], [9, 9], [10, 9], [11, 9]], eggBase)}
+      ${pixels([[3, 10], [4, 10], [5, 10], [6, 10], [7, 10], [8, 10], [9, 10], [10, 10], [11, 10], [12, 10]], eggBase)}
+      ${pixels([[3, 11], [12, 11]], eggBase)}
+      ${pixels([[3, 12], [12, 12]], eggBase)}
+      ${pixels([[3, 13], [12, 13]], eggBase)}
+      ${pixels([[3, 14], [4, 14], [5, 14], [6, 14], [7, 14], [8, 14], [9, 14], [10, 14], [11, 14], [12, 14]], eggBase)}
+      <!-- Gold coins -->
+      ${pixels([[5, 11], [6, 11], [9, 11], [10, 11]], dragonGold)}
+      ${pixels([[6, 12], [7, 12], [8, 12]], eggGold)}
+      ${pixels([[5, 13], [10, 13]], dragonGold)}
+      <!-- Lock -->
+      ${pixels([[7, 10], [8, 10]], eggGold)}
+    </g>
+  `;
+}
+
+/**
+ * Create issue icon (warning crystal)
+ * 16×16px dragon-themed icon for issue statistics
+ */
+export function createIssueIcon(): string {
+  const { dragonRed, dragonOrange, lavaGlow } = DRAGON_COLORS;
+
+  return `
+    <g class="issue-icon">
+      <!-- Crystal/warning shape -->
+      ${pixels([[7, 5], [8, 5]], dragonRed)}
+      ${pixels([[6, 6], [7, 6], [8, 6], [9, 6]], dragonRed)}
+      ${pixels([[6, 7], [9, 7]], dragonRed)}
+      ${pixels([[5, 8], [6, 8], [9, 8], [10, 8]], dragonOrange)}
+      ${pixels([[5, 9], [10, 9]], dragonOrange)}
+      ${pixels([[5, 10], [10, 10]], dragonOrange)}
+      ${pixels([[5, 11], [10, 11]], dragonOrange)}
+      ${pixels([[6, 12], [9, 12]], dragonOrange)}
+      ${pixels([[6, 13], [7, 13], [8, 13], [9, 13]], lavaGlow)}
+      ${pixels([[7, 14], [8, 14]], lavaGlow)}
+      <!-- Exclamation mark inside -->
+      ${pixels([[7, 8], [8, 8]], '#ffffff')}
+      ${pixels([[7, 9], [8, 9]], '#ffffff')}
+      ${pixels([[7, 10], [8, 10]], '#ffffff')}
+      ${pixels([[7, 12], [8, 12]], '#ffffff')}
+    </g>
+  `;
+}
+
+/**
+ * Create pull request icon (merge arrows)
+ * 16×16px dragon-themed icon for pull request statistics
+ */
+export function createPRIcon(): string {
+  const { dragonGold, eggGold } = DRAGON_COLORS;
+
+  return `
+    <g class="pr-icon">
+      <!-- Left branch -->
+      ${pixels([[4, 5], [4, 6], [4, 7], [4, 8], [4, 9], [4, 10], [4, 11]], dragonGold)}
+      ${pixels([[3, 4], [5, 4]], dragonGold)}
+      ${pixels([[3, 12], [5, 12]], dragonGold)}
+      <!-- Right branch -->
+      ${pixels([[11, 5], [11, 6], [11, 7], [11, 8], [11, 9], [11, 10], [11, 11]], dragonGold)}
+      ${pixels([[10, 4], [12, 4]], dragonGold)}
+      ${pixels([[10, 12], [12, 12]], dragonGold)}
+      <!-- Merge point -->
+      ${pixels([[5, 8], [6, 8], [7, 8], [8, 8], [9, 8], [10, 8]], eggGold)}
+      ${pixels([[7, 7], [8, 7]], eggGold)}
+      ${pixels([[7, 9], [8, 9]], eggGold)}
+    </g>
+  `;
+}
+
+/**
+ * Create review icon (dragon eye)
+ * 16×16px dragon-themed icon for review statistics
+ */
+export function createReviewIcon(): string {
+  const { dragonRed, dragonGold, eyePupil } = DRAGON_COLORS;
+
+  return `
+    <g class="review-icon">
+      <!-- Eye outline -->
+      ${pixels([[5, 8], [6, 8], [7, 8], [8, 8], [9, 8], [10, 8]], dragonRed)}
+      ${pixels([[4, 9], [11, 9]], dragonRed)}
+      ${pixels([[3, 10], [12, 10]], dragonRed)}
+      ${pixels([[4, 11], [11, 11]], dragonRed)}
+      ${pixels([[5, 12], [6, 12], [7, 12], [8, 12], [9, 12], [10, 12]], dragonRed)}
+      <!-- Iris (gold) -->
+      ${pixels([[6, 9], [7, 9], [8, 9], [9, 9]], dragonGold)}
+      ${pixels([[5, 10], [6, 10], [7, 10], [8, 10], [9, 10], [10, 10]], dragonGold)}
+      ${pixels([[6, 11], [7, 11], [8, 11], [9, 11]], dragonGold)}
+      <!-- Pupil (black) -->
+      ${pixels([[7, 10], [8, 10]], eyePupil)}
+    </g>
+  `;
 }

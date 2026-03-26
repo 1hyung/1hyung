@@ -1,6 +1,6 @@
 import { ContributionCalendar, SVGConfig, DEFAULT_CONFIG, DragonLevel, GridCell } from './types';
 import { DRAGON_COLORS } from './colors';
-import { createSpriteSymbols, getSpriteSymbolId } from './sprites';
+import { createSpriteSymbols, getSpriteSymbolId, createCommitIcon, createRepoIcon, createIssueIcon, createPRIcon, createReviewIcon } from './sprites';
 import { createBackgroundGradients, createVolcanicBackground } from './background';
 import { contributionLevelToNumber } from './github-api';
 
@@ -33,21 +33,21 @@ export function createGridCells(
 }
 
 /**
- * Get sprite size based on level
+ * Get sprite size based on level (22% increase: PX=2.4)
  */
 function getSpriteSize(level: DragonLevel): { width: number; height: number } {
   switch (level) {
     case 0:
       return { width: 0, height: 0 }; // No sprite for empty cells
     case 1:
-      return { width: 18, height: 21 }; // Small egg
+      return { width: 29, height: 34 }; // Dragon egg (12×14 pixels at 2.4px scale)
     case 2:
     case 3:
-      return { width: 20, height: 22 }; // Hatching
+      return { width: 38, height: 43 }; // Hatching dragon (16×18 pixels at 2.4px scale)
     case 4:
-      return { width: 22, height: 22 }; // Full dragon
+      return { width: 48, height: 48 }; // Full dragon (20×20 pixels at 2.4px scale)
     default:
-      return { width: 18, height: 21 };
+      return { width: 29, height: 34 };
   }
 }
 
@@ -83,8 +83,11 @@ export function createContributionGrid(
     const offsetX = (config.cellSize - spriteSize.width) / 2;
     const offsetY = (config.cellSize - spriteSize.height) / 2;
 
+    // Apply glow filter to Level 4 dragons
+    const filter = cell.level === 4 ? 'url(#dragonGlow)' : 'url(#spriteShadow)';
+
     return `
-      <g class="contribution-cell" filter="url(#spriteShadow)">
+      <g class="contribution-cell" filter="${filter}">
         <use
           href="#${symbolId}"
           x="${cell.x + offsetX}"
@@ -164,12 +167,61 @@ export function createMonthLabels(
 }
 
 /**
- * Create statistics display
+ * Create statistics display with detailed stats bars
  */
 export function createStatsDisplay(
-  totalContributions: number,
+  calendar: ContributionCalendar,
   config: SVGConfig
 ): string {
+  const stats = [
+    { label: 'Commits', value: calendar.totalCommitContributions || 0, icon: 'commit' },
+    { label: 'Repos', value: calendar.totalRepositoryContributions || 0, icon: 'repo' },
+    { label: 'Issues', value: calendar.totalIssueContributions || 0, icon: 'issue' },
+    { label: 'PRs', value: calendar.totalPullRequestContributions || 0, icon: 'pr' },
+    { label: 'Reviews', value: calendar.totalPullRequestReviewContributions || 0, icon: 'review' },
+  ];
+
+  const statsBarX = 100;
+  const statsBarY = 120;
+  const statItemWidth = 216;
+  const barHeight = 12;
+  const maxBarWidth = 180;
+
+  // Calculate max value for bar scaling
+  const maxValue = Math.max(...stats.map(s => s.value), 1);
+
+  const statsElements = stats.map((stat, index) => {
+    const x = statsBarX + index * statItemWidth;
+    const barWidth = (stat.value / maxValue) * maxBarWidth;
+
+    return `
+      <g class="stat-item" transform="translate(${x}, ${statsBarY})">
+        <!-- Icon -->
+        <svg x="0" y="0" width="16" height="16" viewBox="0 0 ${16 * 2.4} ${16 * 2.4}">
+          ${stat.icon === 'commit' ? createCommitIcon() :
+            stat.icon === 'repo' ? createRepoIcon() :
+            stat.icon === 'issue' ? createIssueIcon() :
+            stat.icon === 'pr' ? createPRIcon() :
+            createReviewIcon()}
+        </svg>
+
+        <!-- Label -->
+        <text x="20" y="12" font-family="monospace" font-size="11" fill="${DRAGON_COLORS.textWhite}">${stat.label}</text>
+
+        <!-- Bar background -->
+        <rect x="0" y="20" width="${maxBarWidth}" height="${barHeight}" rx="2" fill="${DRAGON_COLORS.rockMedium}" opacity="0.5"/>
+
+        <!-- Bar fill -->
+        <rect x="0" y="20" width="${barWidth}" height="${barHeight}" rx="2" fill="${DRAGON_COLORS.dragonGold}">
+          <animate attributeName="width" from="0" to="${barWidth}" dur="1s" fill="freeze"/>
+        </rect>
+
+        <!-- Value text -->
+        <text x="0" y="44" font-family="monospace" font-size="13" font-weight="bold" fill="${DRAGON_COLORS.textGold}">${stat.value.toLocaleString()}</text>
+      </g>
+    `;
+  }).join('');
+
   return `
     <g id="stats">
       <!-- Title -->
@@ -183,24 +235,18 @@ export function createStatsDisplay(
         fill="${DRAGON_COLORS.textGold}"
       >DRAGON CONTRIBUTION LAIR</text>
 
-      <!-- Total contributions -->
+      <!-- Total contributions subtitle -->
       <text
         x="${config.width / 2}"
-        y="90"
+        y="85"
         text-anchor="middle"
         font-family="monospace"
-        font-size="18"
+        font-size="16"
         fill="${DRAGON_COLORS.textWhite}"
-      >${totalContributions.toLocaleString()} contributions in the last year</text>
+      >${calendar.totalContributions.toLocaleString()} contributions in the last year</text>
 
-      <!-- Legend -->
-      <g id="legend" transform="translate(${config.gridOffsetX}, ${config.gridOffsetY + 170})">
-        <text x="0" y="0" font-family="monospace" font-size="12" fill="${DRAGON_COLORS.textWhite}">Less</text>
-        <use href="#dragon-egg" x="40" y="-12" width="14" height="16"/>
-        <use href="#dragon-hatching" x="65" y="-14" width="16" height="18"/>
-        <use href="#dragon-full" x="95" y="-14" width="18" height="18"/>
-        <text x="125" y="0" font-family="monospace" font-size="12" fill="${DRAGON_COLORS.textWhite}">More</text>
-      </g>
+      <!-- Statistics bars -->
+      ${statsElements}
     </g>
   `;
 }
@@ -231,7 +277,7 @@ export function generateSVG(
   ${createDayLabels(config)}
   ${createMonthLabels(calendar, config)}
   ${createContributionGrid(cells, config)}
-  ${createStatsDisplay(calendar.totalContributions, config)}
+  ${createStatsDisplay(calendar, config)}
 </svg>`;
 }
 

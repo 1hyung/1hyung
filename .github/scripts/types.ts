@@ -13,12 +13,22 @@ export interface ContributionWeek {
 export interface ContributionCalendar {
   totalContributions: number;
   weeks: ContributionWeek[];
+  totalCommitContributions?: number;
+  totalRepositoryContributions?: number;
+  totalIssueContributions?: number;
+  totalPullRequestContributions?: number;
+  totalPullRequestReviewContributions?: number;
 }
 
 export interface ContributionData {
   user: {
     contributionsCollection: {
       contributionCalendar: ContributionCalendar;
+      totalCommitContributions: number;
+      totalRepositoryContributions: number;
+      totalIssueContributions: number;
+      totalPullRequestContributions: number;
+      totalPullRequestReviewContributions: number;
     };
   };
 }
@@ -51,8 +61,8 @@ export interface SVGConfig {
 export const DEFAULT_CONFIG: SVGConfig = {
   width: 1280,
   height: 850,
-  cellSize: 18,
-  cellGap: 3,
-  gridOffsetX: 100,
-  gridOffsetY: 200,
+  cellSize: 22,
+  cellGap: 2,
+  gridOffsetX: 4,
+  gridOffsetY: 190,
 };
