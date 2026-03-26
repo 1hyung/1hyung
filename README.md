@@ -3,11 +3,6 @@
   <img src="./assets/dragon-header.svg" width="100%" alt="Welcome to 1hyung's Dragon Lair"/>
 </p>
 
-<!-- Dragon Contribution Graph -->
-<p align="center">
-  <img src="./dragon-contrib/dragon-contrib.svg" width="100%" alt="Dragon Contribution Graph"/>
-</p>
-
 <!-- Section Divider -->
 <img src="./assets/section-divider.svg" width="100%"/>
 
@@ -31,10 +26,6 @@
   <br/><br/>
   <img src="https://img.shields.io/badge/2025.06%20~%20Present-ffd700?style=flat-square&labelColor=4a0000"/>
 </div>
-
-<!-- Section Divider -->
-<br/>
-<img src="./assets/section-divider.svg" width="100%"/>
 
 <!-- Tech Stack Section -->
 <h2 align="center">
@@ -77,10 +68,6 @@
   <img src="https://img.shields.io/badge/Prompt%20Engineering-4a0000?style=for-the-badge&logo=openai&logoColor=ffd700"/>
 </div>
 
-<!-- Section Divider -->
-<br/>
-<img src="./assets/section-divider.svg" width="100%"/>
-
 <!-- Social Section -->
 <h2 align="center">
   <img src="https://img.shields.io/badge/-%F0%9F%8C%8B-4a0000?style=flat-square"/>
@@ -94,11 +81,8 @@
   </a>
 </div>
 
-<!-- Section Divider -->
+<!-- Dragon Contribution Graph -->
 <br/>
-<img src="./assets/section-divider.svg" width="100%"/>
-
-<!-- 3D Contribution Graph (keeping the existing one as a secondary display) -->
 <p align="center">
-  <img src="./profile-3d-contrib/profile-gitblock.svg" width="100%" alt="3D Contribution Graph"/>
+  <img src="./dragon-contrib/dragon-contrib.svg" width="100%" alt="Dragon Contribution Graph"/>
 </p>
