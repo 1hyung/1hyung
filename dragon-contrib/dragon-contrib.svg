@@ -1,470 +1,5020 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="1280" height="320">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 1280 850"
+  width="1280"
+  height="850"
+>
   <defs>
-    <!-- Sky gradient -->
+    
+    
     <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" style="stop-color:#1a0a00"/>
       <stop offset="40%" style="stop-color:#2d1408"/>
       <stop offset="100%" style="stop-color:#4a1a0a"/>
     </linearGradient>
-
-    <!-- Lava gradient -->
+  
+    
     <linearGradient id="lavaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#cc3300"/>
       <stop offset="50%" style="stop-color:#ff4500"/>
       <stop offset="100%" style="stop-color:#cc3300"/>
     </linearGradient>
+  
+    
+    <radialGradient id="lavaPoolGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ff8c00"/>
+      <stop offset="70%" style="stop-color:#ff4500"/>
+      <stop offset="100%" style="stop-color:#cc3300"/>
+    </radialGradient>
+  
+    
+    <radialGradient id="eggGradient" cx="40%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#a0522d"/>
+      <stop offset="100%" style="stop-color:#8b4513"/>
+    </radialGradient>
+  
+    
+    <linearGradient id="dragonBodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c41e3a"/>
+      <stop offset="100%" style="stop-color:#8b1428"/>
+    </linearGradient>
+  
 
-    <!-- Glow filter -->
+    <!-- Glow filter for lava -->
     <filter id="lavaGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <!-- Dragon Egg Symbol -->
+    <!-- Smoke effect -->
+    <filter id="smokeBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <!-- Drop shadow for sprites -->
+    <filter id="spriteShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="#2d1b0e" flood-opacity="0.5"/>
+    </filter>
+  
+    
     <symbol id="dragon-egg" viewBox="0 0 24 28">
-      <g class="dragon-egg">
-        <!-- Egg outline and fill -->
-        <rect x="8" y="0" width="2" height="2" fill="#8b4513"/>
-        <rect x="10" y="0" width="2" height="2" fill="#8b4513"/>
-        <rect x="12" y="0" width="2" height="2" fill="#8b4513"/>
-        <rect x="14" y="0" width="2" height="2" fill="#8b4513"/>
-        <rect x="4" y="2" width="2" height="2" fill="#8b4513"/>
-        <rect x="6" y="2" width="2" height="2" fill="#8b4513"/>
-        <rect x="16" y="2" width="2" height="2" fill="#8b4513"/>
-        <rect x="18" y="2" width="2" height="2" fill="#8b4513"/>
-        <rect x="2" y="4" width="2" height="2" fill="#8b4513"/>
-        <rect x="20" y="4" width="2" height="2" fill="#8b4513"/>
-        <rect x="2" y="6" width="2" height="2" fill="#8b4513"/>
-        <rect x="20" y="6" width="2" height="2" fill="#8b4513"/>
-        <rect x="0" y="8" width="2" height="2" fill="#8b4513"/>
-        <rect x="22" y="8" width="2" height="2" fill="#8b4513"/>
-        <rect x="0" y="10" width="2" height="2" fill="#8b4513"/>
-        <rect x="22" y="10" width="2" height="2" fill="#8b4513"/>
-        <rect x="0" y="12" width="2" height="2" fill="#8b4513"/>
-        <rect x="22" y="12" width="2" height="2" fill="#8b4513"/>
-        <rect x="0" y="14" width="2" height="2" fill="#8b4513"/>
-        <rect x="22" y="14" width="2" height="2" fill="#8b4513"/>
-        <rect x="0" y="16" width="2" height="2" fill="#8b4513"/>
-        <rect x="22" y="16" width="2" height="2" fill="#8b4513"/>
-        <rect x="0" y="18" width="2" height="2" fill="#8b4513"/>
-        <rect x="22" y="18" width="2" height="2" fill="#8b4513"/>
-        <rect x="2" y="20" width="2" height="2" fill="#8b4513"/>
-        <rect x="20" y="20" width="2" height="2" fill="#8b4513"/>
-        <rect x="2" y="22" width="2" height="2" fill="#8b4513"/>
-        <rect x="20" y="22" width="2" height="2" fill="#8b4513"/>
-        <rect x="4" y="24" width="2" height="2" fill="#8b4513"/>
-        <rect x="18" y="24" width="2" height="2" fill="#8b4513"/>
-        <rect x="6" y="26" width="2" height="2" fill="#8b4513"/>
-        <rect x="8" y="26" width="2" height="2" fill="#8b4513"/>
-        <rect x="14" y="26" width="2" height="2" fill="#8b4513"/>
-        <rect x="16" y="26" width="2" height="2" fill="#8b4513"/>
+      
+    <g class="dragon-egg">
+      <!-- Egg outline -->
+      <rect x="8" y="0" width="2" height="2" fill="#8b4513"/><rect x="10" y="0" width="2" height="2" fill="#8b4513"/><rect x="12" y="0" width="2" height="2" fill="#8b4513"/><rect x="14" y="0" width="2" height="2" fill="#8b4513"/>
+      <rect x="4" y="2" width="2" height="2" fill="#8b4513"/><rect x="6" y="2" width="2" height="2" fill="#8b4513"/><rect x="16" y="2" width="2" height="2" fill="#8b4513"/><rect x="18" y="2" width="2" height="2" fill="#8b4513"/>
+      <rect x="2" y="4" width="2" height="2" fill="#8b4513"/><rect x="20" y="4" width="2" height="2" fill="#8b4513"/>
+      <rect x="2" y="6" width="2" height="2" fill="#8b4513"/><rect x="20" y="6" width="2" height="2" fill="#8b4513"/>
+      <rect x="0" y="8" width="2" height="2" fill="#8b4513"/><rect x="22" y="8" width="2" height="2" fill="#8b4513"/>
+      <rect x="0" y="10" width="2" height="2" fill="#8b4513"/><rect x="22" y="10" width="2" height="2" fill="#8b4513"/>
+      <rect x="0" y="12" width="2" height="2" fill="#8b4513"/><rect x="22" y="12" width="2" height="2" fill="#8b4513"/>
+      <rect x="0" y="14" width="2" height="2" fill="#8b4513"/><rect x="22" y="14" width="2" height="2" fill="#8b4513"/>
+      <rect x="0" y="16" width="2" height="2" fill="#8b4513"/><rect x="22" y="16" width="2" height="2" fill="#8b4513"/>
+      <rect x="0" y="18" width="2" height="2" fill="#8b4513"/><rect x="22" y="18" width="2" height="2" fill="#8b4513"/>
+      <rect x="2" y="20" width="2" height="2" fill="#8b4513"/><rect x="20" y="20" width="2" height="2" fill="#8b4513"/>
+      <rect x="2" y="22" width="2" height="2" fill="#8b4513"/><rect x="20" y="22" width="2" height="2" fill="#8b4513"/>
+      <rect x="4" y="24" width="2" height="2" fill="#8b4513"/><rect x="18" y="24" width="2" height="2" fill="#8b4513"/>
+      <rect x="6" y="26" width="2" height="2" fill="#8b4513"/><rect x="8" y="26" width="2" height="2" fill="#8b4513"/><rect x="14" y="26" width="2" height="2" fill="#8b4513"/><rect x="16" y="26" width="2" height="2" fill="#8b4513"/>
 
-        <!-- Light brown fill -->
-        <rect x="8" y="2" width="2" height="2" fill="#a0522d"/>
-        <rect x="10" y="2" width="2" height="2" fill="#a0522d"/>
-        <rect x="12" y="2" width="2" height="2" fill="#a0522d"/>
-        <rect x="14" y="2" width="2" height="2" fill="#a0522d"/>
-        <rect x="4" y="4" width="2" height="2" fill="#a0522d"/>
-        <rect x="6" y="4" width="2" height="2" fill="#a0522d"/>
-        <rect x="8" y="4" width="2" height="2" fill="#a0522d"/>
-        <rect x="10" y="4" width="2" height="2" fill="#a0522d"/>
-        <rect x="12" y="4" width="2" height="2" fill="#a0522d"/>
-        <rect x="14" y="4" width="2" height="2" fill="#a0522d"/>
-        <rect x="16" y="4" width="2" height="2" fill="#a0522d"/>
-        <rect x="18" y="4" width="2" height="2" fill="#a0522d"/>
+      <!-- Egg fill (light brown) -->
+      <rect x="8" y="2" width="2" height="2" fill="#a0522d"/><rect x="10" y="2" width="2" height="2" fill="#a0522d"/><rect x="12" y="2" width="2" height="2" fill="#a0522d"/><rect x="14" y="2" width="2" height="2" fill="#a0522d"/>
+      <rect x="4" y="4" width="2" height="2" fill="#a0522d"/><rect x="6" y="4" width="2" height="2" fill="#a0522d"/><rect x="8" y="4" width="2" height="2" fill="#a0522d"/><rect x="10" y="4" width="2" height="2" fill="#a0522d"/><rect x="12" y="4" width="2" height="2" fill="#a0522d"/><rect x="14" y="4" width="2" height="2" fill="#a0522d"/><rect x="16" y="4" width="2" height="2" fill="#a0522d"/><rect x="18" y="4" width="2" height="2" fill="#a0522d"/>
+      <rect x="4" y="6" width="2" height="2" fill="#a0522d"/><rect x="6" y="6" width="2" height="2" fill="#a0522d"/><rect x="8" y="6" width="2" height="2" fill="#a0522d"/><rect x="10" y="6" width="2" height="2" fill="#a0522d"/><rect x="12" y="6" width="2" height="2" fill="#a0522d"/><rect x="14" y="6" width="2" height="2" fill="#a0522d"/><rect x="16" y="6" width="2" height="2" fill="#a0522d"/><rect x="18" y="6" width="2" height="2" fill="#a0522d"/>
+      <rect x="2" y="8" width="2" height="2" fill="#a0522d"/><rect x="4" y="8" width="2" height="2" fill="#a0522d"/><rect x="6" y="8" width="2" height="2" fill="#a0522d"/><rect x="8" y="8" width="2" height="2" fill="#a0522d"/><rect x="10" y="8" width="2" height="2" fill="#a0522d"/><rect x="12" y="8" width="2" height="2" fill="#a0522d"/><rect x="14" y="8" width="2" height="2" fill="#a0522d"/><rect x="16" y="8" width="2" height="2" fill="#a0522d"/><rect x="18" y="8" width="2" height="2" fill="#a0522d"/><rect x="20" y="8" width="2" height="2" fill="#a0522d"/>
+      <rect x="2" y="10" width="2" height="2" fill="#8b4513"/><rect x="4" y="10" width="2" height="2" fill="#8b4513"/><rect x="6" y="10" width="2" height="2" fill="#8b4513"/><rect x="8" y="10" width="2" height="2" fill="#8b4513"/><rect x="10" y="10" width="2" height="2" fill="#8b4513"/><rect x="12" y="10" width="2" height="2" fill="#8b4513"/><rect x="14" y="10" width="2" height="2" fill="#8b4513"/><rect x="16" y="10" width="2" height="2" fill="#8b4513"/><rect x="18" y="10" width="2" height="2" fill="#8b4513"/><rect x="20" y="10" width="2" height="2" fill="#8b4513"/>
+      <rect x="2" y="12" width="2" height="2" fill="#8b4513"/><rect x="4" y="12" width="2" height="2" fill="#8b4513"/><rect x="6" y="12" width="2" height="2" fill="#8b4513"/><rect x="8" y="12" width="2" height="2" fill="#8b4513"/><rect x="10" y="12" width="2" height="2" fill="#8b4513"/><rect x="12" y="12" width="2" height="2" fill="#8b4513"/><rect x="14" y="12" width="2" height="2" fill="#8b4513"/><rect x="16" y="12" width="2" height="2" fill="#8b4513"/><rect x="18" y="12" width="2" height="2" fill="#8b4513"/><rect x="20" y="12" width="2" height="2" fill="#8b4513"/>
+      <rect x="2" y="14" width="2" height="2" fill="#8b4513"/><rect x="4" y="14" width="2" height="2" fill="#8b4513"/><rect x="6" y="14" width="2" height="2" fill="#8b4513"/><rect x="8" y="14" width="2" height="2" fill="#8b4513"/><rect x="10" y="14" width="2" height="2" fill="#8b4513"/><rect x="12" y="14" width="2" height="2" fill="#8b4513"/><rect x="14" y="14" width="2" height="2" fill="#8b4513"/><rect x="16" y="14" width="2" height="2" fill="#8b4513"/><rect x="18" y="14" width="2" height="2" fill="#8b4513"/><rect x="20" y="14" width="2" height="2" fill="#8b4513"/>
+      <rect x="2" y="16" width="2" height="2" fill="#8b4513"/><rect x="4" y="16" width="2" height="2" fill="#8b4513"/><rect x="6" y="16" width="2" height="2" fill="#8b4513"/><rect x="8" y="16" width="2" height="2" fill="#8b4513"/><rect x="10" y="16" width="2" height="2" fill="#8b4513"/><rect x="12" y="16" width="2" height="2" fill="#8b4513"/><rect x="14" y="16" width="2" height="2" fill="#8b4513"/><rect x="16" y="16" width="2" height="2" fill="#8b4513"/><rect x="18" y="16" width="2" height="2" fill="#8b4513"/><rect x="20" y="16" width="2" height="2" fill="#8b4513"/>
+      <rect x="2" y="18" width="2" height="2" fill="#8b4513"/><rect x="4" y="18" width="2" height="2" fill="#8b4513"/><rect x="6" y="18" width="2" height="2" fill="#8b4513"/><rect x="8" y="18" width="2" height="2" fill="#8b4513"/><rect x="10" y="18" width="2" height="2" fill="#8b4513"/><rect x="12" y="18" width="2" height="2" fill="#8b4513"/><rect x="14" y="18" width="2" height="2" fill="#8b4513"/><rect x="16" y="18" width="2" height="2" fill="#8b4513"/><rect x="18" y="18" width="2" height="2" fill="#8b4513"/><rect x="20" y="18" width="2" height="2" fill="#8b4513"/>
+      <rect x="4" y="20" width="2" height="2" fill="#8b4513"/><rect x="6" y="20" width="2" height="2" fill="#8b4513"/><rect x="8" y="20" width="2" height="2" fill="#8b4513"/><rect x="10" y="20" width="2" height="2" fill="#8b4513"/><rect x="12" y="20" width="2" height="2" fill="#8b4513"/><rect x="14" y="20" width="2" height="2" fill="#8b4513"/><rect x="16" y="20" width="2" height="2" fill="#8b4513"/><rect x="18" y="20" width="2" height="2" fill="#8b4513"/>
+      <rect x="4" y="22" width="2" height="2" fill="#8b4513"/><rect x="6" y="22" width="2" height="2" fill="#8b4513"/><rect x="8" y="22" width="2" height="2" fill="#8b4513"/><rect x="10" y="22" width="2" height="2" fill="#8b4513"/><rect x="12" y="22" width="2" height="2" fill="#8b4513"/><rect x="14" y="22" width="2" height="2" fill="#8b4513"/><rect x="16" y="22" width="2" height="2" fill="#8b4513"/><rect x="18" y="22" width="2" height="2" fill="#8b4513"/>
+      <rect x="6" y="24" width="2" height="2" fill="#8b4513"/><rect x="8" y="24" width="2" height="2" fill="#8b4513"/><rect x="10" y="24" width="2" height="2" fill="#8b4513"/><rect x="12" y="24" width="2" height="2" fill="#8b4513"/><rect x="14" y="24" width="2" height="2" fill="#8b4513"/><rect x="16" y="24" width="2" height="2" fill="#8b4513"/>
+      <rect x="10" y="26" width="2" height="2" fill="#8b4513"/><rect x="12" y="26" width="2" height="2" fill="#8b4513"/>
 
-        <!-- Darker fill for body -->
-        <rect x="2" y="8" width="20" height="2" fill="#8b4513"/>
-        <rect x="2" y="10" width="20" height="2" fill="#8b4513"/>
-        <rect x="2" y="12" width="20" height="2" fill="#8b4513"/>
-        <rect x="2" y="14" width="20" height="2" fill="#8b4513"/>
-        <rect x="2" y="16" width="20" height="2" fill="#8b4513"/>
-        <rect x="2" y="18" width="20" height="2" fill="#8b4513"/>
-        <rect x="4" y="20" width="16" height="2" fill="#8b4513"/>
-        <rect x="4" y="22" width="16" height="2" fill="#8b4513"/>
-        <rect x="6" y="24" width="12" height="2" fill="#8b4513"/>
-        <rect x="10" y="26" width="4" height="2" fill="#8b4513"/>
-
-        <!-- Golden speckles -->
-        <rect x="6" y="4" width="2" height="2" fill="#daa520"/>
-        <rect x="14" y="6" width="2" height="2" fill="#daa520"/>
-        <rect x="10" y="8" width="2" height="2" fill="#d2691e"/>
-        <rect x="8" y="16" width="2" height="2" fill="#daa520"/>
-        <rect x="12" y="20" width="2" height="2" fill="#daa520"/>
-      </g>
+      <!-- Golden speckles -->
+      <rect x="6" y="4" width="2" height="2" fill="#daa520"/><rect x="14" y="6" width="2" height="2" fill="#daa520"/><rect x="18" y="10" width="2" height="2" fill="#daa520"/>
+      <rect x="4" y="12" width="2" height="2" fill="#d2691e"/><rect x="10" y="8" width="2" height="2" fill="#d2691e"/><rect x="16" y="14" width="2" height="2" fill="#d2691e"/>
+      <rect x="8" y="16" width="2" height="2" fill="#daa520"/><rect x="12" y="20" width="2" height="2" fill="#daa520"/><rect x="16" y="18" width="2" height="2" fill="#daa520"/>
+      <rect x="6" y="10" width="2" height="2" fill="#d2691e"/><rect x="18" y="12" width="2" height="2" fill="#d2691e"/>
+    </g>
+  
     </symbol>
-
-    <!-- Hatching Dragon Symbol -->
     <symbol id="dragon-hatching" viewBox="0 0 32 36">
-      <g class="hatching-dragon">
-        <!-- Dragon head (simplified for small display) -->
-        <rect x="12" y="0" width="2" height="2" fill="#c41e3a"/>
-        <rect x="14" y="0" width="2" height="2" fill="#c41e3a"/>
-        <rect x="16" y="0" width="2" height="2" fill="#c41e3a"/>
-        <rect x="18" y="0" width="2" height="2" fill="#c41e3a"/>
-        <rect x="10" y="2" width="2" height="2" fill="#c41e3a"/>
-        <rect x="12" y="2" width="2" height="2" fill="#c41e3a"/>
-        <rect x="14" y="2" width="2" height="2" fill="#c41e3a"/>
-        <rect x="16" y="2" width="2" height="2" fill="#c41e3a"/>
-        <rect x="18" y="2" width="2" height="2" fill="#c41e3a"/>
-        <rect x="20" y="2" width="2" height="2" fill="#c41e3a"/>
+      
+    <g class="hatching-dragon">
+      <!-- Dragon head (poking out) -->
+      <rect x="12" y="0" width="2" height="2" fill="#c41e3a"/><rect x="14" y="0" width="2" height="2" fill="#c41e3a"/><rect x="16" y="0" width="2" height="2" fill="#c41e3a"/><rect x="18" y="0" width="2" height="2" fill="#c41e3a"/>
+      <rect x="10" y="2" width="2" height="2" fill="#c41e3a"/><rect x="12" y="2" width="2" height="2" fill="#c41e3a"/><rect x="14" y="2" width="2" height="2" fill="#c41e3a"/><rect x="16" y="2" width="2" height="2" fill="#c41e3a"/><rect x="18" y="2" width="2" height="2" fill="#c41e3a"/><rect x="20" y="2" width="2" height="2" fill="#c41e3a"/>
+      <rect x="8" y="4" width="2" height="2" fill="#c41e3a"/><rect x="10" y="4" width="2" height="2" fill="#c41e3a"/><rect x="12" y="4" width="2" height="2" fill="#c41e3a"/><rect x="14" y="4" width="2" height="2" fill="#c41e3a"/><rect x="16" y="4" width="2" height="2" fill="#c41e3a"/><rect x="18" y="4" width="2" height="2" fill="#c41e3a"/><rect x="20" y="4" width="2" height="2" fill="#c41e3a"/><rect x="22" y="4" width="2" height="2" fill="#c41e3a"/>
+      <rect x="8" y="6" width="2" height="2" fill="#c41e3a"/><rect x="10" y="6" width="2" height="2" fill="#c41e3a"/><rect x="12" y="6" width="2" height="2" fill="#c41e3a"/><rect x="14" y="6" width="2" height="2" fill="#c41e3a"/><rect x="16" y="6" width="2" height="2" fill="#c41e3a"/><rect x="18" y="6" width="2" height="2" fill="#c41e3a"/><rect x="20" y="6" width="2" height="2" fill="#c41e3a"/><rect x="22" y="6" width="2" height="2" fill="#c41e3a"/>
+      <rect x="10" y="8" width="2" height="2" fill="#c41e3a"/><rect x="12" y="8" width="2" height="2" fill="#c41e3a"/><rect x="14" y="8" width="2" height="2" fill="#c41e3a"/><rect x="16" y="8" width="2" height="2" fill="#c41e3a"/><rect x="18" y="8" width="2" height="2" fill="#c41e3a"/><rect x="20" y="8" width="2" height="2" fill="#c41e3a"/>
 
-        <!-- Eyes -->
-        <rect x="10" y="4" width="2" height="2" fill="#ffd700"/>
-        <rect x="18" y="4" width="2" height="2" fill="#ffd700"/>
+      <!-- Dragon eyes -->
+      <rect x="10" y="4" width="2" height="2" fill="#ffd700"/><rect x="18" y="4" width="2" height="2" fill="#ffd700"/>
 
-        <!-- Shell pieces -->
-        <rect x="6" y="2" width="2" height="2" fill="#f5f5dc"/>
-        <rect x="24" y="2" width="2" height="2" fill="#f5f5dc"/>
+      <!-- Dragon snout/nose -->
+      <rect x="14" y="8" width="2" height="2" fill="#f5deb3"/><rect x="16" y="8" width="2" height="2" fill="#f5deb3"/>
 
-        <!-- Cracked egg bottom -->
-        <rect x="4" y="10" width="24" height="2" fill="#8b4513"/>
-        <rect x="2" y="12" width="28" height="2" fill="#8b4513"/>
-        <rect x="2" y="14" width="28" height="2" fill="#8b4513"/>
-        <rect x="2" y="16" width="28" height="2" fill="#8b4513"/>
-        <rect x="4" y="18" width="24" height="2" fill="#8b4513"/>
-        <rect x="6" y="20" width="20" height="2" fill="#8b4513"/>
-        <rect x="8" y="22" width="16" height="2" fill="#8b4513"/>
-        <rect x="10" y="24" width="12" height="2" fill="#8b4513"/>
-        <rect x="12" y="26" width="8" height="2" fill="#8b4513"/>
-        <rect x="14" y="28" width="4" height="2" fill="#8b4513"/>
+      <!-- Small horns -->
+      <rect x="8" y="0" width="2" height="2" fill="#c41e3a"/><rect x="22" y="0" width="2" height="2" fill="#c41e3a"/>
 
-        <!-- Crack lines -->
-        <rect x="14" y="10" width="2" height="2" fill="#2d1b0e"/>
-        <rect x="10" y="14" width="2" height="2" fill="#2d1b0e"/>
-        <rect x="20" y="14" width="2" height="2" fill="#2d1b0e"/>
-      </g>
+      <!-- Shell on head (cracked piece) -->
+      <rect x="6" y="2" width="2" height="2" fill="#f5f5dc"/><rect x="24" y="2" width="2" height="2" fill="#f5f5dc"/>
+      <rect x="4" y="4" width="2" height="2" fill="#f5f5dc"/><rect x="6" y="4" width="2" height="2" fill="#f5f5dc"/><rect x="24" y="4" width="2" height="2" fill="#f5f5dc"/><rect x="26" y="4" width="2" height="2" fill="#f5f5dc"/>
+      <rect x="4" y="6" width="2" height="2" fill="#f5f5dc"/><rect x="6" y="6" width="2" height="2" fill="#f5f5dc"/>
+
+      <!-- Cracked egg shell (bottom half) -->
+      <rect x="8" y="10" width="2" height="2" fill="#8b4513"/><rect x="10" y="10" width="2" height="2" fill="#8b4513"/><rect x="12" y="10" width="2" height="2" fill="#8b4513"/><rect x="18" y="10" width="2" height="2" fill="#8b4513"/><rect x="20" y="10" width="2" height="2" fill="#8b4513"/><rect x="22" y="10" width="2" height="2" fill="#8b4513"/>
+      <rect x="6" y="12" width="2" height="2" fill="#8b4513"/><rect x="8" y="12" width="2" height="2" fill="#8b4513"/><rect x="10" y="12" width="2" height="2" fill="#8b4513"/><rect x="12" y="12" width="2" height="2" fill="#8b4513"/><rect x="14" y="12" width="2" height="2" fill="#8b4513"/><rect x="16" y="12" width="2" height="2" fill="#8b4513"/><rect x="18" y="12" width="2" height="2" fill="#8b4513"/><rect x="20" y="12" width="2" height="2" fill="#8b4513"/><rect x="22" y="12" width="2" height="2" fill="#8b4513"/><rect x="24" y="12" width="2" height="2" fill="#8b4513"/>
+      <rect x="4" y="14" width="2" height="2" fill="#8b4513"/><rect x="6" y="14" width="2" height="2" fill="#8b4513"/><rect x="8" y="14" width="2" height="2" fill="#8b4513"/><rect x="10" y="14" width="2" height="2" fill="#8b4513"/><rect x="12" y="14" width="2" height="2" fill="#8b4513"/><rect x="14" y="14" width="2" height="2" fill="#8b4513"/><rect x="16" y="14" width="2" height="2" fill="#8b4513"/><rect x="18" y="14" width="2" height="2" fill="#8b4513"/><rect x="20" y="14" width="2" height="2" fill="#8b4513"/><rect x="22" y="14" width="2" height="2" fill="#8b4513"/><rect x="24" y="14" width="2" height="2" fill="#8b4513"/><rect x="26" y="14" width="2" height="2" fill="#8b4513"/>
+      <rect x="2" y="16" width="2" height="2" fill="#8b4513"/><rect x="4" y="16" width="2" height="2" fill="#8b4513"/><rect x="6" y="16" width="2" height="2" fill="#8b4513"/><rect x="8" y="16" width="2" height="2" fill="#8b4513"/><rect x="10" y="16" width="2" height="2" fill="#8b4513"/><rect x="12" y="16" width="2" height="2" fill="#8b4513"/><rect x="14" y="16" width="2" height="2" fill="#8b4513"/><rect x="16" y="16" width="2" height="2" fill="#8b4513"/><rect x="18" y="16" width="2" height="2" fill="#8b4513"/><rect x="20" y="16" width="2" height="2" fill="#8b4513"/><rect x="22" y="16" width="2" height="2" fill="#8b4513"/><rect x="24" y="16" width="2" height="2" fill="#8b4513"/><rect x="26" y="16" width="2" height="2" fill="#8b4513"/><rect x="28" y="16" width="2" height="2" fill="#8b4513"/>
+      <rect x="2" y="18" width="2" height="2" fill="#8b4513"/><rect x="4" y="18" width="2" height="2" fill="#8b4513"/><rect x="6" y="18" width="2" height="2" fill="#8b4513"/><rect x="8" y="18" width="2" height="2" fill="#8b4513"/><rect x="10" y="18" width="2" height="2" fill="#8b4513"/><rect x="12" y="18" width="2" height="2" fill="#8b4513"/><rect x="14" y="18" width="2" height="2" fill="#8b4513"/><rect x="16" y="18" width="2" height="2" fill="#8b4513"/><rect x="18" y="18" width="2" height="2" fill="#8b4513"/><rect x="20" y="18" width="2" height="2" fill="#8b4513"/><rect x="22" y="18" width="2" height="2" fill="#8b4513"/><rect x="24" y="18" width="2" height="2" fill="#8b4513"/><rect x="26" y="18" width="2" height="2" fill="#8b4513"/><rect x="28" y="18" width="2" height="2" fill="#8b4513"/>
+      <rect x="2" y="20" width="2" height="2" fill="#8b4513"/><rect x="4" y="20" width="2" height="2" fill="#8b4513"/><rect x="6" y="20" width="2" height="2" fill="#8b4513"/><rect x="8" y="20" width="2" height="2" fill="#8b4513"/><rect x="10" y="20" width="2" height="2" fill="#8b4513"/><rect x="12" y="20" width="2" height="2" fill="#8b4513"/><rect x="14" y="20" width="2" height="2" fill="#8b4513"/><rect x="16" y="20" width="2" height="2" fill="#8b4513"/><rect x="18" y="20" width="2" height="2" fill="#8b4513"/><rect x="20" y="20" width="2" height="2" fill="#8b4513"/><rect x="22" y="20" width="2" height="2" fill="#8b4513"/><rect x="24" y="20" width="2" height="2" fill="#8b4513"/><rect x="26" y="20" width="2" height="2" fill="#8b4513"/><rect x="28" y="20" width="2" height="2" fill="#8b4513"/>
+      <rect x="4" y="22" width="2" height="2" fill="#8b4513"/><rect x="6" y="22" width="2" height="2" fill="#8b4513"/><rect x="8" y="22" width="2" height="2" fill="#8b4513"/><rect x="10" y="22" width="2" height="2" fill="#8b4513"/><rect x="12" y="22" width="2" height="2" fill="#8b4513"/><rect x="14" y="22" width="2" height="2" fill="#8b4513"/><rect x="16" y="22" width="2" height="2" fill="#8b4513"/><rect x="18" y="22" width="2" height="2" fill="#8b4513"/><rect x="20" y="22" width="2" height="2" fill="#8b4513"/><rect x="22" y="22" width="2" height="2" fill="#8b4513"/><rect x="24" y="22" width="2" height="2" fill="#8b4513"/><rect x="26" y="22" width="2" height="2" fill="#8b4513"/>
+      <rect x="4" y="24" width="2" height="2" fill="#8b4513"/><rect x="6" y="24" width="2" height="2" fill="#8b4513"/><rect x="8" y="24" width="2" height="2" fill="#8b4513"/><rect x="10" y="24" width="2" height="2" fill="#8b4513"/><rect x="12" y="24" width="2" height="2" fill="#8b4513"/><rect x="14" y="24" width="2" height="2" fill="#8b4513"/><rect x="16" y="24" width="2" height="2" fill="#8b4513"/><rect x="18" y="24" width="2" height="2" fill="#8b4513"/><rect x="20" y="24" width="2" height="2" fill="#8b4513"/><rect x="22" y="24" width="2" height="2" fill="#8b4513"/><rect x="24" y="24" width="2" height="2" fill="#8b4513"/><rect x="26" y="24" width="2" height="2" fill="#8b4513"/>
+      <rect x="6" y="26" width="2" height="2" fill="#8b4513"/><rect x="8" y="26" width="2" height="2" fill="#8b4513"/><rect x="10" y="26" width="2" height="2" fill="#8b4513"/><rect x="12" y="26" width="2" height="2" fill="#8b4513"/><rect x="14" y="26" width="2" height="2" fill="#8b4513"/><rect x="16" y="26" width="2" height="2" fill="#8b4513"/><rect x="18" y="26" width="2" height="2" fill="#8b4513"/><rect x="20" y="26" width="2" height="2" fill="#8b4513"/><rect x="22" y="26" width="2" height="2" fill="#8b4513"/><rect x="24" y="26" width="2" height="2" fill="#8b4513"/>
+      <rect x="8" y="28" width="2" height="2" fill="#8b4513"/><rect x="10" y="28" width="2" height="2" fill="#8b4513"/><rect x="12" y="28" width="2" height="2" fill="#8b4513"/><rect x="14" y="28" width="2" height="2" fill="#8b4513"/><rect x="16" y="28" width="2" height="2" fill="#8b4513"/><rect x="18" y="28" width="2" height="2" fill="#8b4513"/><rect x="20" y="28" width="2" height="2" fill="#8b4513"/><rect x="22" y="28" width="2" height="2" fill="#8b4513"/>
+      <rect x="10" y="30" width="2" height="2" fill="#8b4513"/><rect x="12" y="30" width="2" height="2" fill="#8b4513"/><rect x="14" y="30" width="2" height="2" fill="#8b4513"/><rect x="16" y="30" width="2" height="2" fill="#8b4513"/><rect x="18" y="30" width="2" height="2" fill="#8b4513"/><rect x="20" y="30" width="2" height="2" fill="#8b4513"/>
+      <rect x="12" y="32" width="2" height="2" fill="#8b4513"/><rect x="14" y="32" width="2" height="2" fill="#8b4513"/><rect x="16" y="32" width="2" height="2" fill="#8b4513"/><rect x="18" y="32" width="2" height="2" fill="#8b4513"/>
+      <rect x="14" y="34" width="2" height="2" fill="#8b4513"/><rect x="16" y="34" width="2" height="2" fill="#8b4513"/>
+
+      <!-- Crack lines on shell -->
+      <rect x="14" y="10" width="2" height="2" fill="#2d1b0e"/><rect x="16" y="10" width="2" height="2" fill="#2d1b0e"/>
+      <rect x="10" y="14" width="2" height="2" fill="#2d1b0e"/><rect x="20" y="14" width="2" height="2" fill="#2d1b0e"/>
+      <rect x="8" y="18" width="2" height="2" fill="#2d1b0e"/><rect x="22" y="18" width="2" height="2" fill="#2d1b0e"/>
+
+      <!-- Jagged shell edge at top -->
+      <rect x="10" y="10" width="2" height="2" fill="#f5f5dc"/><rect x="20" y="10" width="2" height="2" fill="#f5f5dc"/>
+      <rect x="8" y="12" width="2" height="2" fill="#f5f5dc"/><rect x="22" y="12" width="2" height="2" fill="#f5f5dc"/>
+    </g>
+  
     </symbol>
-
-    <!-- Full Dragon Symbol -->
     <symbol id="dragon-full" viewBox="0 0 40 40">
-      <g class="full-dragon">
-        <!-- Wings (simplified) -->
-        <rect x="4" y="10" width="2" height="2" fill="#ff4444"/>
-        <rect x="6" y="8" width="2" height="2" fill="#ff4444"/>
-        <rect x="8" y="6" width="2" height="2" fill="#ff4444"/>
-        <rect x="32" y="10" width="2" height="2" fill="#ff4444"/>
-        <rect x="30" y="8" width="2" height="2" fill="#ff4444"/>
-        <rect x="28" y="6" width="2" height="2" fill="#ff4444"/>
+      
+    <g class="full-dragon">
+      <!-- Wings (behind body) -->
+      <rect x="4" y="12" width="2" height="2" fill="#ff4444"/><rect x="6" y="10" width="2" height="2" fill="#ff4444"/><rect x="8" y="8" width="2" height="2" fill="#ff4444"/><rect x="10" y="6" width="2" height="2" fill="#ff4444"/>
+      <rect x="4" y="14" width="2" height="2" fill="#ff4444"/><rect x="6" y="12" width="2" height="2" fill="#ff4444"/><rect x="8" y="10" width="2" height="2" fill="#ff4444"/><rect x="10" y="8" width="2" height="2" fill="#ff4444"/>
+      <rect x="6" y="16" width="2" height="2" fill="#ff4444"/><rect x="8" y="14" width="2" height="2" fill="#ff4444"/><rect x="10" y="12" width="2" height="2" fill="#ff4444"/>
+      <rect x="32" y="12" width="2" height="2" fill="#ff4444"/><rect x="30" y="10" width="2" height="2" fill="#ff4444"/><rect x="28" y="8" width="2" height="2" fill="#ff4444"/><rect x="26" y="6" width="2" height="2" fill="#ff4444"/>
+      <rect x="32" y="14" width="2" height="2" fill="#ff4444"/><rect x="30" y="12" width="2" height="2" fill="#ff4444"/><rect x="28" y="10" width="2" height="2" fill="#ff4444"/><rect x="26" y="8" width="2" height="2" fill="#ff4444"/>
+      <rect x="30" y="16" width="2" height="2" fill="#ff4444"/><rect x="28" y="14" width="2" height="2" fill="#ff4444"/><rect x="26" y="12" width="2" height="2" fill="#ff4444"/>
 
-        <!-- Horns -->
-        <rect x="14" y="0" width="2" height="2" fill="#8b1428"/>
-        <rect x="24" y="0" width="2" height="2" fill="#8b1428"/>
-        <rect x="12" y="2" width="2" height="2" fill="#8b1428"/>
-        <rect x="14" y="2" width="2" height="2" fill="#8b1428"/>
-        <rect x="24" y="2" width="2" height="2" fill="#8b1428"/>
-        <rect x="26" y="2" width="2" height="2" fill="#8b1428"/>
+      <!-- Head horns -->
+      <rect x="14" y="0" width="2" height="2" fill="#8b1428"/><rect x="24" y="0" width="2" height="2" fill="#8b1428"/>
+      <rect x="12" y="2" width="2" height="2" fill="#8b1428"/><rect x="14" y="2" width="2" height="2" fill="#8b1428"/><rect x="24" y="2" width="2" height="2" fill="#8b1428"/><rect x="26" y="2" width="2" height="2" fill="#8b1428"/>
 
-        <!-- Head -->
-        <rect x="16" y="2" width="2" height="2" fill="#c41e3a"/>
-        <rect x="18" y="2" width="2" height="2" fill="#c41e3a"/>
-        <rect x="20" y="2" width="2" height="2" fill="#c41e3a"/>
-        <rect x="22" y="2" width="2" height="2" fill="#c41e3a"/>
-        <rect x="14" y="4" width="2" height="2" fill="#c41e3a"/>
-        <rect x="16" y="4" width="2" height="2" fill="#c41e3a"/>
-        <rect x="18" y="4" width="2" height="2" fill="#c41e3a"/>
-        <rect x="20" y="4" width="2" height="2" fill="#c41e3a"/>
-        <rect x="22" y="4" width="2" height="2" fill="#c41e3a"/>
-        <rect x="24" y="4" width="2" height="2" fill="#c41e3a"/>
+      <!-- Head -->
+      <rect x="16" y="2" width="2" height="2" fill="#c41e3a"/><rect x="18" y="2" width="2" height="2" fill="#c41e3a"/><rect x="20" y="2" width="2" height="2" fill="#c41e3a"/><rect x="22" y="2" width="2" height="2" fill="#c41e3a"/>
+      <rect x="14" y="4" width="2" height="2" fill="#c41e3a"/><rect x="16" y="4" width="2" height="2" fill="#c41e3a"/><rect x="18" y="4" width="2" height="2" fill="#c41e3a"/><rect x="20" y="4" width="2" height="2" fill="#c41e3a"/><rect x="22" y="4" width="2" height="2" fill="#c41e3a"/><rect x="24" y="4" width="2" height="2" fill="#c41e3a"/>
+      <rect x="12" y="6" width="2" height="2" fill="#c41e3a"/><rect x="14" y="6" width="2" height="2" fill="#c41e3a"/><rect x="16" y="6" width="2" height="2" fill="#c41e3a"/><rect x="18" y="6" width="2" height="2" fill="#c41e3a"/><rect x="20" y="6" width="2" height="2" fill="#c41e3a"/><rect x="22" y="6" width="2" height="2" fill="#c41e3a"/><rect x="24" y="6" width="2" height="2" fill="#c41e3a"/><rect x="26" y="6" width="2" height="2" fill="#c41e3a"/>
+      <rect x="12" y="8" width="2" height="2" fill="#c41e3a"/><rect x="14" y="8" width="2" height="2" fill="#c41e3a"/><rect x="16" y="8" width="2" height="2" fill="#c41e3a"/><rect x="18" y="8" width="2" height="2" fill="#c41e3a"/><rect x="20" y="8" width="2" height="2" fill="#c41e3a"/><rect x="22" y="8" width="2" height="2" fill="#c41e3a"/><rect x="24" y="8" width="2" height="2" fill="#c41e3a"/><rect x="26" y="8" width="2" height="2" fill="#c41e3a"/>
+      <rect x="14" y="10" width="2" height="2" fill="#c41e3a"/><rect x="16" y="10" width="2" height="2" fill="#c41e3a"/><rect x="18" y="10" width="2" height="2" fill="#c41e3a"/><rect x="20" y="10" width="2" height="2" fill="#c41e3a"/><rect x="22" y="10" width="2" height="2" fill="#c41e3a"/><rect x="24" y="10" width="2" height="2" fill="#c41e3a"/>
 
-        <!-- Eyes -->
-        <rect x="14" y="6" width="2" height="2" fill="#ffd700"/>
-        <rect x="22" y="6" width="2" height="2" fill="#ffd700"/>
+      <!-- Eyes -->
+      <rect x="14" y="6" width="2" height="2" fill="#ffd700"/><rect x="22" y="6" width="2" height="2" fill="#ffd700"/>
 
-        <!-- Snout -->
-        <rect x="16" y="10" width="2" height="2" fill="#f5deb3"/>
-        <rect x="18" y="10" width="2" height="2" fill="#f5deb3"/>
-        <rect x="20" y="10" width="2" height="2" fill="#f5deb3"/>
-        <rect x="22" y="10" width="2" height="2" fill="#f5deb3"/>
-        <rect x="18" y="12" width="2" height="2" fill="#ff6b35"/>
-        <rect x="20" y="12" width="2" height="2" fill="#ff6b35"/>
+      <!-- Snout -->
+      <rect x="16" y="10" width="2" height="2" fill="#f5deb3"/><rect x="18" y="10" width="2" height="2" fill="#f5deb3"/><rect x="20" y="10" width="2" height="2" fill="#f5deb3"/><rect x="22" y="10" width="2" height="2" fill="#f5deb3"/>
+      <rect x="18" y="12" width="2" height="2" fill="#ff6b35"/><rect x="20" y="12" width="2" height="2" fill="#ff6b35"/>
 
-        <!-- Body -->
-        <rect x="12" y="16" width="16" height="2" fill="#c41e3a"/>
-        <rect x="10" y="18" width="20" height="2" fill="#c41e3a"/>
-        <rect x="10" y="20" width="20" height="2" fill="#c41e3a"/>
-        <rect x="10" y="22" width="20" height="2" fill="#c41e3a"/>
-        <rect x="12" y="24" width="16" height="2" fill="#c41e3a"/>
+      <!-- Neck -->
+      <rect x="16" y="12" width="2" height="2" fill="#c41e3a"/><rect x="18" y="12" width="2" height="2" fill="#c41e3a"/><rect x="20" y="12" width="2" height="2" fill="#c41e3a"/><rect x="22" y="12" width="2" height="2" fill="#c41e3a"/>
+      <rect x="16" y="14" width="2" height="2" fill="#c41e3a"/><rect x="18" y="14" width="2" height="2" fill="#c41e3a"/><rect x="20" y="14" width="2" height="2" fill="#c41e3a"/><rect x="22" y="14" width="2" height="2" fill="#c41e3a"/>
 
-        <!-- Belly -->
-        <rect x="16" y="18" width="8" height="2" fill="#f5deb3"/>
-        <rect x="16" y="20" width="8" height="2" fill="#f5deb3"/>
-        <rect x="16" y="22" width="8" height="2" fill="#f5deb3"/>
+      <!-- Body -->
+      <rect x="12" y="16" width="2" height="2" fill="#c41e3a"/><rect x="14" y="16" width="2" height="2" fill="#c41e3a"/><rect x="16" y="16" width="2" height="2" fill="#c41e3a"/><rect x="18" y="16" width="2" height="2" fill="#c41e3a"/><rect x="20" y="16" width="2" height="2" fill="#c41e3a"/><rect x="22" y="16" width="2" height="2" fill="#c41e3a"/><rect x="24" y="16" width="2" height="2" fill="#c41e3a"/><rect x="26" y="16" width="2" height="2" fill="#c41e3a"/>
+      <rect x="10" y="18" width="2" height="2" fill="#c41e3a"/><rect x="12" y="18" width="2" height="2" fill="#c41e3a"/><rect x="14" y="18" width="2" height="2" fill="#c41e3a"/><rect x="16" y="18" width="2" height="2" fill="#c41e3a"/><rect x="18" y="18" width="2" height="2" fill="#c41e3a"/><rect x="20" y="18" width="2" height="2" fill="#c41e3a"/><rect x="22" y="18" width="2" height="2" fill="#c41e3a"/><rect x="24" y="18" width="2" height="2" fill="#c41e3a"/><rect x="26" y="18" width="2" height="2" fill="#c41e3a"/><rect x="28" y="18" width="2" height="2" fill="#c41e3a"/>
+      <rect x="10" y="20" width="2" height="2" fill="#c41e3a"/><rect x="12" y="20" width="2" height="2" fill="#c41e3a"/><rect x="14" y="20" width="2" height="2" fill="#c41e3a"/><rect x="16" y="20" width="2" height="2" fill="#c41e3a"/><rect x="18" y="20" width="2" height="2" fill="#c41e3a"/><rect x="20" y="20" width="2" height="2" fill="#c41e3a"/><rect x="22" y="20" width="2" height="2" fill="#c41e3a"/><rect x="24" y="20" width="2" height="2" fill="#c41e3a"/><rect x="26" y="20" width="2" height="2" fill="#c41e3a"/><rect x="28" y="20" width="2" height="2" fill="#c41e3a"/>
+      <rect x="10" y="22" width="2" height="2" fill="#c41e3a"/><rect x="12" y="22" width="2" height="2" fill="#c41e3a"/><rect x="14" y="22" width="2" height="2" fill="#c41e3a"/><rect x="16" y="22" width="2" height="2" fill="#c41e3a"/><rect x="18" y="22" width="2" height="2" fill="#c41e3a"/><rect x="20" y="22" width="2" height="2" fill="#c41e3a"/><rect x="22" y="22" width="2" height="2" fill="#c41e3a"/><rect x="24" y="22" width="2" height="2" fill="#c41e3a"/><rect x="26" y="22" width="2" height="2" fill="#c41e3a"/><rect x="28" y="22" width="2" height="2" fill="#c41e3a"/>
+      <rect x="12" y="24" width="2" height="2" fill="#c41e3a"/><rect x="14" y="24" width="2" height="2" fill="#c41e3a"/><rect x="16" y="24" width="2" height="2" fill="#c41e3a"/><rect x="18" y="24" width="2" height="2" fill="#c41e3a"/><rect x="20" y="24" width="2" height="2" fill="#c41e3a"/><rect x="22" y="24" width="2" height="2" fill="#c41e3a"/><rect x="24" y="24" width="2" height="2" fill="#c41e3a"/><rect x="26" y="24" width="2" height="2" fill="#c41e3a"/>
 
-        <!-- Legs -->
-        <rect x="8" y="26" width="4" height="2" fill="#c41e3a"/>
-        <rect x="28" y="26" width="4" height="2" fill="#c41e3a"/>
-        <rect x="8" y="28" width="4" height="2" fill="#c41e3a"/>
-        <rect x="28" y="28" width="4" height="2" fill="#c41e3a"/>
+      <!-- Belly (cream color) -->
+      <rect x="16" y="18" width="2" height="2" fill="#f5deb3"/><rect x="18" y="18" width="2" height="2" fill="#f5deb3"/><rect x="20" y="18" width="2" height="2" fill="#f5deb3"/><rect x="22" y="18" width="2" height="2" fill="#f5deb3"/>
+      <rect x="16" y="20" width="2" height="2" fill="#f5deb3"/><rect x="18" y="20" width="2" height="2" fill="#f5deb3"/><rect x="20" y="20" width="2" height="2" fill="#f5deb3"/><rect x="22" y="20" width="2" height="2" fill="#f5deb3"/>
+      <rect x="16" y="22" width="2" height="2" fill="#f5deb3"/><rect x="18" y="22" width="2" height="2" fill="#f5deb3"/><rect x="20" y="22" width="2" height="2" fill="#f5deb3"/><rect x="22" y="22" width="2" height="2" fill="#f5deb3"/>
 
-        <!-- Tail -->
-        <rect x="30" y="20" width="2" height="2" fill="#c41e3a"/>
-        <rect x="32" y="18" width="2" height="2" fill="#c41e3a"/>
-        <rect x="34" y="16" width="2" height="2" fill="#c41e3a"/>
-        <rect x="36" y="14" width="2" height="2" fill="#c41e3a"/>
-        <rect x="38" y="10" width="2" height="2" fill="#ff6b35"/>
-        <rect x="38" y="8" width="2" height="2" fill="#ff6b35"/>
-        <rect x="38" y="6" width="2" height="2" fill="#ff6b35"/>
+      <!-- Legs (sitting pose) -->
+      <rect x="10" y="24" width="2" height="2" fill="#c41e3a"/><rect x="12" y="24" width="2" height="2" fill="#c41e3a"/><rect x="26" y="24" width="2" height="2" fill="#c41e3a"/><rect x="28" y="24" width="2" height="2" fill="#c41e3a"/>
+      <rect x="8" y="26" width="2" height="2" fill="#c41e3a"/><rect x="10" y="26" width="2" height="2" fill="#c41e3a"/><rect x="12" y="26" width="2" height="2" fill="#c41e3a"/><rect x="26" y="26" width="2" height="2" fill="#c41e3a"/><rect x="28" y="26" width="2" height="2" fill="#c41e3a"/><rect x="30" y="26" width="2" height="2" fill="#c41e3a"/>
+      <rect x="8" y="28" width="2" height="2" fill="#c41e3a"/><rect x="10" y="28" width="2" height="2" fill="#c41e3a"/><rect x="28" y="28" width="2" height="2" fill="#c41e3a"/><rect x="30" y="28" width="2" height="2" fill="#c41e3a"/>
 
-        <!-- Fire breath -->
-        <rect x="12" y="12" width="2" height="2" fill="#ff6b35"/>
-        <rect x="10" y="10" width="2" height="2" fill="#ff6b35"/>
-        <rect x="8" y="10" width="2" height="2" fill="#ff8c00"/>
-        <rect x="6" y="8" width="2" height="2" fill="#ff8c00"/>
-        <rect x="4" y="6" width="2" height="2" fill="#ffcc00"/>
-        <rect x="6" y="6" width="2" height="2" fill="#ffcc00"/>
-      </g>
+      <!-- Feet/claws -->
+      <rect x="6" y="28" width="2" height="2" fill="#8b1428"/><rect x="8" y="30" width="2" height="2" fill="#8b1428"/><rect x="10" y="30" width="2" height="2" fill="#8b1428"/><rect x="12" y="30" width="2" height="2" fill="#8b1428"/>
+      <rect x="32" y="28" width="2" height="2" fill="#8b1428"/><rect x="30" y="30" width="2" height="2" fill="#8b1428"/><rect x="28" y="30" width="2" height="2" fill="#8b1428"/><rect x="26" y="30" width="2" height="2" fill="#8b1428"/>
+
+      <!-- Tail -->
+      <rect x="28" y="22" width="2" height="2" fill="#c41e3a"/><rect x="30" y="20" width="2" height="2" fill="#c41e3a"/><rect x="32" y="18" width="2" height="2" fill="#c41e3a"/><rect x="34" y="16" width="2" height="2" fill="#c41e3a"/>
+      <rect x="34" y="14" width="2" height="2" fill="#c41e3a"/><rect x="36" y="12" width="2" height="2" fill="#c41e3a"/><rect x="36" y="10" width="2" height="2" fill="#c41e3a"/>
+      <rect x="38" y="8" width="2" height="2" fill="#ff6b35"/><rect x="38" y="6" width="2" height="2" fill="#ff6b35"/>
+
+      <!-- Tail spike -->
+      <rect x="38" y="4" width="2" height="2" fill="#ff6b35"/>
+
+      <!-- Fire breath (small) -->
+      <rect x="12" y="12" width="2" height="2" fill="#ff6b35"/><rect x="10" y="10" width="2" height="2" fill="#ff6b35"/><rect x="8" y="10" width="2" height="2" fill="#ff6b35"/>
+      <rect x="6" y="8" width="2" height="2" fill="#ff8c00"/><rect x="8" y="8" width="2" height="2" fill="#ff8c00"/>
+      <rect x="4" y="6" width="2" height="2" fill="#ffcc00"/><rect x="6" y="6" width="2" height="2" fill="#ffcc00"/>
+    </g>
+  
     </symbol>
+  
   </defs>
 
-  <!-- Background -->
-  <rect x="0" y="0" width="1280" height="320" fill="url(#skyGradient)"/>
+  
+    <g id="background">
+      
+    <rect x="0" y="0" width="1280" height="850" fill="url(#skyGradient)"/>
+  
+      
+    <g id="volcanoes">
+      <!-- Distant volcano left -->
+      <polygon points="0,180 120,60 240,180" fill="#2d1b0e"/>
+      <polygon points="100,80 120,60 140,80" fill="#ff4500"/>
 
-  <!-- Ground -->
-  <rect x="0" y="280" width="1280" height="40" fill="#2d1b0e"/>
+      <!-- Distant volcano center-left -->
+      <polygon points="200,180 350,30 500,180" fill="#4a3728"/>
+      <polygon points="330,50 350,30 370,50" fill="#ff6600"/>
 
-  <!-- Lava river at bottom -->
-  <rect x="0" y="300" width="1280" height="20" fill="url(#lavaGradient)" filter="url(#lavaGlow)"/>
+      <!-- Distant volcano center-right -->
+      <polygon points="700,180 900,20 1100,180" fill="#2d1b0e"/>
+      <polygon points="875,45 900,20 925,45" fill="#ff4500"/>
+      <ellipse cx="900" cy="35" rx="15" ry="8" fill="#ff6600" filter="url(#lavaGlow)"/>
 
-  <!-- Title -->
-  <text x="640" y="30" text-anchor="middle" font-family="monospace" font-size="20" font-weight="bold" fill="#ffd700">
-    DRAGON CONTRIBUTION LAIR
-  </text>
+      <!-- Distant volcano right -->
+      <polygon points="1050,180 1180,50 1280,180" fill="#4a3728"/>
+      <polygon points="1160,70 1180,50 1200,70" fill="#ff6600"/>
 
-  <!-- Contribution Grid -->
-  <g transform="translate(40, 50)">
-    <!-- Create a 52-week x 7-day grid -->
-    <!-- Empty cells (gray) -->
-    <g id="grid">
-      <!-- Week 1-10 (mostly empty with some eggs) -->
-      <rect x="0" y="0" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <rect x="15" y="0" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <rect x="30" y="0" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-egg" x="48" y="0" width="11" height="11"/>
-      <rect x="60" y="0" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <rect x="75" y="0" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-egg" x="90" y="0" width="11" height="11"/>
-      <rect x="105" y="0" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-egg" x="120" y="0" width="11" height="11"/>
-      <rect x="135" y="0" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-
-      <!-- Row 2 -->
-      <rect x="0" y="15" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-egg" x="15" y="15" width="11" height="11"/>
-      <rect x="30" y="15" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <rect x="45" y="15" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-egg" x="60" y="15" width="11" height="11"/>
-      <use href="#dragon-egg" x="75" y="15" width="11" height="11"/>
-      <rect x="90" y="15" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-egg" x="105" y="15" width="11" height="11"/>
-      <rect x="120" y="15" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-egg" x="135" y="15" width="11" height="11"/>
-
-      <!-- Row 3 -->
-      <rect x="0" y="30" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <rect x="15" y="30" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-egg" x="30" y="30" width="11" height="11"/>
-      <use href="#dragon-hatching" x="45" y="30" width="11" height="11"/>
-      <use href="#dragon-egg" x="60" y="30" width="11" height="11"/>
-      <rect x="75" y="30" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-egg" x="90" y="30" width="11" height="11"/>
-      <use href="#dragon-hatching" x="105" y="30" width="11" height="11"/>
-      <use href="#dragon-egg" x="120" y="30" width="11" height="11"/>
-      <rect x="135" y="30" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-
-      <!-- Row 4 -->
-      <use href="#dragon-egg" x="0" y="45" width="11" height="11"/>
-      <rect x="15" y="45" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-hatching" x="30" y="45" width="11" height="11"/>
-      <use href="#dragon-egg" x="45" y="45" width="11" height="11"/>
-      <use href="#dragon-hatching" x="60" y="45" width="11" height="11"/>
-      <use href="#dragon-egg" x="75" y="45" width="11" height="11"/>
-      <use href="#dragon-hatching" x="90" y="45" width="11" height="11"/>
-      <use href="#dragon-full" x="105" y="45" width="11" height="11"/>
-      <use href="#dragon-egg" x="120" y="45" width="11" height="11"/>
-      <use href="#dragon-hatching" x="135" y="45" width="11" height="11"/>
-
-      <!-- Row 5 -->
-      <rect x="0" y="60" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-egg" x="15" y="60" width="11" height="11"/>
-      <use href="#dragon-egg" x="30" y="60" width="11" height="11"/>
-      <use href="#dragon-hatching" x="45" y="60" width="11" height="11"/>
-      <use href="#dragon-full" x="60" y="60" width="11" height="11"/>
-      <use href="#dragon-hatching" x="75" y="60" width="11" height="11"/>
-      <use href="#dragon-full" x="90" y="60" width="11" height="11"/>
-      <use href="#dragon-hatching" x="105" y="60" width="11" height="11"/>
-      <use href="#dragon-full" x="120" y="60" width="11" height="11"/>
-      <use href="#dragon-egg" x="135" y="60" width="11" height="11"/>
-
-      <!-- Row 6 -->
-      <use href="#dragon-egg" x="0" y="75" width="11" height="11"/>
-      <use href="#dragon-hatching" x="15" y="75" width="11" height="11"/>
-      <rect x="30" y="75" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-full" x="45" y="75" width="11" height="11"/>
-      <use href="#dragon-hatching" x="60" y="75" width="11" height="11"/>
-      <use href="#dragon-full" x="75" y="75" width="11" height="11"/>
-      <use href="#dragon-full" x="90" y="75" width="11" height="11"/>
-      <use href="#dragon-hatching" x="105" y="75" width="11" height="11"/>
-      <use href="#dragon-full" x="120" y="75" width="11" height="11"/>
-      <use href="#dragon-hatching" x="135" y="75" width="11" height="11"/>
-
-      <!-- Row 7 -->
-      <rect x="0" y="90" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-egg" x="15" y="90" width="11" height="11"/>
-      <use href="#dragon-egg" x="30" y="90" width="11" height="11"/>
-      <use href="#dragon-hatching" x="45" y="90" width="11" height="11"/>
-      <use href="#dragon-egg" x="60" y="90" width="11" height="11"/>
-      <use href="#dragon-hatching" x="75" y="90" width="11" height="11"/>
-      <use href="#dragon-full" x="90" y="90" width="11" height="11"/>
-      <use href="#dragon-egg" x="105" y="90" width="11" height="11"/>
-      <use href="#dragon-hatching" x="120" y="90" width="11" height="11"/>
-      <rect x="135" y="90" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-
-      <!-- Continue pattern for more weeks (showing progression) -->
-      <!-- Week 11-20 -->
-      <use href="#dragon-egg" x="150" y="0" width="11" height="11"/>
-      <use href="#dragon-hatching" x="165" y="0" width="11" height="11"/>
-      <use href="#dragon-egg" x="180" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="195" y="0" width="11" height="11"/>
-      <use href="#dragon-hatching" x="210" y="0" width="11" height="11"/>
-      <use href="#dragon-egg" x="225" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="240" y="0" width="11" height="11"/>
-      <use href="#dragon-hatching" x="255" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="270" y="0" width="11" height="11"/>
-      <use href="#dragon-egg" x="285" y="0" width="11" height="11"/>
-
-      <use href="#dragon-hatching" x="150" y="15" width="11" height="11"/>
-      <use href="#dragon-full" x="165" y="15" width="11" height="11"/>
-      <use href="#dragon-hatching" x="180" y="15" width="11" height="11"/>
-      <use href="#dragon-full" x="195" y="15" width="11" height="11"/>
-      <use href="#dragon-full" x="210" y="15" width="11" height="11"/>
-      <use href="#dragon-hatching" x="225" y="15" width="11" height="11"/>
-      <use href="#dragon-full" x="240" y="15" width="11" height="11"/>
-      <use href="#dragon-full" x="255" y="15" width="11" height="11"/>
-      <use href="#dragon-hatching" x="270" y="15" width="11" height="11"/>
-      <use href="#dragon-full" x="285" y="15" width="11" height="11"/>
-
-      <use href="#dragon-egg" x="150" y="30" width="11" height="11"/>
-      <use href="#dragon-hatching" x="165" y="30" width="11" height="11"/>
-      <use href="#dragon-full" x="180" y="30" width="11" height="11"/>
-      <use href="#dragon-hatching" x="195" y="30" width="11" height="11"/>
-      <use href="#dragon-full" x="210" y="30" width="11" height="11"/>
-      <use href="#dragon-full" x="225" y="30" width="11" height="11"/>
-      <use href="#dragon-full" x="240" y="30" width="11" height="11"/>
-      <use href="#dragon-hatching" x="255" y="30" width="11" height="11"/>
-      <use href="#dragon-full" x="270" y="30" width="11" height="11"/>
-      <use href="#dragon-hatching" x="285" y="30" width="11" height="11"/>
-
-      <use href="#dragon-hatching" x="150" y="45" width="11" height="11"/>
-      <use href="#dragon-full" x="165" y="45" width="11" height="11"/>
-      <use href="#dragon-full" x="180" y="45" width="11" height="11"/>
-      <use href="#dragon-full" x="195" y="45" width="11" height="11"/>
-      <use href="#dragon-hatching" x="210" y="45" width="11" height="11"/>
-      <use href="#dragon-full" x="225" y="45" width="11" height="11"/>
-      <use href="#dragon-full" x="240" y="45" width="11" height="11"/>
-      <use href="#dragon-full" x="255" y="45" width="11" height="11"/>
-      <use href="#dragon-full" x="270" y="45" width="11" height="11"/>
-      <use href="#dragon-full" x="285" y="45" width="11" height="11"/>
-
-      <use href="#dragon-egg" x="150" y="60" width="11" height="11"/>
-      <use href="#dragon-hatching" x="165" y="60" width="11" height="11"/>
-      <use href="#dragon-full" x="180" y="60" width="11" height="11"/>
-      <use href="#dragon-full" x="195" y="60" width="11" height="11"/>
-      <use href="#dragon-full" x="210" y="60" width="11" height="11"/>
-      <use href="#dragon-hatching" x="225" y="60" width="11" height="11"/>
-      <use href="#dragon-full" x="240" y="60" width="11" height="11"/>
-      <use href="#dragon-full" x="255" y="60" width="11" height="11"/>
-      <use href="#dragon-full" x="270" y="60" width="11" height="11"/>
-      <use href="#dragon-hatching" x="285" y="60" width="11" height="11"/>
-
-      <use href="#dragon-hatching" x="150" y="75" width="11" height="11"/>
-      <use href="#dragon-full" x="165" y="75" width="11" height="11"/>
-      <use href="#dragon-full" x="180" y="75" width="11" height="11"/>
-      <use href="#dragon-full" x="195" y="75" width="11" height="11"/>
-      <use href="#dragon-full" x="210" y="75" width="11" height="11"/>
-      <use href="#dragon-full" x="225" y="75" width="11" height="11"/>
-      <use href="#dragon-full" x="240" y="75" width="11" height="11"/>
-      <use href="#dragon-full" x="255" y="75" width="11" height="11"/>
-      <use href="#dragon-full" x="270" y="75" width="11" height="11"/>
-      <use href="#dragon-full" x="285" y="75" width="11" height="11"/>
-
-      <use href="#dragon-egg" x="150" y="90" width="11" height="11"/>
-      <use href="#dragon-egg" x="165" y="90" width="11" height="11"/>
-      <use href="#dragon-hatching" x="180" y="90" width="11" height="11"/>
-      <use href="#dragon-full" x="195" y="90" width="11" height="11"/>
-      <use href="#dragon-hatching" x="210" y="90" width="11" height="11"/>
-      <use href="#dragon-full" x="225" y="90" width="11" height="11"/>
-      <use href="#dragon-full" x="240" y="90" width="11" height="11"/>
-      <use href="#dragon-hatching" x="255" y="90" width="11" height="11"/>
-      <use href="#dragon-full" x="270" y="90" width="11" height="11"/>
-      <use href="#dragon-egg" x="285" y="90" width="11" height="11"/>
-
-      <!-- Continue with more weeks (similar pattern) -->
-      <!-- Week 21-52 (repeating variations) -->
-      <use href="#dragon-full" x="300" y="0" width="11" height="11"/>
-      <use href="#dragon-hatching" x="315" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="330" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="345" y="0" width="11" height="11"/>
-      <use href="#dragon-egg" x="360" y="0" width="11" height="11"/>
-      <use href="#dragon-hatching" x="375" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="390" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="405" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="420" y="0" width="11" height="11"/>
-      <rect x="435" y="0" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-      <use href="#dragon-egg" x="450" y="0" width="11" height="11"/>
-      <use href="#dragon-hatching" x="465" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="480" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="495" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="510" y="0" width="11" height="11"/>
-      <use href="#dragon-hatching" x="525" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="540" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="555" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="570" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="585" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="600" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="615" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="630" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="645" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="660" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="675" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="690" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="705" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="720" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="735" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="750" y="0" width="11" height="11"/>
-      <use href="#dragon-full" x="765" y="0" width="11" height="11"/>
-
-      <!-- Additional rows for remaining weeks - simplified to show pattern continues -->
-      <!-- (For brevity, showing just a representative sample; in reality would fill all 52 weeks x 7 days) -->
+      <!-- Smoke plumes -->
+      <g filter="url(#smokeBlur)" opacity="0.3">
+        <ellipse cx="900" cy="10" rx="30" ry="15" fill="#696969"/>
+        <ellipse cx="910" cy="0" rx="20" ry="10" fill="#2f2f2f"/>
+        <ellipse cx="350" cy="20" rx="25" ry="12" fill="#696969"/>
+      </g>
     </g>
+  
+      
+    <g id="ground">
+      <!-- Main ground -->
+      <rect x="0" y="180" width="1280" height="670" fill="#2d1b0e"/>
+
+      <!-- Ground texture (layered rocks) -->
+      <path d="M0,180 Q100,170 200,180 T400,180 T600,180 T800,180 T1000,180 T1200,180 L1280,180 L1280,210 L0,210 Z" fill="#4a3728"/>
+
+      <!-- Rock formations -->
+      <polygon points="50,180 70,160 90,180" fill="#6b5344"/>
+      <polygon points="150,180 180,150 200,170 220,180" fill="#4a3728"/>
+      <polygon points="1100,180 1130,155 1160,180" fill="#6b5344"/>
+      <polygon points="1180,180 1210,145 1240,165 1280,180" fill="#4a3728"/>
+    </g>
+  
+      
+    <g id="lava-elements" filter="url(#lavaGlow)">
+      <!-- Main lava river at bottom -->
+      <path d="M0,800 Q200,780 400,800 T800,790 T1200,805 L1280,795 L1280,850 L0,850 Z" fill="url(#lavaGradient)"/>
+
+      <!-- Lava bubbles -->
+      <circle cx="100" cy="810" r="5" fill="#ff8c00">
+        <animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="300" cy="795" r="4" fill="#ff4500">
+        <animate attributeName="r" values="4;6;4" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="600" cy="805" r="6" fill="#ff6600">
+        <animate attributeName="r" values="6;9;6" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="900" cy="800" r="5" fill="#ff8c00">
+        <animate attributeName="r" values="5;7;5" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="1150" cy="808" r="4" fill="#ff4500">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- Small lava pools -->
+      <ellipse cx="50" cy="750" rx="30" ry="10" fill="url(#lavaPoolGradient)"/>
+      <ellipse cx="1200" cy="730" rx="40" ry="12" fill="url(#lavaPoolGradient)"/>
+    </g>
+  
+      
+    <g id="decorations">
+      <!-- Small rocks on ground -->
+      <circle cx="80" cy="195" r="3" fill="#6b5344"/>
+      <circle cx="250" cy="192" r="4" fill="#6b5344"/>
+      <circle cx="450" cy="194" r="3" fill="#6b5344"/>
+      <circle cx="750" cy="193" r="5" fill="#6b5344"/>
+      <circle cx="1050" cy="195" r="4" fill="#6b5344"/>
+
+      <!-- Floating embers -->
+      <g class="embers" opacity="0.8">
+        
+      <circle cx="0" cy="150" r="2" fill="#ff6600">
+        <animate attributeName="cy" values="150;100;150" dur="3s" begin="0s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="0s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="61" cy="187" r="2" fill="#ff8c00">
+        <animate attributeName="cy" values="187;137;187" dur="3s" begin="0.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="0.3s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="122" cy="224" r="2" fill="#ff6600">
+        <animate attributeName="cy" values="224;174;224" dur="3s" begin="0.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="0.6s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="183" cy="161" r="2" fill="#ff8c00">
+        <animate attributeName="cy" values="161;111;161" dur="3s" begin="0.8999999999999999s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="0.8999999999999999s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="244" cy="198" r="2" fill="#ff6600">
+        <animate attributeName="cy" values="198;148;198" dur="3s" begin="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="1.2s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="305" cy="235" r="2" fill="#ff8c00">
+        <animate attributeName="cy" values="235;185;235" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="366" cy="172" r="2" fill="#ff6600">
+        <animate attributeName="cy" values="172;122;172" dur="3s" begin="1.7999999999999998s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="1.7999999999999998s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="427" cy="209" r="2" fill="#ff8c00">
+        <animate attributeName="cy" values="209;159;209" dur="3s" begin="2.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="2.1s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="488" cy="246" r="2" fill="#ff6600">
+        <animate attributeName="cy" values="246;196;246" dur="3s" begin="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="2.4s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="549" cy="183" r="2" fill="#ff8c00">
+        <animate attributeName="cy" values="183;133;183" dur="3s" begin="2.6999999999999997s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="2.6999999999999997s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="610" cy="220" r="2" fill="#ff6600">
+        <animate attributeName="cy" values="220;170;220" dur="3s" begin="0s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="0s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="671" cy="157" r="2" fill="#ff8c00">
+        <animate attributeName="cy" values="157;107;157" dur="3s" begin="0.2999999999999998s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="0.2999999999999998s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="732" cy="194" r="2" fill="#ff6600">
+        <animate attributeName="cy" values="194;144;194" dur="3s" begin="0.5999999999999996s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="0.5999999999999996s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="793" cy="231" r="2" fill="#ff8c00">
+        <animate attributeName="cy" values="231;181;231" dur="3s" begin="0.8999999999999999s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="0.8999999999999999s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="854" cy="168" r="2" fill="#ff6600">
+        <animate attributeName="cy" values="168;118;168" dur="3s" begin="1.2000000000000002s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="1.2000000000000002s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="915" cy="205" r="2" fill="#ff8c00">
+        <animate attributeName="cy" values="205;155;205" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="976" cy="242" r="2" fill="#ff6600">
+        <animate attributeName="cy" values="242;192;242" dur="3s" begin="1.7999999999999998s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="1.7999999999999998s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="1037" cy="179" r="2" fill="#ff8c00">
+        <animate attributeName="cy" values="179;129;179" dur="3s" begin="2.0999999999999996s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="2.0999999999999996s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="1098" cy="216" r="2" fill="#ff6600">
+        <animate attributeName="cy" values="216;166;216" dur="3s" begin="2.3999999999999995s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="2.3999999999999995s" repeatCount="indefinite"/>
+      </circle>
+    
+      <circle cx="1159" cy="153" r="2" fill="#ff8c00">
+        <animate attributeName="cy" values="153;103;153" dur="3s" begin="2.7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" begin="2.7s" repeatCount="indefinite"/>
+      </circle>
+    
+      </g>
+    </g>
+  
+    </g>
+  
+  <g id="day-labels">
+      <text
+        x="90"
+        y="234"
+        text-anchor="end"
+        font-family="monospace"
+        font-size="11"
+        fill="#ffd700"
+      >Mon</text>
+    
+      <text
+        x="90"
+        y="276"
+        text-anchor="end"
+        font-family="monospace"
+        font-size="11"
+        fill="#ffd700"
+      >Wed</text>
+    
+      <text
+        x="90"
+        y="318"
+        text-anchor="end"
+        font-family="monospace"
+        font-size="11"
+        fill="#ffd700"
+      >Fri</text>
+    </g>
+  <g id="month-labels">
+    <text
+      x="100"
+      y="190"
+      font-family="monospace"
+      font-size="11"
+      fill="#ffd700"
+    >Mar</text>
+  
+    <text
+      x="142"
+      y="190"
+      font-family="monospace"
+      font-size="11"
+      fill="#ffd700"
+    >Apr</text>
+  
+    <text
+      x="226"
+      y="190"
+      font-family="monospace"
+      font-size="11"
+      fill="#ffd700"
+    >May</text>
+  
+    <text
+      x="310"
+      y="190"
+      font-family="monospace"
+      font-size="11"
+      fill="#ffd700"
+    >Jun</text>
+  
+    <text
+      x="415"
+      y="190"
+      font-family="monospace"
+      font-size="11"
+      fill="#ffd700"
+    >Jul</text>
+  
+    <text
+      x="499"
+      y="190"
+      font-family="monospace"
+      font-size="11"
+      fill="#ffd700"
+    >Aug</text>
+  
+    <text
+      x="604"
+      y="190"
+      font-family="monospace"
+      font-size="11"
+      fill="#ffd700"
+    >Sep</text>
+  
+    <text
+      x="688"
+      y="190"
+      font-family="monospace"
+      font-size="11"
+      fill="#ffd700"
+    >Oct</text>
+  
+    <text
+      x="772"
+      y="190"
+      font-family="monospace"
+      font-size="11"
+      fill="#ffd700"
+    >Nov</text>
+  
+    <text
+      x="877"
+      y="190"
+      font-family="monospace"
+      font-size="11"
+      fill="#ffd700"
+    >Dec</text>
+  
+    <text
+      x="961"
+      y="190"
+      font-family="monospace"
+      font-size="11"
+      fill="#ffd700"
+    >Jan</text>
+  
+    <text
+      x="1045"
+      y="190"
+      font-family="monospace"
+      font-size="11"
+      fill="#ffd700"
+    >Feb</text>
+  
+    <text
+      x="1129"
+      y="190"
+      font-family="monospace"
+      font-size="11"
+      fill="#ffd700"
+    >Mar</text>
   </g>
+  
+    <g id="contribution-grid">
+      
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="100"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-03-23: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="100"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-03-24: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="100"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-03-25: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="100"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-03-26: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="100"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-03-27: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="100"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-03-28: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="100"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-03-29: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="121"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-03-30: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="121"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-03-31: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="121"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-01: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="121"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-02: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="121"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-03: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="121"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-04: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="121"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-05: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="142"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-06: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="142"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-07: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="142"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-08: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="142"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-09: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="142"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-10: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="142"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-11: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="142"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-12: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="163"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-13: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="163"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-14: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="163"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-15: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="163"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-16: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="163"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-17: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="163"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-18: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="163"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-19: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="184"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-20: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="183"
+          y="219"
+          width="20"
+          height="22"
+        >
+          <title>2025-04-21: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="184"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-22: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="184"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-23: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="184"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-24: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="184"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-25: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="184"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-26: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="205"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-27: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="205"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-28: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="205"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-29: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="205"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-04-30: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="205"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-01: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="205"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-02: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="205"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-03: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="226"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-04: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="226"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-05: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="226"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-06: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="226"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-07: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="226"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-08: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="226"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-09: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="225"
+          y="324"
+          width="20"
+          height="22"
+        >
+          <title>2025-05-10: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="247"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-11: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="247"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-12: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="247"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-13: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="247"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-14: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="247"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-15: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="247"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-16: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="246"
+          y="324"
+          width="20"
+          height="22"
+        >
+          <title>2025-05-17: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="268"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-18: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="268"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-19: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="267"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2025-05-20: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="268"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-21: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="268"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-22: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="267"
+          y="303"
+          width="20"
+          height="22"
+        >
+          <title>2025-05-23: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="267"
+          y="324"
+          width="20"
+          height="22"
+        >
+          <title>2025-05-24: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-full"
+          x="287"
+          y="198"
+          width="22"
+          height="22"
+        >
+          <title>2025-05-25: 18 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-full"
+          x="287"
+          y="219"
+          width="22"
+          height="22"
+        >
+          <title>2025-05-26: 7 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="288"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2025-05-27: 5 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="289"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-28: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="289"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-29: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="289"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-30: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="289"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-05-31: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="310"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-01: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="309"
+          y="219"
+          width="20"
+          height="22"
+        >
+          <title>2025-06-02: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-full"
+          x="308"
+          y="240"
+          width="22"
+          height="22"
+        >
+          <title>2025-06-03: 7 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="310"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-04: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="310"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-05: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="309"
+          y="303"
+          width="20"
+          height="22"
+        >
+          <title>2025-06-06: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="309"
+          y="324"
+          width="20"
+          height="22"
+        >
+          <title>2025-06-07: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="331"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-08: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="331"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-09: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="331"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-10: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="331"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-11: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-full"
+          x="329"
+          y="282"
+          width="22"
+          height="22"
+        >
+          <title>2025-06-12: 9 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-full"
+          x="329"
+          y="303"
+          width="22"
+          height="22"
+        >
+          <title>2025-06-13: 19 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-full"
+          x="329"
+          y="324"
+          width="22"
+          height="22"
+        >
+          <title>2025-06-14: 10 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-full"
+          x="350"
+          y="198"
+          width="22"
+          height="22"
+        >
+          <title>2025-06-15: 18 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-full"
+          x="350"
+          y="219"
+          width="22"
+          height="22"
+        >
+          <title>2025-06-16: 8 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="351"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2025-06-17: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="352"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-18: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="352"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-19: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="352"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-20: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="352"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-21: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="373"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-22: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="373"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-23: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="373"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-24: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="373"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-25: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="372"
+          y="282"
+          width="20"
+          height="22"
+        >
+          <title>2025-06-26: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="373"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-27: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="373"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-28: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="394"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-29: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="394"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-06-30: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="394"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-01: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="394"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-02: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="394"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-03: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="394"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-04: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="394"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-05: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="415"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-06: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="415"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-07: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="415"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-08: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="415"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-09: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="415"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-10: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="415"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-11: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="414"
+          y="324"
+          width="20"
+          height="22"
+        >
+          <title>2025-07-12: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="436"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-13: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="436"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-14: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="436"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-15: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="436"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-16: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="436"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-17: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="435"
+          y="303"
+          width="20"
+          height="22"
+        >
+          <title>2025-07-18: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="435"
+          y="324"
+          width="20"
+          height="22"
+        >
+          <title>2025-07-19: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="456"
+          y="198"
+          width="20"
+          height="22"
+        >
+          <title>2025-07-20: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="456"
+          y="219"
+          width="20"
+          height="22"
+        >
+          <title>2025-07-21: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="456"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2025-07-22: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="457"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-23: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="456"
+          y="282"
+          width="20"
+          height="22"
+        >
+          <title>2025-07-24: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="457"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-25: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="456"
+          y="324"
+          width="20"
+          height="22"
+        >
+          <title>2025-07-26: 5 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="478"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-27: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="477"
+          y="219"
+          width="20"
+          height="22"
+        >
+          <title>2025-07-28: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="477"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2025-07-29: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="478"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-30: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="478"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-07-31: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="477"
+          y="303"
+          width="20"
+          height="22"
+        >
+          <title>2025-08-01: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="477"
+          y="324"
+          width="20"
+          height="22"
+        >
+          <title>2025-08-02: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="499"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-03: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="499"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-04: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="499"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-05: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="499"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-06: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="499"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-07: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="499"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-08: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="499"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-09: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="520"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-10: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="520"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-11: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="520"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-12: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="520"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-13: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="519"
+          y="282"
+          width="20"
+          height="22"
+        >
+          <title>2025-08-14: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="519"
+          y="303"
+          width="20"
+          height="22"
+        >
+          <title>2025-08-15: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="520"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-16: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="540"
+          y="198"
+          width="20"
+          height="22"
+        >
+          <title>2025-08-17: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="541"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-18: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="541"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-19: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="541"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-20: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="541"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-21: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="541"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-22: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="541"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-23: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="562"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-24: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="562"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-25: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="562"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-26: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="562"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-27: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="562"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-28: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="562"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-29: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="562"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-08-30: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="582"
+          y="198"
+          width="20"
+          height="22"
+        >
+          <title>2025-08-31: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="583"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-01: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="583"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-02: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="582"
+          y="261"
+          width="20"
+          height="22"
+        >
+          <title>2025-09-03: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="583"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-04: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="583"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-05: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="583"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-06: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="604"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-07: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="604"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-08: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="604"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-09: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="604"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-10: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="604"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-11: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="604"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-12: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="604"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-13: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="625"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-14: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="625"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-15: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="624"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2025-09-16: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="624"
+          y="261"
+          width="20"
+          height="22"
+        >
+          <title>2025-09-17: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="625"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-18: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="625"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-19: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="625"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-20: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="645"
+          y="198"
+          width="20"
+          height="22"
+        >
+          <title>2025-09-21: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="646"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-22: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="645"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2025-09-23: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="645"
+          y="261"
+          width="20"
+          height="22"
+        >
+          <title>2025-09-24: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="646"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-25: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="646"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-26: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="646"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-27: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="667"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-09-28: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="666"
+          y="219"
+          width="20"
+          height="22"
+        >
+          <title>2025-09-29: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="666"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2025-09-30: 5 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="667"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-01: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="666"
+          y="282"
+          width="20"
+          height="22"
+        >
+          <title>2025-10-02: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="667"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-03: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="666"
+          y="324"
+          width="20"
+          height="22"
+        >
+          <title>2025-10-04: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="688"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-05: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="688"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-06: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="688"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-07: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="688"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-08: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="687"
+          y="282"
+          width="20"
+          height="22"
+        >
+          <title>2025-10-09: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="688"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-10: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="688"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-11: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="709"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-12: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="709"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-13: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="708"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2025-10-14: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="709"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-15: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="709"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-16: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="709"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-17: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="709"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-18: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="730"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-19: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="729"
+          y="219"
+          width="20"
+          height="22"
+        >
+          <title>2025-10-20: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="730"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-21: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="729"
+          y="261"
+          width="20"
+          height="22"
+        >
+          <title>2025-10-22: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="730"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-23: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="730"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-24: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="730"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-25: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="751"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-26: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="751"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-27: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="750"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2025-10-28: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="751"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-29: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="750"
+          y="282"
+          width="20"
+          height="22"
+        >
+          <title>2025-10-30: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="751"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-10-31: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="750"
+          y="324"
+          width="20"
+          height="22"
+        >
+          <title>2025-11-01: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="771"
+          y="198"
+          width="20"
+          height="22"
+        >
+          <title>2025-11-02: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="772"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-03: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="771"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2025-11-04: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="772"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-05: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="772"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-06: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="772"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-07: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="772"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-08: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="793"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-09: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="792"
+          y="219"
+          width="20"
+          height="22"
+        >
+          <title>2025-11-10: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="793"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-11: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="792"
+          y="261"
+          width="20"
+          height="22"
+        >
+          <title>2025-11-12: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="793"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-13: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="793"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-14: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="792"
+          y="324"
+          width="20"
+          height="22"
+        >
+          <title>2025-11-15: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="814"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-16: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="814"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-17: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="814"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-18: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="814"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-19: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="814"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-20: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="814"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-21: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="813"
+          y="324"
+          width="20"
+          height="22"
+        >
+          <title>2025-11-22: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="835"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-23: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="835"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-24: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="835"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-25: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="835"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-26: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="835"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-27: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="835"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-28: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="835"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-29: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="856"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-11-30: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="856"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-01: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="856"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-02: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="856"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-03: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="856"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-04: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="856"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-05: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="856"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-06: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="877"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-07: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="877"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-08: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="877"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-09: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="877"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-10: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="877"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-11: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="877"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-12: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="877"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-13: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="898"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-14: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="898"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-15: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="898"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-16: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="898"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-17: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="898"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-18: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="897"
+          y="303"
+          width="20"
+          height="22"
+        >
+          <title>2025-12-19: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="898"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-20: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="918"
+          y="198"
+          width="20"
+          height="22"
+        >
+          <title>2025-12-21: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="919"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-22: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="919"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-23: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="918"
+          y="261"
+          width="20"
+          height="22"
+        >
+          <title>2025-12-24: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="919"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-25: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="919"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-26: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="919"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-27: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="940"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-28: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="940"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-29: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="939"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2025-12-30: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="940"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2025-12-31: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="940"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-01: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="940"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-02: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="940"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-03: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="961"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-04: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="961"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-05: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="961"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-06: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="961"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-07: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="961"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-08: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="961"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-09: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="961"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-10: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="982"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-11: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="982"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-12: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="982"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-13: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="982"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-14: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="982"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-15: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="982"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-16: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="982"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-17: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1003"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-18: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1003"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-19: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1003"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-20: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1003"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-21: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1003"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-22: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1003"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-23: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1003"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-24: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1024"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-25: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="1023"
+          y="219"
+          width="20"
+          height="22"
+        >
+          <title>2026-01-26: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1024"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-27: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="1023"
+          y="261"
+          width="20"
+          height="22"
+        >
+          <title>2026-01-28: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1024"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-29: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1024"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-30: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1024"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-01-31: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1045"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-01: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1045"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-02: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="1044"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2026-02-03: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="1044"
+          y="261"
+          width="20"
+          height="22"
+        >
+          <title>2026-02-04: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1045"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-05: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="1044"
+          y="303"
+          width="20"
+          height="22"
+        >
+          <title>2026-02-06: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1045"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-07: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1066"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-08: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1066"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-09: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1066"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-10: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1066"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-11: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1066"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-12: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="1065"
+          y="303"
+          width="20"
+          height="22"
+        >
+          <title>2026-02-13: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1066"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-14: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1087"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-15: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1087"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-16: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1087"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-17: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="1086"
+          y="261"
+          width="20"
+          height="22"
+        >
+          <title>2026-02-18: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1087"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-19: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1087"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-20: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1087"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-21: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1108"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-22: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1108"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-23: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1108"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-24: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1108"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-25: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1108"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-26: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1108"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-27: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1108"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-02-28: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1129"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-01: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1129"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-02: 1 contribution</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1129"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-03: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1129"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-04: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1129"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-05: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1129"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-06: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1129"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-07: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1150"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-08: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1150"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-09: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1150"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-10: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1150"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-11: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="1149"
+          y="282"
+          width="20"
+          height="22"
+        >
+          <title>2026-03-12: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1150"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-13: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1150"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-14: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1171"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-15: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1171"
+          y="219.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-16: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1171"
+          y="240.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-17: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1171"
+          y="261.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-18: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1171"
+          y="282.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-19: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1171"
+          y="303.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-20: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1171"
+          y="324.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-21: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-egg"
+          x="1192"
+          y="198.5"
+          width="18"
+          height="21"
+        >
+          <title>2026-03-22: 2 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="1191"
+          y="219"
+          width="20"
+          height="22"
+        >
+          <title>2026-03-23: 4 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="1191"
+          y="240"
+          width="20"
+          height="22"
+        >
+          <title>2026-03-24: 5 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-hatching"
+          x="1191"
+          y="261"
+          width="20"
+          height="22"
+        >
+          <title>2026-03-25: 3 contributions</title>
+        </use>
+      </g>
+    
+      <g class="contribution-cell" filter="url(#spriteShadow)">
+        <use
+          href="#dragon-full"
+          x="1190"
+          y="282"
+          width="22"
+          height="22"
+        >
+          <title>2026-03-26: 8 contributions</title>
+        </use>
+      </g>
+    
+    </g>
+  
+  
+    <g id="stats">
+      <!-- Title -->
+      <text
+        x="640"
+        y="50"
+        text-anchor="middle"
+        font-family="monospace"
+        font-size="28"
+        font-weight="bold"
+        fill="#ffd700"
+      >DRAGON CONTRIBUTION LAIR</text>
 
-  <!-- Legend -->
-  <g transform="translate(900, 220)">
-    <text x="0" y="0" font-family="monospace" font-size="12" fill="#f5deb3">Legend:</text>
-    <text x="0" y="20" font-family="monospace" font-size="11" fill="#a0a0a0">Less</text>
+      <!-- Total contributions -->
+      <text
+        x="640"
+        y="90"
+        text-anchor="middle"
+        font-family="monospace"
+        font-size="18"
+        fill="#ffffff"
+      >848 contributions in the last year</text>
 
-    <!-- Empty cell -->
-    <rect x="40" y="10" width="11" height="11" rx="2" fill="#2d1b0e" opacity="0.3"/>
-
-    <!-- Egg -->
-    <use href="#dragon-egg" x="60" y="10" width="11" height="11"/>
-
-    <!-- Hatching -->
-    <use href="#dragon-hatching" x="80" y="10" width="11" height="11"/>
-
-    <!-- Full dragon -->
-    <use href="#dragon-full" x="100" y="10" width="11" height="11"/>
-
-    <text x="120" y="20" font-family="monospace" font-size="11" fill="#ffd700">More</text>
-  </g>
-
-  <!-- Stats text -->
-  <text x="40" y="240" font-family="monospace" font-size="12" fill="#f5deb3">
-    Dragons grow stronger with each contribution • Run the workflow to hatch your dragons!
-  </text>
+      <!-- Legend -->
+      <g id="legend" transform="translate(100, 370)">
+        <text x="0" y="0" font-family="monospace" font-size="12" fill="#ffffff">Less</text>
+        <use href="#dragon-egg" x="40" y="-12" width="14" height="16"/>
+        <use href="#dragon-hatching" x="65" y="-14" width="16" height="18"/>
+        <use href="#dragon-full" x="95" y="-14" width="18" height="18"/>
+        <text x="125" y="0" font-family="monospace" font-size="12" fill="#ffffff">More</text>
+      </g>
+    </g>
+  
 </svg>
