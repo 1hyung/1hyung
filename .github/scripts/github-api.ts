@@ -21,6 +21,19 @@ const CONTRIBUTION_QUERY = `
         totalPullRequestContributions
         totalPullRequestReviewContributions
       }
+      repositories(first: 100, ownerAffiliations: OWNER, orderBy: {field: UPDATED_AT, direction: DESC}) {
+        nodes {
+          languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+            edges {
+              size
+              node {
+                name
+                color
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -28,7 +41,7 @@ const CONTRIBUTION_QUERY = `
 export async function fetchContributions(
   token: string,
   username: string
-): Promise<ContributionCalendar> {
+): Promise<ContributionData> {
   const graphqlWithAuth = graphql.defaults({
     headers: {
       authorization: `token ${token}`,
@@ -39,15 +52,7 @@ export async function fetchContributions(
     username,
   });
 
-  const collection = data.user.contributionsCollection;
-  return {
-    ...collection.contributionCalendar,
-    totalCommitContributions: collection.totalCommitContributions,
-    totalRepositoryContributions: collection.totalRepositoryContributions,
-    totalIssueContributions: collection.totalIssueContributions,
-    totalPullRequestContributions: collection.totalPullRequestContributions,
-    totalPullRequestReviewContributions: collection.totalPullRequestReviewContributions,
-  };
+  return data;
 }
 
 export function contributionLevelToNumber(

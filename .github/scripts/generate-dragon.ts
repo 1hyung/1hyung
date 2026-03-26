@@ -18,13 +18,14 @@ async function main(): Promise<void> {
 
   try {
     // Fetch contribution data from GitHub
-    const calendar = await fetchContributions(token, username);
+    const data = await fetchContributions(token, username);
+    const calendar = data.user.contributionsCollection.contributionCalendar;
     console.log(`Total contributions: ${calendar.totalContributions}`);
 
     // Generate SVGs
     console.log('Generating SVG files...');
-    const staticSVG = generateSVG(calendar, DEFAULT_CONFIG);
-    const animatedSVG = generateAnimatedSVG(calendar, DEFAULT_CONFIG);
+    const staticSVG = generateSVG(data, DEFAULT_CONFIG);
+    const animatedSVG = generateAnimatedSVG(data, DEFAULT_CONFIG);
 
     // Create output directory
     const outputDir = path.join(__dirname, '../../dragon-contrib');
