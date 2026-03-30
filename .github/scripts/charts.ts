@@ -1,4 +1,5 @@
 // 레이더 차트 및 도넛 차트 생성 함수
+// profile-3d-contrib 스타일을 기반으로 한 고품질 차트
 
 import { LanguageEdge } from './types';
 
@@ -18,8 +19,11 @@ export interface LanguageData {
 }
 
 /**
- * 레이더 차트 생성 (5축)
- * 중심점 (centerX, centerY), 반지름 radius
+ * 레이더 차트 생성 (5축, 로그 스케일)
+ * profile-3d-contrib 스타일의 오각형 레이더 차트
+ *
+ * 로그 스케일: 1, 10, 100, 1K, 10K (5단계 동심 오각형)
+ * 공식: r = (log10(value) + 1) * step (value >= 1)
  */
 export function createRadarChart(
   data: RadarChartData,
@@ -27,96 +31,93 @@ export function createRadarChart(
   centerY: number,
   radius: number
 ): string {
-  // 최대값 정규화
-  const maxValue = Math.max(
-    data.commits,
-    data.repos,
-    data.issues,
-    data.pullRequests,
-    data.reviews
-  );
+  const numLevels = 5;
+  const step = radius / numLevels;
 
-  // 각 축의 값 정규화 (0~1)
-  const normalized = {
-    commits: maxValue > 0 ? data.commits / maxValue : 0,
-    repos: maxValue > 0 ? data.repos / maxValue : 0,
-    issues: maxValue > 0 ? data.issues / maxValue : 0,
-    pullRequests: maxValue > 0 ? data.pullRequests / maxValue : 0,
-    reviews: maxValue > 0 ? data.reviews / maxValue : 0
+  // 축 순서: Commit(위), Issue(오른쪽 위), PullReq(오른쪽 아래), Review(왼쪽 아래), Repo(왼쪽 위)
+  const labels = ['Commit', 'Issue', 'PullReq', 'Review', 'Repo'];
+  const values = [data.commits, data.issues, data.pullRequests, data.reviews, data.repos];
+  const angles = [0, 72, 144, 216, 288]; // 위에서 시작, 시계방향 (도)
+
+  // 각도(위에서 시계방향) → SVG 좌표 변환
+  const toXY = (angleDeg: number, r: number): { x: number; y: number } => {
+    const rad = (angleDeg * Math.PI) / 180;
+    return {
+      x: centerX + r * Math.sin(rad),
+      y: centerY - r * Math.cos(rad)
+    };
   };
 
-  // 5개 축의 각도 (오각형)
-  const angles = [0, 72, 144, 216, 288]; // 0도부터 시작, 72도씩 증가
+  // === 동심 오각형 그리드 (5레벨, 점선) ===
+  const gridLines: string[] = [];
+  for (let level = 1; level <= numLevels; level++) {
+    const r = level * step;
+    for (let i = 0; i < 5; i++) {
+      const p1 = toXY(angles[i], r);
+      const p2 = toXY(angles[(i + 1) % 5], r);
+      gridLines.push(
+        `<line x1="${p1.x.toFixed(2)}" y1="${p1.y.toFixed(2)}" x2="${p2.x.toFixed(2)}" y2="${p2.y.toFixed(2)}" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>`
+      );
+    }
+  }
 
-  // 각 축의 좌표 계산
-  const toRadians = (deg: number) => (deg - 90) * Math.PI / 180; // -90도로 시작점을 위쪽으로
-
-  const points = [
-    normalized.commits,
-    normalized.repos,
-    normalized.issues,
-    normalized.pullRequests,
-    normalized.reviews
-  ].map((value, index) => {
-    const angle = toRadians(angles[index]);
-    const r = value * radius;
-    return {
-      x: centerX + r * Math.cos(angle),
-      y: centerY + r * Math.sin(angle)
-    };
+  // === 스케일 라벨 (Commit 축을 따라 표시: 1, 10, 100, 1K, 10K) ===
+  const scaleLabels = ['1', '10', '100', '1K', '10K'];
+  const scaleFontSize = Math.max(10, Math.round(radius * 0.083));
+  const scaleLabelElements = scaleLabels.map((label, i) => {
+    const r = (i + 1) * step;
+    const x = centerX + step * 0.1;
+    const y = centerY - r;
+    return `<text style="font-size: ${scaleFontSize}px;" text-anchor="start" dominant-baseline="auto" x="${x.toFixed(2)}" y="${y.toFixed(2)}" fill="gray">${label}</text>`;
   });
 
-  // 배경 오각형 그리드 (3단계)
-  const gridLevels = [0.33, 0.66, 1.0];
-  const gridPolygons = gridLevels.map(level => {
-    const gridPoints = angles.map(angle => {
-      const rad = toRadians(angle);
-      const r = level * radius;
-      return `${centerX + r * Math.cos(rad)},${centerY + r * Math.sin(rad)}`;
-    }).join(' ');
+  // === 축 선 (내부 → 외부, 점선) + 축 라벨 (값 tooltip 포함) ===
+  const labelFontSize = Math.max(13, Math.round(radius * 0.133));
+  const axisElements = angles.map((angle, i) => {
+    const inner = toXY(angle, step);
+    const outer = toXY(angle, radius);
+    const labelPos = toXY(angle, radius * 1.17);
 
-    return `<polygon points="${gridPoints}" stroke="#4a3728" stroke-width="1" fill="none" opacity="0.3"/>`;
-  }).join('\n');
+    return `<g class="axis">
+      <line x1="${inner.x.toFixed(2)}" y1="${inner.y.toFixed(2)}" x2="${outer.x.toFixed(2)}" y2="${outer.y.toFixed(2)}" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <text style="font-size: ${labelFontSize}px;" text-anchor="middle" dominant-baseline="middle" x="${labelPos.x.toFixed(2)}" y="${labelPos.y.toFixed(2)}" fill="#c9d1d9">${labels[i]}<title>${values[i]}</title></text>
+    </g>`;
+  });
 
-  // 축 레이블
-  const labels = ['Commits', 'Repos', 'Issues', 'PRs', 'Reviews'];
-  const labelElements = labels.map((label, index) => {
-    const angle = toRadians(angles[index]);
-    const labelRadius = radius + 20;
-    const x = centerX + labelRadius * Math.cos(angle);
-    const y = centerY + labelRadius * Math.sin(angle);
+  // === 데이터 다각형 (로그 스케일 매핑) ===
+  const dataPoints = values.map((value, i) => {
+    let r: number;
+    if (value <= 0) {
+      // 값이 0인 경우 최소 반지름 (첫번째 레벨의 80%)
+      r = step * 0.8;
+    } else {
+      // 로그 스케일: r = (log10(value) + 1) * step
+      // value=1 → r=step, value=10 → r=2*step, value=100 → r=3*step, etc.
+      r = (Math.log10(value) + 1) * step;
+      r = Math.min(r, radius);
+      r = Math.max(r, step * 0.8);
+    }
+    return toXY(angles[i], r);
+  });
 
-    return `<text x="${x}" y="${y}" font-family="monospace" font-size="11" fill="#8b949e" text-anchor="middle" dominant-baseline="middle">${label}</text>`;
-  }).join('\n');
+  const dataPolygonPoints = dataPoints.map(p => `${p.x.toFixed(2)},${p.y.toFixed(2)}`).join(' ');
 
-  // 축 선
-  const axisLines = angles.map(angle => {
-    const rad = toRadians(angle);
-    const endX = centerX + radius * Math.cos(rad);
-    const endY = centerY + radius * Math.sin(rad);
-
-    return `<line x1="${centerX}" y1="${centerY}" x2="${endX}" y2="${endY}" stroke="#4a3728" stroke-width="1" opacity="0.5"/>`;
-  }).join('\n');
-
-  // 데이터 오각형
-  const dataPolygon = points.map(p => `${p.x},${p.y}`).join(' ');
+  // 데이터 폴리곤 색상 (profile-3d-contrib 스타일: 초록 계열)
+  const fillColor = '#47a042';
 
   return `
     <g class="radar-chart">
-      ${gridPolygons}
-      ${axisLines}
-      <polygon points="${dataPolygon}" fill="rgba(255, 107, 53, 0.3)" stroke="#ff6b35" stroke-width="2">
-        <animate attributeName="opacity" from="0" to="1" dur="0.8s" fill="freeze"/>
-      </polygon>
-      ${points.map(p => `<circle cx="${p.x}" cy="${p.y}" r="3" fill="#ffd700"/>`).join('\n')}
-      ${labelElements}
+      ${gridLines.join('\n      ')}
+      ${scaleLabelElements.join('\n      ')}
+      ${axisElements.join('\n      ')}
+      <polygon style="stroke-width: 4px; stroke: ${fillColor}; fill: ${fillColor}; fill-opacity: 0.5;" points="${dataPolygonPoints}"/>
     </g>
   `;
 }
 
 /**
  * 도넛 차트 생성
- * 중심점 (centerX, centerY), 외부 반지름 outerRadius, 내부 반지름 innerRadius
+ * profile-3d-contrib 스타일의 도넛 차트
  */
 export function createDonutChart(
   languages: LanguageData[],
@@ -131,7 +132,7 @@ export function createDonutChart(
 
   let currentAngle = -90; // 위쪽부터 시작
 
-  const paths = languages.map((lang, index) => {
+  const paths = languages.map((lang) => {
     const angleSize = (lang.percentage / 100) * 360;
     const endAngle = currentAngle + angleSize;
 
@@ -160,22 +161,23 @@ export function createDonutChart(
 
     currentAngle = endAngle;
 
-    return `<path d="${path}" fill="${lang.color}" stroke="#0d1117" stroke-width="2">
-      <title>${lang.name}: ${lang.percentage.toFixed(1)}%</title>
+    return `<path d="${path}" style="fill: ${lang.color};" stroke="#0d1117" stroke-width="2px">
+      <title>${lang.name} ${lang.size}</title>
     </path>`;
   }).join('\n');
 
-  // 범례
-  const legendY = centerY + outerRadius + 30;
+  // 범례 (오른쪽에 배치)
+  const legendX = centerX + outerRadius + 20;
+  const legendStartY = centerY - outerRadius + 10;
+  const rectSize = Math.round(outerRadius * 0.18);
+  const legendFontSize = Math.round(outerRadius * 0.18);
+  const legendSpacing = Math.round(rectSize * 1.5);
+
   const legend = languages.slice(0, 5).map((lang, index) => {
-    const y = legendY + index * 18;
+    const y = legendStartY + index * legendSpacing;
     return `
-      <g>
-        <rect x="${centerX - outerRadius}" y="${y}" width="12" height="12" fill="${lang.color}"/>
-        <text x="${centerX - outerRadius + 16}" y="${y + 10}" font-family="monospace" font-size="11" fill="#8b949e">
-          ${lang.name} (${lang.percentage.toFixed(1)}%)
-        </text>
-      </g>
+      <rect x="${legendX}" y="${y}" width="${rectSize}" height="${rectSize}" fill="${lang.color}" stroke="#30363d" stroke-width="1px"/>
+      <text dominant-baseline="middle" x="${legendX + rectSize + 6}" y="${y + rectSize / 2}" fill="#c9d1d9" font-size="${legendFontSize}px" font-family="'Ubuntu', 'Helvetica', 'Arial', sans-serif">${lang.name}</text>
     `;
   }).join('\n');
 
@@ -191,7 +193,7 @@ export function createDonutChart(
  * 언어 데이터 처리 및 정규화
  */
 export function processLanguageData(repositories: any[]): LanguageData[] {
-  const languageMap = new Map<string, number>();
+  const languageMap = new Map<string, { size: number; color: string }>();
 
   // 모든 저장소의 언어 데이터를 집계
   repositories.forEach(repo => {
@@ -201,16 +203,16 @@ export function processLanguageData(repositories: any[]): LanguageData[] {
         const size = edge.size;
 
         if (languageMap.has(name)) {
-          languageMap.set(name, languageMap.get(name)! + size);
+          languageMap.get(name)!.size += size;
         } else {
-          languageMap.set(name, size);
+          languageMap.set(name, { size, color: color || getDefaultColor(name) });
         }
       });
     }
   });
 
   // 총 바이트 수 계산
-  const totalSize = Array.from(languageMap.values()).reduce((sum, size) => sum + size, 0);
+  const totalSize = Array.from(languageMap.values()).reduce((sum, entry) => sum + entry.size, 0);
 
   if (totalSize === 0) {
     return [];
@@ -219,39 +221,63 @@ export function processLanguageData(repositories: any[]): LanguageData[] {
   // 언어 데이터 배열로 변환 및 정렬
   const languages: LanguageData[] = [];
 
-  languageMap.forEach((size, name) => {
-    // GitHub Linguist 기본 색상 맵
-    const colorMap: { [key: string]: string } = {
-      'TypeScript': '#3178c6',
-      'JavaScript': '#f1e05a',
-      'Python': '#3572A5',
-      'Java': '#b07219',
-      'Kotlin': '#A97BFF',
-      'Swift': '#ffac45',
-      'Go': '#00ADD8',
-      'Rust': '#dea584',
-      'C++': '#f34b7d',
-      'C': '#555555',
-      'Ruby': '#701516',
-      'PHP': '#4F5D95',
-      'C#': '#178600',
-      'Shell': '#89e051',
-      'HTML': '#e34c26',
-      'CSS': '#563d7c',
-      'Vue': '#41b883',
-      'Dart': '#00B4AB'
-    };
-
+  languageMap.forEach((entry, name) => {
     languages.push({
       name,
-      size,
-      color: colorMap[name] || '#8b949e',
-      percentage: (size / totalSize) * 100
+      size: entry.size,
+      color: entry.color,
+      percentage: (entry.size / totalSize) * 100
     });
   });
 
-  // 크기 순으로 정렬하고 상위 10개만 선택
-  return languages
-    .sort((a, b) => b.size - a.size)
-    .slice(0, 10);
+  // 크기 순으로 정렬
+  const sorted = languages.sort((a, b) => b.size - a.size);
+
+  // 상위 항목 + "other" 그룹
+  const topN = 5;
+  if (sorted.length <= topN) {
+    return sorted;
+  }
+
+  const top = sorted.slice(0, topN);
+  const others = sorted.slice(topN);
+  const otherSize = others.reduce((sum, l) => sum + l.size, 0);
+  const otherPercentage = others.reduce((sum, l) => sum + l.percentage, 0);
+
+  top.push({
+    name: 'other',
+    size: otherSize,
+    color: '#444444',
+    percentage: otherPercentage
+  });
+
+  return top;
+}
+
+/**
+ * GitHub Linguist 기본 색상 맵
+ */
+function getDefaultColor(name: string): string {
+  const colorMap: { [key: string]: string } = {
+    'TypeScript': '#3178c6',
+    'JavaScript': '#f1e05a',
+    'Python': '#3572A5',
+    'Java': '#b07219',
+    'Kotlin': '#A97BFF',
+    'Swift': '#ffac45',
+    'Go': '#00ADD8',
+    'Rust': '#dea584',
+    'C++': '#f34b7d',
+    'C': '#555555',
+    'Ruby': '#701516',
+    'PHP': '#4F5D95',
+    'C#': '#178600',
+    'Shell': '#89e051',
+    'HTML': '#e34c26',
+    'CSS': '#563d7c',
+    'Vue': '#41b883',
+    'Dart': '#00B4AB'
+  };
+
+  return colorMap[name] || '#8b949e';
 }

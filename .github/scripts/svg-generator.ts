@@ -48,69 +48,29 @@ function createHeader(calendar: any, config: SVGConfig): string {
 }
 
 /**
- * 통계 요약 섹션 생성 (하단)
+ * 통계 요약 섹션 생성 (하단, profile-3d-contrib 스타일)
  */
 function createStatsSection(calendar: any, config: SVGConfig): string {
-  const { textGold, githubGray } = DRAGON_COLORS;
-  const y = config.height - 100;
-
-  const totalRepos = calendar.totalRepositoryContributions || 0;
-  const totalStars = 2; // placeholder, GitHub API에서 가져올 수 있음
+  const y = config.height - 20;
 
   return `
     <g id="stats-summary">
-      <text
-        x="120"
-        y="${y}"
-        font-family="monospace"
-        font-size="24"
-        font-weight="bold"
-        fill="${textGold}"
-      >${calendar.totalContributions.toLocaleString()}</text>
-
-      <text
-        x="120"
-        y="${y + 20}"
-        font-family="monospace"
-        font-size="12"
-        fill="${githubGray}"
-      >contributions</text>
-
-      <text
-        x="300"
-        y="${y}"
-        font-family="monospace"
-        font-size="24"
-        font-weight="bold"
-        fill="${textGold}"
-      >☆ ${totalStars}</text>
-
-      <text
-        x="300"
-        y="${y + 20}"
-        font-family="monospace"
-        font-size="12"
-        fill="${githubGray}"
-      >stars</text>
-
-      <text
-        x="450"
-        y="${y}"
-        font-family="monospace"
-        font-size="24"
-        font-weight="bold"
-        fill="${textGold}"
-      >ψ ${totalRepos}</text>
-
-      <text
-        x="450"
-        y="${y + 20}"
-        font-family="monospace"
-        font-size="12"
-        fill="${githubGray}"
-      >repos</text>
+      <text style="font-size: 24px; font-weight: bold;" x="300" y="${y}" text-anchor="end" fill="#c9d1d9">${calendar.totalContributions.toLocaleString()}</text>
+      <text style="font-size: 18px;" x="310" y="${y}" text-anchor="start" fill="#8b949e">contributions</text>
+      <text style="font-size: 14px;" x="${config.width - 50}" y="${y}" text-anchor="end" fill="#484f58">${getDateRangeText(calendar)}</text>
     </g>
   `;
+}
+
+/**
+ * 날짜 범위 텍스트 생성
+ */
+function getDateRangeText(calendar: any): string {
+  const weeks = calendar.weeks;
+  const startDate = weeks[0]?.contributionDays[0]?.date || '';
+  const endDate = weeks[weeks.length - 1]?.contributionDays[weeks[weeks.length - 1].contributionDays.length - 1]?.date || '';
+  if (!startDate || !endDate) return '';
+  return `${startDate} / ${endDate}`;
 }
 
 /**
@@ -146,6 +106,7 @@ export function generateSVG(
   width="${config.width}"
   height="${config.height}"
 >
+  <style>* { font-family: "Ubuntu", "Helvetica", "Arial", sans-serif; }</style>
   <defs>
     ${createBackgroundFilters()}
   </defs>
@@ -158,15 +119,15 @@ export function generateSVG(
     ${createIsometricDragonGrid(gridCells, config)}
   </g>
 
-  <!-- 레이더 차트 (우측 상단) -->
-  <g transform="translate(620, 120)">
-    ${createRadarChart(radarData, 100, 100, 80)}
+  <!-- 레이더 차트 (우측 상단, profile-3d-contrib 스타일) -->
+  <g>
+    ${createRadarChart(radarData, 700, 200, 110)}
   </g>
 
   <!-- 도넛 차트 (좌측 하단) -->
   ${languages.length > 0 ? `
-  <g transform="translate(0, 0)">
-    ${createDonutChart(languages, 130, 430, 70, 40)}
+  <g>
+    ${createDonutChart(languages, 120, 420, 75, 42)}
   </g>
   ` : ''}
 
