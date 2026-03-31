@@ -6,6 +6,7 @@
   width="850"
   height="520"
 >
+  <style>* { font-family: "Ubuntu", "Helvetica", "Arial", sans-serif; }</style>
   
     <style>
       @keyframes fadeIn {
@@ -15604,142 +15605,143 @@
 </g>
   </g>
 
-  <!-- 레이더 차트 (우측 상단) -->
-  <g transform="translate(620, 120)">
+  <!-- 레이더 차트 (우측 상단, profile-3d-contrib 스타일) -->
+  <g>
     
     <g class="radar-chart">
-      <polygon points="100,73.6 125.10789203019206,91.84195134850138 115.51753066052129,121.35804865149862 84.48246933947871,121.35804865149862 74.89210796980794,91.84195134850138" stroke="#4a3728" stroke-width="1" fill="none" opacity="0.3"/>
-<polygon points="100,47.199999999999996 150.21578406038412,83.68390269700278 131.03506132104258,142.71609730299724 68.96493867895742,142.71609730299724 49.78421593961589,83.68390269700276" stroke="#4a3728" stroke-width="1" fill="none" opacity="0.3"/>
-<polygon points="100,20 176.0845213036123,75.2786404500042 147.02282018339787,164.72135954999578 52.97717981660216,164.72135954999578 23.915478696387723,75.27864045000419" stroke="#4a3728" stroke-width="1" fill="none" opacity="0.3"/>
-      <line x1="100" y1="100" x2="100" y2="20" stroke="#4a3728" stroke-width="1" opacity="0.5"/>
-<line x1="100" y1="100" x2="176.0845213036123" y2="75.2786404500042" stroke="#4a3728" stroke-width="1" opacity="0.5"/>
-<line x1="100" y1="100" x2="147.02282018339787" y2="164.72135954999578" stroke="#4a3728" stroke-width="1" opacity="0.5"/>
-<line x1="100" y1="100" x2="52.97717981660216" y2="164.72135954999578" stroke="#4a3728" stroke-width="1" opacity="0.5"/>
-<line x1="100" y1="100" x2="23.915478696387723" y2="75.27864045000419" stroke="#4a3728" stroke-width="1" opacity="0.5"/>
-      <polygon points="100,20 100.90361664256072,99.70639715498817 100,100 100,100 100,100" fill="rgba(255, 107, 53, 0.3)" stroke="#ff6b35" stroke-width="2">
-        <animate attributeName="opacity" from="0" to="1" dur="0.8s" fill="freeze"/>
-      </polygon>
-      <circle cx="100" cy="20" r="3" fill="#ffd700"/>
-<circle cx="100.90361664256072" cy="99.70639715498817" r="3" fill="#ffd700"/>
-<circle cx="100" cy="100" r="3" fill="#ffd700"/>
-<circle cx="100" cy="100" r="3" fill="#ffd700"/>
-<circle cx="100" cy="100" r="3" fill="#ffd700"/>
-      <text x="100" y="0" font-family="monospace" font-size="11" fill="#8b949e" text-anchor="middle" dominant-baseline="middle">Commits</text>
-<text x="195.10565162951536" y="69.09830056250526" font-family="monospace" font-size="11" fill="#8b949e" text-anchor="middle" dominant-baseline="middle">Repos</text>
-<text x="158.77852522924732" y="180.90169943749476" font-family="monospace" font-size="11" fill="#8b949e" text-anchor="middle" dominant-baseline="middle">Issues</text>
-<text x="41.2214747707527" y="180.90169943749476" font-family="monospace" font-size="11" fill="#8b949e" text-anchor="middle" dominant-baseline="middle">PRs</text>
-<text x="4.89434837048465" y="69.09830056250523" font-family="monospace" font-size="11" fill="#8b949e" text-anchor="middle" dominant-baseline="middle">Reviews</text>
+      <line x1="700.00" y1="178.00" x2="720.92" y2="193.20" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="720.92" y1="193.20" x2="712.93" y2="217.80" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="712.93" y1="217.80" x2="687.07" y2="217.80" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="687.07" y1="217.80" x2="679.08" y2="193.20" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="679.08" y1="193.20" x2="700.00" y2="178.00" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="700.00" y1="156.00" x2="741.85" y2="186.40" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="741.85" y1="186.40" x2="725.86" y2="235.60" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="725.86" y1="235.60" x2="674.14" y2="235.60" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="674.14" y1="235.60" x2="658.15" y2="186.40" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="658.15" y1="186.40" x2="700.00" y2="156.00" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="700.00" y1="134.00" x2="762.77" y2="179.60" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="762.77" y1="179.60" x2="738.79" y2="253.40" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="738.79" y1="253.40" x2="661.21" y2="253.40" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="661.21" y1="253.40" x2="637.23" y2="179.60" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="637.23" y1="179.60" x2="700.00" y2="134.00" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="700.00" y1="112.00" x2="783.69" y2="172.81" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="783.69" y1="172.81" x2="751.73" y2="271.19" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="751.73" y1="271.19" x2="648.27" y2="271.19" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="648.27" y1="271.19" x2="616.31" y2="172.81" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="616.31" y1="172.81" x2="700.00" y2="112.00" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="700.00" y1="90.00" x2="804.62" y2="166.01" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="804.62" y1="166.01" x2="764.66" y2="288.99" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="764.66" y1="288.99" x2="635.34" y2="288.99" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="635.34" y1="288.99" x2="595.38" y2="166.01" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <line x1="595.38" y1="166.01" x2="700.00" y2="90.00" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <text style="font-size: 10px;" text-anchor="start" dominant-baseline="auto" x="702.20" y="178.00" fill="gray">1</text>
+      <text style="font-size: 10px;" text-anchor="start" dominant-baseline="auto" x="702.20" y="156.00" fill="gray">10</text>
+      <text style="font-size: 10px;" text-anchor="start" dominant-baseline="auto" x="702.20" y="134.00" fill="gray">100</text>
+      <text style="font-size: 10px;" text-anchor="start" dominant-baseline="auto" x="702.20" y="112.00" fill="gray">1K</text>
+      <text style="font-size: 10px;" text-anchor="start" dominant-baseline="auto" x="702.20" y="90.00" fill="gray">10K</text>
+      <g class="axis">
+      <line x1="700.00" y1="178.00" x2="700.00" y2="90.00" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <text style="font-size: 15px;" text-anchor="middle" dominant-baseline="middle" x="700.00" y="71.30" fill="#c9d1d9">Commit<title>844</title></text>
+    </g>
+      <g class="axis">
+      <line x1="720.92" y1="193.20" x2="804.62" y2="166.01" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <text style="font-size: 15px;" text-anchor="middle" dominant-baseline="middle" x="822.40" y="160.23" fill="#c9d1d9">Issue<title>0</title></text>
+    </g>
+      <g class="axis">
+      <line x1="712.93" y1="217.80" x2="764.66" y2="288.99" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <text style="font-size: 15px;" text-anchor="middle" dominant-baseline="middle" x="775.65" y="304.12" fill="#c9d1d9">PullReq<title>0</title></text>
+    </g>
+      <g class="axis">
+      <line x1="687.07" y1="217.80" x2="635.34" y2="288.99" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <text style="font-size: 15px;" text-anchor="middle" dominant-baseline="middle" x="624.35" y="304.12" fill="#c9d1d9">Review<title>0</title></text>
+    </g>
+      <g class="axis">
+      <line x1="679.08" y1="193.20" x2="595.38" y2="166.01" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <text style="font-size: 15px;" text-anchor="middle" dominant-baseline="middle" x="577.60" y="160.23" fill="#c9d1d9">Repo<title>10</title></text>
+    </g>
+      <polygon style="stroke-width: 4px; stroke: #47a042; fill: #47a042; fill-opacity: 0.5;" points="700.00,113.62 716.74,194.56 710.35,214.24 689.65,214.24 658.15,186.40"/>
     </g>
   
   </g>
 
   <!-- 도넛 차트 (좌측 하단) -->
   
-  <g transform="translate(0, 0)">
+  <g>
     
     <g class="donut-chart">
       <path d="
-      M 130 360
-      A 70 70 0 1 1 87.87346221296312 485.9048729010035
-      L 105.92769269312178 461.9456416577163
-      A 40 40 0 1 0 130 390
+      M 120 345
+      A 75 75 0 1 1 74.86442379960334 479.89807810821804
+      L 94.72407732777788 453.5429237406021
+      A 42 42 0 1 0 120 378
       Z
-    " fill="#A97BFF" stroke="#0d1117" stroke-width="2">
-      <title>Kotlin: 60.3%</title>
+    " style="fill: #A97BFF;" stroke="#0d1117" stroke-width="2px">
+      <title>Kotlin 1240762</title>
     </path>
 <path d="
-      M 87.87346221296312 485.9048729010035
-      A 70 70 0 0 1 71.1768715499685 392.05478212803234
-      L 96.38678374283914 408.3170183588756
-      A 40 40 0 0 0 105.92769269312178 461.9456416577163
+      M 74.86442379960334 479.89807810821804
+      A 75 75 0 0 1 56.97521951782339 379.3444094228918
+      L 84.70612292998109 397.23286927681943
+      A 42 42 0 0 0 94.72407732777788 453.5429237406021
       Z
-    " fill="#f1e05a" stroke="#0d1117" stroke-width="2">
-      <title>JavaScript: 23.8%</title>
+    " style="fill: #f1e05a;" stroke="#0d1117" stroke-width="2px">
+      <title>JavaScript 490734</title>
     </path>
 <path d="
-      M 71.1768715499685 392.05478212803234
-      A 70 70 0 0 1 108.21414241881052 363.4764973152185
-      L 117.55093852503458 391.9865698944106
-      A 40 40 0 0 0 96.38678374283914 408.3170183588756
+      M 56.97521951782339 379.3444094228918
+      A 75 75 0 0 1 96.65800973443984 348.7248185520198
+      L 106.92848545128632 380.0858983891311
+      A 42 42 0 0 0 84.70612292998109 397.23286927681943
       Z
-    " fill="#e34c26" stroke="#0d1117" stroke-width="2">
-      <title>HTML: 10.8%</title>
+    " style="fill: #e34c26;" stroke="#0d1117" stroke-width="2px">
+      <title>HTML 223234</title>
     </path>
 <path d="
-      M 108.21414241881052 363.4764973152185
-      A 70 70 0 0 1 124.8818089277743 360.1873641799123
-      L 127.0753193872996 390.1070652456642
-      A 40 40 0 0 0 117.55093852503458 391.9865698944106
+      M 96.65800973443984 348.7248185520198
+      A 75 75 0 0 1 114.51622385118675 345.20074733562035
+      L 116.92908535666457 378.1124185079474
+      A 42 42 0 0 0 106.92848545128632 380.0858983891311
       Z
-    " fill="#b07219" stroke="#0d1117" stroke-width="2">
-      <title>Java: 3.9%</title>
+    " style="fill: #b07219;" stroke="#0d1117" stroke-width="2px">
+      <title>Java 79707</title>
     </path>
 <path d="
-      M 124.8818089277743 360.1873641799123
-      A 70 70 0 0 1 129.1209805674884 360.0055193258978
-      L 129.49770318142194 390.00315390051304
-      A 40 40 0 0 0 127.0753193872996 390.1070652456642
+      M 114.51622385118675 345.20074733562035
+      A 75 75 0 0 1 119.05819346516616 345.00591356346195
+      L 119.47258834049305 378.00331159553866
+      A 42 42 0 0 0 116.92908535666457 378.1124185079474
       Z
-    " fill="#563d7c" stroke="#0d1117" stroke-width="2">
-      <title>CSS: 1.0%</title>
+    " style="fill: #663399;" stroke="#0d1117" stroke-width="2px">
+      <title>CSS 19861</title>
     </path>
 <path d="
-      M 129.1209805674884 360.0055193258978
-      A 70 70 0 0 1 129.98311999035568 360.0000020352481
-      L 129.99035428020323 390.0000011629989
-      A 40 40 0 0 0 129.49770318142194 390.00315390051304
+      M 119.05819346516616 345.00591356346195
+      A 75 75 0 0 1 119.99999999999999 345
+      L 119.99999999999999 378
+      A 42 42 0 0 0 119.47258834049305 378.00331159553866
       Z
-    " fill="#f34b7d" stroke="#0d1117" stroke-width="2">
-      <title>C++: 0.2%</title>
-    </path>
-<path d="
-      M 129.98311999035568 360.0000020352481
-      A 70 70 0 0 1 130 360
-      L 130 390
-      A 40 40 0 0 0 129.99035428020323 390.0000011629989
-      Z
-    " fill="#3572A5" stroke="#0d1117" stroke-width="2">
-      <title>Python: 0.0%</title>
+    " style="fill: #444444;" stroke="#0d1117" stroke-width="2px">
+      <title>other 4114</title>
     </path>
       
-      <g>
-        <rect x="60" y="530" width="12" height="12" fill="#A97BFF"/>
-        <text x="76" y="540" font-family="monospace" font-size="11" fill="#8b949e">
-          Kotlin (60.3%)
-        </text>
-      </g>
+      <rect x="215" y="355" width="14" height="14" fill="#A97BFF" stroke="#30363d" stroke-width="1px"/>
+      <text dominant-baseline="middle" x="235" y="362" fill="#c9d1d9" font-size="14px" font-family="'Ubuntu', 'Helvetica', 'Arial', sans-serif">Kotlin</text>
     
 
-      <g>
-        <rect x="60" y="548" width="12" height="12" fill="#f1e05a"/>
-        <text x="76" y="558" font-family="monospace" font-size="11" fill="#8b949e">
-          JavaScript (23.8%)
-        </text>
-      </g>
+      <rect x="215" y="376" width="14" height="14" fill="#f1e05a" stroke="#30363d" stroke-width="1px"/>
+      <text dominant-baseline="middle" x="235" y="383" fill="#c9d1d9" font-size="14px" font-family="'Ubuntu', 'Helvetica', 'Arial', sans-serif">JavaScript</text>
     
 
-      <g>
-        <rect x="60" y="566" width="12" height="12" fill="#e34c26"/>
-        <text x="76" y="576" font-family="monospace" font-size="11" fill="#8b949e">
-          HTML (10.8%)
-        </text>
-      </g>
+      <rect x="215" y="397" width="14" height="14" fill="#e34c26" stroke="#30363d" stroke-width="1px"/>
+      <text dominant-baseline="middle" x="235" y="404" fill="#c9d1d9" font-size="14px" font-family="'Ubuntu', 'Helvetica', 'Arial', sans-serif">HTML</text>
     
 
-      <g>
-        <rect x="60" y="584" width="12" height="12" fill="#b07219"/>
-        <text x="76" y="594" font-family="monospace" font-size="11" fill="#8b949e">
-          Java (3.9%)
-        </text>
-      </g>
+      <rect x="215" y="418" width="14" height="14" fill="#b07219" stroke="#30363d" stroke-width="1px"/>
+      <text dominant-baseline="middle" x="235" y="425" fill="#c9d1d9" font-size="14px" font-family="'Ubuntu', 'Helvetica', 'Arial', sans-serif">Java</text>
     
 
-      <g>
-        <rect x="60" y="602" width="12" height="12" fill="#563d7c"/>
-        <text x="76" y="612" font-family="monospace" font-size="11" fill="#8b949e">
-          CSS (1.0%)
-        </text>
-      </g>
+      <rect x="215" y="439" width="14" height="14" fill="#663399" stroke="#30363d" stroke-width="1px"/>
+      <text dominant-baseline="middle" x="235" y="446" fill="#c9d1d9" font-size="14px" font-family="'Ubuntu', 'Helvetica', 'Arial', sans-serif">CSS</text>
     
     </g>
   
@@ -15748,56 +15750,9 @@
 
   
     <g id="stats-summary">
-      <text
-        x="120"
-        y="420"
-        font-family="monospace"
-        font-size="24"
-        font-weight="bold"
-        fill="#ffd700"
-      >859</text>
-
-      <text
-        x="120"
-        y="440"
-        font-family="monospace"
-        font-size="12"
-        fill="#8b949e"
-      >contributions</text>
-
-      <text
-        x="300"
-        y="420"
-        font-family="monospace"
-        font-size="24"
-        font-weight="bold"
-        fill="#ffd700"
-      >☆ 2</text>
-
-      <text
-        x="300"
-        y="440"
-        font-family="monospace"
-        font-size="12"
-        fill="#8b949e"
-      >stars</text>
-
-      <text
-        x="450"
-        y="420"
-        font-family="monospace"
-        font-size="24"
-        font-weight="bold"
-        fill="#ffd700"
-      >ψ 0</text>
-
-      <text
-        x="450"
-        y="440"
-        font-family="monospace"
-        font-size="12"
-        fill="#8b949e"
-      >repos</text>
+      <text style="font-size: 24px; font-weight: bold;" x="300" y="500" text-anchor="end" fill="#c9d1d9">861</text>
+      <text style="font-size: 18px;" x="310" y="500" text-anchor="start" fill="#8b949e">contributions</text>
+      <text style="font-size: 14px;" x="800" y="500" text-anchor="end" fill="#484f58">2025-03-30 / 2026-04-01</text>
     </g>
   
 </svg>
