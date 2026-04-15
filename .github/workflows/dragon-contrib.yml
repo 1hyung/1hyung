@@ -41,7 +41,7 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          git diff --quiet mountain-contrib/ || echo "changes=true" >> $GITHUB_OUTPUT
+          git status --porcelain mountain-contrib/ | grep -q . && echo "changes=true" >> $GITHUB_OUTPUT || true
 
       - name: Commit and Push
         if: steps.changes.outputs.changes == 'true'
