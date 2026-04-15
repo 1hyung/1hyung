@@ -1,4 +1,4 @@
-// Dragon/Farm Contribution 시각화 SVG 생성 (테마 지원)
+// Dragon/Farm/Mountain Contribution 시각화 SVG 생성 (테마 지원)
 
 import { ContributionData, SVGConfig, DEFAULT_CONFIG } from './types';
 import { contributionLevelToNumber } from './github-api';
@@ -8,8 +8,11 @@ import { Theme, getTheme } from './theme';
 
 /**
  * 헤더 생성 (제목 + 날짜 범위)
+ * showHeader=false인 테마는 빈 문자열 반환 (배경에 자체 타이틀 포함)
  */
 function createHeader(calendar: any, config: SVGConfig, theme: Theme): string {
+  if (!theme.showHeader) return '';
+
   const weeks = calendar.weeks;
   const startDate = weeks[0]?.contributionDays[0]?.date || '';
   const endDate = weeks[weeks.length - 1]?.contributionDays[6]?.date || '';
@@ -51,9 +54,9 @@ function createStatsSection(calendar: any, config: SVGConfig, theme: Theme): str
   const dateRange = getDateRangeText(calendar);
 
   if (!theme.showCharts) {
-    // 농장 테마: 그리드 아래 중앙 정렬 패널
+    // 농장/설산 테마: 그리드 아래 중앙 정렬 패널
     const cx = Math.round(config.width / 2);
-    const panelY = 425;
+    const panelY = theme.statsPanelY ?? 425;
     return `
     <g id="stats-summary">
       <rect x="${cx - 200}" y="${panelY}" width="400" height="58" fill="${theme.colors.statsPanelColor}" rx="8" opacity="0.65"/>
@@ -93,6 +96,11 @@ export function generateSVG(
   config: SVGConfig = DEFAULT_CONFIG,
   theme: Theme = getTheme('farm')
 ): string {
+  // configOverride 적용 (캔버스 크기, 그리드 위치 등 테마별 오버라이드)
+  const effectiveConfig: SVGConfig = theme.configOverride
+    ? { ...config, ...theme.configOverride }
+    : config;
+
   const calendar = data.user.contributionsCollection.contributionCalendar;
   const repositories = data.user.repositories.nodes;
 
@@ -113,8 +121,8 @@ export function generateSVG(
 
   // 테마별 그리드 렌더링 (flat: 탑뷰 격자, isometric: 등각 투영)
   const gridSVG = theme.gridStyle === 'flat'
-    ? createFlatGrid(gridCells, config, theme)
-    : createIsometricGrid(gridCells, config, theme);
+    ? createFlatGrid(gridCells, effectiveConfig, theme)
+    : createIsometricGrid(gridCells, effectiveConfig, theme);
 
   // 테마별 차트 위치
   const { radarCx, radarCy, radarR, donutCx, donutCy, donutOuter, donutInner } = theme.layout;
@@ -123,17 +131,17 @@ export function generateSVG(
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  viewBox="0 0 ${config.width} ${config.height}"
-  width="${config.width}"
-  height="${config.height}"
+  viewBox="0 0 ${effectiveConfig.width} ${effectiveConfig.height}"
+  width="${effectiveConfig.width}"
+  height="${effectiveConfig.height}"
 >
   <style>* { font-family: "Ubuntu", "Helvetica", "Arial", sans-serif; }</style>
   <defs>
     ${theme.createFilters()}
   </defs>
 
-  ${theme.createBackground(config)}
-  ${createHeader(calendar, config, theme)}
+  ${theme.createBackground(effectiveConfig)}
+  ${createHeader(calendar, effectiveConfig, theme)}
 
   <!-- 그리드 -->
   <g transform="translate(0, 0)">
@@ -158,7 +166,7 @@ export function generateSVG(
   </g>
   ` : ''}
 
-  ${createStatsSection(calendar, config, theme)}
+  ${createStatsSection(calendar, effectiveConfig, theme)}
 </svg>`;
 }
 
