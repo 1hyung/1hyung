@@ -54,6 +54,9 @@ export interface Theme {
   title: string;
   gridStyle: 'isometric' | 'flat';
   showCharts: boolean;
+  showHeader: boolean;           // false = 배경이 자체 타이틀 포함
+  configOverride?: Partial<SVGConfig>;  // SVGConfig 오버라이드 (캔버스 크기, 그리드 위치)
+  statsPanelY?: number;          // 통계 패널 Y 위치 (기본 425)
   createBackground: (config: SVGConfig) => string;
   createFilters: () => string;
   createSprite: (level: DragonLevel) => string;
@@ -100,6 +103,7 @@ function getDragonTheme(): Theme {
     title: 'DRAGON LAIR',
     gridStyle: 'isometric',
     showCharts: true,
+    showHeader: true,
     createBackground: createDarkBackground,
     createFilters: createBackgroundFilters,
     createSprite: dragonSprite,
@@ -157,6 +161,7 @@ function getFarmTheme(): Theme {
     title: 'MY FARM',
     gridStyle: 'flat',
     showCharts: false,
+    showHeader: true,
     createBackground: createFarmBackground,
     createFilters: createFarmFilters,
     createSprite: createFarmSprite,
@@ -215,6 +220,13 @@ function getMountainTheme(): Theme {
     title: "1hyung's Git Mountain",
     gridStyle: 'isometric',
     showCharts: false,
+    showHeader: false,          // 제목은 배경에 포함
+    configOverride: {
+      height: 600,              // 캔버스 높이 확장 (더 장엄한 비율)
+      gridOffsetX: 50,
+      gridOffsetY: 130,         // 그리드를 아래로 (제목 영역 확보)
+    },
+    statsPanelY: 490,           // 통계 패널을 최하단으로
     createBackground: createMountainBackground,
     createFilters: createMountainFilters,
     createSprite: createMountainSprite,
