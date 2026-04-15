@@ -2,7 +2,7 @@
 
 import { ContributionData, SVGConfig, DEFAULT_CONFIG } from './types';
 import { contributionLevelToNumber } from './github-api';
-import { createGridCells, createIsometricGrid } from './isometric';
+import { createGridCells, createIsometricGrid, createFlatGrid } from './isometric';
 import { createRadarChart, createDonutChart, processLanguageData, RadarChartData } from './charts';
 import { Theme, getTheme } from './theme';
 
@@ -47,13 +47,29 @@ function createHeader(calendar: any, config: SVGConfig, theme: Theme): string {
  * 통계 요약 섹션 생성 (하단)
  */
 function createStatsSection(calendar: any, config: SVGConfig, theme: Theme): string {
-  const y = config.height - 20;
+  const total = calendar.totalContributions.toLocaleString();
+  const dateRange = getDateRangeText(calendar);
 
+  if (!theme.showCharts) {
+    // 농장 테마: 그리드 아래 중앙 정렬 패널
+    const cx = Math.round(config.width / 2);
+    const panelY = 425;
+    return `
+    <g id="stats-summary">
+      <rect x="${cx - 200}" y="${panelY}" width="400" height="58" fill="#1e4a10" rx="8" opacity="0.55"/>
+      <text font-family="monospace" font-size="12" x="${cx}" y="${panelY + 19}" text-anchor="middle" fill="${theme.colors.statsDateColor}">${dateRange}</text>
+      <text font-family="monospace" font-size="20" font-weight="bold" x="${cx}" y="${panelY + 46}" text-anchor="middle" fill="${theme.colors.statsTextColor}">${total} contributions</text>
+    </g>
+  `;
+  }
+
+  // 드래곤 테마: 기존 레이아웃
+  const y = config.height - 20;
   return `
     <g id="stats-summary">
-      <text style="font-size: 24px; font-weight: bold;" x="300" y="${y}" text-anchor="end" fill="${theme.colors.statsTextColor}">${calendar.totalContributions.toLocaleString()}</text>
+      <text style="font-size: 24px; font-weight: bold;" x="300" y="${y}" text-anchor="end" fill="${theme.colors.statsTextColor}">${total}</text>
       <text style="font-size: 18px;" x="310" y="${y}" text-anchor="start" fill="${theme.colors.statsLabelColor}">contributions</text>
-      <text style="font-size: 14px;" x="${config.width - 50}" y="${y}" text-anchor="end" fill="${theme.colors.statsDateColor}">${getDateRangeText(calendar)}</text>
+      <text style="font-size: 14px;" x="${config.width - 50}" y="${y}" text-anchor="end" fill="${theme.colors.statsDateColor}">${dateRange}</text>
     </g>
   `;
 }
@@ -80,7 +96,7 @@ export function generateSVG(
   const calendar = data.user.contributionsCollection.contributionCalendar;
   const repositories = data.user.repositories.nodes;
 
-  // 등각 투영 그리드 셀 생성
+  // 그리드 셀 생성
   const gridCells = createGridCells(calendar.weeks, contributionLevelToNumber);
 
   // 레이더 차트 데이터
@@ -94,6 +110,14 @@ export function generateSVG(
 
   // 언어 데이터 처리
   const languages = processLanguageData(repositories);
+
+  // 테마별 그리드 렌더링 (flat: 탑뷰 격자, isometric: 등각 투영)
+  const gridSVG = theme.gridStyle === 'flat'
+    ? createFlatGrid(gridCells, config, theme)
+    : createIsometricGrid(gridCells, config, theme);
+
+  // 테마별 차트 위치
+  const { radarCx, radarCy, radarR, donutCx, donutCy, donutOuter, donutInner } = theme.layout;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg
@@ -111,24 +135,26 @@ export function generateSVG(
   ${theme.createBackground(config)}
   ${createHeader(calendar, config, theme)}
 
-  <!-- 등각 투영 그리드 -->
+  <!-- 그리드 -->
   <g transform="translate(0, 0)">
-    ${createIsometricGrid(gridCells, config, theme)}
+    ${gridSVG}
   </g>
 
-  <!-- 레이더 차트 (우측 상단) -->
+  <!-- 레이더 차트 (showCharts=true일 때만) -->
+  ${theme.showCharts ? `
   <g>
-    ${createRadarChart(radarData, 700, 200, 110, {
+    ${createRadarChart(radarData, radarCx, radarCy, radarR, {
       fillColor: theme.colors.radarFillColor,
       labelColor: theme.colors.radarLabelColor,
       gridColor: theme.colors.radarGridColor,
     })}
   </g>
+  ` : ''}
 
-  <!-- 도넛 차트 (좌측 하단) -->
-  ${languages.length > 0 ? `
+  <!-- 도넛 차트 (showCharts=true일 때만) -->
+  ${theme.showCharts && languages.length > 0 ? `
   <g>
-    ${createDonutChart(languages, 120, 420, 75, 42, theme.colors.donutStrokeColor, theme.colors.legendTextColor)}
+    ${createDonutChart(languages, donutCx, donutCy, donutOuter, donutInner, theme.colors.donutStrokeColor, theme.colors.legendTextColor)}
   </g>
   ` : ''}
 

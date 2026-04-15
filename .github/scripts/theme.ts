@@ -1,6 +1,7 @@
 // 테마 시스템: dragon | farm 전환 지원
 
 import { SVGConfig, DragonLevel } from './types';
+import { createFlatFarmSprite } from './farm-sprites';
 
 // 드래곤 테마 (기존)
 import { DRAGON_COLORS } from './colors';
@@ -32,18 +33,32 @@ export interface ThemeColors {
   legendTextColor: string;
 }
 
+export interface ThemeLayout {
+  radarCx: number;
+  radarCy: number;
+  radarR: number;
+  donutCx: number;
+  donutCy: number;
+  donutOuter: number;
+  donutInner: number;
+}
+
 export interface Theme {
   name: ThemeName;
   title: string;
+  gridStyle: 'isometric' | 'flat';
+  showCharts: boolean;
   createBackground: (config: SVGConfig) => string;
   createFilters: () => string;
   createSprite: (level: DragonLevel) => string;
   getSpriteSize: (level: DragonLevel) => { width: number; height: number };
+  createFlatSprite?: (level: DragonLevel) => string;
   heightOffsets: number[];
   level4FilterId: string;
   renderLevel0: boolean;
   colors: ThemeColors;
   animationCSS: string;
+  layout: ThemeLayout;
   outputDir: string;
   outputPrefix: string;
 }
@@ -77,6 +92,8 @@ function getDragonTheme(): Theme {
   return {
     name: 'dragon',
     title: 'DRAGON LAIR',
+    gridStyle: 'isometric',
+    showCharts: true,
     createBackground: createDarkBackground,
     createFilters: createBackgroundFilters,
     createSprite: dragonSprite,
@@ -115,6 +132,10 @@ function getDragonTheme(): Theme {
         animation: fadeIn 2.5s ease-in-out;
       }
     `,
+    layout: {
+      radarCx: 700, radarCy: 200, radarR: 110,
+      donutCx: 120, donutCy: 420, donutOuter: 75, donutInner: 42,
+    },
     outputDir: 'dragon-contrib',
     outputPrefix: 'dragon-contrib',
   };
@@ -127,23 +148,26 @@ function getFarmTheme(): Theme {
   return {
     name: 'farm',
     title: 'MY FARM',
+    gridStyle: 'flat',
+    showCharts: false,
     createBackground: createFarmBackground,
     createFilters: createFarmFilters,
     createSprite: createFarmSprite,
     getSpriteSize: getFarmSpriteSize,
+    createFlatSprite: createFlatFarmSprite,
     heightOffsets: [0, 3, 8, 14, 18],
     level4FilterId: 'sunGlow',
     renderLevel0: true,
     colors: {
       titleColor: FARM_COLORS.titleColor,
-      subtitleColor: FARM_COLORS.textDark,
+      subtitleColor: FARM_COLORS.titleColor,  // 초록 배경에서 잘 보이도록 크림색
       radarFillColor: '#e8a33c',
       radarLabelColor: FARM_COLORS.textDark,
       radarGridColor: '#3d6a2a',
       donutStrokeColor: FARM_COLORS.bgGreen,
       statsTextColor: FARM_COLORS.titleColor,
       statsLabelColor: FARM_COLORS.textLight,
-      statsDateColor: FARM_COLORS.textDark,
+      statsDateColor: FARM_COLORS.textLight,  // 어두운 패널 위에 밝은 색
       legendTextColor: FARM_COLORS.textDark,
     },
     animationCSS: `
@@ -155,7 +179,7 @@ function getFarmTheme(): Theme {
         0%, 100% { filter: drop-shadow(0 0 3px ${FARM_COLORS.sunYellow}); }
         50% { filter: drop-shadow(0 0 6px ${FARM_COLORS.sunOrange}); }
       }
-      #isometric-dragon-grid {
+      #farm-flat-grid {
         animation: fadeIn 1.5s ease-in-out;
       }
       .radar-chart {
@@ -165,6 +189,10 @@ function getFarmTheme(): Theme {
         animation: fadeIn 2.5s ease-in-out;
       }
     `,
+    layout: {
+      radarCx: 685, radarCy: 340, radarR: 100,
+      donutCx: 145, donutCy: 340, donutOuter: 80, donutInner: 45,
+    },
     outputDir: 'farm-contrib',
     outputPrefix: 'farm-contrib',
   };
