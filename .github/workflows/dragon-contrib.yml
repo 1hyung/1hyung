@@ -1,4 +1,4 @@
-name: Dragon Contribution Generator
+name: Farm Contribution Generator
 
 on:
   schedule:
@@ -15,7 +15,7 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    name: Generate Dragon Contribution SVG
+    name: Generate Farm Contribution SVG
 
     steps:
       - name: Checkout repository
@@ -30,23 +30,24 @@ jobs:
         working-directory: .github/scripts
         run: npm install
 
-      - name: Generate Dragon Contribution SVG
+      - name: Generate Farm Contribution SVG
         working-directory: .github/scripts
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           USERNAME: ${{ github.repository_owner }}
+          THEME: farm
         run: npx ts-node generate-dragon.ts
 
       - name: Check for changes
         id: changes
         run: |
-          git diff --quiet dragon-contrib/ || echo "changes=true" >> $GITHUB_OUTPUT
+          git diff --quiet farm-contrib/ || echo "changes=true" >> $GITHUB_OUTPUT
 
       - name: Commit and Push
         if: steps.changes.outputs.changes == 'true'
         run: |
           git config user.name "1hyung"
           git config user.email "dev.1hyung@gmail.com"
-          git add dragon-contrib/
-          git commit -m "Update dragon contribution visualization"
+          git add farm-contrib/
+          git commit -m "Update farm contribution visualization"
           git push

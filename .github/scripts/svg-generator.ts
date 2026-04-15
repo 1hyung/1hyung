@@ -1,19 +1,15 @@
-// Dragon Contribution 시각화 SVG 생성 (등각 투영 + 차트 통합)
+// Dragon/Farm Contribution 시각화 SVG 생성 (테마 지원)
 
 import { ContributionData, SVGConfig, DEFAULT_CONFIG } from './types';
-import { DRAGON_COLORS } from './colors';
-import { createBackgroundFilters, createDarkBackground } from './background';
 import { contributionLevelToNumber } from './github-api';
-import { createGridCells, createIsometricDragonGrid } from './isometric';
+import { createGridCells, createIsometricGrid } from './isometric';
 import { createRadarChart, createDonutChart, processLanguageData, RadarChartData } from './charts';
+import { Theme, getTheme } from './theme';
 
 /**
  * 헤더 생성 (제목 + 날짜 범위)
  */
-function createHeader(calendar: any, config: SVGConfig): string {
-  const { textGold, githubGray } = DRAGON_COLORS;
-
-  // 날짜 범위 계산
+function createHeader(calendar: any, config: SVGConfig, theme: Theme): string {
   const weeks = calendar.weeks;
   const startDate = weeks[0]?.contributionDays[0]?.date || '';
   const endDate = weeks[weeks.length - 1]?.contributionDays[6]?.date || '';
@@ -32,8 +28,8 @@ function createHeader(calendar: any, config: SVGConfig): string {
         font-family="monospace"
         font-size="20"
         font-weight="bold"
-        fill="${textGold}"
-      >DRAGON LAIR</text>
+        fill="${theme.colors.titleColor}"
+      >${theme.title}</text>
 
       <text
         x="${config.width - 50}"
@@ -41,23 +37,23 @@ function createHeader(calendar: any, config: SVGConfig): string {
         text-anchor="end"
         font-family="monospace"
         font-size="12"
-        fill="${githubGray}"
+        fill="${theme.colors.subtitleColor}"
       >${formatDate(startDate)} - ${formatDate(endDate)}</text>
     </g>
   `;
 }
 
 /**
- * 통계 요약 섹션 생성 (하단, profile-3d-contrib 스타일)
+ * 통계 요약 섹션 생성 (하단)
  */
-function createStatsSection(calendar: any, config: SVGConfig): string {
+function createStatsSection(calendar: any, config: SVGConfig, theme: Theme): string {
   const y = config.height - 20;
 
   return `
     <g id="stats-summary">
-      <text style="font-size: 24px; font-weight: bold;" x="300" y="${y}" text-anchor="end" fill="#c9d1d9">${calendar.totalContributions.toLocaleString()}</text>
-      <text style="font-size: 18px;" x="310" y="${y}" text-anchor="start" fill="#8b949e">contributions</text>
-      <text style="font-size: 14px;" x="${config.width - 50}" y="${y}" text-anchor="end" fill="#484f58">${getDateRangeText(calendar)}</text>
+      <text style="font-size: 24px; font-weight: bold;" x="300" y="${y}" text-anchor="end" fill="${theme.colors.statsTextColor}">${calendar.totalContributions.toLocaleString()}</text>
+      <text style="font-size: 18px;" x="310" y="${y}" text-anchor="start" fill="${theme.colors.statsLabelColor}">contributions</text>
+      <text style="font-size: 14px;" x="${config.width - 50}" y="${y}" text-anchor="end" fill="${theme.colors.statsDateColor}">${getDateRangeText(calendar)}</text>
     </g>
   `;
 }
@@ -78,7 +74,8 @@ function getDateRangeText(calendar: any): string {
  */
 export function generateSVG(
   data: ContributionData,
-  config: SVGConfig = DEFAULT_CONFIG
+  config: SVGConfig = DEFAULT_CONFIG,
+  theme: Theme = getTheme('farm')
 ): string {
   const calendar = data.user.contributionsCollection.contributionCalendar;
   const repositories = data.user.repositories.nodes;
@@ -108,30 +105,34 @@ export function generateSVG(
 >
   <style>* { font-family: "Ubuntu", "Helvetica", "Arial", sans-serif; }</style>
   <defs>
-    ${createBackgroundFilters()}
+    ${theme.createFilters()}
   </defs>
 
-  ${createDarkBackground(config)}
-  ${createHeader(calendar, config)}
+  ${theme.createBackground(config)}
+  ${createHeader(calendar, config, theme)}
 
-  <!-- 등각 투영 드래곤 그리드 -->
+  <!-- 등각 투영 그리드 -->
   <g transform="translate(0, 0)">
-    ${createIsometricDragonGrid(gridCells, config)}
+    ${createIsometricGrid(gridCells, config, theme)}
   </g>
 
-  <!-- 레이더 차트 (우측 상단, profile-3d-contrib 스타일) -->
+  <!-- 레이더 차트 (우측 상단) -->
   <g>
-    ${createRadarChart(radarData, 700, 200, 110)}
+    ${createRadarChart(radarData, 700, 200, 110, {
+      fillColor: theme.colors.radarFillColor,
+      labelColor: theme.colors.radarLabelColor,
+      gridColor: theme.colors.radarGridColor,
+    })}
   </g>
 
   <!-- 도넛 차트 (좌측 하단) -->
   ${languages.length > 0 ? `
   <g>
-    ${createDonutChart(languages, 120, 420, 75, 42)}
+    ${createDonutChart(languages, 120, 420, 75, 42, theme.colors.donutStrokeColor, theme.colors.legendTextColor)}
   </g>
   ` : ''}
 
-  ${createStatsSection(calendar, config)}
+  ${createStatsSection(calendar, config, theme)}
 </svg>`;
 }
 
@@ -140,30 +141,14 @@ export function generateSVG(
  */
 export function generateAnimatedSVG(
   data: ContributionData,
-  config: SVGConfig = DEFAULT_CONFIG
+  config: SVGConfig = DEFAULT_CONFIG,
+  theme: Theme = getTheme('farm')
 ): string {
-  const baseSVG = generateSVG(data, config);
+  const baseSVG = generateSVG(data, config, theme);
 
-  // CSS 애니메이션 추가
   const animationStyles = `
     <style>
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
-      @keyframes dragonGlow {
-        0%, 100% { filter: drop-shadow(0 0 3px ${DRAGON_COLORS.dragonOrange}); }
-        50% { filter: drop-shadow(0 0 8px ${DRAGON_COLORS.dragonGold}); }
-      }
-      #isometric-dragon-grid {
-        animation: fadeIn 1.5s ease-in-out;
-      }
-      .radar-chart {
-        animation: fadeIn 2s ease-in-out;
-      }
-      .donut-chart {
-        animation: fadeIn 2.5s ease-in-out;
-      }
+      ${theme.animationCSS}
     </style>
   `;
 

@@ -1,83 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380">
-  <!-- Background -->
-  <rect x="0" y="0" width="1200" height="380" fill="#0d1117"/>
+  <!-- 배경 -->
+  <rect x="0" y="0" width="1200" height="380" fill="#4a8c38"/>
+  <rect x="0" y="0" width="1200" height="380" fill="none" stroke="#6b4423" stroke-width="2" opacity="0.6"/>
 
-  <!-- Subtle border -->
-  <rect x="0" y="0" width="1200" height="380" fill="none" stroke="#30363d" stroke-width="1" opacity="0.5"/>
-
-  <!-- Section Title -->
-  <text x="600" y="35" text-anchor="middle" font-family="monospace" font-size="24" font-weight="bold" fill="#ffd700">
-    🐉 Tech Stack 🐉
+  <!-- 섹션 타이틀 -->
+  <text x="600" y="35" text-anchor="middle" font-family="monospace" font-size="24" font-weight="bold" fill="#f5e6d0">
+    🌾 Tech Stack 🌾
   </text>
 
   
-    <text x="600" y="60" text-anchor="middle" font-family="monospace" font-size="16" font-weight="bold" fill="#8b949e">
+    <text x="600" y="60" text-anchor="middle" font-family="monospace" font-size="16" font-weight="bold" fill="#c8e6c9">
       Backend
     </text>
-      <rect x="300" y="90" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="355" y="107" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="300" y="90" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="300" y="90" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="355" y="107" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         Kotlin
       </text>
-      <rect x="420" y="90" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="475" y="107" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="420" y="90" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="420" y="90" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="475" y="107" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         Spring Boot
       </text>
-      <rect x="540" y="90" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="595" y="107" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="540" y="90" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="540" y="90" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="595" y="107" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         MySQL
       </text>
-      <rect x="660" y="90" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="715" y="107" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="660" y="90" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="660" y="90" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="715" y="107" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         Kafka
       </text>
-      <rect x="780" y="90" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="835" y="107" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="780" y="90" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="780" y="90" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="835" y="107" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         gRPC
       </text>
-    <text x="600" y="135" text-anchor="middle" font-family="monospace" font-size="16" font-weight="bold" fill="#8b949e">
+    <text x="600" y="135" text-anchor="middle" font-family="monospace" font-size="16" font-weight="bold" fill="#c8e6c9">
       DevOps
     </text>
-      <rect x="480" y="165" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="535" y="182" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="480" y="165" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="480" y="165" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="535" y="182" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         Docker
       </text>
-      <rect x="600" y="165" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="655" y="182" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="600" y="165" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="600" y="165" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="655" y="182" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         Kubernetes
       </text>
-    <text x="600" y="210" text-anchor="middle" font-family="monospace" font-size="16" font-weight="bold" fill="#8b949e">
+    <text x="600" y="210" text-anchor="middle" font-family="monospace" font-size="16" font-weight="bold" fill="#c8e6c9">
       Tools
     </text>
-      <rect x="300" y="240" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="355" y="257" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="300" y="240" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="300" y="240" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="355" y="257" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         IntelliJ IDEA
       </text>
-      <rect x="420" y="240" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="475" y="257" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="420" y="240" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="420" y="240" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="475" y="257" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         Jira
       </text>
-      <rect x="540" y="240" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="595" y="257" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="540" y="240" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="540" y="240" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="595" y="257" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         Confluence
       </text>
-      <rect x="660" y="240" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="715" y="257" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="660" y="240" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="660" y="240" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="715" y="257" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         Slack
       </text>
-      <rect x="780" y="240" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="835" y="257" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="780" y="240" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="780" y="240" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="835" y="257" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         Notion
       </text>
-    <text x="600" y="285" text-anchor="middle" font-family="monospace" font-size="16" font-weight="bold" fill="#8b949e">
+    <text x="600" y="285" text-anchor="middle" font-family="monospace" font-size="16" font-weight="bold" fill="#c8e6c9">
       AI & Prompt
     </text>
-      <rect x="480" y="315" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="535" y="332" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="480" y="315" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="480" y="315" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="535" y="332" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         Claude
       </text>
-      <rect x="600" y="315" width="110" height="25" rx="4" fill="#d32f2f" opacity="0.8"/>
-      <text x="655" y="332" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd700">
+      <rect x="600" y="315" width="110" height="25" rx="4" fill="#2d5a1e" opacity="0.85"/>
+      <rect x="600" y="315" width="110" height="25" rx="4" fill="none" stroke="#6b4423" stroke-width="1" opacity="0.6"/>
+      <text x="655" y="332" text-anchor="middle" font-family="monospace" font-size="11" fill="#f5e6d0">
         Prompt Engineering
       </text>
 </svg>
