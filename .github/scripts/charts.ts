@@ -18,6 +18,12 @@ export interface LanguageData {
   percentage: number;
 }
 
+export interface RadarChartColors {
+  fillColor?: string;
+  labelColor?: string;
+  gridColor?: string;
+}
+
 /**
  * 레이더 차트 생성 (5축, 로그 스케일)
  * profile-3d-contrib 스타일의 오각형 레이더 차트
@@ -29,7 +35,8 @@ export function createRadarChart(
   data: RadarChartData,
   centerX: number,
   centerY: number,
-  radius: number
+  radius: number,
+  chartColors: RadarChartColors = {}
 ): string {
   const numLevels = 5;
   const step = radius / numLevels;
@@ -38,6 +45,10 @@ export function createRadarChart(
   const labels = ['Commit', 'Issue', 'PullReq', 'Review', 'Repo'];
   const values = [data.commits, data.issues, data.pullRequests, data.reviews, data.repos];
   const angles = [0, 72, 144, 216, 288]; // 위에서 시작, 시계방향 (도)
+
+  const fillColor = chartColors.fillColor ?? '#47a042';
+  const labelColor = chartColors.labelColor ?? '#c9d1d9';
+  const gridColor = chartColors.gridColor ?? 'gray';
 
   // 각도(위에서 시계방향) → SVG 좌표 변환
   const toXY = (angleDeg: number, r: number): { x: number; y: number } => {
@@ -56,7 +67,7 @@ export function createRadarChart(
       const p1 = toXY(angles[i], r);
       const p2 = toXY(angles[(i + 1) % 5], r);
       gridLines.push(
-        `<line x1="${p1.x.toFixed(2)}" y1="${p1.y.toFixed(2)}" x2="${p2.x.toFixed(2)}" y2="${p2.y.toFixed(2)}" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>`
+        `<line x1="${p1.x.toFixed(2)}" y1="${p1.y.toFixed(2)}" x2="${p2.x.toFixed(2)}" y2="${p2.y.toFixed(2)}" style="stroke: ${gridColor}; stroke-dasharray: 4 4; stroke-width: 1px;"/>`
       );
     }
   }
@@ -79,8 +90,8 @@ export function createRadarChart(
     const labelPos = toXY(angle, radius * 1.17);
 
     return `<g class="axis">
-      <line x1="${inner.x.toFixed(2)}" y1="${inner.y.toFixed(2)}" x2="${outer.x.toFixed(2)}" y2="${outer.y.toFixed(2)}" style="stroke: gray; stroke-dasharray: 4 4; stroke-width: 1px;"/>
-      <text style="font-size: ${labelFontSize}px;" text-anchor="middle" dominant-baseline="middle" x="${labelPos.x.toFixed(2)}" y="${labelPos.y.toFixed(2)}" fill="#c9d1d9">${labels[i]}<title>${values[i]}</title></text>
+      <line x1="${inner.x.toFixed(2)}" y1="${inner.y.toFixed(2)}" x2="${outer.x.toFixed(2)}" y2="${outer.y.toFixed(2)}" style="stroke: ${gridColor}; stroke-dasharray: 4 4; stroke-width: 1px;"/>
+      <text style="font-size: ${labelFontSize}px;" text-anchor="middle" dominant-baseline="middle" x="${labelPos.x.toFixed(2)}" y="${labelPos.y.toFixed(2)}" fill="${labelColor}">${labels[i]}<title>${values[i]}</title></text>
     </g>`;
   });
 
@@ -102,9 +113,6 @@ export function createRadarChart(
 
   const dataPolygonPoints = dataPoints.map(p => `${p.x.toFixed(2)},${p.y.toFixed(2)}`).join(' ');
 
-  // 데이터 폴리곤 색상 (profile-3d-contrib 스타일: 초록 계열)
-  const fillColor = '#47a042';
-
   return `
     <g class="radar-chart">
       ${gridLines.join('\n      ')}
@@ -124,7 +132,9 @@ export function createDonutChart(
   centerX: number,
   centerY: number,
   outerRadius: number,
-  innerRadius: number
+  innerRadius: number,
+  strokeColor: string = '#0d1117',
+  legendTextColor: string = '#c9d1d9'
 ): string {
   if (languages.length === 0) {
     return '<g class="donut-chart"></g>';
@@ -161,7 +171,7 @@ export function createDonutChart(
 
     currentAngle = endAngle;
 
-    return `<path d="${path}" style="fill: ${lang.color};" stroke="#0d1117" stroke-width="2px">
+    return `<path d="${path}" style="fill: ${lang.color};" stroke="${strokeColor}" stroke-width="2px">
       <title>${lang.name} ${lang.size}</title>
     </path>`;
   }).join('\n');
@@ -176,8 +186,8 @@ export function createDonutChart(
   const legend = languages.slice(0, 5).map((lang, index) => {
     const y = legendStartY + index * legendSpacing;
     return `
-      <rect x="${legendX}" y="${y}" width="${rectSize}" height="${rectSize}" fill="${lang.color}" stroke="#30363d" stroke-width="1px"/>
-      <text dominant-baseline="middle" x="${legendX + rectSize + 6}" y="${y + rectSize / 2}" fill="#c9d1d9" font-size="${legendFontSize}px" font-family="'Ubuntu', 'Helvetica', 'Arial', sans-serif">${lang.name}</text>
+      <rect x="${legendX}" y="${y}" width="${rectSize}" height="${rectSize}" fill="${lang.color}" stroke="${strokeColor}" stroke-width="1px"/>
+      <text dominant-baseline="middle" x="${legendX + rectSize + 6}" y="${y + rectSize / 2}" fill="${legendTextColor}" font-size="${legendFontSize}px" font-family="'Ubuntu', 'Helvetica', 'Arial', sans-serif">${lang.name}</text>
     `;
   }).join('\n');
 
