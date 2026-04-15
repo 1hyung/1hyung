@@ -277,8 +277,91 @@ export function createAppleTree(): DragonSprite {
   return { svg, width: 32, height: 44 };
 }
 
+// ──────────────────────────────────────────────────────
+// 플랫 그리드용 스프라이트 (1px = 1 SVG unit, 13×13 셀 기준)
+// ──────────────────────────────────────────────────────
+const fp = (x: number, y: number, color: string): string =>
+  `<rect x="${x}" y="${y}" width="1" height="1" fill="${color}"/>`;
+const fps = (coords: [number, number][], color: string): string =>
+  coords.map(([x, y]) => fp(x, y, color)).join('');
+
+/** Level 1 — 새싹 (Sprout) */
+export function createFlatSprout(): string {
+  const { sproutGreen, leafLight, sproutDark } = FARM_COLORS;
+  return `<g class="flat-sprout">
+    ${fp(6, 1, leafLight)}
+    ${fps([[5,2],[6,2],[7,2]], leafLight)}
+    ${fps([[4,3],[8,3]], sproutGreen)}
+    ${fps([[5,3],[7,3]], sproutDark)}
+    ${fp(6, 3, leafLight)}
+    ${fps([[6,4],[6,5],[6,6],[6,7],[6,8]], sproutGreen)}
+  </g>`;
+}
+
+/** Level 2 — 어린 묘목 (Sapling) */
+export function createFlatSapling(): string {
+  const { leafGreen, leafLight, leafDark, trunkBrown } = FARM_COLORS;
+  return `<g class="flat-sapling">
+    ${fp(6, 0, leafLight)}
+    ${fps([[5,1],[6,1],[7,1]], leafLight)}
+    ${fps([[4,2],[5,2],[6,2],[7,2],[8,2]], leafGreen)}
+    ${fps([[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3]], leafGreen)}
+    ${fps([[4,4],[5,4],[6,4],[7,4],[8,4]], leafDark)}
+    ${fps([[5,5],[6,5],[7,5]], leafDark)}
+    ${fps([[6,6],[6,7],[6,8]], trunkBrown)}
+  </g>`;
+}
+
+/** Level 3 — 나무 (Tree) */
+export function createFlatTree(): string {
+  const { leafGreen, leafLight, leafDark, leafMid, trunkBrown, trunkDark } = FARM_COLORS;
+  return `<g class="flat-tree">
+    ${fps([[4,0],[5,0],[6,0],[7,0],[8,0]], leafLight)}
+    ${fps([[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[9,1]], leafGreen)}
+    ${fps([[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[9,2],[10,2]], leafGreen)}
+    ${fps([[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3]], leafMid)}
+    ${fps([[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4]], leafMid)}
+    ${fps([[4,5],[5,5],[6,5],[7,5],[8,5]], leafDark)}
+    ${fps([[5,6],[6,6],[7,6]], trunkBrown)}
+    ${fps([[5,7],[6,7],[7,7]], trunkBrown)}
+    ${fp(6, 8, trunkDark)}
+  </g>`;
+}
+
+/** Level 4 — 사과나무 (Apple Tree) */
+export function createFlatAppleTree(): string {
+  const { leafGreen, leafLight, leafDark, leafMid, trunkBrown, trunkDark, appleRed, appleHighlight } = FARM_COLORS;
+  return `<g class="flat-apple-tree">
+    ${fps([[4,0],[5,0],[6,0],[7,0],[8,0]], leafLight)}
+    ${fps([[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[9,1]], leafGreen)}
+    ${fps([[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[9,2],[10,2]], leafGreen)}
+    ${fps([[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3]], leafMid)}
+    ${fps([[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4]], leafMid)}
+    ${fps([[4,5],[5,5],[6,5],[7,5],[8,5]], leafDark)}
+    ${fps([[5,6],[6,6],[7,6]], trunkBrown)}
+    ${fps([[5,7],[6,7],[7,7]], trunkBrown)}
+    ${fp(6, 8, trunkDark)}
+    ${fps([[4,2],[5,2]], appleRed)}
+    ${fp(4, 2, appleHighlight)}
+    ${fps([[9,2],[9,3]], appleRed)}
+    ${fps([[7,4],[7,5]], appleRed)}
+    ${fp(7, 4, appleHighlight)}
+  </g>`;
+}
+
+/** 레벨별 플랫 스프라이트 반환 */
+export function createFlatFarmSprite(level: DragonLevel): string {
+  switch (level) {
+    case 1: return createFlatSprout();
+    case 2: return createFlatSapling();
+    case 3: return createFlatTree();
+    case 4: return createFlatAppleTree();
+    default: return '';
+  }
+}
+
 /**
- * 레벨별 농장 스프라이트 반환
+ * 레벨별 농장 스프라이트 반환 (등각 투영용 - 호환성 유지)
  */
 export function createFarmSprite(level: DragonLevel): string {
   switch (level) {

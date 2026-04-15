@@ -50,5 +50,6 @@ jobs:
           git config user.email "dev.1hyung@gmail.com"
           git add farm-contrib/
           git commit -m "Update farm contribution visualization"
-          git pull --rebase origin main
+          git fetch origin main
+          git rebase -X ours origin/main
           git push

@@ -121,6 +121,70 @@ export function createIsometricGrid(
 }
 
 /**
+ * 플랫 그리드 생성 (농장 테마용 - 탑뷰 격자)
+ * 각 셀: 14×14px, 간격: 2px, 스텝: 16px
+ */
+export function createFlatGrid(
+  cells: GridCell[],
+  config: SVGConfig,
+  theme: Theme
+): string {
+  const cellSize = 14;
+  const cellGap = 2;
+  const cellStep = cellSize + cellGap; // 16px
+
+  // 최대 주(col) 수 계산
+  const numWeeks = cells.length > 0
+    ? Math.max(...cells.map(c => Math.floor(c.x))) + 1
+    : 53;
+
+  // 그리드 전체 너비 계산, 수평 중앙 정렬
+  const gridWidth = numWeeks * cellStep - cellGap;
+  const gridX = Math.round((config.width - gridWidth) / 2);
+  const gridY = 305; // 상단 농장 장식 영역 아래
+
+  // 행, 열 순서로 정렬
+  const sortedCells = [...cells].sort((a, b) => {
+    const rowDiff = Math.floor(a.y) - Math.floor(b.y);
+    if (rowDiff !== 0) return rowDiff;
+    return Math.floor(a.x) - Math.floor(b.x);
+  });
+
+  let svg = '<g id="farm-flat-grid">\n';
+
+  sortedCells.forEach(cell => {
+    const col = Math.floor(cell.x); // 주 인덱스
+    const row = Math.floor(cell.y); // 요일 인덱스
+
+    const cx = gridX + col * cellStep;
+    const cy = gridY + row * cellStep;
+
+    // 레벨에 따른 흙 배경색 (레벨 0은 어두운 흙, 1이상은 약간 밝게)
+    const bgColor = cell.level === 0 ? '#6b4423' : '#7a5232';
+    svg += `<rect x="${cx}" y="${cy}" width="${cellSize}" height="${cellSize}" fill="${bgColor}" rx="1"/>\n`;
+
+    // 상단/좌측 하이라이트
+    svg += `<rect x="${cx}" y="${cy}" width="${cellSize}" height="1" fill="#c87040" opacity="0.5"/>\n`;
+    svg += `<rect x="${cx}" y="${cy}" width="1" height="${cellSize}" fill="#c87040" opacity="0.5"/>\n`;
+
+    // 하단/우측 그림자
+    svg += `<rect x="${cx}" y="${cy + cellSize - 1}" width="${cellSize}" height="1" fill="#4a2f17" opacity="0.6"/>\n`;
+    svg += `<rect x="${cx + cellSize - 1}" y="${cy}" width="1" height="${cellSize}" fill="#4a2f17" opacity="0.6"/>\n`;
+
+    // 식물 스프라이트 (레벨 1 이상)
+    if (cell.level > 0 && theme.createFlatSprite) {
+      const sprite = theme.createFlatSprite(cell.level);
+      if (sprite) {
+        svg += `<g transform="translate(${cx}, ${cy})">${sprite}</g>\n`;
+      }
+    }
+  });
+
+  svg += '</g>';
+  return svg;
+}
+
+/**
  * 기존 함수 (하위 호환 유지 - 드래곤 테마 전용)
  */
 export function createIsometricDragonGrid(
