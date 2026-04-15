@@ -56,7 +56,7 @@ function createStatsSection(calendar: any, config: SVGConfig, theme: Theme): str
     const panelY = 425;
     return `
     <g id="stats-summary">
-      <rect x="${cx - 200}" y="${panelY}" width="400" height="58" fill="#1e4a10" rx="8" opacity="0.55"/>
+      <rect x="${cx - 200}" y="${panelY}" width="400" height="58" fill="${theme.colors.statsPanelColor}" rx="8" opacity="0.65"/>
       <text font-family="monospace" font-size="12" x="${cx}" y="${panelY + 19}" text-anchor="middle" fill="${theme.colors.statsDateColor}">${dateRange}</text>
       <text font-family="monospace" font-size="20" font-weight="bold" x="${cx}" y="${panelY + 46}" text-anchor="middle" fill="${theme.colors.statsTextColor}">${total} contributions</text>
     </g>

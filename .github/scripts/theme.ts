@@ -1,4 +1,4 @@
-// 테마 시스템: dragon | farm 전환 지원
+// 테마 시스템: dragon | farm | mountain 전환 지원
 
 import { SVGConfig, DragonLevel } from './types';
 import { createFlatFarmSprite } from './farm-sprites';
@@ -18,7 +18,12 @@ import { FARM_COLORS } from './farm-colors';
 import { createFarmFilters, createFarmBackground } from './farm-background';
 import { createFarmSprite, getFarmSpriteSize } from './farm-sprites';
 
-export type ThemeName = 'dragon' | 'farm';
+// 설산 테마 (신규)
+import { MOUNTAIN_COLORS } from './mountain-colors';
+import { createMountainFilters, createMountainBackground } from './mountain-background';
+import { createMountainSprite, getMountainSpriteSize } from './mountain-sprites';
+
+export type ThemeName = 'dragon' | 'farm' | 'mountain';
 
 export interface ThemeColors {
   titleColor: string;
@@ -31,6 +36,7 @@ export interface ThemeColors {
   statsLabelColor: string;
   statsDateColor: string;
   legendTextColor: string;
+  statsPanelColor: string;  // showCharts=false 시 통계 패널 배경색
 }
 
 export interface ThemeLayout {
@@ -112,6 +118,7 @@ function getDragonTheme(): Theme {
       statsLabelColor: '#8b949e',
       statsDateColor: '#484f58',
       legendTextColor: '#c9d1d9',
+      statsPanelColor: '#0d1117',
     },
     animationCSS: `
       @keyframes fadeIn {
@@ -169,6 +176,7 @@ function getFarmTheme(): Theme {
       statsLabelColor: FARM_COLORS.textLight,
       statsDateColor: FARM_COLORS.textLight,  // 어두운 패널 위에 밝은 색
       legendTextColor: FARM_COLORS.textDark,
+      statsPanelColor: '#1e4a10',
     },
     animationCSS: `
       @keyframes fadeIn {
@@ -199,12 +207,64 @@ function getFarmTheme(): Theme {
 }
 
 /**
+ * 설산 테마
+ */
+function getMountainTheme(): Theme {
+  return {
+    name: 'mountain',
+    title: "1hyung's Git Mountain",
+    gridStyle: 'isometric',
+    showCharts: false,
+    createBackground: createMountainBackground,
+    createFilters: createMountainFilters,
+    createSprite: createMountainSprite,
+    getSpriteSize: getMountainSpriteSize,
+    heightOffsets: [0, 4, 10, 16, 24],
+    level4FilterId: 'snowGlow',
+    renderLevel0: true,
+    colors: {
+      titleColor: MOUNTAIN_COLORS.titleColor,
+      subtitleColor: MOUNTAIN_COLORS.subtitleColor,
+      radarFillColor: '#4a80d8',
+      radarLabelColor: MOUNTAIN_COLORS.legendTextColor,
+      radarGridColor: '#2a3a5a',
+      donutStrokeColor: MOUNTAIN_COLORS.skyMid,
+      statsTextColor: MOUNTAIN_COLORS.statsTextColor,
+      statsLabelColor: MOUNTAIN_COLORS.statsLabelColor,
+      statsDateColor: MOUNTAIN_COLORS.statsDateColor,
+      legendTextColor: MOUNTAIN_COLORS.legendTextColor,
+      statsPanelColor: MOUNTAIN_COLORS.statsPanelColor,
+    },
+    animationCSS: `
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes snowGlow {
+        0%, 100% { filter: drop-shadow(0 0 3px #f0f4ff); }
+        50% { filter: drop-shadow(0 0 8px #f5c890); }
+      }
+      #isometric-dragon-grid {
+        animation: fadeIn 1.5s ease-in-out;
+      }
+    `,
+    layout: {
+      radarCx: 700, radarCy: 200, radarR: 110,
+      donutCx: 120, donutCy: 420, donutOuter: 75, donutInner: 42,
+    },
+    outputDir: 'mountain-contrib',
+    outputPrefix: 'mountain-contrib',
+  };
+}
+
+/**
  * 테마 이름으로 테마 객체 반환
  */
 export function getTheme(name: ThemeName): Theme {
   switch (name) {
-    case 'dragon': return getDragonTheme();
-    case 'farm': return getFarmTheme();
-    default: return getFarmTheme();
+    case 'dragon':   return getDragonTheme();
+    case 'farm':     return getFarmTheme();
+    case 'mountain': return getMountainTheme();
+    default:         return getFarmTheme();
   }
 }
