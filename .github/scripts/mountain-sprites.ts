@@ -44,14 +44,18 @@ const MC = {
 
 /**
  * Level 0: 평지 돌 타일 (W=20, H=14)
+ * 다이아몬드 높이 12px = cellHeight(12)와 완전 일치 → 타일 간 갭 없는 테셀레이션
+ * 외곽선(stroke)으로 등각 격자선 가시화 → 입체감 강화
  */
 function createFlatGround(): string {
   return `<g>
-    <polygon points="10,1 20,6 10,11 0,6" fill="${MC.tileTop}"/>
-    <polygon points="0,6 10,11 10,13 0,8" fill="${MC.tileLeft}"/>
-    <polygon points="10,11 20,6 20,8 10,13" fill="${MC.tileRight}"/>
-    <line x1="10" y1="1" x2="20" y2="6" stroke="${MC.tileLeft}" stroke-width="0.4" opacity="0.35"/>
-    <line x1="10" y1="1" x2="0" y2="6" stroke="${MC.tileLeft}" stroke-width="0.4" opacity="0.35"/>
+    <!-- 상면 다이아몬드 (12px 높이, stroke으로 격자선 표시) -->
+    <polygon points="10,1 20,7 10,13 0,7" fill="${MC.tileTop}"
+             stroke="#1c2d40" stroke-width="0.8"/>
+    <!-- 왼쪽 측면 (1px) -->
+    <polygon points="0,7 10,13 10,14 0,8" fill="${MC.tileLeft}"/>
+    <!-- 오른쪽 측면 (1px) -->
+    <polygon points="10,13 20,7 20,8 10,14" fill="${MC.tileRight}"/>
   </g>`;
 }
 
