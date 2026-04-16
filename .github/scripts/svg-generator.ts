@@ -156,6 +156,9 @@ export function generateSVG(
     ${gridSVG}
   </g>
 
+  <!-- 전경 장식 (그리드 위에 렌더링) -->
+  ${theme.createForeground ? theme.createForeground(effectiveConfig) : ''}
+
   <!-- 레이더 차트 (showCharts=true일 때만) -->
   ${theme.showCharts ? `
   <g>

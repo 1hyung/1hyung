@@ -141,7 +141,7 @@ export function createFlatGrid(
   // 그리드 전체 너비 계산, 수평 중앙 정렬
   const gridWidth = numWeeks * cellStep - cellGap;
   const gridX = Math.round((config.width - gridWidth) / 2);
-  const gridY = 305; // 상단 농장 장식 영역 아래
+  const gridY = theme.flatGridY ?? 305; // 테마별 Y 위치 (기본 305)
 
   // 행, 열 순서로 정렬
   const sortedCells = [...cells].sort((a, b) => {
