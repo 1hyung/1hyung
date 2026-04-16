@@ -284,52 +284,42 @@
     <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
-  <g transform="translate(147.0, 144.0)">
+  <g transform="translate(150.0, 162.0)">
     <g>
     <!-- 기저 타일 -->
-    <polygon points="18,39 28,45 18,50 8,45" fill="#6e8090"/>
-    <polygon points="8,45 18,50 18,52 8,47" fill="#3e5060"/>
-    <polygon points="18,50 28,45 28,47 18,52" fill="#90a8b8"/>
+    <polygon points="15,27 25,32 15,37 5,32" fill="#6e8090"/>
+    <polygon points="5,32 15,37 15,39 5,34" fill="#3e5060"/>
+    <polygon points="15,37 25,32 25,34 15,39" fill="#90a8b8"/>
 
-    <!-- 하부 초원 왼쪽 -->
-    <polygon points="18,50 8,45 10,33 18,39" fill="#3a5c2e"/>
-    <!-- 하부 초원 오른쪽 -->
-    <polygon points="18,39 26,33 28,45 18,50" fill="#588840"/>
-
-    <!-- 상부 풀 왼쪽 (짙은 초록) -->
-    <polygon points="18,39 10,33 12,23 14,11 18,3" fill="#284820"/>
-    <!-- 상부 풀 오른쪽 (중간 초록) -->
-    <polygon points="18,3 22,11 24,23 26,33 18,39" fill="#4a7830"/>
-
-    <!-- 정상 밝은 초록 하이라이트 -->
-    <polygon points="18,3 15,9 21,9" fill="#78b848" opacity="0.85"/>
-    <!-- 정상 둥근 처리 -->
-    <ellipse cx="18" cy="6" rx="4" ry="3" fill="#4a7830"/>
-    <ellipse cx="19" cy="5" rx="2.5" ry="2" fill="#78b848" opacity="0.7"/>
+    <!-- 언덕 왼쪽 — 베지어 (그늘), 정상 타원 수렴점으로 -->
+    <path d="M 15,37 L 5,32 Q 2,21 15,8 Z" fill="#7a6250"/>
+    <!-- 언덕 오른쪽 — 베지어 (빛) -->
+    <path d="M 15,8 Q 28,21 25,32 L 15,37 Z" fill="#ac8c6c"/>
+    <!-- 둥근 정상 돔 — 타원으로 뾰족한 끝 없애기 -->
+    <ellipse cx="15" cy="8" rx="8" ry="5.5" fill="#ac8c6c"/>
+    <!-- 정상 이끼 (약간의 초록 느낌) -->
+    <ellipse cx="14" cy="7" rx="5" ry="3.5" fill="#7a8858" opacity="0.32"/>
+    <!-- 정상 하이라이트 -->
+    <ellipse cx="16" cy="6" rx="4" ry="2.5" fill="#c8a880" opacity="0.72"/>
   </g>
   </g>
-  <g transform="translate(167.0, 144.0)">
+  <g transform="translate(170.0, 162.0)">
     <g>
     <!-- 기저 타일 -->
-    <polygon points="18,39 28,45 18,50 8,45" fill="#6e8090"/>
-    <polygon points="8,45 18,50 18,52 8,47" fill="#3e5060"/>
-    <polygon points="18,50 28,45 28,47 18,52" fill="#90a8b8"/>
+    <polygon points="15,27 25,32 15,37 5,32" fill="#6e8090"/>
+    <polygon points="5,32 15,37 15,39 5,34" fill="#3e5060"/>
+    <polygon points="15,37 25,32 25,34 15,39" fill="#90a8b8"/>
 
-    <!-- 하부 초원 왼쪽 -->
-    <polygon points="18,50 8,45 10,33 18,39" fill="#3a5c2e"/>
-    <!-- 하부 초원 오른쪽 -->
-    <polygon points="18,39 26,33 28,45 18,50" fill="#588840"/>
-
-    <!-- 상부 풀 왼쪽 (짙은 초록) -->
-    <polygon points="18,39 10,33 12,23 14,11 18,3" fill="#284820"/>
-    <!-- 상부 풀 오른쪽 (중간 초록) -->
-    <polygon points="18,3 22,11 24,23 26,33 18,39" fill="#4a7830"/>
-
-    <!-- 정상 밝은 초록 하이라이트 -->
-    <polygon points="18,3 15,9 21,9" fill="#78b848" opacity="0.85"/>
-    <!-- 정상 둥근 처리 -->
-    <ellipse cx="18" cy="6" rx="4" ry="3" fill="#4a7830"/>
-    <ellipse cx="19" cy="5" rx="2.5" ry="2" fill="#78b848" opacity="0.7"/>
+    <!-- 언덕 왼쪽 — 베지어 (그늘), 정상 타원 수렴점으로 -->
+    <path d="M 15,37 L 5,32 Q 2,21 15,8 Z" fill="#7a6250"/>
+    <!-- 언덕 오른쪽 — 베지어 (빛) -->
+    <path d="M 15,8 Q 28,21 25,32 L 15,37 Z" fill="#ac8c6c"/>
+    <!-- 둥근 정상 돔 — 타원으로 뾰족한 끝 없애기 -->
+    <ellipse cx="15" cy="8" rx="8" ry="5.5" fill="#ac8c6c"/>
+    <!-- 정상 이끼 (약간의 초록 느낌) -->
+    <ellipse cx="14" cy="7" rx="5" ry="3.5" fill="#7a8858" opacity="0.32"/>
+    <!-- 정상 하이라이트 -->
+    <ellipse cx="16" cy="6" rx="4" ry="2.5" fill="#c8a880" opacity="0.72"/>
   </g>
   </g>
   <g transform="translate(194.0, 178.0)">
@@ -463,23 +453,26 @@
     <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
-  <g transform="translate(150.0, 174.0)">
+  <g transform="translate(135.0, 208.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="15,27 25,32 15,37 5,32" fill="#6e8090"/>
-    <polygon points="5,32 15,37 15,39 5,34" fill="#3e5060"/>
-    <polygon points="15,37 25,32 25,34 15,39" fill="#90a8b8"/>
+    <polygon points="10,1 20,7 10,13 0,7" fill="#6e8090"
+             stroke="#1c2d40" stroke-width="0.8"/>
+    <polygon points="0,7 10,13 10,14 0,8" fill="#3e5060"/>
+    <polygon points="10,13 20,7 20,8 10,14" fill="#90a8b8"/>
+  </g>
+  </g>
+  <g transform="translate(154.0, 190.0)">
+    <g>
+    <!-- 나무 줄기 (그늘/빛 분할) -->
+    <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
+    <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
 
-    <!-- 언덕 왼쪽 — 베지어 (그늘), 정상 타원 수렴점으로 -->
-    <path d="M 15,37 L 5,32 Q 2,21 15,8 Z" fill="#7a6250"/>
-    <!-- 언덕 오른쪽 — 베지어 (빛) -->
-    <path d="M 15,8 Q 28,21 25,32 L 15,37 Z" fill="#ac8c6c"/>
-    <!-- 둥근 정상 돔 — 타원으로 뾰족한 끝 없애기 -->
-    <ellipse cx="15" cy="8" rx="8" ry="5.5" fill="#ac8c6c"/>
-    <!-- 정상 이끼 (약간의 초록 느낌) -->
-    <ellipse cx="14" cy="7" rx="5" ry="3.5" fill="#7a8858" opacity="0.32"/>
-    <!-- 정상 하이라이트 -->
-    <ellipse cx="16" cy="6" rx="4" ry="2.5" fill="#c8a880" opacity="0.72"/>
+    <!-- 수관 — 팜 나무 색상 레이어드 ellipse (leafDark 외곽→Green→Mid→Light 하이라이트) -->
+    <ellipse cx="11" cy="8" rx="8.5" ry="7.5" fill="#1d4a0d"/>
+    <ellipse cx="11" cy="8" rx="7.5" ry="6.5" fill="#2d6b18"/>
+    <ellipse cx="11" cy="8.5" rx="6" ry="5" fill="#4a8c30"/>
+    <ellipse cx="10" cy="6" rx="4.5" ry="3.5" fill="#6aae48"/>
+    <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
   <g transform="translate(174.0, 190.0)">
@@ -650,28 +643,23 @@
     <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
-  <g transform="translate(167.0, 168.0)">
+  <g transform="translate(170.0, 186.0)">
     <g>
     <!-- 기저 타일 -->
-    <polygon points="18,39 28,45 18,50 8,45" fill="#6e8090"/>
-    <polygon points="8,45 18,50 18,52 8,47" fill="#3e5060"/>
-    <polygon points="18,50 28,45 28,47 18,52" fill="#90a8b8"/>
+    <polygon points="15,27 25,32 15,37 5,32" fill="#6e8090"/>
+    <polygon points="5,32 15,37 15,39 5,34" fill="#3e5060"/>
+    <polygon points="15,37 25,32 25,34 15,39" fill="#90a8b8"/>
 
-    <!-- 하부 초원 왼쪽 -->
-    <polygon points="18,50 8,45 10,33 18,39" fill="#3a5c2e"/>
-    <!-- 하부 초원 오른쪽 -->
-    <polygon points="18,39 26,33 28,45 18,50" fill="#588840"/>
-
-    <!-- 상부 풀 왼쪽 (짙은 초록) -->
-    <polygon points="18,39 10,33 12,23 14,11 18,3" fill="#284820"/>
-    <!-- 상부 풀 오른쪽 (중간 초록) -->
-    <polygon points="18,3 22,11 24,23 26,33 18,39" fill="#4a7830"/>
-
-    <!-- 정상 밝은 초록 하이라이트 -->
-    <polygon points="18,3 15,9 21,9" fill="#78b848" opacity="0.85"/>
-    <!-- 정상 둥근 처리 -->
-    <ellipse cx="18" cy="6" rx="4" ry="3" fill="#4a7830"/>
-    <ellipse cx="19" cy="5" rx="2.5" ry="2" fill="#78b848" opacity="0.7"/>
+    <!-- 언덕 왼쪽 — 베지어 (그늘), 정상 타원 수렴점으로 -->
+    <path d="M 15,37 L 5,32 Q 2,21 15,8 Z" fill="#7a6250"/>
+    <!-- 언덕 오른쪽 — 베지어 (빛) -->
+    <path d="M 15,8 Q 28,21 25,32 L 15,37 Z" fill="#ac8c6c"/>
+    <!-- 둥근 정상 돔 — 타원으로 뾰족한 끝 없애기 -->
+    <ellipse cx="15" cy="8" rx="8" ry="5.5" fill="#ac8c6c"/>
+    <!-- 정상 이끼 (약간의 초록 느낌) -->
+    <ellipse cx="14" cy="7" rx="5" ry="3.5" fill="#7a8858" opacity="0.32"/>
+    <!-- 정상 하이라이트 -->
+    <ellipse cx="16" cy="6" rx="4" ry="2.5" fill="#c8a880" opacity="0.72"/>
   </g>
   </g>
   <g transform="translate(194.0, 202.0)">
@@ -4244,28 +4232,23 @@
     <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
-  <g transform="translate(607.0, 384.0)">
+  <g transform="translate(610.0, 402.0)">
     <g>
     <!-- 기저 타일 -->
-    <polygon points="18,39 28,45 18,50 8,45" fill="#6e8090"/>
-    <polygon points="8,45 18,50 18,52 8,47" fill="#3e5060"/>
-    <polygon points="18,50 28,45 28,47 18,52" fill="#90a8b8"/>
+    <polygon points="15,27 25,32 15,37 5,32" fill="#6e8090"/>
+    <polygon points="5,32 15,37 15,39 5,34" fill="#3e5060"/>
+    <polygon points="15,37 25,32 25,34 15,39" fill="#90a8b8"/>
 
-    <!-- 하부 초원 왼쪽 -->
-    <polygon points="18,50 8,45 10,33 18,39" fill="#3a5c2e"/>
-    <!-- 하부 초원 오른쪽 -->
-    <polygon points="18,39 26,33 28,45 18,50" fill="#588840"/>
-
-    <!-- 상부 풀 왼쪽 (짙은 초록) -->
-    <polygon points="18,39 10,33 12,23 14,11 18,3" fill="#284820"/>
-    <!-- 상부 풀 오른쪽 (중간 초록) -->
-    <polygon points="18,3 22,11 24,23 26,33 18,39" fill="#4a7830"/>
-
-    <!-- 정상 밝은 초록 하이라이트 -->
-    <polygon points="18,3 15,9 21,9" fill="#78b848" opacity="0.85"/>
-    <!-- 정상 둥근 처리 -->
-    <ellipse cx="18" cy="6" rx="4" ry="3" fill="#4a7830"/>
-    <ellipse cx="19" cy="5" rx="2.5" ry="2" fill="#78b848" opacity="0.7"/>
+    <!-- 언덕 왼쪽 — 베지어 (그늘), 정상 타원 수렴점으로 -->
+    <path d="M 15,37 L 5,32 Q 2,21 15,8 Z" fill="#7a6250"/>
+    <!-- 언덕 오른쪽 — 베지어 (빛) -->
+    <path d="M 15,8 Q 28,21 25,32 L 15,37 Z" fill="#ac8c6c"/>
+    <!-- 둥근 정상 돔 — 타원으로 뾰족한 끝 없애기 -->
+    <ellipse cx="15" cy="8" rx="8" ry="5.5" fill="#ac8c6c"/>
+    <!-- 정상 이끼 (약간의 초록 느낌) -->
+    <ellipse cx="14" cy="7" rx="5" ry="3.5" fill="#7a8858" opacity="0.32"/>
+    <!-- 정상 하이라이트 -->
+    <ellipse cx="16" cy="6" rx="4" ry="2.5" fill="#c8a880" opacity="0.72"/>
   </g>
   </g>
   <g transform="translate(504.0, 424.0)">
@@ -4338,23 +4321,18 @@
     <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
-  <g transform="translate(600.0, 408.0)">
+  <g transform="translate(604.0, 424.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="15,27 25,32 15,37 5,32" fill="#6e8090"/>
-    <polygon points="5,32 15,37 15,39 5,34" fill="#3e5060"/>
-    <polygon points="15,37 25,32 25,34 15,39" fill="#90a8b8"/>
+    <!-- 나무 줄기 (그늘/빛 분할) -->
+    <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
+    <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
 
-    <!-- 언덕 왼쪽 — 베지어 (그늘), 정상 타원 수렴점으로 -->
-    <path d="M 15,37 L 5,32 Q 2,21 15,8 Z" fill="#7a6250"/>
-    <!-- 언덕 오른쪽 — 베지어 (빛) -->
-    <path d="M 15,8 Q 28,21 25,32 L 15,37 Z" fill="#ac8c6c"/>
-    <!-- 둥근 정상 돔 — 타원으로 뾰족한 끝 없애기 -->
-    <ellipse cx="15" cy="8" rx="8" ry="5.5" fill="#ac8c6c"/>
-    <!-- 정상 이끼 (약간의 초록 느낌) -->
-    <ellipse cx="14" cy="7" rx="5" ry="3.5" fill="#7a8858" opacity="0.32"/>
-    <!-- 정상 하이라이트 -->
-    <ellipse cx="16" cy="6" rx="4" ry="2.5" fill="#c8a880" opacity="0.72"/>
+    <!-- 수관 — 팜 나무 색상 레이어드 ellipse (leafDark 외곽→Green→Mid→Light 하이라이트) -->
+    <ellipse cx="11" cy="8" rx="8.5" ry="7.5" fill="#1d4a0d"/>
+    <ellipse cx="11" cy="8" rx="7.5" ry="6.5" fill="#2d6b18"/>
+    <ellipse cx="11" cy="8.5" rx="6" ry="5" fill="#4a8c30"/>
+    <ellipse cx="10" cy="6" rx="4.5" ry="3.5" fill="#6aae48"/>
+    <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
   <g transform="translate(624.0, 424.0)">
@@ -4553,28 +4531,23 @@
     <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
-  <g transform="translate(637.0, 402.0)">
+  <g transform="translate(640.0, 420.0)">
     <g>
     <!-- 기저 타일 -->
-    <polygon points="18,39 28,45 18,50 8,45" fill="#6e8090"/>
-    <polygon points="8,45 18,50 18,52 8,47" fill="#3e5060"/>
-    <polygon points="18,50 28,45 28,47 18,52" fill="#90a8b8"/>
+    <polygon points="15,27 25,32 15,37 5,32" fill="#6e8090"/>
+    <polygon points="5,32 15,37 15,39 5,34" fill="#3e5060"/>
+    <polygon points="15,37 25,32 25,34 15,39" fill="#90a8b8"/>
 
-    <!-- 하부 초원 왼쪽 -->
-    <polygon points="18,50 8,45 10,33 18,39" fill="#3a5c2e"/>
-    <!-- 하부 초원 오른쪽 -->
-    <polygon points="18,39 26,33 28,45 18,50" fill="#588840"/>
-
-    <!-- 상부 풀 왼쪽 (짙은 초록) -->
-    <polygon points="18,39 10,33 12,23 14,11 18,3" fill="#284820"/>
-    <!-- 상부 풀 오른쪽 (중간 초록) -->
-    <polygon points="18,3 22,11 24,23 26,33 18,39" fill="#4a7830"/>
-
-    <!-- 정상 밝은 초록 하이라이트 -->
-    <polygon points="18,3 15,9 21,9" fill="#78b848" opacity="0.85"/>
-    <!-- 정상 둥근 처리 -->
-    <ellipse cx="18" cy="6" rx="4" ry="3" fill="#4a7830"/>
-    <ellipse cx="19" cy="5" rx="2.5" ry="2" fill="#78b848" opacity="0.7"/>
+    <!-- 언덕 왼쪽 — 베지어 (그늘), 정상 타원 수렴점으로 -->
+    <path d="M 15,37 L 5,32 Q 2,21 15,8 Z" fill="#7a6250"/>
+    <!-- 언덕 오른쪽 — 베지어 (빛) -->
+    <path d="M 15,8 Q 28,21 25,32 L 15,37 Z" fill="#ac8c6c"/>
+    <!-- 둥근 정상 돔 — 타원으로 뾰족한 끝 없애기 -->
+    <ellipse cx="15" cy="8" rx="8" ry="5.5" fill="#ac8c6c"/>
+    <!-- 정상 이끼 (약간의 초록 느낌) -->
+    <ellipse cx="14" cy="7" rx="5" ry="3.5" fill="#7a8858" opacity="0.32"/>
+    <!-- 정상 하이라이트 -->
+    <ellipse cx="16" cy="6" rx="4" ry="2.5" fill="#c8a880" opacity="0.72"/>
   </g>
   </g>
   <g transform="translate(534.0, 442.0)">
@@ -4703,23 +4676,18 @@
     <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
-  <g transform="translate(580.0, 432.0)">
+  <g transform="translate(584.0, 448.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="15,27 25,32 15,37 5,32" fill="#6e8090"/>
-    <polygon points="5,32 15,37 15,39 5,34" fill="#3e5060"/>
-    <polygon points="15,37 25,32 25,34 15,39" fill="#90a8b8"/>
+    <!-- 나무 줄기 (그늘/빛 분할) -->
+    <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
+    <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
 
-    <!-- 언덕 왼쪽 — 베지어 (그늘), 정상 타원 수렴점으로 -->
-    <path d="M 15,37 L 5,32 Q 2,21 15,8 Z" fill="#7a6250"/>
-    <!-- 언덕 오른쪽 — 베지어 (빛) -->
-    <path d="M 15,8 Q 28,21 25,32 L 15,37 Z" fill="#ac8c6c"/>
-    <!-- 둥근 정상 돔 — 타원으로 뾰족한 끝 없애기 -->
-    <ellipse cx="15" cy="8" rx="8" ry="5.5" fill="#ac8c6c"/>
-    <!-- 정상 이끼 (약간의 초록 느낌) -->
-    <ellipse cx="14" cy="7" rx="5" ry="3.5" fill="#7a8858" opacity="0.32"/>
-    <!-- 정상 하이라이트 -->
-    <ellipse cx="16" cy="6" rx="4" ry="2.5" fill="#c8a880" opacity="0.72"/>
+    <!-- 수관 — 팜 나무 색상 레이어드 ellipse (leafDark 외곽→Green→Mid→Light 하이라이트) -->
+    <ellipse cx="11" cy="8" rx="8.5" ry="7.5" fill="#1d4a0d"/>
+    <ellipse cx="11" cy="8" rx="7.5" ry="6.5" fill="#2d6b18"/>
+    <ellipse cx="11" cy="8.5" rx="6" ry="5" fill="#4a8c30"/>
+    <ellipse cx="10" cy="6" rx="4.5" ry="3.5" fill="#6aae48"/>
+    <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
   <g transform="translate(604.0, 448.0)">
@@ -4792,28 +4760,23 @@
     <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
-  <g transform="translate(567.0, 420.0)">
+  <g transform="translate(570.0, 438.0)">
     <g>
     <!-- 기저 타일 -->
-    <polygon points="18,39 28,45 18,50 8,45" fill="#6e8090"/>
-    <polygon points="8,45 18,50 18,52 8,47" fill="#3e5060"/>
-    <polygon points="18,50 28,45 28,47 18,52" fill="#90a8b8"/>
+    <polygon points="15,27 25,32 15,37 5,32" fill="#6e8090"/>
+    <polygon points="5,32 15,37 15,39 5,34" fill="#3e5060"/>
+    <polygon points="15,37 25,32 25,34 15,39" fill="#90a8b8"/>
 
-    <!-- 하부 초원 왼쪽 -->
-    <polygon points="18,50 8,45 10,33 18,39" fill="#3a5c2e"/>
-    <!-- 하부 초원 오른쪽 -->
-    <polygon points="18,39 26,33 28,45 18,50" fill="#588840"/>
-
-    <!-- 상부 풀 왼쪽 (짙은 초록) -->
-    <polygon points="18,39 10,33 12,23 14,11 18,3" fill="#284820"/>
-    <!-- 상부 풀 오른쪽 (중간 초록) -->
-    <polygon points="18,3 22,11 24,23 26,33 18,39" fill="#4a7830"/>
-
-    <!-- 정상 밝은 초록 하이라이트 -->
-    <polygon points="18,3 15,9 21,9" fill="#78b848" opacity="0.85"/>
-    <!-- 정상 둥근 처리 -->
-    <ellipse cx="18" cy="6" rx="4" ry="3" fill="#4a7830"/>
-    <ellipse cx="19" cy="5" rx="2.5" ry="2" fill="#78b848" opacity="0.7"/>
+    <!-- 언덕 왼쪽 — 베지어 (그늘), 정상 타원 수렴점으로 -->
+    <path d="M 15,37 L 5,32 Q 2,21 15,8 Z" fill="#7a6250"/>
+    <!-- 언덕 오른쪽 — 베지어 (빛) -->
+    <path d="M 15,8 Q 28,21 25,32 L 15,37 Z" fill="#ac8c6c"/>
+    <!-- 둥근 정상 돔 — 타원으로 뾰족한 끝 없애기 -->
+    <ellipse cx="15" cy="8" rx="8" ry="5.5" fill="#ac8c6c"/>
+    <!-- 정상 이끼 (약간의 초록 느낌) -->
+    <ellipse cx="14" cy="7" rx="5" ry="3.5" fill="#7a8858" opacity="0.32"/>
+    <!-- 정상 하이라이트 -->
+    <ellipse cx="16" cy="6" rx="4" ry="2.5" fill="#c8a880" opacity="0.72"/>
   </g>
   </g>
   <g transform="translate(594.0, 454.0)">
@@ -4886,23 +4849,18 @@
     <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
-  <g transform="translate(560.0, 444.0)">
+  <g transform="translate(564.0, 460.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="15,27 25,32 15,37 5,32" fill="#6e8090"/>
-    <polygon points="5,32 15,37 15,39 5,34" fill="#3e5060"/>
-    <polygon points="15,37 25,32 25,34 15,39" fill="#90a8b8"/>
+    <!-- 나무 줄기 (그늘/빛 분할) -->
+    <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
+    <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
 
-    <!-- 언덕 왼쪽 — 베지어 (그늘), 정상 타원 수렴점으로 -->
-    <path d="M 15,37 L 5,32 Q 2,21 15,8 Z" fill="#7a6250"/>
-    <!-- 언덕 오른쪽 — 베지어 (빛) -->
-    <path d="M 15,8 Q 28,21 25,32 L 15,37 Z" fill="#ac8c6c"/>
-    <!-- 둥근 정상 돔 — 타원으로 뾰족한 끝 없애기 -->
-    <ellipse cx="15" cy="8" rx="8" ry="5.5" fill="#ac8c6c"/>
-    <!-- 정상 이끼 (약간의 초록 느낌) -->
-    <ellipse cx="14" cy="7" rx="5" ry="3.5" fill="#7a8858" opacity="0.32"/>
-    <!-- 정상 하이라이트 -->
-    <ellipse cx="16" cy="6" rx="4" ry="2.5" fill="#c8a880" opacity="0.72"/>
+    <!-- 수관 — 팜 나무 색상 레이어드 ellipse (leafDark 외곽→Green→Mid→Light 하이라이트) -->
+    <ellipse cx="11" cy="8" rx="8.5" ry="7.5" fill="#1d4a0d"/>
+    <ellipse cx="11" cy="8" rx="7.5" ry="6.5" fill="#2d6b18"/>
+    <ellipse cx="11" cy="8.5" rx="6" ry="5" fill="#4a8c30"/>
+    <ellipse cx="10" cy="6" rx="4.5" ry="3.5" fill="#6aae48"/>
+    <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
   <g transform="translate(584.0, 460.0)">
@@ -5491,8 +5449,8 @@
   
     <g id="stats-summary">
       <rect x="225" y="548" width="400" height="58" fill="#0d1b38" rx="8" opacity="0.65"/>
-      <text font-family="monospace" font-size="12" x="425" y="567" text-anchor="middle" fill="#6a90b8">2025-04-13 / 2026-04-16</text>
-      <text font-family="monospace" font-size="20" font-weight="bold" x="425" y="594" text-anchor="middle" fill="#f0f4ff">966 contributions</text>
+      <text font-family="monospace" font-size="12" x="425" y="567" text-anchor="middle" fill="#6a90b8">2025-04-13 / 2026-04-17</text>
+      <text font-family="monospace" font-size="20" font-weight="bold" x="425" y="594" text-anchor="middle" fill="#f0f4ff">1,009 contributions</text>
     </g>
   
 </svg>
