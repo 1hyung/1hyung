@@ -235,13 +235,13 @@ export function createIsometricDragonGrid(
 // 그리드 셀 데이터 생성 (주별 데이터를 등각 투영용으로 변환)
 export function createGridCells(
   weeks: any[],
-  contributionLevelToNumber: (level: string) => DragonLevel
+  contributionLevelToNumber: (level: string, count: number) => DragonLevel
 ): GridCell[] {
   const cells: GridCell[] = [];
 
   weeks.forEach((week, weekIndex) => {
     week.contributionDays.forEach((day: any, dayIndex: number) => {
-      const level = contributionLevelToNumber(day.contributionLevel);
+      const level = contributionLevelToNumber(day.contributionLevel, day.contributionCount);
 
       cells.push({
         x: weekIndex, // col
