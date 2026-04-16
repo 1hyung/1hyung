@@ -1,6 +1,6 @@
-<!-- Farm Header (메인 헤더) -->
+<!-- Mountain Header (메인 헤더) -->
 <p align="center">
-  <img src="./assets/farm-header.svg" width="100%" alt="1hyung's Git Farm"/>
+  <img src="./assets/mountain-header.svg" width="100%" alt="1hyung's Git Mountain"/>
 </p>
 
 <!-- Section Divider -->
