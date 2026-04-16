@@ -1,4 +1,4 @@
-name: Mountain Contribution Generator
+name: Heungbu Contribution Generator
 
 on:
   schedule:
@@ -15,7 +15,7 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    name: Generate Mountain Contribution SVG
+    name: Generate Heungbu Contribution SVG
 
     steps:
       - name: Checkout repository
@@ -30,26 +30,26 @@ jobs:
         working-directory: .github/scripts
         run: npm install
 
-      - name: Generate Mountain Contribution SVG
+      - name: Generate Heungbu Contribution SVG
         working-directory: .github/scripts
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           USERNAME: ${{ github.repository_owner }}
-          THEME: mountain
+          THEME: heungbu
         run: npx ts-node generate-dragon.ts
 
       - name: Check for changes
         id: changes
         run: |
-          git status --porcelain mountain-contrib/ | grep -q . && echo "changes=true" >> $GITHUB_OUTPUT || true
+          git status --porcelain heungbu-contrib/ | grep -q . && echo "changes=true" >> $GITHUB_OUTPUT || true
 
       - name: Commit and Push
         if: steps.changes.outputs.changes == 'true'
         run: |
           git config user.name "1hyung"
           git config user.email "dev.1hyung@gmail.com"
-          git add mountain-contrib/
-          git commit -m "Update mountain contribution visualization"
+          git add heungbu-contrib/
+          git commit -m "Update heungbu contribution visualization"
           git fetch origin main
           git rebase -X ours origin/main
           git push
