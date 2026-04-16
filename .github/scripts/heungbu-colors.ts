@@ -22,13 +22,13 @@ export const HEUNGBU_COLORS = {
   leafVeryDark: '#2A5A16',
   vineGreen:    '#4A8A30',
 
-  // 박 (황금 호박형 — 레퍼런스 이미지 기준 주황/황금색)
-  gourdHighlight: '#F8D870',
-  gourdLight:     '#F0B840',
-  gourdMid:       '#D09020',
-  gourdDark:      '#A87010',
+  // 박 (golden yellow — 전통 박/호리병)
+  gourdHighlight: '#F8F0A0',
+  gourdLight:     '#EACF48',
+  gourdMid:       '#D4AF28',
+  gourdDark:      '#A88818',
   gourdStem:      '#3A6010',
-  gourdRidge:     '#C07818',   // 박 주름선
+  gourdRidge:     '#B89820',   // 박 주름선
 
   // 배경 하늘
   skyTop:    '#5AA8D8',
