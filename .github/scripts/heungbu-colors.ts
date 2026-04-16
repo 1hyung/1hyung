@@ -1,42 +1,63 @@
 // 흥부네 커밋 — 한국 전통 초가집 박 테마 색상 팔레트
 
 export const HEUNGBU_COLORS = {
-  // 초가 (볏짚)
-  strawLight:    '#f0d880',   // 밝은 볏짚
-  strawMid:      '#d4a853',   // 중간 볏짚 (기본 셀)
-  strawDark:     '#c4983e',   // 어두운 볏짚 (level 0 셀)
-  strawShadow:   '#8a6020',   // 그림자 볏짚 (셀 하단 테두리)
-  strawHighlight:'#e8c870',   // 하이라이트 볏짚 (셀 상단 테두리)
+  // 볏짚 단계별 (기여도 레벨 0~4)
+  strawLevel0:   '#EAD898',   // 빈 칸 — 창백한 밀짚
+  strawLevel1:   '#D4B048',   // 레벨 1 — 연한 황금빛
+  strawLevel2:   '#C09838',   // 레벨 2 — 중간 황금빛
+  strawLevel3:   '#A87828',   // 레벨 3 — 진한 황금빛
+  strawLevel4:   '#8E6018',   // 레벨 4 — 짙은 호박빛
+  strawHighlight:'#F0E0A0',   // 볏짚 섬유 밝은 선
+  strawShadow:   '#6A4810',   // 볏짚 묶음 하단 그림자
+
+  // 볏짚 UI alias (처마/처마 장식용)
+  strawLight:    '#F0D880',
+  strawMid:      '#D4A853',
+  strawDark:     '#C4983E',
 
   // 덩굴/잎
-  leafLight:    '#90d060',
-  leafMid:      '#5a9e3a',
-  leafDark:     '#3d7a22',
-  leafVeryDark: '#2a5a16',
-  vineGreen:    '#4a8a30',
+  leafLight:    '#90D060',
+  leafMid:      '#5A9E3A',
+  leafDark:     '#3D7A22',
+  leafVeryDark: '#2A5A16',
+  vineGreen:    '#4A8A30',
 
-  // 박 (박 고동색 꼭지 + 연노란 몸통)
-  gourdHighlight: '#f8f0b0',
-  gourdLight:     '#e8d890',
-  gourdMid:       '#c8b860',
-  gourdDark:      '#a89848',
-  gourdStem:      '#5a7820',
+  // 박 (황금 호박형 — 레퍼런스 이미지 기준 주황/황금색)
+  gourdHighlight: '#F8D870',
+  gourdLight:     '#F0B840',
+  gourdMid:       '#D09020',
+  gourdDark:      '#A87010',
+  gourdStem:      '#3A6010',
+  gourdRidge:     '#C07818',   // 박 주름선
 
   // 배경 하늘
-  skyTop:    '#4a98c8',
-  skyMid:    '#70b8e0',
-  skyBottom: '#a8d8f0',
+  skyTop:    '#5AA8D8',
+  skyMid:    '#78C0E8',
+  skyBottom: '#B8DCF0',
 
-  // 언덕/땅
-  hillFar:    '#3a7020',
-  hillMid:    '#4a8030',
-  hillNear:   '#5a9e3a',
-  groundGreen:'#6ab840',
+  // 땅 / 언덕
+  groundGreen: '#5AB828',
+  groundEdge:  '#4A9820',
+  hillFar:     '#3A7020',
+  hillMid:     '#4A8030',
+
+  // 대나무 (통계 패널 테두리)
+  bambooGreen: '#5A7830',
+  bambooLight: '#7A9840',
+  bambooJoint: '#3A5820',
+
+  // 닭
+  chickenBody:  '#C85828',
+  chickenDark:  '#A03820',
+  chickenBeak:  '#D4A030',
+  chickenComb:  '#C02820',
+  chickenLeg:   '#C09030',
 
   // UI
-  titleColor:     '#f8e8c0',
-  textLight:      '#f0ddb0',
-  statsPanelColor:'#6a4420',
-  statsTextColor: '#f8e8c0',
-  statsDateColor: '#d0b870',
+  titleColor:     '#F8E8C0',
+  textLight:      '#F0DDB0',
+  statsPanelColor:'#7A5030',
+  statsTextColor: '#F8E8C0',
+  statsDateColor: '#D0B870',
+  hillNear:       '#5A9E3A',
 } as const;

@@ -308,12 +308,13 @@ function getHeungbuTheme(): Theme {
     flatGridY: 140,
     statsPanelY: 338,
     flatCellStyle: {
-      bg0:              HEUNGBU_COLORS.strawDark,      // 빈 초가 (더 어두운 볏짚)
-      bgN:              HEUNGBU_COLORS.strawMid,       // 활성 초가
-      highlight:        HEUNGBU_COLORS.strawHighlight, // 상단/좌측 밝은 볏짚
-      shadow:           HEUNGBU_COLORS.strawShadow,    // 하단/우측 그림자
-      highlightOpacity: '0.6',
-      shadowOpacity:    '0.5',
+      // 스프라이트가 셀 배경 전체를 그리므로 베이스 색은 중간값
+      bg0:              HEUNGBU_COLORS.strawLevel0,
+      bgN:              HEUNGBU_COLORS.strawLevel2,
+      highlight:        HEUNGBU_COLORS.strawHighlight,
+      shadow:           HEUNGBU_COLORS.strawShadow,
+      highlightOpacity: '0',   // 스프라이트 내부에서 처리
+      shadowOpacity:    '0',
     },
     heightOffsets: [0, 3, 8, 12, 18],
     level4FilterId: 'heungbuGlow',
