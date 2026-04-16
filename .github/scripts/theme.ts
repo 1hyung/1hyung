@@ -1,4 +1,4 @@
-// 테마 시스템: dragon | farm | mountain 전환 지원
+// 테마 시스템: dragon | farm | mountain | heungbu 전환 지원
 
 import { SVGConfig, DragonLevel } from './types';
 import { createFlatFarmSprite } from './farm-sprites';
@@ -23,7 +23,12 @@ import { MOUNTAIN_COLORS } from './mountain-colors';
 import { createMountainFilters, createMountainBackground } from './mountain-background';
 import { createMountainSprite, getMountainSpriteSize } from './mountain-sprites';
 
-export type ThemeName = 'dragon' | 'farm' | 'mountain';
+// 흥부네 커밋 테마 (신규)
+import { HEUNGBU_COLORS } from './heungbu-colors';
+import { createHeungbuFilters, createHeungbuBackground } from './heungbu-background';
+import { createFlatHeungbuSprite, createHeungbuSprite, getHeungbuSpriteSize } from './heungbu-sprites';
+
+export type ThemeName = 'dragon' | 'farm' | 'mountain' | 'heungbu';
 
 export interface ThemeColors {
   titleColor: string;
@@ -49,6 +54,16 @@ export interface ThemeLayout {
   donutInner: number;
 }
 
+/** flat grid 셀 배경/테두리 색상 오버라이드 (미설정 시 기본 흙색 사용) */
+export interface FlatCellStyle {
+  bg0: string;              // level 0 셀 배경색
+  bgN: string;              // level 1+ 셀 배경색
+  highlight: string;        // 상단/좌측 하이라이트 색
+  shadow: string;           // 하단/우측 그림자 색
+  highlightOpacity?: string; // 기본 "0.5"
+  shadowOpacity?: string;    // 기본 "0.6"
+}
+
 export interface Theme {
   name: ThemeName;
   title: string;
@@ -63,6 +78,7 @@ export interface Theme {
   createSprite: (level: DragonLevel) => string;
   getSpriteSize: (level: DragonLevel) => { width: number; height: number };
   createFlatSprite?: (level: DragonLevel) => string;
+  flatCellStyle?: FlatCellStyle; // flat grid 셀 색상 (미설정 시 흙색 기본값)
   heightOffsets: number[];
   level4FilterId: string;
   renderLevel0: boolean;
@@ -272,6 +288,67 @@ function getMountainTheme(): Theme {
 }
 
 /**
+ * 흥부네 커밋 테마 — 초가집 박 수확
+ */
+function getHeungbuTheme(): Theme {
+  return {
+    name: 'heungbu',
+    title: "1hyung's Commits",
+    gridStyle: 'flat',
+    showCharts: false,
+    showHeader: false,           // 타이틀은 배경에 포함
+    createBackground: createHeungbuBackground,
+    createFilters: createHeungbuFilters,
+    createSprite: createHeungbuSprite,
+    getSpriteSize: getHeungbuSpriteSize,
+    createFlatSprite: createFlatHeungbuSprite,
+    flatCellStyle: {
+      bg0:              HEUNGBU_COLORS.strawDark,      // 빈 초가 (더 어두운 볏짚)
+      bgN:              HEUNGBU_COLORS.strawMid,       // 활성 초가
+      highlight:        HEUNGBU_COLORS.strawHighlight, // 상단/좌측 밝은 볏짚
+      shadow:           HEUNGBU_COLORS.strawShadow,    // 하단/우측 그림자
+      highlightOpacity: '0.6',
+      shadowOpacity:    '0.5',
+    },
+    heightOffsets: [0, 3, 8, 12, 18],
+    level4FilterId: 'heungbuGlow',
+    renderLevel0: true,
+    colors: {
+      titleColor:     HEUNGBU_COLORS.titleColor,
+      subtitleColor:  HEUNGBU_COLORS.titleColor,
+      radarFillColor:   '#c8a030',
+      radarLabelColor:  HEUNGBU_COLORS.titleColor,
+      radarGridColor:   '#5a7820',
+      donutStrokeColor: HEUNGBU_COLORS.hillNear,
+      statsTextColor:   HEUNGBU_COLORS.statsTextColor,
+      statsLabelColor:  HEUNGBU_COLORS.textLight,
+      statsDateColor:   HEUNGBU_COLORS.statsDateColor,
+      legendTextColor:  HEUNGBU_COLORS.titleColor,
+      statsPanelColor:  HEUNGBU_COLORS.statsPanelColor,
+    },
+    animationCSS: `
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+      @keyframes heungbuGlow {
+        0%, 100% { filter: drop-shadow(0 0 3px ${HEUNGBU_COLORS.gourdLight}); }
+        50%       { filter: drop-shadow(0 0 7px ${HEUNGBU_COLORS.gourdHighlight}); }
+      }
+      #farm-flat-grid {
+        animation: fadeIn 1.5s ease-in-out;
+      }
+    `,
+    layout: {
+      radarCx: 685, radarCy: 340, radarR: 100,
+      donutCx: 145, donutCy: 340, donutOuter: 80, donutInner: 45,
+    },
+    outputDir: 'heungbu-contrib',
+    outputPrefix: 'heungbu-contrib',
+  };
+}
+
+/**
  * 테마 이름으로 테마 객체 반환
  */
 export function getTheme(name: ThemeName): Theme {
@@ -279,6 +356,7 @@ export function getTheme(name: ThemeName): Theme {
     case 'dragon':   return getDragonTheme();
     case 'farm':     return getFarmTheme();
     case 'mountain': return getMountainTheme();
-    default:         return getFarmTheme();
+    case 'heungbu':  return getHeungbuTheme();
+    default:         return getHeungbuTheme();
   }
 }
