@@ -233,7 +233,7 @@ function getMountainTheme(): Theme {
     createFilters: createMountainFilters,
     createSprite: createMountainSprite,
     getSpriteSize: getMountainSpriteSize,
-    heightOffsets: [0, 4, 10, 16, 24],
+    heightOffsets: [0, 8, 12, 15, 18],
     level4FilterId: 'snowGlow',
     renderLevel0: true,
     colors: {
