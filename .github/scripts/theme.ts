@@ -233,7 +233,7 @@ function getMountainTheme(): Theme {
     createFilters: createMountainFilters,
     createSprite: createMountainSprite,
     getSpriteSize: getMountainSpriteSize,
-    heightOffsets: [0, 18, 8, 12, 18],  // [L0=평지, L1=나무(18), L2=민둥산(8), L3=풀산(12), L4=설산(18)]
+    heightOffsets: [0, 10, 20, 32, 46],  // [L0=평지, L1=나무(10), L2=민둥산(20), L3=풀산(32), L4=설산(46)]
     level4FilterId: 'snowGlow',
     renderLevel0: true,
     colors: {
