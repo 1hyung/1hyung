@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 112" width="850" height="112">
+  <rect width="850" height="112" fill="#0d1b38" rx="4"/>
+  <rect width="850" height="112" fill="none" stroke="#2a3d5a" stroke-width="1.5" rx="4"/>
+  
+  <rect x="19" y="5" width="156" height="102"
+        fill="#112040" stroke="#2a4060" stroke-width="1" rx="3"/>
+  <text x="97" y="17" text-anchor="middle"
+        font-family="monospace" font-size="9" fill="#c0d4f0" opacity="0.65">Lv.0</text>
+  <g transform="translate(72.0,35.5) scale(2.500)"><g>
+    <polygon points="10,1 20,7 10,13 0,7" fill="#6e8090"
+             stroke="#1c2d40" stroke-width="0.8"/>
+    <polygon points="0,7 10,13 10,14 0,8" fill="#3e5060"/>
+    <polygon points="10,13 20,7 20,8 10,14" fill="#90a8b8"/>
+  </g></g>
+  <text x="97" y="98" text-anchor="middle"
+        font-family="monospace" font-size="8" fill="#6888b0">빈 땅</text>
+  <rect x="183" y="5" width="156" height="102"
+        fill="#112040" stroke="#2a4060" stroke-width="1" rx="3"/>
+  <text x="261" y="17" text-anchor="middle"
+        font-family="monospace" font-size="9" fill="#c0d4f0" opacity="0.65">Lv.1</text>
+  <g transform="translate(238.3,22.0) scale(2.067)"><g>
+    <!-- 기저 타일 -->
+    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
+             stroke="#1c2d40" stroke-width="0.6"/>
+    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
+    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
+
+    <!-- 나무 줄기 (그늘/빛 분할) -->
+    <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
+    <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
+
+    <!-- 수관 — 팜 나무 색상 레이어드 ellipse (leafDark 외곽→Green→Mid→Light 하이라이트) -->
+    <ellipse cx="11" cy="8" rx="8.5" ry="7.5" fill="#1d4a0d"/>
+    <ellipse cx="11" cy="8" rx="7.5" ry="6.5" fill="#2d6b18"/>
+    <ellipse cx="11" cy="8.5" rx="6" ry="5" fill="#4a8c30"/>
+    <ellipse cx="10" cy="6" rx="4.5" ry="3.5" fill="#6aae48"/>
+    <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
+  </g></g>
+  <text x="261" y="98" text-anchor="middle"
+        font-family="monospace" font-size="8" fill="#6888b0">소형 나무</text>
+  <rect x="347" y="5" width="156" height="102"
+        fill="#112040" stroke="#2a4060" stroke-width="1" rx="3"/>
+  <text x="425" y="17" text-anchor="middle"
+        font-family="monospace" font-size="9" fill="#c0d4f0" opacity="0.65">Lv.2</text>
+  <g transform="translate(402.9,22.0) scale(1.476)"><g>
+    <!-- 기저 타일 -->
+    <polygon points="15,27 25,32 15,37 5,32" fill="#6e8090"/>
+    <polygon points="5,32 15,37 15,39 5,34" fill="#3e5060"/>
+    <polygon points="15,37 25,32 25,34 15,39" fill="#90a8b8"/>
+
+    <!-- 언덕 왼쪽 — 베지어 (그늘), 정상 타원 수렴점으로 -->
+    <path d="M 15,37 L 5,32 Q 2,21 15,8 Z" fill="#7a6250"/>
+    <!-- 언덕 오른쪽 — 베지어 (빛) -->
+    <path d="M 15,8 Q 28,21 25,32 L 15,37 Z" fill="#ac8c6c"/>
+    <!-- 둥근 정상 돔 — 타원으로 뾰족한 끝 없애기 -->
+    <ellipse cx="15" cy="8" rx="8" ry="5.5" fill="#ac8c6c"/>
+    <!-- 정상 이끼 (약간의 초록 느낌) -->
+    <ellipse cx="14" cy="7" rx="5" ry="3.5" fill="#7a8858" opacity="0.32"/>
+    <!-- 정상 하이라이트 -->
+    <ellipse cx="16" cy="6" rx="4" ry="2.5" fill="#c8a880" opacity="0.72"/>
+  </g></g>
+  <text x="425" y="98" text-anchor="middle"
+        font-family="monospace" font-size="8" fill="#6888b0">민둥산</text>
+  <rect x="511" y="5" width="156" height="102"
+        fill="#112040" stroke="#2a4060" stroke-width="1" rx="3"/>
+  <text x="589" y="17" text-anchor="middle"
+        font-family="monospace" font-size="9" fill="#c0d4f0" opacity="0.65">Lv.3</text>
+  <g transform="translate(568.3,22.0) scale(1.148)"><g>
+    <!-- 기저 타일 -->
+    <polygon points="18,39 28,45 18,50 8,45" fill="#6e8090"/>
+    <polygon points="8,45 18,50 18,52 8,47" fill="#3e5060"/>
+    <polygon points="18,50 28,45 28,47 18,52" fill="#90a8b8"/>
+
+    <!-- 하부 초원 왼쪽 -->
+    <polygon points="18,50 8,45 10,33 18,39" fill="#3a5c2e"/>
+    <!-- 하부 초원 오른쪽 -->
+    <polygon points="18,39 26,33 28,45 18,50" fill="#588840"/>
+
+    <!-- 상부 풀 왼쪽 (짙은 초록) -->
+    <polygon points="18,39 10,33 12,23 14,11 18,3" fill="#284820"/>
+    <!-- 상부 풀 오른쪽 (중간 초록) -->
+    <polygon points="18,3 22,11 24,23 26,33 18,39" fill="#4a7830"/>
+
+    <!-- 정상 밝은 초록 하이라이트 -->
+    <polygon points="18,3 15,9 21,9" fill="#78b848" opacity="0.85"/>
+    <!-- 정상 둥근 처리 -->
+    <ellipse cx="18" cy="6" rx="4" ry="3" fill="#4a7830"/>
+    <ellipse cx="19" cy="5" rx="2.5" ry="2" fill="#78b848" opacity="0.7"/>
+  </g></g>
+  <text x="589" y="98" text-anchor="middle"
+        font-family="monospace" font-size="8" fill="#6888b0">풀 덮힌 산</text>
+  <rect x="675" y="5" width="156" height="102"
+        fill="#112040" stroke="#c0d8f8" stroke-width="1.5" rx="3"/>
+  <text x="753" y="17" text-anchor="middle"
+        font-family="monospace" font-size="9" fill="#c0d4f0" opacity="0.65">Lv.4</text>
+  <g transform="translate(733.9,22.0) scale(0.912)"><g>
+    <!-- 기저 타일 -->
+    <polygon points="21,53 31,59 21,65 11,59" fill="#6e8090"/>
+    <polygon points="11,59 21,65 21,67 11,61" fill="#3e5060"/>
+    <polygon points="21,65 31,59 31,61 21,67" fill="#90a8b8"/>
+
+    <!-- 빙하/암석 기저 -->
+    <polygon points="21,65 3,59 6,49 10,37 8,22 21,22" fill="#364858"/>
+    <polygon points="21,22 35,22 36,49 39,59 21,65" fill="#4e7088"/>
+    <!-- 좌측 그늘 -->
+    <polygon points="21,22 8,22 10,37 6,49 3,59 21,65"
+             fill="#1e2c38" opacity="0.22"/>
+
+    <!-- 왼쪽 봉우리 눈 (그늘면 — 차가운 파랑) -->
+    <path d="M 8,22 Q 9,6 14,3 Q 19,13 21,22 Z"
+          fill="#c0d4f0"/>
+    <!-- 왼쪽 봉우리 밝은 하이라이트 -->
+    <path d="M 14,3 Q 17,1 18,4 Q 17,8 14,6 Z"
+          fill="#eef6ff" opacity="0.85"/>
+
+    <!-- 오른쪽 봉우리 눈 (주봉, 밝은 청백색) -->
+    <path d="M 21,22 Q 23,13 29,1 Q 34,6 35,22 Z"
+          fill="#daeeff"/>
+    <!-- 오른쪽 봉우리 최고 밝음 -->
+    <path d="M 29,1 Q 33,3 32,6 Q 28,5 29,1 Z"
+          fill="#ffffff" opacity="0.90"/>
+
+    <!-- 왼쪽 봉우리 정상 순백 -->
+    <polygon points="14,3 12,7 16,7" fill="#ffffff"/>
+    <!-- 오른쪽 봉우리 정상 순백 -->
+    <polygon points="29,1 27,5 31,5" fill="#ffffff"/>
+
+    <!-- 안부(saddle) 연결 눈 — 두 봉우리 사이 이음 -->
+    <path d="M 14,6 Q 21,14 29,5 Q 21,16 14,6 Z"
+          fill="#d0e4f8" opacity="0.55"/>
+
+    <!-- 눈골 선 (좌봉) -->
+    <line x1="14" y1="3" x2="10" y2="22"
+          stroke="#a8c8e8" stroke-width="0.7" opacity="0.38"/>
+    <!-- 눈골 선 (우봉) -->
+    <line x1="29" y1="1" x2="32" y2="22"
+          stroke="#e0f0ff" stroke-width="0.7" opacity="0.36"/>
+  </g></g>
+  <text x="753" y="98" text-anchor="middle"
+        font-family="monospace" font-size="8" fill="#6888b0">설산</text>
+</svg>
