@@ -31,7 +31,7 @@
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="gourdShadow" x="-25%" y="-25%" width="150%" height="150%">
-      <feDropShadow dx="2" dy="3" stdDeviation="3.5" flood-color="#3a1a00" flood-opacity="0.45"/>
+      <feDropShadow dx="1.5" dy="2.5" stdDeviation="2.5" flood-color="#3a1a00" flood-opacity="0.4"/>
     </filter>
   
   </defs>
@@ -53,445 +53,365 @@
     </linearGradient>
   </defs>
 
-  <!-- ① 하늘 -->
+  <!-- ① 하늘 (0~140) -->
   <rect x="0" y="0" width="850" height="140" fill="url(#hSkyGrad)"/>
-  <!-- 구름 좌 -->
   <g opacity="0.93">
-    <ellipse cx="80" cy="44" rx="46" ry="18" fill="white"/>
-    <ellipse cx="112" cy="32" rx="30" ry="14" fill="white"/>
-    <ellipse cx="52" cy="46" rx="26" ry="12" fill="white"/>
-    <ellipse cx="128" cy="44" rx="22" ry="11" fill="white"/>
+    <ellipse cx="80" cy="40" rx="46" ry="18" fill="white"/>
+    <ellipse cx="112" cy="28" rx="30" ry="13" fill="white"/>
+    <ellipse cx="52" cy="42" rx="26" ry="11" fill="white"/>
+    <ellipse cx="128" cy="40" rx="22" ry="10" fill="white"/>
   </g>
-  <!-- 구름 우 -->
   <g opacity="0.88">
-    <ellipse cx="762" cy="38" rx="50" ry="20" fill="white"/>
-    <ellipse cx="798" cy="26" rx="34" ry="15" fill="white"/>
-    <ellipse cx="730" cy="40" rx="28" ry="13" fill="white"/>
-    <ellipse cx="818" cy="42" rx="20" ry="10" fill="white"/>
+    <ellipse cx="762" cy="34" rx="50" ry="20" fill="white"/>
+    <ellipse cx="798" cy="22" rx="34" ry="14" fill="white"/>
+    <ellipse cx="730" cy="36" rx="28" ry="12" fill="white"/>
   </g>
-  <!-- 구름 중 -->
   <g opacity="0.72">
-    <ellipse cx="438" cy="22" rx="36" ry="13" fill="white"/>
-    <ellipse cx="462" cy="12" rx="24" ry="10" fill="white"/>
+    <ellipse cx="438" cy="18" rx="36" ry="13" fill="white"/>
+    <ellipse cx="462" cy="8" rx="24" ry="9" fill="white"/>
   </g>
-  <!-- 타이틀 -->
-  <text x="425" y="68"
+  <!-- 타이틀: 하늘 위쪽에 배치 (박 침범 안 하도록 y=36/56) -->
+  <text x="425" y="36"
     text-anchor="middle" font-family="monospace" font-size="11"
     fill="#F0DDB0" opacity="0.82">흥부네 커밋 · Heungbu's Commits</text>
-  <text x="425" y="98"
+  <text x="425" y="60"
     text-anchor="middle" font-family="monospace" font-size="22" font-weight="bold"
     fill="#F8E8C0">1hyung's Commits</text>
 
   <!-- ② 용마루 -->
-  <rect x="0" y="118" width="850" height="25"
+  <rect x="0" y="122" width="850" height="20"
     fill="url(#hRoofGrad)" rx="2"/>
-  <rect x="0" y="118" width="850" height="4"
+  <rect x="0" y="122" width="850" height="4"
     fill="#F0D880" opacity="0.4"/>
-  <rect x="0" y="140" width="850" height="3"
+  <rect x="0" y="139" width="850" height="3"
     fill="#1e0e04" opacity="0.5"/>
 
   <!-- ③ 박(호리병) + 덩굴 -->
   
     <!-- 덩굴 줄기 -->
-    <path d="M52,126 C72,112 135,112 155,126"
-      stroke="#4A8A30" stroke-width="4" fill="none" opacity="0.9"/>
-    <path d="M155,126 C175,108 242,108 262,126"
-      stroke="#4A8A30" stroke-width="4" fill="none" opacity="0.9"/>
-    <path d="M262,126 C282,104 340,104 360,126"
-      stroke="#4A8A30" stroke-width="4" fill="none" opacity="0.9"/>
-    <path d="M360,126 C380,112 365,112 385,126"
-      stroke="#4A8A30" stroke-width="4" fill="none" opacity="0.9"/>
-    <path d="M385,126 C405,108 465,108 485,126"
-      stroke="#4A8A30" stroke-width="4" fill="none" opacity="0.9"/>
-    <path d="M485,126 C505,104 545,104 565,126"
-      stroke="#4A8A30" stroke-width="4" fill="none" opacity="0.9"/>
-    <path d="M565,126 C585,112 638,112 658,126"
-      stroke="#4A8A30" stroke-width="4" fill="none" opacity="0.9"/>
-    <path d="M658,126 C678,108 732,108 752,126"
-      stroke="#4A8A30" stroke-width="4" fill="none" opacity="0.9"/>
-    <path d="M752,126 C772,104 808,104 828,126"
-      stroke="#4A8A30" stroke-width="4" fill="none" opacity="0.9"/>
+    <path d="M52,128 C70,118 132,118 150,128"
+      stroke="#4A8A30" stroke-width="3.5" fill="none" opacity="0.9"/>
+    <path d="M150,128 C168,115 237,115 255,128"
+      stroke="#4A8A30" stroke-width="3.5" fill="none" opacity="0.9"/>
+    <path d="M255,128 C273,112 332,112 350,128"
+      stroke="#4A8A30" stroke-width="3.5" fill="none" opacity="0.9"/>
+    <path d="M350,128 C368,118 372,118 390,128"
+      stroke="#4A8A30" stroke-width="3.5" fill="none" opacity="0.9"/>
+    <path d="M390,128 C408,115 462,115 480,128"
+      stroke="#4A8A30" stroke-width="3.5" fill="none" opacity="0.9"/>
+    <path d="M480,128 C498,112 542,112 560,128"
+      stroke="#4A8A30" stroke-width="3.5" fill="none" opacity="0.9"/>
+    <path d="M560,128 C578,118 634,118 652,128"
+      stroke="#4A8A30" stroke-width="3.5" fill="none" opacity="0.9"/>
+    <path d="M652,128 C670,115 730,115 748,128"
+      stroke="#4A8A30" stroke-width="3.5" fill="none" opacity="0.9"/>
+    <path d="M748,128 C766,112 810,112 828,128"
+      stroke="#4A8A30" stroke-width="3.5" fill="none" opacity="0.9"/>
     <!-- 잎 -->
     
-    <ellipse cx="104" cy="113" rx="36" ry="24"
+    <ellipse cx="100" cy="118" rx="29" ry="19"
       fill="#5A9E3A"
-      transform="rotate(-28 104 113)" opacity="0.92"/>
-    <line x1="104" y1="96"
-          x2="104" y2="130"
-      stroke="#3D7A22" stroke-width="1.2" opacity="0.45"
-      transform="rotate(-28 104 113)"/>
-    <line x1="82" y1="111"
-          x2="122" y2="118"
-      stroke="#3D7A22" stroke-width="0.7" opacity="0.3"
-      transform="rotate(-28 104 113)"/>
+      transform="rotate(-28 100 118)" opacity="0.93"/>
+    <line x1="100" y1="105"
+          x2="100" y2="131"
+      stroke="#3D7A22" stroke-width="1" opacity="0.45"
+      transform="rotate(-28 100 118)"/>
   
-    <ellipse cx="210" cy="113" rx="42" ry="28"
+    <ellipse cx="204" cy="118" rx="34" ry="22"
       fill="#5A9E3A"
-      transform="rotate(22 210 113)" opacity="0.92"/>
-    <line x1="210" y1="93"
-          x2="210" y2="133"
-      stroke="#3D7A22" stroke-width="1.2" opacity="0.45"
-      transform="rotate(22 210 113)"/>
-    <line x1="185" y1="110"
-          x2="231" y2="119"
-      stroke="#3D7A22" stroke-width="0.7" opacity="0.3"
-      transform="rotate(22 210 113)"/>
+      transform="rotate(22 204 118)" opacity="0.93"/>
+    <line x1="204" y1="103"
+          x2="204" y2="133"
+      stroke="#3D7A22" stroke-width="1" opacity="0.45"
+      transform="rotate(22 204 118)"/>
   
-    <ellipse cx="312" cy="113" rx="33" ry="22"
+    <ellipse cx="302" cy="118" rx="26" ry="17"
       fill="#5A9E3A"
-      transform="rotate(-32 312 113)" opacity="0.92"/>
-    <line x1="312" y1="98"
-          x2="312" y2="128"
-      stroke="#3D7A22" stroke-width="1.2" opacity="0.45"
-      transform="rotate(-32 312 113)"/>
-    <line x1="292" y1="111"
-          x2="329" y2="117"
-      stroke="#3D7A22" stroke-width="0.7" opacity="0.3"
-      transform="rotate(-32 312 113)"/>
+      transform="rotate(-30 302 118)" opacity="0.93"/>
+    <line x1="302" y1="106"
+          x2="302" y2="130"
+      stroke="#3D7A22" stroke-width="1" opacity="0.45"
+      transform="rotate(-30 302 118)"/>
   
-    <ellipse cx="408" cy="113" rx="45" ry="30"
+    <ellipse cx="400" cy="118" rx="36" ry="24"
       fill="#5A9E3A"
-      transform="rotate(18 408 113)" opacity="0.92"/>
-    <line x1="408" y1="92"
-          x2="408" y2="134"
-      stroke="#3D7A22" stroke-width="1.2" opacity="0.45"
-      transform="rotate(18 408 113)"/>
-    <line x1="381" y1="110"
-          x2="431" y2="119"
-      stroke="#3D7A22" stroke-width="0.7" opacity="0.3"
-      transform="rotate(18 408 113)"/>
+      transform="rotate(18 400 118)" opacity="0.93"/>
+    <line x1="400" y1="101"
+          x2="400" y2="135"
+      stroke="#3D7A22" stroke-width="1" opacity="0.45"
+      transform="rotate(18 400 118)"/>
   
-    <ellipse cx="433" cy="113" rx="39" ry="26"
+    <ellipse cx="433" cy="118" rx="31" ry="20"
       fill="#5A9E3A"
-      transform="rotate(-22 433 113)" opacity="0.92"/>
-    <line x1="433" y1="95"
-          x2="433" y2="131"
-      stroke="#3D7A22" stroke-width="1.2" opacity="0.45"
-      transform="rotate(-22 433 113)"/>
-    <line x1="410" y1="110"
-          x2="453" y2="118"
-      stroke="#3D7A22" stroke-width="0.7" opacity="0.3"
-      transform="rotate(-22 433 113)"/>
+      transform="rotate(-22 433 118)" opacity="0.93"/>
+    <line x1="433" y1="104"
+          x2="433" y2="132"
+      stroke="#3D7A22" stroke-width="1" opacity="0.45"
+      transform="rotate(-22 433 118)"/>
   
-    <ellipse cx="512" cy="113" rx="36" ry="24"
+    <ellipse cx="508" cy="118" rx="29" ry="19"
       fill="#5A9E3A"
-      transform="rotate(28 512 113)" opacity="0.92"/>
-    <line x1="512" y1="96"
-          x2="512" y2="130"
-      stroke="#3D7A22" stroke-width="1.2" opacity="0.45"
-      transform="rotate(28 512 113)"/>
-    <line x1="490" y1="111"
-          x2="530" y2="118"
-      stroke="#3D7A22" stroke-width="0.7" opacity="0.3"
-      transform="rotate(28 512 113)"/>
+      transform="rotate(26 508 118)" opacity="0.93"/>
+    <line x1="508" y1="105"
+          x2="508" y2="131"
+      stroke="#3D7A22" stroke-width="1" opacity="0.45"
+      transform="rotate(26 508 118)"/>
   
-    <ellipse cx="612" cy="113" rx="42" ry="28"
+    <ellipse cx="606" cy="118" rx="34" ry="22"
       fill="#5A9E3A"
-      transform="rotate(-20 612 113)" opacity="0.92"/>
-    <line x1="612" y1="93"
-          x2="612" y2="133"
-      stroke="#3D7A22" stroke-width="1.2" opacity="0.45"
-      transform="rotate(-20 612 113)"/>
-    <line x1="587" y1="110"
-          x2="633" y2="119"
-      stroke="#3D7A22" stroke-width="0.7" opacity="0.3"
-      transform="rotate(-20 612 113)"/>
+      transform="rotate(-20 606 118)" opacity="0.93"/>
+    <line x1="606" y1="103"
+          x2="606" y2="133"
+      stroke="#3D7A22" stroke-width="1" opacity="0.45"
+      transform="rotate(-20 606 118)"/>
   
-    <ellipse cx="706" cy="113" rx="33" ry="22"
+    <ellipse cx="700" cy="118" rx="26" ry="17"
       fill="#5A9E3A"
-      transform="rotate(24 706 113)" opacity="0.92"/>
-    <line x1="706" y1="98"
-          x2="706" y2="128"
-      stroke="#3D7A22" stroke-width="1.2" opacity="0.45"
-      transform="rotate(24 706 113)"/>
-    <line x1="686" y1="111"
-          x2="723" y2="117"
-      stroke="#3D7A22" stroke-width="0.7" opacity="0.3"
-      transform="rotate(24 706 113)"/>
+      transform="rotate(22 700 118)" opacity="0.93"/>
+    <line x1="700" y1="106"
+          x2="700" y2="130"
+      stroke="#3D7A22" stroke-width="1" opacity="0.45"
+      transform="rotate(22 700 118)"/>
   
-    <ellipse cx="792" cy="113" rx="36" ry="24"
+    <ellipse cx="790" cy="118" rx="29" ry="19"
       fill="#5A9E3A"
-      transform="rotate(-26 792 113)" opacity="0.92"/>
-    <line x1="792" y1="96"
-          x2="792" y2="130"
-      stroke="#3D7A22" stroke-width="1.2" opacity="0.45"
-      transform="rotate(-26 792 113)"/>
-    <line x1="770" y1="111"
-          x2="810" y2="118"
-      stroke="#3D7A22" stroke-width="0.7" opacity="0.3"
-      transform="rotate(-26 792 113)"/>
+      transform="rotate(-24 790 118)" opacity="0.93"/>
+    <line x1="790" y1="105"
+          x2="790" y2="131"
+      stroke="#3D7A22" stroke-width="1" opacity="0.45"
+      transform="rotate(-24 790 118)"/>
   
-    <!-- 박들 (호리병형) -->
+    <!-- 박(호리병) -->
     
-    <!-- 아래 큰 구 -->
-    <ellipse cx="52" cy="95" rx="18" ry="16"
+    <ellipse cx="52" cy="112" rx="8" ry="7"
       fill="#D4AF28" filter="url(#gourdShadow)"/>
-    <ellipse cx="47" cy="90"
-      rx="7" ry="4"
+    <ellipse cx="50" cy="110"
+      rx="3" ry="2"
       fill="#EACF48" opacity="0.72"/>
-    <ellipse cx="49" cy="87"
-      rx="4" ry="3"
-      fill="#F8F0A0" opacity="0.6"/>
-    <!-- 위 작은 구 -->
-    <ellipse cx="52" cy="73" rx="10" ry="9"
-      fill="#D4AF28"/>
-    <ellipse cx="49" cy="70"
-      rx="4" ry="3"
-      fill="#EACF48" opacity="0.7"/>
-    <ellipse cx="51" cy="69"
+    <ellipse cx="51" cy="108"
       rx="2" ry="1"
       fill="#F8F0A0" opacity="0.6"/>
-    <!-- 목 -->
-    <rect x="47" y="80" width="10" height="2"
+    <ellipse cx="52" cy="103" rx="4" ry="4"
       fill="#D4AF28"/>
-    <!-- 줄기 -->
-    <rect x="49" y="55" width="6" height="11" rx="3"
-      fill="#3A6010"/>
-    <path d="M55,61 Q62,52 60,44"
-      stroke="#3A6010" stroke-width="2" fill="none"/>
-  
-    <!-- 아래 큰 구 -->
-    <ellipse cx="155" cy="85" rx="25" ry="22"
-      fill="#D4AF28" filter="url(#gourdShadow)"/>
-    <ellipse cx="148" cy="78"
-      rx="10" ry="6"
-      fill="#EACF48" opacity="0.72"/>
-    <ellipse cx="152" cy="74"
-      rx="5" ry="4"
-      fill="#F8F0A0" opacity="0.6"/>
-    <!-- 위 작은 구 -->
-    <ellipse cx="155" cy="54" rx="14" ry="13"
-      fill="#D4AF28"/>
-    <ellipse cx="151" cy="50"
-      rx="6" ry="4"
+    <ellipse cx="51" cy="102"
+      rx="2" ry="1"
       fill="#EACF48" opacity="0.7"/>
-    <ellipse cx="153" cy="48"
-      rx="3" ry="2"
+    <ellipse cx="51" cy="101"
+      rx="1" ry="1"
       fill="#F8F0A0" opacity="0.6"/>
-    <!-- 목 -->
-    <rect x="148" y="65" width="14" height="2"
+    <rect x="50" y="105" width="4" height="2"
       fill="#D4AF28"/>
-    <!-- 줄기 -->
-    <rect x="152" y="32" width="6" height="11" rx="3"
+    <rect x="50" y="92" width="4" height="9" rx="2"
       fill="#3A6010"/>
-    <path d="M158,38 Q165,29 163,21"
-      stroke="#3A6010" stroke-width="2" fill="none"/>
+    <path d="M54,97 Q59,90 58,83"
+      stroke="#3A6010" stroke-width="1.5" fill="none"/>
   
-    <!-- 아래 큰 구 -->
-    <ellipse cx="262" cy="98" rx="16" ry="14"
+    <ellipse cx="150" cy="110" rx="10" ry="9"
       fill="#D4AF28" filter="url(#gourdShadow)"/>
-    <ellipse cx="258" cy="94"
-      rx="6" ry="4"
+    <ellipse cx="147" cy="107"
+      rx="4" ry="3"
       fill="#EACF48" opacity="0.72"/>
-    <ellipse cx="260" cy="91"
-      rx="3" ry="2"
-      fill="#F8F0A0" opacity="0.6"/>
-    <!-- 위 작은 구 -->
-    <ellipse cx="262" cy="78" rx="9" ry="8"
-      fill="#D4AF28"/>
-    <ellipse cx="259" cy="76"
-      rx="4" ry="2"
-      fill="#EACF48" opacity="0.7"/>
-    <ellipse cx="261" cy="74"
+    <ellipse cx="149" cy="105"
       rx="2" ry="1"
       fill="#F8F0A0" opacity="0.6"/>
-    <!-- 목 -->
-    <rect x="258" y="84" width="8" height="2"
+    <ellipse cx="150" cy="97" rx="6" ry="5"
       fill="#D4AF28"/>
-    <!-- 줄기 -->
-    <rect x="259" y="61" width="6" height="11" rx="3"
-      fill="#3A6010"/>
-    <path d="M265,67 Q272,58 270,50"
-      stroke="#3A6010" stroke-width="2" fill="none"/>
-  
-    <!-- 아래 큰 구 -->
-    <ellipse cx="360" cy="81" rx="28" ry="25"
-      fill="#D4AF28" filter="url(#gourdShadow)"/>
-    <ellipse cx="352" cy="73"
-      rx="11" ry="7"
-      fill="#EACF48" opacity="0.72"/>
-    <ellipse cx="356" cy="68"
-      rx="6" ry="4"
-      fill="#F8F0A0" opacity="0.6"/>
-    <!-- 위 작은 구 -->
-    <ellipse cx="360" cy="47" rx="15" ry="15"
-      fill="#D4AF28"/>
-    <ellipse cx="356" cy="43"
-      rx="6" ry="5"
-      fill="#EACF48" opacity="0.7"/>
-    <ellipse cx="358" cy="40"
+    <ellipse cx="148" cy="96"
       rx="3" ry="2"
-      fill="#F8F0A0" opacity="0.6"/>
-    <!-- 목 -->
-    <rect x="352" y="60" width="16" height="2"
-      fill="#D4AF28"/>
-    <!-- 줄기 -->
-    <rect x="357" y="23" width="6" height="11" rx="3"
-      fill="#3A6010"/>
-    <path d="M363,29 Q370,20 368,12"
-      stroke="#3A6010" stroke-width="2" fill="none"/>
-  
-    <!-- 아래 큰 구 -->
-    <ellipse cx="385" cy="72" rx="34" ry="30"
-      fill="#D4AF28" filter="url(#gourdShadow)"/>
-    <ellipse cx="375" cy="62"
-      rx="14" ry="8"
-      fill="#EACF48" opacity="0.72"/>
-    <ellipse cx="380" cy="56"
-      rx="7" ry="5"
-      fill="#F8F0A0" opacity="0.6"/>
-    <!-- 위 작은 구 -->
-    <ellipse cx="385" cy="30" rx="19" ry="18"
-      fill="#D4AF28"/>
-    <ellipse cx="379" cy="25"
-      rx="8" ry="5"
       fill="#EACF48" opacity="0.7"/>
-    <ellipse cx="382" cy="21"
-      rx="4" ry="3"
+    <ellipse cx="149" cy="95"
+      rx="1" ry="1"
       fill="#F8F0A0" opacity="0.6"/>
-    <!-- 목 -->
-    <rect x="375" y="46" width="20" height="2"
+    <rect x="147" y="100" width="6" height="3"
       fill="#D4AF28"/>
-    <!-- 줄기 -->
-    <rect x="382" y="3" width="6" height="11" rx="3"
+    <rect x="148" y="85" width="4" height="9" rx="2"
       fill="#3A6010"/>
-    <path d="M388,9 Q395,0 393,-8"
-      stroke="#3A6010" stroke-width="2" fill="none"/>
+    <path d="M152,90 Q157,83 156,76"
+      stroke="#3A6010" stroke-width="1.5" fill="none"/>
   
-    <!-- 아래 큰 구 -->
-    <ellipse cx="485" cy="78" rx="30" ry="26"
+    <ellipse cx="255" cy="114" rx="7" ry="6"
       fill="#D4AF28" filter="url(#gourdShadow)"/>
-    <ellipse cx="477" cy="70"
-      rx="12" ry="7"
+    <ellipse cx="253" cy="112"
+      rx="3" ry="2"
       fill="#EACF48" opacity="0.72"/>
-    <ellipse cx="481" cy="64"
-      rx="6" ry="4"
+    <ellipse cx="254" cy="111"
+      rx="1" ry="1"
       fill="#F8F0A0" opacity="0.6"/>
-    <!-- 위 작은 구 -->
-    <ellipse cx="485" cy="41" rx="17" ry="16"
+    <ellipse cx="255" cy="105" rx="4" ry="4"
       fill="#D4AF28"/>
-    <ellipse cx="480" cy="36"
-      rx="7" ry="5"
-      fill="#EACF48" opacity="0.7"/>
-    <ellipse cx="482" cy="33"
-      rx="4" ry="3"
-      fill="#F8F0A0" opacity="0.6"/>
-    <!-- 목 -->
-    <rect x="477" y="55" width="16" height="2"
-      fill="#D4AF28"/>
-    <!-- 줄기 -->
-    <rect x="482" y="16" width="6" height="11" rx="3"
-      fill="#3A6010"/>
-    <path d="M488,22 Q495,13 493,5"
-      stroke="#3A6010" stroke-width="2" fill="none"/>
-  
-    <!-- 아래 큰 구 -->
-    <ellipse cx="565" cy="95" rx="18" ry="16"
-      fill="#D4AF28" filter="url(#gourdShadow)"/>
-    <ellipse cx="560" cy="90"
-      rx="7" ry="4"
-      fill="#EACF48" opacity="0.72"/>
-    <ellipse cx="562" cy="87"
-      rx="4" ry="3"
-      fill="#F8F0A0" opacity="0.6"/>
-    <!-- 위 작은 구 -->
-    <ellipse cx="565" cy="73" rx="10" ry="9"
-      fill="#D4AF28"/>
-    <ellipse cx="562" cy="70"
-      rx="4" ry="3"
-      fill="#EACF48" opacity="0.7"/>
-    <ellipse cx="564" cy="69"
+    <ellipse cx="254" cy="104"
       rx="2" ry="1"
-      fill="#F8F0A0" opacity="0.6"/>
-    <!-- 목 -->
-    <rect x="560" y="80" width="10" height="2"
-      fill="#D4AF28"/>
-    <!-- 줄기 -->
-    <rect x="562" y="55" width="6" height="11" rx="3"
-      fill="#3A6010"/>
-    <path d="M568,61 Q575,52 573,44"
-      stroke="#3A6010" stroke-width="2" fill="none"/>
-  
-    <!-- 아래 큰 구 -->
-    <ellipse cx="658" cy="84" rx="26" ry="23"
-      fill="#D4AF28" filter="url(#gourdShadow)"/>
-    <ellipse cx="651" cy="77"
-      rx="10" ry="6"
-      fill="#EACF48" opacity="0.72"/>
-    <ellipse cx="654" cy="72"
-      rx="5" ry="4"
-      fill="#F8F0A0" opacity="0.6"/>
-    <!-- 위 작은 구 -->
-    <ellipse cx="658" cy="52" rx="14" ry="14"
-      fill="#D4AF28"/>
-    <ellipse cx="654" cy="48"
-      rx="6" ry="4"
       fill="#EACF48" opacity="0.7"/>
-    <ellipse cx="656" cy="45"
-      rx="3" ry="2"
+    <ellipse cx="254" cy="103"
+      rx="1" ry="1"
       fill="#F8F0A0" opacity="0.6"/>
-    <!-- 목 -->
-    <rect x="651" y="64" width="14" height="2"
+    <rect x="253" y="107" width="4" height="3"
       fill="#D4AF28"/>
-    <!-- 줄기 -->
-    <rect x="655" y="29" width="6" height="11" rx="3"
+    <rect x="253" y="94" width="4" height="9" rx="2"
       fill="#3A6010"/>
-    <path d="M661,35 Q668,26 666,18"
-      stroke="#3A6010" stroke-width="2" fill="none"/>
+    <path d="M257,99 Q262,92 261,85"
+      stroke="#3A6010" stroke-width="1.5" fill="none"/>
   
-    <!-- 아래 큰 구 -->
-    <ellipse cx="752" cy="97" rx="17" ry="15"
+    <ellipse cx="350" cy="108" rx="11" ry="10"
       fill="#D4AF28" filter="url(#gourdShadow)"/>
-    <ellipse cx="747" cy="92"
-      rx="7" ry="4"
-      fill="#EACF48" opacity="0.72"/>
-    <ellipse cx="750" cy="89"
-      rx="3" ry="2"
-      fill="#F8F0A0" opacity="0.6"/>
-    <!-- 위 작은 구 -->
-    <ellipse cx="752" cy="76" rx="9" ry="9"
-      fill="#D4AF28"/>
-    <ellipse cx="749" cy="73"
+    <ellipse cx="347" cy="105"
       rx="4" ry="3"
+      fill="#EACF48" opacity="0.72"/>
+    <ellipse cx="348" cy="103"
+      rx="2" ry="2"
+      fill="#F8F0A0" opacity="0.6"/>
+    <ellipse cx="350" cy="95" rx="6" ry="6"
+      fill="#D4AF28"/>
+    <ellipse cx="348" cy="93"
+      rx="3" ry="2"
       fill="#EACF48" opacity="0.7"/>
-    <ellipse cx="751" cy="72"
-      rx="2" ry="1"
+    <ellipse cx="349" cy="92"
+      rx="1" ry="1"
       fill="#F8F0A0" opacity="0.6"/>
-    <!-- 목 -->
-    <rect x="747" y="83" width="10" height="2"
+    <rect x="347" y="99" width="6" height="2"
       fill="#D4AF28"/>
-    <!-- 줄기 -->
-    <rect x="749" y="58" width="6" height="11" rx="3"
+    <rect x="348" y="82" width="4" height="9" rx="2"
       fill="#3A6010"/>
-    <path d="M755,64 Q762,55 760,47"
-      stroke="#3A6010" stroke-width="2" fill="none"/>
+    <path d="M352,87 Q357,80 356,73"
+      stroke="#3A6010" stroke-width="1.5" fill="none"/>
   
-    <!-- 아래 큰 구 -->
-    <ellipse cx="828" cy="90" rx="22" ry="19"
+    <ellipse cx="390" cy="107" rx="12" ry="11"
       fill="#D4AF28" filter="url(#gourdShadow)"/>
-    <ellipse cx="822" cy="84"
-      rx="9" ry="5"
-      fill="#EACF48" opacity="0.72"/>
-    <ellipse cx="825" cy="80"
-      rx="4" ry="3"
-      fill="#F8F0A0" opacity="0.6"/>
-    <!-- 위 작은 구 -->
-    <ellipse cx="828" cy="63" rx="12" ry="11"
-      fill="#D4AF28"/>
-    <ellipse cx="824" cy="60"
+    <ellipse cx="387" cy="103"
       rx="5" ry="3"
-      fill="#EACF48" opacity="0.7"/>
-    <ellipse cx="826" cy="58"
-      rx="3" ry="2"
+      fill="#EACF48" opacity="0.72"/>
+    <ellipse cx="388" cy="101"
+      rx="2" ry="2"
       fill="#F8F0A0" opacity="0.6"/>
-    <!-- 목 -->
-    <rect x="822" y="72" width="12" height="2"
+    <ellipse cx="390" cy="92" rx="7" ry="6"
       fill="#D4AF28"/>
-    <!-- 줄기 -->
-    <rect x="825" y="43" width="6" height="11" rx="3"
+    <ellipse cx="388" cy="90"
+      rx="3" ry="2"
+      fill="#EACF48" opacity="0.7"/>
+    <ellipse cx="389" cy="89"
+      rx="2" ry="1"
+      fill="#F8F0A0" opacity="0.6"/>
+    <rect x="387" y="96" width="6" height="2"
+      fill="#D4AF28"/>
+    <rect x="388" y="79" width="4" height="9" rx="2"
       fill="#3A6010"/>
-    <path d="M831,49 Q838,40 836,32"
-      stroke="#3A6010" stroke-width="2" fill="none"/>
+    <path d="M392,84 Q397,77 396,70"
+      stroke="#3A6010" stroke-width="1.5" fill="none"/>
+  
+    <ellipse cx="480" cy="108" rx="11" ry="10"
+      fill="#D4AF28" filter="url(#gourdShadow)"/>
+    <ellipse cx="477" cy="105"
+      rx="4" ry="3"
+      fill="#EACF48" opacity="0.72"/>
+    <ellipse cx="478" cy="103"
+      rx="2" ry="2"
+      fill="#F8F0A0" opacity="0.6"/>
+    <ellipse cx="480" cy="95" rx="6" ry="6"
+      fill="#D4AF28"/>
+    <ellipse cx="478" cy="93"
+      rx="3" ry="2"
+      fill="#EACF48" opacity="0.7"/>
+    <ellipse cx="479" cy="92"
+      rx="1" ry="1"
+      fill="#F8F0A0" opacity="0.6"/>
+    <rect x="477" y="99" width="6" height="2"
+      fill="#D4AF28"/>
+    <rect x="478" y="82" width="4" height="9" rx="2"
+      fill="#3A6010"/>
+    <path d="M482,87 Q487,80 486,73"
+      stroke="#3A6010" stroke-width="1.5" fill="none"/>
+  
+    <ellipse cx="560" cy="112" rx="8" ry="7"
+      fill="#D4AF28" filter="url(#gourdShadow)"/>
+    <ellipse cx="558" cy="110"
+      rx="3" ry="2"
+      fill="#EACF48" opacity="0.72"/>
+    <ellipse cx="559" cy="108"
+      rx="2" ry="1"
+      fill="#F8F0A0" opacity="0.6"/>
+    <ellipse cx="560" cy="103" rx="4" ry="4"
+      fill="#D4AF28"/>
+    <ellipse cx="559" cy="102"
+      rx="2" ry="1"
+      fill="#EACF48" opacity="0.7"/>
+    <ellipse cx="559" cy="101"
+      rx="1" ry="1"
+      fill="#F8F0A0" opacity="0.6"/>
+    <rect x="558" y="105" width="4" height="2"
+      fill="#D4AF28"/>
+    <rect x="558" y="92" width="4" height="9" rx="2"
+      fill="#3A6010"/>
+    <path d="M562,97 Q567,90 566,83"
+      stroke="#3A6010" stroke-width="1.5" fill="none"/>
+  
+    <ellipse cx="652" cy="110" rx="10" ry="9"
+      fill="#D4AF28" filter="url(#gourdShadow)"/>
+    <ellipse cx="649" cy="107"
+      rx="4" ry="3"
+      fill="#EACF48" opacity="0.72"/>
+    <ellipse cx="651" cy="105"
+      rx="2" ry="1"
+      fill="#F8F0A0" opacity="0.6"/>
+    <ellipse cx="652" cy="97" rx="6" ry="5"
+      fill="#D4AF28"/>
+    <ellipse cx="650" cy="96"
+      rx="3" ry="2"
+      fill="#EACF48" opacity="0.7"/>
+    <ellipse cx="651" cy="95"
+      rx="1" ry="1"
+      fill="#F8F0A0" opacity="0.6"/>
+    <rect x="649" y="100" width="6" height="3"
+      fill="#D4AF28"/>
+    <rect x="650" y="85" width="4" height="9" rx="2"
+      fill="#3A6010"/>
+    <path d="M654,90 Q659,83 658,76"
+      stroke="#3A6010" stroke-width="1.5" fill="none"/>
+  
+    <ellipse cx="748" cy="114" rx="7" ry="6"
+      fill="#D4AF28" filter="url(#gourdShadow)"/>
+    <ellipse cx="746" cy="112"
+      rx="3" ry="2"
+      fill="#EACF48" opacity="0.72"/>
+    <ellipse cx="747" cy="111"
+      rx="1" ry="1"
+      fill="#F8F0A0" opacity="0.6"/>
+    <ellipse cx="748" cy="105" rx="4" ry="4"
+      fill="#D4AF28"/>
+    <ellipse cx="747" cy="104"
+      rx="2" ry="1"
+      fill="#EACF48" opacity="0.7"/>
+    <ellipse cx="747" cy="103"
+      rx="1" ry="1"
+      fill="#F8F0A0" opacity="0.6"/>
+    <rect x="746" y="107" width="4" height="3"
+      fill="#D4AF28"/>
+    <rect x="746" y="94" width="4" height="9" rx="2"
+      fill="#3A6010"/>
+    <path d="M750,99 Q755,92 754,85"
+      stroke="#3A6010" stroke-width="1.5" fill="none"/>
+  
+    <ellipse cx="828" cy="111" rx="9" ry="8"
+      fill="#D4AF28" filter="url(#gourdShadow)"/>
+    <ellipse cx="825" cy="108"
+      rx="4" ry="2"
+      fill="#EACF48" opacity="0.72"/>
+    <ellipse cx="827" cy="107"
+      rx="2" ry="1"
+      fill="#F8F0A0" opacity="0.6"/>
+    <ellipse cx="828" cy="100" rx="5" ry="5"
+      fill="#D4AF28"/>
+    <ellipse cx="827" cy="99"
+      rx="2" ry="2"
+      fill="#EACF48" opacity="0.7"/>
+    <ellipse cx="827" cy="98"
+      rx="1" ry="1"
+      fill="#F8F0A0" opacity="0.6"/>
+    <rect x="825" y="103" width="6" height="2"
+      fill="#D4AF28"/>
+    <rect x="826" y="88" width="4" height="9" rx="2"
+      fill="#3A6010"/>
+    <path d="M830,93 Q835,86 834,79"
+      stroke="#3A6010" stroke-width="1.5" fill="none"/>
   
   
 
@@ -654,7 +574,7 @@
   
   
     <rect x="44" y="316" width="167" height="98" rx="2" fill="#5A3218"/>
-    <rect x="50" y="320" width="155" height="90" fill="#EDD4A0" rx="1" opacity="0.93"/>
+    <rect x="50" y="320" width="155" height="90" fill="#EDD4A0" rx="1" opacity="0.94"/>
     <rect x="50" y="320" width="155" height="90" fill="none" stroke="#5C3214" stroke-width="2" rx="1"/>
     <line x1="102" y1="325" x2="102" y2="405"
       stroke="#7A5030" stroke-width="1.5" opacity="0.6"/><line x1="153" y1="325" x2="153" y2="405"
@@ -665,7 +585,7 @@
   
   
     <rect x="639" y="316" width="167" height="98" rx="2" fill="#5A3218"/>
-    <rect x="645" y="320" width="155" height="90" fill="#EDD4A0" rx="1" opacity="0.93"/>
+    <rect x="645" y="320" width="155" height="90" fill="#EDD4A0" rx="1" opacity="0.94"/>
     <rect x="645" y="320" width="155" height="90" fill="none" stroke="#5C3214" stroke-width="2" rx="1"/>
     <line x1="697" y1="325" x2="697" y2="405"
       stroke="#7A5030" stroke-width="1.5" opacity="0.6"/><line x1="748" y1="325" x2="748" y2="405"
@@ -5580,7 +5500,7 @@
     <g id="stats-summary">
       <rect x="225" y="338" width="400" height="58" fill="#7A5030" rx="8" opacity="0.65"/>
       <text font-family="monospace" font-size="12" x="425" y="357" text-anchor="middle" fill="#D0B870">2025-04-13 / 2026-04-17</text>
-      <text font-family="monospace" font-size="20" font-weight="bold" x="425" y="384" text-anchor="middle" fill="#F8E8C0">1,018 contributions</text>
+      <text font-family="monospace" font-size="20" font-weight="bold" x="425" y="384" text-anchor="middle" fill="#F8E8C0">1,020 contributions</text>
     </g>
   
 </svg>
