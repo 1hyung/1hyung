@@ -202,12 +202,6 @@
     <g id="isometric-dragon-grid">
   <g transform="translate(184.0, 160.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -222,12 +216,6 @@
   </g>
   <g transform="translate(174.0, 166.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -242,12 +230,6 @@
   </g>
   <g transform="translate(194.0, 166.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -262,12 +244,6 @@
   </g>
   <g transform="translate(164.0, 172.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -282,12 +258,6 @@
   </g>
   <g transform="translate(184.0, 172.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -302,12 +272,6 @@
   </g>
   <g transform="translate(204.0, 172.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -370,12 +334,6 @@
   </g>
   <g transform="translate(194.0, 178.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -390,12 +348,6 @@
   </g>
   <g transform="translate(214.0, 178.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -457,12 +409,6 @@
   </g>
   <g transform="translate(164.0, 184.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -477,12 +423,6 @@
   </g>
   <g transform="translate(184.0, 184.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -497,12 +437,6 @@
   </g>
   <g transform="translate(204.0, 184.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -517,12 +451,6 @@
   </g>
   <g transform="translate(224.0, 184.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -561,12 +489,6 @@
   </g>
   <g transform="translate(174.0, 190.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -581,12 +503,6 @@
   </g>
   <g transform="translate(194.0, 190.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -601,12 +517,6 @@
   </g>
   <g transform="translate(214.0, 190.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -621,12 +531,6 @@
   </g>
   <g transform="translate(234.0, 190.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -641,12 +545,6 @@
   </g>
   <g transform="translate(144.0, 196.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -661,12 +559,6 @@
   </g>
   <g transform="translate(164.0, 196.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -681,12 +573,6 @@
   </g>
   <g transform="translate(184.0, 196.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -701,12 +587,6 @@
   </g>
   <g transform="translate(204.0, 196.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -721,12 +601,6 @@
   </g>
   <g transform="translate(224.0, 196.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -741,12 +615,6 @@
   </g>
   <g transform="translate(244.0, 196.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -761,12 +629,6 @@
   </g>
   <g transform="translate(134.0, 202.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -781,12 +643,6 @@
   </g>
   <g transform="translate(154.0, 202.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -825,12 +681,6 @@
   </g>
   <g transform="translate(194.0, 202.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -845,12 +695,6 @@
   </g>
   <g transform="translate(214.0, 202.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -865,12 +709,6 @@
   </g>
   <g transform="translate(234.0, 202.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -885,12 +723,6 @@
   </g>
   <g transform="translate(254.0, 202.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -905,12 +737,6 @@
   </g>
   <g transform="translate(144.0, 208.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -925,12 +751,6 @@
   </g>
   <g transform="translate(164.0, 208.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -945,12 +765,6 @@
   </g>
   <g transform="translate(184.0, 208.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -965,12 +779,6 @@
   </g>
   <g transform="translate(204.0, 208.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -985,12 +793,6 @@
   </g>
   <g transform="translate(224.0, 208.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1005,12 +807,6 @@
   </g>
   <g transform="translate(244.0, 208.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1025,12 +821,6 @@
   </g>
   <g transform="translate(264.0, 208.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1045,12 +835,6 @@
   </g>
   <g transform="translate(154.0, 214.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1065,12 +849,6 @@
   </g>
   <g transform="translate(174.0, 214.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1085,12 +863,6 @@
   </g>
   <g transform="translate(194.0, 214.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1105,12 +877,6 @@
   </g>
   <g transform="translate(214.0, 214.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1125,12 +891,6 @@
   </g>
   <g transform="translate(234.0, 214.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1145,12 +905,6 @@
   </g>
   <g transform="translate(254.0, 214.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1165,12 +919,6 @@
   </g>
   <g transform="translate(274.0, 214.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1185,12 +933,6 @@
   </g>
   <g transform="translate(164.0, 220.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1205,12 +947,6 @@
   </g>
   <g transform="translate(184.0, 220.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1225,12 +961,6 @@
   </g>
   <g transform="translate(204.0, 220.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1245,12 +975,6 @@
   </g>
   <g transform="translate(224.0, 220.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1265,12 +989,6 @@
   </g>
   <g transform="translate(244.0, 220.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1285,12 +1003,6 @@
   </g>
   <g transform="translate(264.0, 220.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1305,12 +1017,6 @@
   </g>
   <g transform="translate(284.0, 220.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1325,12 +1031,6 @@
   </g>
   <g transform="translate(174.0, 226.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1345,12 +1045,6 @@
   </g>
   <g transform="translate(194.0, 226.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1365,12 +1059,6 @@
   </g>
   <g transform="translate(214.0, 226.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1385,12 +1073,6 @@
   </g>
   <g transform="translate(234.0, 226.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1405,12 +1087,6 @@
   </g>
   <g transform="translate(254.0, 226.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1425,12 +1101,6 @@
   </g>
   <g transform="translate(274.0, 226.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1445,12 +1115,6 @@
   </g>
   <g transform="translate(294.0, 226.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1465,12 +1129,6 @@
   </g>
   <g transform="translate(184.0, 232.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1485,12 +1143,6 @@
   </g>
   <g transform="translate(204.0, 232.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1505,12 +1157,6 @@
   </g>
   <g transform="translate(224.0, 232.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1525,12 +1171,6 @@
   </g>
   <g transform="translate(244.0, 232.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1545,12 +1185,6 @@
   </g>
   <g transform="translate(264.0, 232.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1565,12 +1199,6 @@
   </g>
   <g transform="translate(284.0, 232.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1585,12 +1213,6 @@
   </g>
   <g transform="translate(304.0, 232.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1605,12 +1227,6 @@
   </g>
   <g transform="translate(194.0, 238.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1625,12 +1241,6 @@
   </g>
   <g transform="translate(214.0, 238.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1645,12 +1255,6 @@
   </g>
   <g transform="translate(234.0, 238.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1665,12 +1269,6 @@
   </g>
   <g transform="translate(254.0, 238.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1685,12 +1283,6 @@
   </g>
   <g transform="translate(274.0, 238.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1705,12 +1297,6 @@
   </g>
   <g transform="translate(294.0, 238.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1725,12 +1311,6 @@
   </g>
   <g transform="translate(314.0, 238.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1745,12 +1325,6 @@
   </g>
   <g transform="translate(204.0, 244.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1765,12 +1339,6 @@
   </g>
   <g transform="translate(224.0, 244.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1785,12 +1353,6 @@
   </g>
   <g transform="translate(244.0, 244.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1805,12 +1367,6 @@
   </g>
   <g transform="translate(264.0, 244.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1825,12 +1381,6 @@
   </g>
   <g transform="translate(284.0, 244.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1845,12 +1395,6 @@
   </g>
   <g transform="translate(304.0, 244.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1865,12 +1409,6 @@
   </g>
   <g transform="translate(324.0, 244.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1885,12 +1423,6 @@
   </g>
   <g transform="translate(214.0, 250.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1905,12 +1437,6 @@
   </g>
   <g transform="translate(234.0, 250.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1925,12 +1451,6 @@
   </g>
   <g transform="translate(254.0, 250.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1945,12 +1465,6 @@
   </g>
   <g transform="translate(274.0, 250.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1965,12 +1479,6 @@
   </g>
   <g transform="translate(294.0, 250.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -1985,12 +1493,6 @@
   </g>
   <g transform="translate(314.0, 250.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2005,12 +1507,6 @@
   </g>
   <g transform="translate(334.0, 250.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2025,12 +1521,6 @@
   </g>
   <g transform="translate(224.0, 256.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2045,12 +1535,6 @@
   </g>
   <g transform="translate(244.0, 256.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2065,12 +1549,6 @@
   </g>
   <g transform="translate(264.0, 256.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2085,12 +1563,6 @@
   </g>
   <g transform="translate(284.0, 256.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2105,12 +1577,6 @@
   </g>
   <g transform="translate(304.0, 256.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2125,12 +1591,6 @@
   </g>
   <g transform="translate(324.0, 256.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2145,12 +1605,6 @@
   </g>
   <g transform="translate(344.0, 256.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2165,12 +1619,6 @@
   </g>
   <g transform="translate(234.0, 262.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2185,12 +1633,6 @@
   </g>
   <g transform="translate(254.0, 262.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2205,12 +1647,6 @@
   </g>
   <g transform="translate(274.0, 262.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2225,12 +1661,6 @@
   </g>
   <g transform="translate(294.0, 262.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2245,12 +1675,6 @@
   </g>
   <g transform="translate(314.0, 262.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2265,12 +1689,6 @@
   </g>
   <g transform="translate(334.0, 262.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2285,12 +1703,6 @@
   </g>
   <g transform="translate(354.0, 262.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2305,12 +1717,6 @@
   </g>
   <g transform="translate(244.0, 268.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2325,12 +1731,6 @@
   </g>
   <g transform="translate(264.0, 268.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2345,12 +1745,6 @@
   </g>
   <g transform="translate(284.0, 268.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2365,12 +1759,6 @@
   </g>
   <g transform="translate(304.0, 268.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2385,12 +1773,6 @@
   </g>
   <g transform="translate(324.0, 268.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2405,12 +1787,6 @@
   </g>
   <g transform="translate(344.0, 268.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2425,12 +1801,6 @@
   </g>
   <g transform="translate(364.0, 268.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2445,12 +1815,6 @@
   </g>
   <g transform="translate(254.0, 274.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2465,12 +1829,6 @@
   </g>
   <g transform="translate(274.0, 274.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2485,12 +1843,6 @@
   </g>
   <g transform="translate(294.0, 274.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2505,12 +1857,6 @@
   </g>
   <g transform="translate(314.0, 274.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2525,12 +1871,6 @@
   </g>
   <g transform="translate(334.0, 274.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2545,12 +1885,6 @@
   </g>
   <g transform="translate(354.0, 274.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2565,12 +1899,6 @@
   </g>
   <g transform="translate(374.0, 274.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2585,12 +1913,6 @@
   </g>
   <g transform="translate(264.0, 280.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2605,12 +1927,6 @@
   </g>
   <g transform="translate(284.0, 280.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2625,12 +1941,6 @@
   </g>
   <g transform="translate(304.0, 280.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2645,12 +1955,6 @@
   </g>
   <g transform="translate(324.0, 280.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2665,12 +1969,6 @@
   </g>
   <g transform="translate(344.0, 280.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2685,12 +1983,6 @@
   </g>
   <g transform="translate(364.0, 280.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2705,12 +1997,6 @@
   </g>
   <g transform="translate(384.0, 280.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2725,12 +2011,6 @@
   </g>
   <g transform="translate(274.0, 286.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2745,12 +2025,6 @@
   </g>
   <g transform="translate(294.0, 286.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2765,12 +2039,6 @@
   </g>
   <g transform="translate(314.0, 286.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2785,12 +2053,6 @@
   </g>
   <g transform="translate(334.0, 286.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2805,12 +2067,6 @@
   </g>
   <g transform="translate(354.0, 286.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2825,12 +2081,6 @@
   </g>
   <g transform="translate(374.0, 286.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2845,12 +2095,6 @@
   </g>
   <g transform="translate(394.0, 286.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2865,12 +2109,6 @@
   </g>
   <g transform="translate(284.0, 292.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2885,12 +2123,6 @@
   </g>
   <g transform="translate(304.0, 292.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2905,12 +2137,6 @@
   </g>
   <g transform="translate(324.0, 292.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2925,12 +2151,6 @@
   </g>
   <g transform="translate(344.0, 292.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2945,12 +2165,6 @@
   </g>
   <g transform="translate(364.0, 292.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2965,12 +2179,6 @@
   </g>
   <g transform="translate(384.0, 292.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -2985,12 +2193,6 @@
   </g>
   <g transform="translate(404.0, 292.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3005,12 +2207,6 @@
   </g>
   <g transform="translate(294.0, 298.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3025,12 +2221,6 @@
   </g>
   <g transform="translate(314.0, 298.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3045,12 +2235,6 @@
   </g>
   <g transform="translate(334.0, 298.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3065,12 +2249,6 @@
   </g>
   <g transform="translate(354.0, 298.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3085,12 +2263,6 @@
   </g>
   <g transform="translate(374.0, 298.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3105,12 +2277,6 @@
   </g>
   <g transform="translate(394.0, 298.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3125,12 +2291,6 @@
   </g>
   <g transform="translate(414.0, 298.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3145,12 +2305,6 @@
   </g>
   <g transform="translate(304.0, 304.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3165,12 +2319,6 @@
   </g>
   <g transform="translate(324.0, 304.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3185,12 +2333,6 @@
   </g>
   <g transform="translate(344.0, 304.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3205,12 +2347,6 @@
   </g>
   <g transform="translate(364.0, 304.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3225,12 +2361,6 @@
   </g>
   <g transform="translate(384.0, 304.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3245,12 +2375,6 @@
   </g>
   <g transform="translate(404.0, 304.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3265,12 +2389,6 @@
   </g>
   <g transform="translate(424.0, 304.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3285,12 +2403,6 @@
   </g>
   <g transform="translate(314.0, 310.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3305,12 +2417,6 @@
   </g>
   <g transform="translate(334.0, 310.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3325,12 +2431,6 @@
   </g>
   <g transform="translate(354.0, 310.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3345,12 +2445,6 @@
   </g>
   <g transform="translate(374.0, 310.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3365,12 +2459,6 @@
   </g>
   <g transform="translate(394.0, 310.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3385,12 +2473,6 @@
   </g>
   <g transform="translate(414.0, 310.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3405,12 +2487,6 @@
   </g>
   <g transform="translate(434.0, 310.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3425,12 +2501,6 @@
   </g>
   <g transform="translate(324.0, 316.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3445,12 +2515,6 @@
   </g>
   <g transform="translate(344.0, 316.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3465,12 +2529,6 @@
   </g>
   <g transform="translate(364.0, 316.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3485,12 +2543,6 @@
   </g>
   <g transform="translate(384.0, 316.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3505,12 +2557,6 @@
   </g>
   <g transform="translate(404.0, 316.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3525,12 +2571,6 @@
   </g>
   <g transform="translate(424.0, 316.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3545,12 +2585,6 @@
   </g>
   <g transform="translate(444.0, 316.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3565,12 +2599,6 @@
   </g>
   <g transform="translate(334.0, 322.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3585,12 +2613,6 @@
   </g>
   <g transform="translate(354.0, 322.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3605,12 +2627,6 @@
   </g>
   <g transform="translate(374.0, 322.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3625,12 +2641,6 @@
   </g>
   <g transform="translate(394.0, 322.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3645,12 +2655,6 @@
   </g>
   <g transform="translate(414.0, 322.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3665,12 +2669,6 @@
   </g>
   <g transform="translate(434.0, 322.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3685,12 +2683,6 @@
   </g>
   <g transform="translate(454.0, 322.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3705,12 +2697,6 @@
   </g>
   <g transform="translate(344.0, 328.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3725,12 +2711,6 @@
   </g>
   <g transform="translate(364.0, 328.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3745,12 +2725,6 @@
   </g>
   <g transform="translate(384.0, 328.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3765,12 +2739,6 @@
   </g>
   <g transform="translate(404.0, 328.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3785,12 +2753,6 @@
   </g>
   <g transform="translate(424.0, 328.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3805,12 +2767,6 @@
   </g>
   <g transform="translate(444.0, 328.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3825,12 +2781,6 @@
   </g>
   <g transform="translate(464.0, 328.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3845,12 +2795,6 @@
   </g>
   <g transform="translate(354.0, 334.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3865,12 +2809,6 @@
   </g>
   <g transform="translate(374.0, 334.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3885,12 +2823,6 @@
   </g>
   <g transform="translate(394.0, 334.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3905,12 +2837,6 @@
   </g>
   <g transform="translate(414.0, 334.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3925,12 +2851,6 @@
   </g>
   <g transform="translate(434.0, 334.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3945,12 +2865,6 @@
   </g>
   <g transform="translate(454.0, 334.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3965,12 +2879,6 @@
   </g>
   <g transform="translate(474.0, 334.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -3985,12 +2893,6 @@
   </g>
   <g transform="translate(364.0, 340.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4005,12 +2907,6 @@
   </g>
   <g transform="translate(384.0, 340.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4025,12 +2921,6 @@
   </g>
   <g transform="translate(404.0, 340.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4045,12 +2935,6 @@
   </g>
   <g transform="translate(424.0, 340.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4065,12 +2949,6 @@
   </g>
   <g transform="translate(444.0, 340.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4085,12 +2963,6 @@
   </g>
   <g transform="translate(464.0, 340.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4105,12 +2977,6 @@
   </g>
   <g transform="translate(484.0, 340.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4125,12 +2991,6 @@
   </g>
   <g transform="translate(374.0, 346.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4145,12 +3005,6 @@
   </g>
   <g transform="translate(394.0, 346.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4165,12 +3019,6 @@
   </g>
   <g transform="translate(414.0, 346.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4185,12 +3033,6 @@
   </g>
   <g transform="translate(434.0, 346.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4205,12 +3047,6 @@
   </g>
   <g transform="translate(454.0, 346.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4225,12 +3061,6 @@
   </g>
   <g transform="translate(474.0, 346.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4245,12 +3075,6 @@
   </g>
   <g transform="translate(494.0, 346.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4265,12 +3089,6 @@
   </g>
   <g transform="translate(384.0, 352.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4285,12 +3103,6 @@
   </g>
   <g transform="translate(404.0, 352.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4305,12 +3117,6 @@
   </g>
   <g transform="translate(424.0, 352.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4325,12 +3131,6 @@
   </g>
   <g transform="translate(444.0, 352.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4345,12 +3145,6 @@
   </g>
   <g transform="translate(464.0, 352.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4365,12 +3159,6 @@
   </g>
   <g transform="translate(484.0, 352.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4385,12 +3173,6 @@
   </g>
   <g transform="translate(504.0, 352.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4405,12 +3187,6 @@
   </g>
   <g transform="translate(394.0, 358.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4425,12 +3201,6 @@
   </g>
   <g transform="translate(414.0, 358.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4445,12 +3215,6 @@
   </g>
   <g transform="translate(434.0, 358.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4465,12 +3229,6 @@
   </g>
   <g transform="translate(454.0, 358.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4485,12 +3243,6 @@
   </g>
   <g transform="translate(474.0, 358.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4505,12 +3257,6 @@
   </g>
   <g transform="translate(494.0, 358.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4525,12 +3271,6 @@
   </g>
   <g transform="translate(514.0, 358.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4545,12 +3285,6 @@
   </g>
   <g transform="translate(404.0, 364.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4565,12 +3299,6 @@
   </g>
   <g transform="translate(424.0, 364.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4585,12 +3313,6 @@
   </g>
   <g transform="translate(444.0, 364.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4605,12 +3327,6 @@
   </g>
   <g transform="translate(464.0, 364.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4625,12 +3341,6 @@
   </g>
   <g transform="translate(484.0, 364.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4645,12 +3355,6 @@
   </g>
   <g transform="translate(504.0, 364.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4665,12 +3369,6 @@
   </g>
   <g transform="translate(524.0, 364.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4685,12 +3383,6 @@
   </g>
   <g transform="translate(414.0, 370.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4705,12 +3397,6 @@
   </g>
   <g transform="translate(434.0, 370.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4725,12 +3411,6 @@
   </g>
   <g transform="translate(454.0, 370.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4745,12 +3425,6 @@
   </g>
   <g transform="translate(474.0, 370.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4765,12 +3439,6 @@
   </g>
   <g transform="translate(494.0, 370.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4785,12 +3453,6 @@
   </g>
   <g transform="translate(514.0, 370.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4805,12 +3467,6 @@
   </g>
   <g transform="translate(534.0, 370.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4825,12 +3481,6 @@
   </g>
   <g transform="translate(424.0, 376.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4845,12 +3495,6 @@
   </g>
   <g transform="translate(444.0, 376.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4865,12 +3509,6 @@
   </g>
   <g transform="translate(464.0, 376.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4885,12 +3523,6 @@
   </g>
   <g transform="translate(484.0, 376.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4905,12 +3537,6 @@
   </g>
   <g transform="translate(504.0, 376.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4925,12 +3551,6 @@
   </g>
   <g transform="translate(524.0, 376.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4945,12 +3565,6 @@
   </g>
   <g transform="translate(544.0, 376.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4965,12 +3579,6 @@
   </g>
   <g transform="translate(434.0, 382.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -4985,12 +3593,6 @@
   </g>
   <g transform="translate(454.0, 382.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5005,12 +3607,6 @@
   </g>
   <g transform="translate(474.0, 382.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5025,12 +3621,6 @@
   </g>
   <g transform="translate(494.0, 382.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5045,12 +3635,6 @@
   </g>
   <g transform="translate(514.0, 382.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5065,12 +3649,6 @@
   </g>
   <g transform="translate(534.0, 382.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5085,12 +3663,6 @@
   </g>
   <g transform="translate(554.0, 382.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5105,12 +3677,6 @@
   </g>
   <g transform="translate(444.0, 388.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5125,12 +3691,6 @@
   </g>
   <g transform="translate(464.0, 388.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5145,12 +3705,6 @@
   </g>
   <g transform="translate(484.0, 388.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5165,12 +3719,6 @@
   </g>
   <g transform="translate(504.0, 388.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5185,12 +3733,6 @@
   </g>
   <g transform="translate(524.0, 388.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5205,12 +3747,6 @@
   </g>
   <g transform="translate(544.0, 388.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5225,12 +3761,6 @@
   </g>
   <g transform="translate(564.0, 388.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5245,12 +3775,6 @@
   </g>
   <g transform="translate(454.0, 394.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5265,12 +3789,6 @@
   </g>
   <g transform="translate(474.0, 394.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5285,12 +3803,6 @@
   </g>
   <g transform="translate(494.0, 394.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5305,12 +3817,6 @@
   </g>
   <g transform="translate(514.0, 394.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5325,12 +3831,6 @@
   </g>
   <g transform="translate(534.0, 394.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5345,12 +3845,6 @@
   </g>
   <g transform="translate(554.0, 394.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5365,12 +3859,6 @@
   </g>
   <g transform="translate(574.0, 394.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5385,12 +3873,6 @@
   </g>
   <g transform="translate(464.0, 400.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5405,12 +3887,6 @@
   </g>
   <g transform="translate(484.0, 400.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5425,12 +3901,6 @@
   </g>
   <g transform="translate(504.0, 400.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5445,12 +3915,6 @@
   </g>
   <g transform="translate(524.0, 400.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5465,12 +3929,6 @@
   </g>
   <g transform="translate(544.0, 400.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5485,12 +3943,6 @@
   </g>
   <g transform="translate(564.0, 400.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5505,12 +3957,6 @@
   </g>
   <g transform="translate(584.0, 400.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5525,12 +3971,6 @@
   </g>
   <g transform="translate(474.0, 406.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5545,12 +3985,6 @@
   </g>
   <g transform="translate(494.0, 406.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5565,12 +3999,6 @@
   </g>
   <g transform="translate(514.0, 406.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5585,12 +4013,6 @@
   </g>
   <g transform="translate(534.0, 406.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5605,12 +4027,6 @@
   </g>
   <g transform="translate(554.0, 406.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5625,12 +4041,6 @@
   </g>
   <g transform="translate(574.0, 406.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5645,12 +4055,6 @@
   </g>
   <g transform="translate(594.0, 406.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5665,12 +4069,6 @@
   </g>
   <g transform="translate(484.0, 412.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5685,12 +4083,6 @@
   </g>
   <g transform="translate(504.0, 412.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5705,12 +4097,6 @@
   </g>
   <g transform="translate(524.0, 412.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5725,12 +4111,6 @@
   </g>
   <g transform="translate(544.0, 412.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5745,12 +4125,6 @@
   </g>
   <g transform="translate(564.0, 412.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5765,12 +4139,6 @@
   </g>
   <g transform="translate(584.0, 412.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5785,12 +4153,6 @@
   </g>
   <g transform="translate(604.0, 412.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5805,12 +4167,6 @@
   </g>
   <g transform="translate(494.0, 418.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5825,12 +4181,6 @@
   </g>
   <g transform="translate(514.0, 418.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5845,12 +4195,6 @@
   </g>
   <g transform="translate(534.0, 418.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5865,12 +4209,6 @@
   </g>
   <g transform="translate(554.0, 418.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5885,12 +4223,6 @@
   </g>
   <g transform="translate(574.0, 418.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5905,12 +4237,6 @@
   </g>
   <g transform="translate(594.0, 418.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5949,12 +4275,6 @@
   </g>
   <g transform="translate(504.0, 424.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5969,12 +4289,6 @@
   </g>
   <g transform="translate(524.0, 424.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -5989,12 +4303,6 @@
   </g>
   <g transform="translate(544.0, 424.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6009,12 +4317,6 @@
   </g>
   <g transform="translate(564.0, 424.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6029,12 +4331,6 @@
   </g>
   <g transform="translate(584.0, 424.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6068,12 +4364,6 @@
   </g>
   <g transform="translate(624.0, 424.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6088,12 +4378,6 @@
   </g>
   <g transform="translate(514.0, 430.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6108,12 +4392,6 @@
   </g>
   <g transform="translate(534.0, 430.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6128,12 +4406,6 @@
   </g>
   <g transform="translate(554.0, 430.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6148,12 +4420,6 @@
   </g>
   <g transform="translate(574.0, 430.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6168,12 +4434,6 @@
   </g>
   <g transform="translate(594.0, 430.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6188,12 +4448,6 @@
   </g>
   <g transform="translate(614.0, 430.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6208,12 +4462,6 @@
   </g>
   <g transform="translate(634.0, 430.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6228,12 +4476,6 @@
   </g>
   <g transform="translate(524.0, 436.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6248,12 +4490,6 @@
   </g>
   <g transform="translate(544.0, 436.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6268,12 +4504,6 @@
   </g>
   <g transform="translate(564.0, 436.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6288,12 +4518,6 @@
   </g>
   <g transform="translate(584.0, 436.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6308,12 +4532,6 @@
   </g>
   <g transform="translate(604.0, 436.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6328,12 +4546,6 @@
   </g>
   <g transform="translate(624.0, 436.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6372,12 +4584,6 @@
   </g>
   <g transform="translate(534.0, 442.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6392,12 +4598,6 @@
   </g>
   <g transform="translate(554.0, 442.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6412,12 +4612,6 @@
   </g>
   <g transform="translate(574.0, 442.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6432,12 +4626,6 @@
   </g>
   <g transform="translate(594.0, 442.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6490,12 +4678,6 @@
   </g>
   <g transform="translate(654.0, 442.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6510,12 +4692,6 @@
   </g>
   <g transform="translate(544.0, 448.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6530,12 +4706,6 @@
   </g>
   <g transform="translate(564.0, 448.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6569,12 +4739,6 @@
   </g>
   <g transform="translate(604.0, 448.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6589,12 +4753,6 @@
   </g>
   <g transform="translate(624.0, 448.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6609,12 +4767,6 @@
   </g>
   <g transform="translate(644.0, 448.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6629,12 +4781,6 @@
   </g>
   <g transform="translate(664.0, 448.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6649,12 +4795,6 @@
   </g>
   <g transform="translate(554.0, 454.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6667,61 +4807,32 @@
     <ellipse cx="10.5" cy="4" rx="2.5" ry="2" fill="#6aae48" opacity="0.75"/>
   </g>
   </g>
-  <g transform="translate(564.0, 399.0)">
-    <g filter="url(#snowGlow)">
-      <g>
+  <g transform="translate(567.0, 420.0)">
+    <g>
     <!-- 기저 타일 -->
-    <polygon points="21,53 31,59 21,65 11,59" fill="#6e8090"/>
-    <polygon points="11,59 21,65 21,67 11,61" fill="#3e5060"/>
-    <polygon points="21,65 31,59 31,61 21,67" fill="#90a8b8"/>
+    <polygon points="18,39 28,45 18,50 8,45" fill="#6e8090"/>
+    <polygon points="8,45 18,50 18,52 8,47" fill="#3e5060"/>
+    <polygon points="18,50 28,45 28,47 18,52" fill="#90a8b8"/>
 
-    <!-- 빙하/암석 기저 -->
-    <polygon points="21,65 3,59 6,49 10,37 8,22 21,22" fill="#364858"/>
-    <polygon points="21,22 35,22 36,49 39,59 21,65" fill="#4e7088"/>
-    <!-- 좌측 그늘 -->
-    <polygon points="21,22 8,22 10,37 6,49 3,59 21,65"
-             fill="#1e2c38" opacity="0.22"/>
+    <!-- 하부 초원 왼쪽 -->
+    <polygon points="18,50 8,45 10,33 18,39" fill="#3a5c2e"/>
+    <!-- 하부 초원 오른쪽 -->
+    <polygon points="18,39 26,33 28,45 18,50" fill="#588840"/>
 
-    <!-- 왼쪽 봉우리 눈 (그늘면 — 차가운 파랑) -->
-    <path d="M 8,22 Q 9,6 14,3 Q 19,13 21,22 Z"
-          fill="#c0d4f0"/>
-    <!-- 왼쪽 봉우리 밝은 하이라이트 -->
-    <path d="M 14,3 Q 17,1 18,4 Q 17,8 14,6 Z"
-          fill="#eef6ff" opacity="0.85"/>
+    <!-- 상부 풀 왼쪽 (짙은 초록) -->
+    <polygon points="18,39 10,33 12,23 14,11 18,3" fill="#284820"/>
+    <!-- 상부 풀 오른쪽 (중간 초록) -->
+    <polygon points="18,3 22,11 24,23 26,33 18,39" fill="#4a7830"/>
 
-    <!-- 오른쪽 봉우리 눈 (주봉, 밝은 청백색) -->
-    <path d="M 21,22 Q 23,13 29,1 Q 34,6 35,22 Z"
-          fill="#daeeff"/>
-    <!-- 오른쪽 봉우리 최고 밝음 -->
-    <path d="M 29,1 Q 33,3 32,6 Q 28,5 29,1 Z"
-          fill="#ffffff" opacity="0.90"/>
-
-    <!-- 왼쪽 봉우리 정상 순백 -->
-    <polygon points="14,3 12,7 16,7" fill="#ffffff"/>
-    <!-- 오른쪽 봉우리 정상 순백 -->
-    <polygon points="29,1 27,5 31,5" fill="#ffffff"/>
-
-    <!-- 안부(saddle) 연결 눈 — 두 봉우리 사이 이음 -->
-    <path d="M 14,6 Q 21,14 29,5 Q 21,16 14,6 Z"
-          fill="#d0e4f8" opacity="0.55"/>
-
-    <!-- 눈골 선 (좌봉) -->
-    <line x1="14" y1="3" x2="10" y2="22"
-          stroke="#a8c8e8" stroke-width="0.7" opacity="0.38"/>
-    <!-- 눈골 선 (우봉) -->
-    <line x1="29" y1="1" x2="32" y2="22"
-          stroke="#e0f0ff" stroke-width="0.7" opacity="0.36"/>
+    <!-- 정상 밝은 초록 하이라이트 -->
+    <polygon points="18,3 15,9 21,9" fill="#78b848" opacity="0.85"/>
+    <!-- 정상 둥근 처리 -->
+    <ellipse cx="18" cy="6" rx="4" ry="3" fill="#4a7830"/>
+    <ellipse cx="19" cy="5" rx="2.5" ry="2" fill="#78b848" opacity="0.7"/>
   </g>
-    </g>
   </g>
   <g transform="translate(594.0, 454.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6736,12 +4847,6 @@
   </g>
   <g transform="translate(614.0, 454.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6756,12 +4861,6 @@
   </g>
   <g transform="translate(634.0, 454.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6776,12 +4875,6 @@
   </g>
   <g transform="translate(654.0, 454.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6796,12 +4889,6 @@
   </g>
   <g transform="translate(674.0, 454.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6835,12 +4922,6 @@
   </g>
   <g transform="translate(584.0, 460.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6855,12 +4936,6 @@
   </g>
   <g transform="translate(604.0, 460.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6875,12 +4950,6 @@
   </g>
   <g transform="translate(624.0, 460.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6895,12 +4964,6 @@
   </g>
   <g transform="translate(644.0, 460.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6915,12 +4978,6 @@
   </g>
   <g transform="translate(664.0, 460.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6935,12 +4992,6 @@
   </g>
   <g transform="translate(684.0, 460.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6955,12 +5006,6 @@
   </g>
   <g transform="translate(574.0, 466.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6975,12 +5020,6 @@
   </g>
   <g transform="translate(594.0, 466.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -6995,12 +5034,6 @@
   </g>
   <g transform="translate(614.0, 466.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7015,12 +5048,6 @@
   </g>
   <g transform="translate(634.0, 466.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7035,12 +5062,6 @@
   </g>
   <g transform="translate(654.0, 466.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7055,12 +5076,6 @@
   </g>
   <g transform="translate(674.0, 466.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7075,12 +5090,6 @@
   </g>
   <g transform="translate(694.0, 466.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7095,12 +5104,6 @@
   </g>
   <g transform="translate(584.0, 472.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7115,12 +5118,6 @@
   </g>
   <g transform="translate(604.0, 472.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7135,12 +5132,6 @@
   </g>
   <g transform="translate(624.0, 472.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7155,12 +5146,6 @@
   </g>
   <g transform="translate(644.0, 472.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7175,12 +5160,6 @@
   </g>
   <g transform="translate(664.0, 472.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7195,12 +5174,6 @@
   </g>
   <g transform="translate(684.0, 472.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7215,12 +5188,6 @@
   </g>
   <g transform="translate(704.0, 472.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7235,12 +5202,6 @@
   </g>
   <g transform="translate(594.0, 478.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7255,12 +5216,6 @@
   </g>
   <g transform="translate(614.0, 478.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7275,12 +5230,6 @@
   </g>
   <g transform="translate(634.0, 478.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7295,12 +5244,6 @@
   </g>
   <g transform="translate(654.0, 478.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7315,12 +5258,6 @@
   </g>
   <g transform="translate(674.0, 478.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7335,12 +5272,6 @@
   </g>
   <g transform="translate(694.0, 478.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7355,12 +5286,6 @@
   </g>
   <g transform="translate(604.0, 484.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7375,12 +5300,6 @@
   </g>
   <g transform="translate(624.0, 484.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7395,12 +5314,6 @@
   </g>
   <g transform="translate(644.0, 484.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7415,12 +5328,6 @@
   </g>
   <g transform="translate(664.0, 484.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7435,12 +5342,6 @@
   </g>
   <g transform="translate(684.0, 484.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7455,12 +5356,6 @@
   </g>
   <g transform="translate(614.0, 490.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7475,12 +5370,6 @@
   </g>
   <g transform="translate(634.0, 490.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7495,12 +5384,6 @@
   </g>
   <g transform="translate(654.0, 490.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7515,12 +5398,6 @@
   </g>
   <g transform="translate(674.0, 490.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7535,12 +5412,6 @@
   </g>
   <g transform="translate(624.0, 496.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7555,12 +5426,6 @@
   </g>
   <g transform="translate(644.0, 496.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7575,12 +5440,6 @@
   </g>
   <g transform="translate(664.0, 496.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7595,12 +5454,6 @@
   </g>
   <g transform="translate(634.0, 502.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7615,12 +5468,6 @@
   </g>
   <g transform="translate(654.0, 502.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7635,12 +5482,6 @@
   </g>
   <g transform="translate(644.0, 508.0)">
     <g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
@@ -7666,7 +5507,7 @@
     <g id="stats-summary">
       <rect x="225" y="548" width="400" height="58" fill="#0d1b38" rx="8" opacity="0.65"/>
       <text font-family="monospace" font-size="12" x="425" y="567" text-anchor="middle" fill="#6a90b8">2025-04-13 / 2026-04-16</text>
-      <text font-family="monospace" font-size="20" font-weight="bold" x="425" y="594" text-anchor="middle" fill="#f0f4ff">961 contributions</text>
+      <text font-family="monospace" font-size="20" font-weight="bold" x="425" y="594" text-anchor="middle" fill="#f0f4ff">963 contributions</text>
     </g>
   
 </svg>
