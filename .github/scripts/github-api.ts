@@ -73,3 +73,13 @@ export function contributionLevelToNumber(
       return 0;
   }
 }
+
+// contributionCount 기반 레벨 계산 (GitHub API의 contributionLevel은 캐싱 지연 있음)
+export function countToLevel(count: number, maxCount: number): 0 | 1 | 2 | 3 | 4 {
+  if (count === 0 || maxCount === 0) return 0;
+  const ratio = count / maxCount;
+  if (ratio <= 0.25) return 1;
+  if (ratio <= 0.50) return 2;
+  if (ratio <= 0.75) return 3;
+  return 4;
+}

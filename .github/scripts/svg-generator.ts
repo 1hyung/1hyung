@@ -1,7 +1,7 @@
 // Dragon/Farm/Mountain Contribution 시각화 SVG 생성 (테마 지원)
 
 import { ContributionData, SVGConfig, DEFAULT_CONFIG } from './types';
-import { contributionLevelToNumber } from './github-api';
+import { countToLevel } from './github-api';
 import { createGridCells, createIsometricGrid, createFlatGrid } from './isometric';
 import { createRadarChart, createDonutChart, processLanguageData, RadarChartData } from './charts';
 import { Theme, getTheme } from './theme';
@@ -108,7 +108,12 @@ export function generateSVG(
   const weeks = theme.reverseWeeks
     ? [...calendar.weeks].reverse()
     : calendar.weeks;
-  const gridCells = createGridCells(weeks, contributionLevelToNumber);
+  // 전체 기간의 최대 기여 수로 실시간 레벨 계산 (contributionLevel은 GitHub 서버 캐싱으로 지연될 수 있음)
+  const allCounts: number[] = weeks.flatMap((w: any) =>
+    w.contributionDays.map((d: any) => d.contributionCount as number)
+  );
+  const maxCount = Math.max(...allCounts, 1);
+  const gridCells = createGridCells(weeks, (_level: string, count: number) => countToLevel(count, maxCount));
 
   // 레이더 차트 데이터
   const radarData: RadarChartData = {
