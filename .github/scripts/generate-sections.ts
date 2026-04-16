@@ -300,15 +300,16 @@ const {
  */
 function generateHeungbuHeaderSVG(): string {
   const W = 1200, H = 420;
+  const GRASS_Y = 298;
   // 간판 위치
-  const sx = 380, sy = 72, sw = 440, sh = 208;
+  const sx = 370, sy = 80, sw = 460, sh = 210;
   const scx = sx + Math.round(sw / 2); // 600
 
-  // 무지개 색동 테두리 (6색 × 3px = 18px 폭)
+  // 무지개 색동 테두리 (6색 × 4px = 24px 폭)
   const rainbow = ['#E82020','#F07020','#E8C018','#38A028','#2070D0','#7828C0'];
-  const bs = 3; // stripe height
+  const bs = 4;
   const nb = rainbow.length; // 6
-  const borderH = nb * bs; // 18px
+  const borderH = nb * bs; // 24px
   const rbTop    = rainbow.map((c, i) =>
     `<rect x="${sx}" y="${sy+i*bs}" width="${sw}" height="${bs}" fill="${c}"/>`).join('');
   const rbBottom = rainbow.map((c, i) =>
@@ -319,175 +320,221 @@ function generateHeungbuHeaderSVG(): string {
     `<rect x="${sx+sw-borderH+i*bs}" y="${sy+borderH}" width="${bs}" height="${sh-borderH*2}" fill="${c}"/>`).join('');
 
   // 나뭇결 선
-  const grainLines = Array.from({ length: 9 }, (_, i) => {
-    const gy = sy + borderH + 10 + i * 20;
-    const c2 = (i % 2 === 0) ? 5 : -5;
-    return `<path d="M${sx+borderH+10},${gy} Q${scx},${gy+c2} ${sx+sw-borderH-10},${gy}"
-      stroke="#5A2808" stroke-width="1.2" fill="none" opacity="0.28"/>`;
+  const grainLines = Array.from({ length: 10 }, (_, i) => {
+    const gy = sy + borderH + 8 + i * 18;
+    const c2 = (i % 2 === 0) ? 6 : -6;
+    return `<path d="M${sx+borderH+8},${gy} Q${scx},${gy+c2} ${sx+sw-borderH-8},${gy}"
+      stroke="#5A2808" stroke-width="1.2" fill="none" opacity="0.25"/>`;
   }).join('');
 
-  // 소나무 헬퍼
+  // 소나무 헬퍼 (3단 레이어로 풍성하게)
   const pine = (pcx: number, pcy: number, ph: number) => {
-    const pw = ph * 0.36;
+    const pw = ph * 0.42;
     return `
-      <polygon points="${pcx},${pcy} ${pcx-pw*0.9},${pcy+ph*0.55} ${pcx+pw*0.9},${pcy+ph*0.55}" fill="#224818"/>
-      <polygon points="${pcx},${pcy+ph*0.22} ${pcx-pw},${pcy+ph*0.78} ${pcx+pw},${pcy+ph*0.78}" fill="#224818"/>
-      <rect x="${pcx-5}" y="${pcy+ph*0.72}" width="10" height="${ph*0.32}" fill="#4A2808"/>`;
+      <polygon points="${pcx},${pcy} ${pcx-pw*0.68},${pcy+ph*0.38} ${pcx+pw*0.68},${pcy+ph*0.38}" fill="#1A3810"/>
+      <polygon points="${pcx},${pcy+ph*0.14} ${pcx-pw*0.82},${pcy+ph*0.57} ${pcx+pw*0.82},${pcy+ph*0.57}" fill="#22481A"/>
+      <polygon points="${pcx},${pcy+ph*0.32} ${pcx-pw},${pcy+ph*0.80} ${pcx+pw},${pcy+ph*0.80}" fill="#2C5E22"/>
+      <rect x="${pcx-6}" y="${pcy+ph*0.74}" width="12" height="${ph*0.30}" rx="2" fill="#3A2008"/>`;
   };
 
-  // 돔형 초가집 헬퍼
+  // 돔형 초가집 — 더 크고 짚 텍스처 포함
   const domeHouse = (hcx: number, baseY: number) => {
-    const rx = 95, ry = 62;
-    const bx = hcx - Math.round(rx * 0.72);
-    const bw = Math.round(rx * 1.44);
-    const bodyH = 55;
+    const rx = 118, ry = 84;
+    const bx = hcx - Math.round(rx * 0.70);
+    const bw = Math.round(rx * 1.40);
+    const bodyH = 70;
+    // 돔 위 가로 짚 줄무늬 (8줄)
+    const thatch = [10,20,30,40,50,62,72].map(di => {
+      const hw = Math.round(rx * Math.sqrt(Math.max(0, 1 - (di / ry) * (di / ry))));
+      const ty = baseY - di;
+      const op = (0.10 + di * 0.004).toFixed(2);
+      return `<line x1="${hcx-hw}" y1="${ty}" x2="${hcx+hw}" y2="${ty}" stroke="#F8D840" stroke-width="2" opacity="${op}"/>`;
+    }).join('');
+    // 돔 테두리 하이라이트
+    const domePath = `M${hcx-rx},${baseY} A${rx},${ry} 0 0 1 ${hcx+rx},${baseY}`;
     return `
-      <path d="M${hcx-rx},${baseY} A${rx},${ry} 0 0 1 ${hcx+rx},${baseY}" fill="#D4A838"/>
-      <path d="M${hcx-rx*0.75},${baseY-ry*0.42} A${rx*0.82},${ry*0.65} 0 0 1 ${hcx+rx*0.75},${baseY-ry*0.42}"
-        fill="none" stroke="#F0C840" stroke-width="1.5" opacity="0.25"/>
-      <circle cx="${hcx-rx*0.62}" cy="${baseY-ry*0.35}" r="4" fill="#F8F040" opacity="0.88"/>
-      <circle cx="${hcx}"         cy="${baseY-ry+5}"     r="4" fill="#F8F040" opacity="0.88"/>
-      <circle cx="${hcx+rx*0.62}" cy="${baseY-ry*0.35}" r="4" fill="#F8F040" opacity="0.88"/>
+      <path d="${domePath}" fill="#C89020"/>
+      <path d="${domePath}" fill="#D4A030" opacity="0.6"/>
+      ${thatch}
+      <path d="M${hcx-rx*0.74},${baseY-ry*0.40} A${rx*0.82},${ry*0.62} 0 0 1 ${hcx+rx*0.74},${baseY-ry*0.40}"
+        fill="none" stroke="#F8E060" stroke-width="2.5" opacity="0.28"/>
+      <circle cx="${hcx-rx*0.60}" cy="${baseY-ry*0.36}" r="5" fill="#FFF060" opacity="0.82"/>
+      <circle cx="${hcx}"         cy="${baseY-ry+6}"     r="5" fill="#FFF060" opacity="0.82"/>
+      <circle cx="${hcx+rx*0.60}" cy="${baseY-ry*0.36}" r="5" fill="#FFF060" opacity="0.82"/>
       <rect x="${bx}" y="${baseY}" width="${bw}" height="${bodyH}" fill="#7A5030" rx="2"/>
-      <line x1="${bx}" y1="${baseY+16}" x2="${bx+bw}" y2="${baseY+16}" stroke="#5A3818" stroke-width="1" opacity="0.35"/>
-      <rect x="${hcx-13}" y="${baseY+14}" width="26" height="${bodyH-8}" rx="2" fill="#4A2808"/>
-      <rect x="${hcx+22}" y="${baseY+11}" width="28" height="20" rx="1" fill="#E8D090" opacity="0.82"/>
-      <line x1="${hcx+36}" y1="${baseY+11}" x2="${hcx+36}" y2="${baseY+31}" stroke="#6A4020" stroke-width="1.5"/>
-      <line x1="${hcx+22}" y1="${baseY+21}" x2="${hcx+50}" y2="${baseY+21}" stroke="#6A4020" stroke-width="1.5"/>
-      <rect x="${hcx-50}" y="${baseY+11}" width="28" height="20" rx="1" fill="#E8D090" opacity="0.82"/>
-      <line x1="${hcx-36}" y1="${baseY+11}" x2="${hcx-36}" y2="${baseY+31}" stroke="#6A4020" stroke-width="1.5"/>
-      <line x1="${hcx-50}" y1="${baseY+21}" x2="${hcx-22}" y2="${baseY+21}" stroke="#6A4020" stroke-width="1.5"/>`;
+      <rect x="${bx}" y="${baseY}" width="${bw}" height="3" fill="#5A3818" opacity="0.55"/>
+      <line x1="${bx}" y1="${baseY+18}" x2="${bx+bw}" y2="${baseY+18}" stroke="#5A3818" stroke-width="1.5" opacity="0.35"/>
+      <rect x="${hcx-14}" y="${baseY+16}" width="28" height="${bodyH-8}" rx="2" fill="#3C2008"/>
+      <rect x="${hcx+24}" y="${baseY+12}" width="32" height="24" rx="2" fill="#EED898" opacity="0.88"/>
+      <line x1="${hcx+40}" y1="${baseY+12}" x2="${hcx+40}" y2="${baseY+36}" stroke="#6A4020" stroke-width="2"/>
+      <line x1="${hcx+24}" y1="${baseY+24}" x2="${hcx+56}" y2="${baseY+24}" stroke="#6A4020" stroke-width="2"/>
+      <rect x="${hcx-56}" y="${baseY+12}" width="32" height="24" rx="2" fill="#EED898" opacity="0.88"/>
+      <line x1="${hcx-40}" y1="${baseY+12}" x2="${hcx-40}" y2="${baseY+36}" stroke="#6A4020" stroke-width="2"/>
+      <line x1="${hcx-56}" y1="${baseY+24}" x2="${hcx-24}" y2="${baseY+24}" stroke="#6A4020" stroke-width="2"/>
+      <rect x="${hcx-6}" y="${baseY+bodyH-22}" width="12" height="4" rx="1" fill="#8A6040" opacity="0.7"/>`;
   };
+
+  // 삼각형 산 + 설원 (배경)
+  const mountainSVG = (() => {
+    const peaks = [
+      { cx: 170, py: 48, hw: 245, snowHw: 62 },
+      { cx: 600, py: 30, hw: 300, snowHw: 75 },
+      { cx: 1030, py: 52, hw: 255, snowHw: 65 },
+    ];
+    return peaks.map(({ cx, py, hw, snowHw }) => {
+      const snowBase = py + 100;
+      return `
+        <polygon points="${cx},${py} ${cx-hw},${GRASS_Y} ${cx+hw},${GRASS_Y}" fill="#6878A0" opacity="0.70"/>
+        <polygon points="${cx},${py} ${cx-hw*0.12},${py+28} ${cx+hw*0.12},${py+28}" fill="#FFFFFF" opacity="0.30"/>
+        <polygon points="${cx},${py} ${cx-snowHw},${snowBase} ${cx+snowHw},${snowBase}" fill="#EEF4FF" opacity="0.82"/>`;
+    }).join('');
+  })();
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
   <defs>
     <linearGradient id="hSkG" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#80C8E8"/>
-      <stop offset="60%"  stop-color="#A8D8F0"/>
-      <stop offset="100%" stop-color="#C0E0F8"/>
+      <stop offset="0%"   stop-color="#6AB8E0"/>
+      <stop offset="55%"  stop-color="#9CD0EC"/>
+      <stop offset="100%" stop-color="#C2E4F8"/>
     </linearGradient>
     <linearGradient id="signG" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#A86030"/>
+      <stop offset="0%"   stop-color="#B06838"/>
       <stop offset="100%" stop-color="#7A4820"/>
     </linearGradient>
+    <linearGradient id="grassG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#62CA28"/>
+      <stop offset="100%" stop-color="#48A018"/>
+    </linearGradient>
     <filter id="signSh">
-      <feDropShadow dx="5" dy="6" stdDeviation="6" flood-color="#1a0800" flood-opacity="0.45"/>
+      <feDropShadow dx="6" dy="8" stdDeviation="7" flood-color="#1a0800" flood-opacity="0.50"/>
     </filter>
     <filter id="textGl">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#3a1800" flood-opacity="0.7"/>
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#3a1800" flood-opacity="0.75"/>
+    </filter>
+    <filter id="charSh">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#1a0800" flood-opacity="0.40"/>
     </filter>
   </defs>
 
   <!-- 하늘 -->
   <rect x="0" y="0" width="${W}" height="${H}" fill="url(#hSkG)"/>
 
-  <!-- 배경 산 (청회색) -->
-  <ellipse cx="220"  cy="240" rx="215" ry="135" fill="#7890A8" opacity="0.55"/>
-  <ellipse cx="600"  cy="230" rx="260" ry="122" fill="#6880A0" opacity="0.5"/>
-  <ellipse cx="980"  cy="236" rx="225" ry="128" fill="#7890A8" opacity="0.55"/>
+  <!-- 배경 산 (삼각형 + 설원) -->
+  ${mountainSVG}
 
-  <!-- 중경 언덕 (짙은 녹색) -->
-  <ellipse cx="-30"  cy="318" rx="260" ry="128" fill="#3A6828"/>
-  <ellipse cx="300"  cy="320" rx="270" ry="130" fill="#3A6828"/>
-  <ellipse cx="650"  cy="316" rx="260" ry="125" fill="#3A6828"/>
-  <ellipse cx="1030" cy="320" rx="250" ry="128" fill="#3A6828"/>
+  <!-- 중경 언덕 (짙은 녹색 타원) -->
+  <ellipse cx="-20"  cy="325" rx="290" ry="140" fill="#2E5A22"/>
+  <ellipse cx="320"  cy="326" rx="295" ry="138" fill="#325E24"/>
+  <ellipse cx="660"  cy="322" rx="285" ry="136" fill="#2E5A22"/>
+  <ellipse cx="1050" cy="325" rx="280" ry="140" fill="#325E24"/>
 
   <!-- 밝은 잔디 -->
-  <rect x="0" y="298" width="${W}" height="${H-298}" fill="#52BA1C"/>
-  <rect x="0" y="298" width="${W}" height="14" fill="#60CA28" opacity="0.8"/>
+  <rect x="0" y="${GRASS_Y}" width="${W}" height="${H-GRASS_Y}" fill="url(#grassG)"/>
+  <rect x="0" y="${GRASS_Y}" width="${W}" height="10" fill="#72DA38" opacity="0.75"/>
+  <rect x="0" y="${GRASS_Y+10}" width="${W}" height="6" fill="#5AC028" opacity="0.5"/>
 
   <!-- 구름 좌 -->
-  <g opacity="0.92">
-    <ellipse cx="155" cy="58" rx="52" ry="22" fill="white"/>
-    <ellipse cx="185" cy="46" rx="36" ry="17" fill="white"/>
-    <ellipse cx="125" cy="62" rx="30" ry="13" fill="white"/>
+  <g opacity="0.94">
+    <ellipse cx="148" cy="55" rx="58" ry="24" fill="white"/>
+    <ellipse cx="182" cy="42" rx="40" ry="18" fill="white"/>
+    <ellipse cx="118" cy="60" rx="34" ry="15" fill="white"/>
+    <ellipse cx="200" cy="56" rx="25" ry="12" fill="white"/>
   </g>
   <!-- 구름 우 -->
-  <g opacity="0.86">
-    <ellipse cx="1048" cy="52" rx="55" ry="22" fill="white"/>
-    <ellipse cx="1082" cy="40" rx="40" ry="17" fill="white"/>
-    <ellipse cx="1018" cy="56" rx="32" ry="13" fill="white"/>
+  <g opacity="0.90">
+    <ellipse cx="1052" cy="48" rx="62" ry="26" fill="white"/>
+    <ellipse cx="1090" cy="36" rx="44" ry="19" fill="white"/>
+    <ellipse cx="1020" cy="53" rx="36" ry="16" fill="white"/>
+    <ellipse cx="1112" cy="52" rx="28" ry="13" fill="white"/>
   </g>
 
-  <!-- 소나무 좌 -->
-  ${pine(90,  140, 162)}
-  ${pine(148, 158, 142)}
-  ${pine(196, 172, 120)}
+  <!-- 소나무 좌 (3그루) -->
+  ${pine(82,  138, 168)}
+  ${pine(140, 155, 148)}
+  ${pine(194, 170, 126)}
 
-  <!-- 소나무 우 -->
-  ${pine(1004, 155, 148)}
-  ${pine(1055, 142, 158)}
-  ${pine(1110, 168, 125)}
+  <!-- 소나무 우 (3그루) -->
+  ${pine(1006, 152, 154)}
+  ${pine(1060, 140, 164)}
+  ${pine(1118, 165, 130)}
 
   <!-- 초가집 좌 -->
-  ${domeHouse(232, 298)}
+  ${domeHouse(210, GRASS_Y)}
 
   <!-- 초가집 우 -->
-  ${domeHouse(968, 298)}
+  ${domeHouse(990, GRASS_Y)}
 
   <!-- 간판 받침대 -->
-  <path d="M${sx+55},${sy+sh} L${sx+42},${H-12}" stroke="#6A4018" stroke-width="20" stroke-linecap="round"/>
-  <path d="M${sx+sw-55},${sy+sh} L${sx+sw-42},${H-12}" stroke="#6A4018" stroke-width="20" stroke-linecap="round"/>
-  <path d="M${sx+55},${sy+sh} L${sx+42},${H-12}" stroke="#8A5828" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
-  <path d="M${sx+sw-55},${sy+sh} L${sx+sw-42},${H-12}" stroke="#8A5828" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
-  <rect x="${sx+32}" y="${sy+sh+88}" width="${sw-64}" height="16" rx="5" fill="#5A3810"/>
-  <rect x="${sx+32}" y="${sy+sh+88}" width="${sw-64}" height="5" rx="3" fill="#7A5020" opacity="0.5"/>
+  <path d="M${sx+52},${sy+sh} L${sx+40},${H-10}" stroke="#5A3410" stroke-width="22" stroke-linecap="round"/>
+  <path d="M${sx+sw-52},${sy+sh} L${sx+sw-40},${H-10}" stroke="#5A3410" stroke-width="22" stroke-linecap="round"/>
+  <path d="M${sx+52},${sy+sh} L${sx+40},${H-10}" stroke="#8A5828" stroke-width="6" stroke-linecap="round" opacity="0.40"/>
+  <path d="M${sx+sw-52},${sy+sh} L${sx+sw-40},${H-10}" stroke="#8A5828" stroke-width="6" stroke-linecap="round" opacity="0.40"/>
+  <rect x="${sx+28}" y="${sy+sh+90}" width="${sw-56}" height="18" rx="6" fill="#4E3010"/>
+  <rect x="${sx+28}" y="${sy+sh+90}" width="${sw-56}" height="6" rx="4" fill="#7A5020" opacity="0.45"/>
 
   <!-- 간판 보드 -->
-  <rect x="${sx}" y="${sy}" width="${sw}" height="${sh}" rx="8"
+  <rect x="${sx}" y="${sy}" width="${sw}" height="${sh}" rx="10"
     fill="url(#signG)" filter="url(#signSh)"/>
   ${grainLines}
-  <rect x="${sx}" y="${sy}" width="${sw}" height="${sh}" rx="8"
-    fill="none" stroke="#3A1808" stroke-width="3" opacity="0.3"/>
+  <rect x="${sx}" y="${sy}" width="${sw}" height="${sh}" rx="10"
+    fill="none" stroke="#2E1408" stroke-width="3.5" opacity="0.35"/>
 
   <!-- 무지개 색동 테두리 -->
   ${rbTop}${rbBottom}${rbLeft}${rbRight}
 
   <!-- 갓 쓴 캐릭터 (간판 위에서 삐죽 나옴) -->
+  <g filter="url(#charSh)">
   <!-- 갓 크라운 (검은 원통형 모자) -->
-  <rect x="${scx-22}" y="${sy-82}" width="44" height="52" rx="5" fill="#181818"/>
-  <ellipse cx="${scx}" cy="${sy-82}" rx="24" ry="9" fill="#181818"/>
-  <rect x="${scx-20}" y="${sy-80}" width="8" height="48" rx="3" fill="#323232" opacity="0.55"/>
+  <rect x="${scx-24}" y="${sy-78}" width="48" height="55" rx="6" fill="#141414"/>
+  <ellipse cx="${scx}" cy="${sy-78}" rx="26" ry="10" fill="#141414"/>
+  <rect x="${scx-22}" y="${sy-76}" width="9" height="51" rx="3" fill="#2A2A2A" opacity="0.60"/>
   <!-- 갓 챙 (넓은 평면 브림) -->
-  <ellipse cx="${scx}" cy="${sy-30}" rx="56" ry="13" fill="#181818"/>
-  <ellipse cx="${scx}" cy="${sy-32}" rx="58" ry="11" fill="none" stroke="#303030" stroke-width="2"/>
+  <ellipse cx="${scx}" cy="${sy-23}" rx="62" ry="15" fill="#141414"/>
+  <ellipse cx="${scx}" cy="${sy-25}" rx="64" ry="12" fill="none" stroke="#282828" stroke-width="2.5"/>
   <!-- 갓끈 -->
-  <path d="M${scx-45},${sy-26} Q${scx-35},${sy-8} ${scx-26},${sy+2}"
-    stroke="#C89018" stroke-width="2.5" fill="none"/>
-  <path d="M${scx+45},${sy-26} Q${scx+35},${sy-8} ${scx+26},${sy+2}"
-    stroke="#C89018" stroke-width="2.5" fill="none"/>
+  <path d="M${scx-50},${sy-18} Q${scx-36},${sy-4} ${scx-26},${sy+6}"
+    stroke="#C89018" stroke-width="3" fill="none"/>
+  <path d="M${scx+50},${sy-18} Q${scx+36},${sy-4} ${scx+26},${sy+6}"
+    stroke="#C89018" stroke-width="3" fill="none"/>
   <!-- 얼굴 -->
-  <circle cx="${scx}" cy="${sy-16}" r="34" fill="#F4C898"/>
+  <circle cx="${scx}" cy="${sy-10}" r="36" fill="#F6CA9A"/>
+  <circle cx="${scx}" cy="${sy-10}" r="36" fill="none" stroke="#D8A870" stroke-width="1.5" opacity="0.4"/>
+  <!-- 눈썹 -->
+  <path d="M${scx-18},${sy-22} Q${scx-12},${sy-26} ${scx-6},${sy-22}"
+    stroke="#381808" stroke-width="2.2" fill="none"/>
+  <path d="M${scx+6},${sy-22} Q${scx+12},${sy-26} ${scx+18},${sy-22}"
+    stroke="#381808" stroke-width="2.2" fill="none"/>
   <!-- 눈 -->
-  <circle cx="${scx-12}" cy="${sy-20}" r="4.5" fill="#281008"/>
-  <circle cx="${scx+12}" cy="${sy-20}" r="4.5" fill="#281008"/>
-  <circle cx="${scx-10}" cy="${sy-22}" r="1.8" fill="white"/>
-  <circle cx="${scx+14}" cy="${sy-22}" r="1.8" fill="white"/>
+  <circle cx="${scx-12}" cy="${sy-16}" r="5" fill="#241008"/>
+  <circle cx="${scx+12}" cy="${sy-16}" r="5" fill="#241008"/>
+  <circle cx="${scx-10}" cy="${sy-18}" r="2" fill="white"/>
+  <circle cx="${scx+14}" cy="${sy-18}" r="2" fill="white"/>
   <!-- 코 -->
-  <ellipse cx="${scx}" cy="${sy-11}" rx="4" ry="3" fill="#DFA878"/>
-  <!-- 입 (웃음) -->
-  <path d="M${scx-10},${sy-5} Q${scx},${sy+2} ${scx+10},${sy-5}"
-    stroke="#A05840" stroke-width="2.2" fill="none"/>
+  <ellipse cx="${scx}" cy="${sy-6}" rx="4.5" ry="3.5" fill="#D4986A"/>
+  <!-- 입 (활짝 웃음) -->
+  <path d="M${scx-12},${sy+1} Q${scx},${sy+10} ${scx+12},${sy+1}"
+    stroke="#904830" stroke-width="2.5" fill="none"/>
   <!-- 볼 홍조 -->
-  <circle cx="${scx-28}" cy="${sy-12}" r="7" fill="#F4A0A0" opacity="0.45"/>
-  <circle cx="${scx+28}" cy="${sy-12}" r="7" fill="#F4A0A0" opacity="0.45"/>
+  <ellipse cx="${scx-30}" cy="${sy-8}" rx="9" ry="6" fill="#F8A0A0" opacity="0.50"/>
+  <ellipse cx="${scx+30}" cy="${sy-8}" rx="9" ry="6" fill="#F8A0A0" opacity="0.50"/>
+  </g>
 
   <!-- 간판 텍스트 -->
-  <text x="${scx}" y="${sy + sh*0.38}"
-    text-anchor="middle" font-family="monospace" font-size="15"
-    fill="#F0E0A8" opacity="0.90">흥부네 커밋 · Heungbu's Commits</text>
-  <text x="${scx}" y="${sy + sh*0.70}"
+  <text x="${scx}" y="${sy + Math.round(sh*0.37)}"
+    text-anchor="middle" font-family="monospace" font-size="16"
+    fill="#F8E8B8" opacity="0.88" letter-spacing="1">흥부네 커밋 · Heungbu's Commits</text>
+  <text x="${scx}" y="${sy + Math.round(sh*0.68)}"
     text-anchor="middle"
     font-family="'Arial Black','Arial Bold',Arial,sans-serif"
-    font-size="46" font-weight="bold"
-    fill="#F8D838"
+    font-size="50" font-weight="bold"
+    fill="#FFD838"
     filter="url(#textGl)">1HYUNG'S COMMITS</text>
 
-  <!-- 하단 3개 닷 -->
-  <circle cx="${scx-24}" cy="${sy+sh*0.88}" r="8" fill="none" stroke="#C0A030" stroke-width="2.5"/>
-  <circle cx="${scx}"    cy="${sy+sh*0.88}" r="8" fill="#4A7828"/>
-  <circle cx="${scx+24}" cy="${sy+sh*0.88}" r="8" fill="#284820"/>
+  <!-- 하단 장식 닷 3개 -->
+  <circle cx="${scx-28}" cy="${sy+Math.round(sh*0.87)}" r="9" fill="none" stroke="#C8A030" stroke-width="3"/>
+  <circle cx="${scx}"    cy="${sy+Math.round(sh*0.87)}" r="9" fill="#4A7A28"/>
+  <circle cx="${scx+28}" cy="${sy+Math.round(sh*0.87)}" r="9" fill="#284820"/>
 </svg>`;
 }
 
