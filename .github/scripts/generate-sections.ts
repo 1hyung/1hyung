@@ -295,172 +295,199 @@ const {
 } = HEUNGBU_COLORS;
 
 /**
- * 흥부네 커밋 헤더 SVG (1200×300)
- * 한국 시골 풍경 + 초가집 실루엣 + 박 덩굴
+ * 흥부네 커밋 헤더 SVG (1200×420)
+ * 나무 간판 + 갓 캐릭터 + 초가집 + 산 배경
  */
 function generateHeungbuHeaderSVG(): string {
+  const W = 1200, H = 420;
+  // 간판 위치
+  const sx = 380, sy = 72, sw = 440, sh = 208;
+  const scx = sx + Math.round(sw / 2); // 600
+
+  // 무지개 색동 테두리 (6색 × 3px = 18px 폭)
+  const rainbow = ['#E82020','#F07020','#E8C018','#38A028','#2070D0','#7828C0'];
+  const bs = 3; // stripe height
+  const nb = rainbow.length; // 6
+  const borderH = nb * bs; // 18px
+  const rbTop    = rainbow.map((c, i) =>
+    `<rect x="${sx}" y="${sy+i*bs}" width="${sw}" height="${bs}" fill="${c}"/>`).join('');
+  const rbBottom = rainbow.map((c, i) =>
+    `<rect x="${sx}" y="${sy+sh-borderH+i*bs}" width="${sw}" height="${bs}" fill="${c}"/>`).join('');
+  const rbLeft   = rainbow.map((c, i) =>
+    `<rect x="${sx+i*bs}" y="${sy+borderH}" width="${bs}" height="${sh-borderH*2}" fill="${c}"/>`).join('');
+  const rbRight  = rainbow.map((c, i) =>
+    `<rect x="${sx+sw-borderH+i*bs}" y="${sy+borderH}" width="${bs}" height="${sh-borderH*2}" fill="${c}"/>`).join('');
+
+  // 나뭇결 선
+  const grainLines = Array.from({ length: 9 }, (_, i) => {
+    const gy = sy + borderH + 10 + i * 20;
+    const c2 = (i % 2 === 0) ? 5 : -5;
+    return `<path d="M${sx+borderH+10},${gy} Q${scx},${gy+c2} ${sx+sw-borderH-10},${gy}"
+      stroke="#5A2808" stroke-width="1.2" fill="none" opacity="0.28"/>`;
+  }).join('');
+
+  // 소나무 헬퍼
+  const pine = (pcx: number, pcy: number, ph: number) => {
+    const pw = ph * 0.36;
+    return `
+      <polygon points="${pcx},${pcy} ${pcx-pw*0.9},${pcy+ph*0.55} ${pcx+pw*0.9},${pcy+ph*0.55}" fill="#224818"/>
+      <polygon points="${pcx},${pcy+ph*0.22} ${pcx-pw},${pcy+ph*0.78} ${pcx+pw},${pcy+ph*0.78}" fill="#224818"/>
+      <rect x="${pcx-5}" y="${pcy+ph*0.72}" width="10" height="${ph*0.32}" fill="#4A2808"/>`;
+  };
+
+  // 돔형 초가집 헬퍼
+  const domeHouse = (hcx: number, baseY: number) => {
+    const rx = 95, ry = 62;
+    const bx = hcx - Math.round(rx * 0.72);
+    const bw = Math.round(rx * 1.44);
+    const bodyH = 55;
+    return `
+      <path d="M${hcx-rx},${baseY} A${rx},${ry} 0 0 1 ${hcx+rx},${baseY}" fill="#D4A838"/>
+      <path d="M${hcx-rx*0.75},${baseY-ry*0.42} A${rx*0.82},${ry*0.65} 0 0 1 ${hcx+rx*0.75},${baseY-ry*0.42}"
+        fill="none" stroke="#F0C840" stroke-width="1.5" opacity="0.25"/>
+      <circle cx="${hcx-rx*0.62}" cy="${baseY-ry*0.35}" r="4" fill="#F8F040" opacity="0.88"/>
+      <circle cx="${hcx}"         cy="${baseY-ry+5}"     r="4" fill="#F8F040" opacity="0.88"/>
+      <circle cx="${hcx+rx*0.62}" cy="${baseY-ry*0.35}" r="4" fill="#F8F040" opacity="0.88"/>
+      <rect x="${bx}" y="${baseY}" width="${bw}" height="${bodyH}" fill="#7A5030" rx="2"/>
+      <line x1="${bx}" y1="${baseY+16}" x2="${bx+bw}" y2="${baseY+16}" stroke="#5A3818" stroke-width="1" opacity="0.35"/>
+      <rect x="${hcx-13}" y="${baseY+14}" width="26" height="${bodyH-8}" rx="2" fill="#4A2808"/>
+      <rect x="${hcx+22}" y="${baseY+11}" width="28" height="20" rx="1" fill="#E8D090" opacity="0.82"/>
+      <line x1="${hcx+36}" y1="${baseY+11}" x2="${hcx+36}" y2="${baseY+31}" stroke="#6A4020" stroke-width="1.5"/>
+      <line x1="${hcx+22}" y1="${baseY+21}" x2="${hcx+50}" y2="${baseY+21}" stroke="#6A4020" stroke-width="1.5"/>
+      <rect x="${hcx-50}" y="${baseY+11}" width="28" height="20" rx="1" fill="#E8D090" opacity="0.82"/>
+      <line x1="${hcx-36}" y1="${baseY+11}" x2="${hcx-36}" y2="${baseY+31}" stroke="#6A4020" stroke-width="1.5"/>
+      <line x1="${hcx-50}" y1="${baseY+21}" x2="${hcx-22}" y2="${baseY+21}" stroke="#6A4020" stroke-width="1.5"/>`;
+  };
+
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
   <defs>
-    <linearGradient id="hSkyGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="${skyTop}"/>
-      <stop offset="55%"  stop-color="${skyMid}"/>
-      <stop offset="100%" stop-color="${skyBottom}"/>
+    <linearGradient id="hSkG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#80C8E8"/>
+      <stop offset="60%"  stop-color="#A8D8F0"/>
+      <stop offset="100%" stop-color="#C0E0F8"/>
     </linearGradient>
-    <linearGradient id="hTitleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   stop-color="${strawLight}"/>
-      <stop offset="50%"  stop-color="#fffde0"/>
-      <stop offset="100%" stop-color="${strawLight}"/>
+    <linearGradient id="signG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#A86030"/>
+      <stop offset="100%" stop-color="#7A4820"/>
     </linearGradient>
-    <filter id="hTextShadow">
-      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="${statsPanelColor}" flood-opacity="0.7"/>
+    <filter id="signSh">
+      <feDropShadow dx="5" dy="6" stdDeviation="6" flood-color="#1a0800" flood-opacity="0.45"/>
     </filter>
-    <filter id="hGourdGlow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="textGl">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#3a1800" flood-opacity="0.7"/>
     </filter>
   </defs>
 
   <!-- 하늘 -->
-  <rect x="0" y="0" width="1200" height="300" fill="url(#hSkyGrad)"/>
+  <rect x="0" y="0" width="${W}" height="${H}" fill="url(#hSkG)"/>
 
-  <!-- 구름 -->
-  <g opacity="0.88">
-    <ellipse cx="160"  cy="60"  rx="55" ry="22" fill="white"/>
-    <ellipse cx="195"  cy="50"  rx="40" ry="17" fill="white"/>
-    <ellipse cx="128"  cy="63"  rx="32" ry="14" fill="white"/>
+  <!-- 배경 산 (청회색) -->
+  <ellipse cx="220"  cy="240" rx="215" ry="135" fill="#7890A8" opacity="0.55"/>
+  <ellipse cx="600"  cy="230" rx="260" ry="122" fill="#6880A0" opacity="0.5"/>
+  <ellipse cx="980"  cy="236" rx="225" ry="128" fill="#7890A8" opacity="0.55"/>
+
+  <!-- 중경 언덕 (짙은 녹색) -->
+  <ellipse cx="-30"  cy="318" rx="260" ry="128" fill="#3A6828"/>
+  <ellipse cx="300"  cy="320" rx="270" ry="130" fill="#3A6828"/>
+  <ellipse cx="650"  cy="316" rx="260" ry="125" fill="#3A6828"/>
+  <ellipse cx="1030" cy="320" rx="250" ry="128" fill="#3A6828"/>
+
+  <!-- 밝은 잔디 -->
+  <rect x="0" y="298" width="${W}" height="${H-298}" fill="#52BA1C"/>
+  <rect x="0" y="298" width="${W}" height="14" fill="#60CA28" opacity="0.8"/>
+
+  <!-- 구름 좌 -->
+  <g opacity="0.92">
+    <ellipse cx="155" cy="58" rx="52" ry="22" fill="white"/>
+    <ellipse cx="185" cy="46" rx="36" ry="17" fill="white"/>
+    <ellipse cx="125" cy="62" rx="30" ry="13" fill="white"/>
   </g>
-  <g opacity="0.80">
-    <ellipse cx="950"  cy="48"  rx="58" ry="22" fill="white"/>
-    <ellipse cx="985"  cy="38"  rx="42" ry="17" fill="white"/>
-    <ellipse cx="918"  cy="52"  rx="34" ry="14" fill="white"/>
-  </g>
-  <g opacity="0.72">
-    <ellipse cx="520"  cy="35"  rx="42" ry="16" fill="white"/>
-    <ellipse cx="545"  cy="26"  rx="30" ry="12" fill="white"/>
-  </g>
-
-  <!-- 원경 산 -->
-  <polygon
-    points="0,190 80,115 180,155 280,100 380,145 480,92 580,132 680,88 780,125 880,82 980,118 1080,78 1200,108 1200,210 0,210"
-    fill="${hillFar}" opacity="0.5"/>
-
-  <!-- 중경 언덕 -->
-  <ellipse cx="-30"  cy="240" rx="230" ry="88" fill="${hillMid}"/>
-  <ellipse cx="330"  cy="255" rx="280" ry="95" fill="${hillMid}"/>
-  <ellipse cx="720"  cy="248" rx="250" ry="90" fill="${hillMid}"/>
-  <ellipse cx="1100" cy="242" rx="220" ry="85" fill="${hillMid}"/>
-
-  <!-- 지평선 -->
-  <rect x="0" y="248" width="1200" height="52" fill="${hillNear}"/>
-
-  <!-- 소나무 (좌) -->
-  <g fill="${hLeafDark}" opacity="0.82">
-    <polygon points="55,252 80,175 105,252"/>
-    <polygon points="60,235 80,188 100,235"/>
-    <rect x="75" y="247" width="10" height="28" fill="#5c3214"/>
-  </g>
-  <g fill="${hLeafDark}" opacity="0.70">
-    <polygon points="108,255 130,188 152,255"/>
-    <polygon points="112,240 130,200 148,240"/>
-    <rect x="126" y="250" width="8" height="24" fill="#5c3214"/>
+  <!-- 구름 우 -->
+  <g opacity="0.86">
+    <ellipse cx="1048" cy="52" rx="55" ry="22" fill="white"/>
+    <ellipse cx="1082" cy="40" rx="40" ry="17" fill="white"/>
+    <ellipse cx="1018" cy="56" rx="32" ry="13" fill="white"/>
   </g>
 
-  <!-- 소나무 (우) -->
-  <g fill="${hLeafDark}" opacity="0.78">
-    <polygon points="1060,252 1082,177 1104,252"/>
-    <polygon points="1064,237 1082,190 1100,237"/>
-    <rect x="1078" y="247" width="10" height="28" fill="#5c3214"/>
-  </g>
-  <g fill="${hLeafDark}" opacity="0.85">
-    <polygon points="1108,256 1132,180 1156,256"/>
-    <polygon points="1112,240 1132,194 1152,240"/>
-    <rect x="1128" y="250" width="10" height="28" fill="#5c3214"/>
-  </g>
+  <!-- 소나무 좌 -->
+  ${pine(90,  140, 162)}
+  ${pine(148, 158, 142)}
+  ${pine(196, 172, 120)}
 
-  <!-- 초가집 실루엣 (좌) -->
-  <g opacity="0.78">
-    <!-- 지붕 -->
-    <polygon points="155,200 240,155 325,200" fill="${hStrawDark}"/>
-    <polygon points="165,200 240,160 315,200" fill="${strawMid}"/>
-    <!-- 지붕 하이라이트 -->
-    <line x1="200" y1="183" x2="240" y2="162" stroke="${strawLight}" stroke-width="1.5" opacity="0.5"/>
-    <!-- 집 본체 -->
-    <rect x="175" y="198" width="130" height="52" fill="#6b4828"/>
-    <!-- 기둥 -->
-    <rect x="182" y="200" width="8" height="50" fill="#5a3820"/>
-    <rect x="290" y="200" width="8" height="50" fill="#5a3820"/>
-    <!-- 창문 -->
-    <rect x="215" y="212" width="28" height="22" rx="1" fill="#e8d4a0" opacity="0.7"/>
-    <rect x="237" y="212" width="2" height="22" fill="#6b4828" opacity="0.6"/>
-    <rect x="215" y="223" width="28" height="2" fill="#6b4828" opacity="0.6"/>
-    <rect x="258" y="212" width="24" height="22" rx="1" fill="#e8d4a0" opacity="0.7"/>
-    <rect x="270" y="212" width="2" height="22" fill="#6b4828" opacity="0.6"/>
-    <rect x="258" y="223" width="24" height="2" fill="#6b4828" opacity="0.6"/>
-    <!-- 박 덩굴 on 지붕 -->
-    <path d="M180,198 Q210,180 240,185 Q270,180 310,192" stroke="${vineGreen}" stroke-width="2.5" fill="none" opacity="0.9"/>
-    <ellipse cx="205" cy="181" rx="9" ry="6" fill="${hGourdMid}" filter="url(#hGourdGlow)"/>
-    <ellipse cx="205" cy="181" rx="5" ry="3" fill="${gourdHighlight}"/>
-    <ellipse cx="258" cy="178" rx="11" ry="7.5" fill="${hGourdMid}" filter="url(#hGourdGlow)"/>
-    <ellipse cx="258" cy="178" rx="6" ry="4" fill="${gourdHighlight}"/>
-    <ellipse cx="295" cy="183" rx="8" ry="5.5" fill="${hGourdMid}" filter="url(#hGourdGlow)"/>
-  </g>
+  <!-- 소나무 우 -->
+  ${pine(1004, 155, 148)}
+  ${pine(1055, 142, 158)}
+  ${pine(1110, 168, 125)}
 
-  <!-- 초가집 실루엣 (우) -->
-  <g opacity="0.78">
-    <polygon points="875,200 960,155 1045,200" fill="${hStrawDark}"/>
-    <polygon points="885,200 960,160 1035,200" fill="${strawMid}"/>
-    <line x1="918" y1="183" x2="960" y2="162" stroke="${strawLight}" stroke-width="1.5" opacity="0.5"/>
-    <rect x="893" y="198" width="130" height="52" fill="#6b4828"/>
-    <rect x="900" y="200" width="8" height="50" fill="#5a3820"/>
-    <rect x="1008" y="200" width="8" height="50" fill="#5a3820"/>
-    <rect x="932" y="212" width="28" height="22" rx="1" fill="#e8d4a0" opacity="0.7"/>
-    <rect x="954" y="212" width="2" height="22" fill="#6b4828" opacity="0.6"/>
-    <rect x="932" y="223" width="28" height="2" fill="#6b4828" opacity="0.6"/>
-    <rect x="974" y="212" width="24" height="22" rx="1" fill="#e8d4a0" opacity="0.7"/>
-    <rect x="986" y="212" width="2" height="22" fill="#6b4828" opacity="0.6"/>
-    <rect x="974" y="223" width="24" height="2" fill="#6b4828" opacity="0.6"/>
-    <path d="M895,198 Q930,180 960,184 Q990,180 1030,192" stroke="${vineGreen}" stroke-width="2.5" fill="none" opacity="0.9"/>
-    <ellipse cx="922"  cy="181" rx="9"  ry="6"   fill="${hGourdMid}" filter="url(#hGourdGlow)"/>
-    <ellipse cx="922"  cy="181" rx="5"  ry="3"   fill="${gourdHighlight}"/>
-    <ellipse cx="972"  cy="177" rx="12" ry="8"   fill="${hGourdMid}" filter="url(#hGourdGlow)"/>
-    <ellipse cx="972"  cy="177" rx="7"  ry="4.5" fill="${gourdHighlight}"/>
-    <ellipse cx="1015" cy="184" rx="8"  ry="5.5" fill="${hGourdMid}" filter="url(#hGourdGlow)"/>
-  </g>
+  <!-- 초가집 좌 -->
+  ${domeHouse(232, 298)}
 
-  <!-- 중앙 타이틀 패널 -->
-  <rect x="380" y="115" width="440" height="90" rx="12" fill="${statsPanelColor}" opacity="0.80"/>
-  <rect x="385" y="120" width="430" height="80" rx="10" fill="none" stroke="${strawLight}" stroke-width="1.5" opacity="0.55"/>
+  <!-- 초가집 우 -->
+  ${domeHouse(968, 298)}
 
-  <!-- 타이틀 텍스트 -->
-  <text x="600" y="150"
-        text-anchor="middle"
-        font-family="monospace"
-        font-size="13"
-        fill="${hTitleColor}"
-        opacity="0.85">흥부네 커밋 · Heungbu's Commits</text>
-  <text x="600" y="183"
-        text-anchor="middle"
-        font-family="'Arial Black', Arial, sans-serif"
-        font-size="34"
-        font-weight="bold"
-        fill="url(#hTitleGrad)"
-        filter="url(#hTextShadow)">1HYUNG'S COMMITS</text>
+  <!-- 간판 받침대 -->
+  <path d="M${sx+55},${sy+sh} L${sx+42},${H-12}" stroke="#6A4018" stroke-width="20" stroke-linecap="round"/>
+  <path d="M${sx+sw-55},${sy+sh} L${sx+sw-42},${H-12}" stroke="#6A4018" stroke-width="20" stroke-linecap="round"/>
+  <path d="M${sx+55},${sy+sh} L${sx+42},${H-12}" stroke="#8A5828" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+  <path d="M${sx+sw-55},${sy+sh} L${sx+sw-42},${H-12}" stroke="#8A5828" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+  <rect x="${sx+32}" y="${sy+sh+88}" width="${sw-64}" height="16" rx="5" fill="#5A3810"/>
+  <rect x="${sx+32}" y="${sy+sh+88}" width="${sw-64}" height="5" rx="3" fill="#7A5020" opacity="0.5"/>
 
-  <!-- 떠다니는 박 파티클 -->
-  <g filter="url(#hGourdGlow)">
-    <ellipse cx="480" cy="268" rx="7" ry="5" fill="${gourdLight}" opacity="0.85">
-      <animate attributeName="cy" values="268;252;268" dur="4.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.85;0.3;0.85" dur="4.2s" repeatCount="indefinite"/>
-    </ellipse>
-    <ellipse cx="720" cy="272" rx="8" ry="5.5" fill="${gourdLight}" opacity="0.80">
-      <animate attributeName="cy" values="272;254;272" dur="3.6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.80;0.2;0.80" dur="3.6s" repeatCount="indefinite"/>
-    </ellipse>
-  </g>
+  <!-- 간판 보드 -->
+  <rect x="${sx}" y="${sy}" width="${sw}" height="${sh}" rx="8"
+    fill="url(#signG)" filter="url(#signSh)"/>
+  ${grainLines}
+  <rect x="${sx}" y="${sy}" width="${sw}" height="${sh}" rx="8"
+    fill="none" stroke="#3A1808" stroke-width="3" opacity="0.3"/>
 
-  <!-- 하단 지면 -->
-  <rect x="0" y="292" width="1200" height="8" fill="${hillNear}" opacity="0.7"/>
+  <!-- 무지개 색동 테두리 -->
+  ${rbTop}${rbBottom}${rbLeft}${rbRight}
+
+  <!-- 갓 쓴 캐릭터 (간판 위에서 삐죽 나옴) -->
+  <!-- 갓 크라운 (검은 원통형 모자) -->
+  <rect x="${scx-22}" y="${sy-82}" width="44" height="52" rx="5" fill="#181818"/>
+  <ellipse cx="${scx}" cy="${sy-82}" rx="24" ry="9" fill="#181818"/>
+  <rect x="${scx-20}" y="${sy-80}" width="8" height="48" rx="3" fill="#323232" opacity="0.55"/>
+  <!-- 갓 챙 (넓은 평면 브림) -->
+  <ellipse cx="${scx}" cy="${sy-30}" rx="56" ry="13" fill="#181818"/>
+  <ellipse cx="${scx}" cy="${sy-32}" rx="58" ry="11" fill="none" stroke="#303030" stroke-width="2"/>
+  <!-- 갓끈 -->
+  <path d="M${scx-45},${sy-26} Q${scx-35},${sy-8} ${scx-26},${sy+2}"
+    stroke="#C89018" stroke-width="2.5" fill="none"/>
+  <path d="M${scx+45},${sy-26} Q${scx+35},${sy-8} ${scx+26},${sy+2}"
+    stroke="#C89018" stroke-width="2.5" fill="none"/>
+  <!-- 얼굴 -->
+  <circle cx="${scx}" cy="${sy-16}" r="34" fill="#F4C898"/>
+  <!-- 눈 -->
+  <circle cx="${scx-12}" cy="${sy-20}" r="4.5" fill="#281008"/>
+  <circle cx="${scx+12}" cy="${sy-20}" r="4.5" fill="#281008"/>
+  <circle cx="${scx-10}" cy="${sy-22}" r="1.8" fill="white"/>
+  <circle cx="${scx+14}" cy="${sy-22}" r="1.8" fill="white"/>
+  <!-- 코 -->
+  <ellipse cx="${scx}" cy="${sy-11}" rx="4" ry="3" fill="#DFA878"/>
+  <!-- 입 (웃음) -->
+  <path d="M${scx-10},${sy-5} Q${scx},${sy+2} ${scx+10},${sy-5}"
+    stroke="#A05840" stroke-width="2.2" fill="none"/>
+  <!-- 볼 홍조 -->
+  <circle cx="${scx-28}" cy="${sy-12}" r="7" fill="#F4A0A0" opacity="0.45"/>
+  <circle cx="${scx+28}" cy="${sy-12}" r="7" fill="#F4A0A0" opacity="0.45"/>
+
+  <!-- 간판 텍스트 -->
+  <text x="${scx}" y="${sy + sh*0.38}"
+    text-anchor="middle" font-family="monospace" font-size="15"
+    fill="#F0E0A8" opacity="0.90">흥부네 커밋 · Heungbu's Commits</text>
+  <text x="${scx}" y="${sy + sh*0.70}"
+    text-anchor="middle"
+    font-family="'Arial Black','Arial Bold',Arial,sans-serif"
+    font-size="46" font-weight="bold"
+    fill="#F8D838"
+    filter="url(#textGl)">1HYUNG'S COMMITS</text>
+
+  <!-- 하단 3개 닷 -->
+  <circle cx="${scx-24}" cy="${sy+sh*0.88}" r="8" fill="none" stroke="#C0A030" stroke-width="2.5"/>
+  <circle cx="${scx}"    cy="${sy+sh*0.88}" r="8" fill="#4A7828"/>
+  <circle cx="${scx+24}" cy="${sy+sh*0.88}" r="8" fill="#284820"/>
 </svg>`;
 }
 
