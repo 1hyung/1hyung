@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+  <defs>
+    <!-- 밤하늘 그라디언트 -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#06101e"/>
+      <stop offset="55%"  stop-color="#0d1b38"/>
+      <stop offset="100%" stop-color="#162240"/>
+    </linearGradient>
+
+    <!-- 제목 텍스트 그라디언트 (차가운 흰빛) -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="50%"  stop-color="#ddeeff"/>
+      <stop offset="100%" stop-color="#b8d0f0"/>
+    </linearGradient>
+
+    <!-- 알펜글로 그라디언트 (노을빛 서브타이틀) -->
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#f0a860"/>
+      <stop offset="50%"  stop-color="#f8d0a0"/>
+      <stop offset="100%" stop-color="#f0a860"/>
+    </linearGradient>
+
+    <!-- 제목 글로우 필터 -->
+    <filter id="titleGlow" x="-15%" y="-40%" width="130%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0.4 0.5 1 0 0  0.2 0.4 1 0 0  0.1 0.3 1 0 0  0 0 0 0.5 0" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- 알펜글로 글로우 -->
+    <filter id="peakGlow" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="1 0.5 0 0 0  0.5 0.3 0 0 0  0 0 0.2 0 0  0 0 0 0.6 0" result="ag"/>
+      <feMerge>
+        <feMergeNode in="ag"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 배경 -->
+  <rect x="0" y="0" width="1200" height="300" fill="url(#skyGrad)"/>
+
+  <!-- 별 -->
+  <g fill="#f0f4ff">
+    <circle cx="80"  cy="22" r="1.2" opacity="0.85"/>
+    <circle cx="185" cy="14" r="0.9" opacity="0.72"/>
+    <circle cx="310" cy="28" r="1.1" opacity="0.80"/>
+    <circle cx="450" cy="10" r="1.3" opacity="0.90"/>
+    <circle cx="590" cy="20" r="0.8" opacity="0.65"/>
+    <circle cx="680" cy="12" r="1.0" opacity="0.78"/>
+    <circle cx="780" cy="25" r="1.2" opacity="0.82"/>
+    <circle cx="900" cy="8"  r="0.9" opacity="0.70"/>
+    <circle cx="1020" cy="18" r="1.1" opacity="0.76"/>
+    <circle cx="1130" cy="14" r="1.0" opacity="0.80"/>
+    <circle cx="140" cy="48" r="0.8" opacity="0.60"/>
+    <circle cx="360" cy="42" r="0.9" opacity="0.68"/>
+    <circle cx="520" cy="50" r="0.7" opacity="0.55"/>
+    <circle cx="840" cy="44" r="0.8" opacity="0.62"/>
+    <circle cx="1060" cy="38" r="0.9" opacity="0.65"/>
+  </g>
+
+  <!-- 원거리 산맥 (희미) -->
+  <polygon points="0,180 120,148 240,162 360,140 480,155 600,138 720,152 840,136 960,150 1080,140 1200,148 1200,220 0,220"
+    fill="#2a3858" opacity="0.35"/>
+
+  <!-- 중거리 산맥 -->
+  <polygon points="0,195 80,168 180,180 280,155 380,170 480,150 580,165 680,148 780,162 880,145 980,160 1080,148 1200,155 1200,240 0,240"
+    fill="#1e2e50" opacity="0.55"/>
+
+  <!-- 근거리 산맥 (선명, 설산 포함) -->
+  <polygon points="0,210 60,188 140,200 220,175 300,190 380,162 460,178 520,155 580,170 640,152 700,168 760,148 820,164 880,145 940,160 1020,148 1100,160 1200,152 1200,260 0,260"
+    fill="#14203a" opacity="0.82"/>
+
+  <!-- 설산 봉우리 (좌측) — 알펜글로 -->
+  <polygon points="220,175 202,197 220,204" fill="#e8c080" opacity="0.80" filter="url(#peakGlow)"/>
+  <polygon points="220,175 238,197 220,204" fill="#f0f4ff" opacity="0.90"/>
+  <polygon points="220,175 218,178 222,178" fill="#ffffff"/>
+
+  <!-- 설산 봉우리 (중앙 왼쪽) -->
+  <polygon points="380,162 360,186 380,193" fill="#e8c080" opacity="0.80" filter="url(#peakGlow)"/>
+  <polygon points="380,162 400,186 380,193" fill="#f0f4ff" opacity="0.92"/>
+  <polygon points="380,162 378,166 382,166" fill="#ffffff"/>
+
+  <!-- 설산 봉우리 (중앙) -->
+  <polygon points="640,152 618,178 640,186" fill="#e8c080" opacity="0.85" filter="url(#peakGlow)"/>
+  <polygon points="640,152 662,178 640,186" fill="#f0f4ff" opacity="0.95"/>
+  <polygon points="640,152 638,156 642,156" fill="#ffffff"/>
+
+  <!-- 설산 봉우리 (중앙 오른쪽) -->
+  <polygon points="880,145 858,172 880,180" fill="#e8c080" opacity="0.80" filter="url(#peakGlow)"/>
+  <polygon points="880,145 902,172 880,180" fill="#f0f4ff" opacity="0.90"/>
+  <polygon points="880,145 878,149 882,149" fill="#ffffff"/>
+
+  <!-- 설산 봉우리 (우측) -->
+  <polygon points="1060,148 1040,172 1060,180" fill="#e8c080" opacity="0.78" filter="url(#peakGlow)"/>
+  <polygon points="1060,148 1080,172 1060,180" fill="#f0f4ff" opacity="0.88"/>
+  <polygon points="1060,148 1058,152 1062,152" fill="#ffffff"/>
+
+  <!-- 메인 타이틀 -->
+  <text x="600" y="105"
+    text-anchor="middle"
+    font-family="'Arial Black', Arial, sans-serif"
+    font-size="36"
+    font-weight="bold"
+    fill="url(#titleGrad)"
+    filter="url(#titleGlow)"
+  >WELCOME TO 1HYUNG'S</text>
+  <text x="600" y="170"
+    text-anchor="middle"
+    font-family="'Arial Black', Arial, sans-serif"
+    font-size="56"
+    font-weight="bold"
+    fill="url(#titleGrad)"
+    filter="url(#titleGlow)"
+  >GIT MOUNTAIN</text>
+
+  <!-- 서브타이틀 (알펜글로 색상) -->
+  <text x="600" y="215"
+    text-anchor="middle"
+    font-family="monospace"
+    font-size="15"
+    fill="url(#glowGrad)"
+    opacity="0.88"
+  >Where every commit reaches the summit</text>
+
+  <!-- 장식 구분선 -->
+  <line x1="340" y1="225" x2="860" y2="225" stroke="#4a6898" stroke-width="0.8" opacity="0.5"/>
+  <line x1="380" y1="229" x2="820" y2="229" stroke="#3a5070" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- 눈 파티클 (내리는 눈 애니메이션) -->
+  <g fill="#ddeeff" opacity="0.7">
+    <circle cx="150" cy="60" r="2">
+      <animate attributeName="cy" values="60;280;60" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="30" r="1.5">
+      <animate attributeName="cy" values="30;280;30" dur="7.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="7.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="70" r="1.8">
+      <animate attributeName="cy" values="70;280;70" dur="5.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.65;0;0.65" dur="5.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="720" cy="40" r="1.5">
+      <animate attributeName="cy" values="40;280;40" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="950" cy="55" r="2">
+      <animate attributeName="cy" values="55;280;55" dur="6.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="25" r="1.5">
+      <animate attributeName="cy" values="25;280;25" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.55;0;0.55" dur="7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- 테두리 -->
+  <rect x="0" y="0" width="1200" height="300" fill="none" stroke="#1e2d48" stroke-width="4"/>
+  <rect x="3" y="3" width="1194" height="294" fill="none" stroke="#3a5270" stroke-width="1" opacity="0.3"/>
+</svg>
