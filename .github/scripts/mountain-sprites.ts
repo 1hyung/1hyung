@@ -1,121 +1,147 @@
 // 설산 테마 등각 투영 스프라이트
 // Level 0: 평지, Level 1: 소형 나무, Level 2: 민둥산, Level 3: 풀 덮힌 산, Level 4: 눈 덮인 산
-// 각 레벨 GY (타일 기저 Y): [-, 17, 27, 39, 53] → heightOffset = GY - 7 = [0, 10, 20, 32, 46]
+// heightOffsets: [0, 10, 20, 32, 46]
 
 import { DragonLevel } from './types';
 
 const MC = {
-  // 기저 타일 (회청색 석판)
   tileTop:    '#6e8090',
   tileLeft:   '#3e5060',
   tileRight:  '#90a8b8',
 
-  // Level 2: 민둥산 (따뜻한 흙+이끼)
-  bareLeft:   '#7a6250',   // 왼쪽 그늘 (갈색 흙)
-  bareRight:  '#ac8c6c',   // 오른쪽 빛 (밝은 갈색)
-  bareHigh:   '#c8a880',   // 정상 밝은 흙
-  bareMoss:   '#7a8858',   // 약간의 초록 이끼
+  bareLeft:   '#7a6250',
+  bareRight:  '#ac8c6c',
+  bareHigh:   '#c8a880',
+  bareMoss:   '#7a8858',
 
-  // Level 3: 풀 덮힌 산 (초록 초원+암석)
-  rockLeft:   '#4a5c6e',   // 왼쪽 그늘 암석
-  rockRight:  '#7898aa',   // 오른쪽 빛 암석
-  rockHigh:   '#9ab8c8',   // 정상 하이라이트
-  meadowL:    '#3a5c2e',   // 초록 초원 (왼쪽)
-  meadowR:    '#588840',   // 초록 초원 (오른쪽)
+  meadowL:    '#3a5c2e',
+  meadowR:    '#588840',
+  grassDark:  '#284820',
+  grassMid:   '#4a7830',
+  grassHigh:  '#78b848',
 
-  // Level 1/3: 침엽수/나무 색상
-  pineLeft:   '#1a3c1e',   // 왼쪽 짙은 수관 그늘
-  pineRight:  '#347838',   // 오른쪽 수관 빛
-  pineMid:    '#2a5c2e',   // 중간 수관
-  pineHigh:   '#4a8850',   // 수관 하이라이트
-  capL:       '#404e5c',   // 정상 암석 왼쪽
-  capR:       '#6082a0',   // 정상 암석 오른쪽
+  pineLeft:   '#1a3c1e',
+  pineRight:  '#347838',
+  pineMid:    '#2a5c2e',
+  pineHigh:   '#4a8850',
+  capL:       '#404e5c',
+  capR:       '#6082a0',
 
-  // Level 4: 설산
-  snowTop:    '#eef4ff',   // 눈 상면
-  snowLeft:   '#d8b878',   // 알펜글로 노을빛 (왼쪽)
-  snowRight:  '#f6faff',   // 오른쪽 순백
-  snowShade:  '#90b4d0',   // 눈 그늘 (얼음 파랑)
-  iceLeft:    '#364858',   // 빙하 하부 왼쪽
-  iceRight:   '#4e7088',   // 빙하 하부 오른쪽
-  glow:       '#e87828',   // 알펜글로 포인트
-  glowSoft:   '#f4a850',   // 알펜글로 소프트
+  iceLeft:    '#364858',
+  iceRight:   '#4e7088',
 };
 
-/**
- * Level 0: 평지 돌 타일 (W=20, H=14)
- * 다이아몬드 12px 높이 = cellHeight(12)와 완전 일치
- */
+/** Level 0: 평지 돌 타일 (W=20, H=14) */
 function createFlatGround(): string {
   return `<g>
-    <!-- 상면 다이아몬드 -->
     <polygon points="10,1 20,7 10,13 0,7" fill="${MC.tileTop}"
              stroke="#1c2d40" stroke-width="0.8"/>
-    <!-- 왼쪽 측면 -->
     <polygon points="0,7 10,13 10,14 0,8" fill="${MC.tileLeft}"/>
-    <!-- 오른쪽 측면 -->
     <polygon points="10,13 20,7 20,8 10,14" fill="${MC.tileRight}"/>
   </g>`;
 }
 
 /**
- * Level 1: 소형 나무 — 둥근 수관 (W=22, H=30, GY=17)
- * 농장 나무 축소 버전. 시각 높이 = GY = 17px.
+ * Level 1: 소형 나무 (W=22, H=30, GY=17)
+ * 농장 나무 픽셀 아트 스타일 축소 버전 (PX=0.9, 흙 없음)
  * heightOffset = GY - 7 = 10
  */
 function createSmallMountainTree(): string {
   const CX = 11;
-  const GY = 17; // 기저 타일 상면 Y
+  const GY = 17;
+  const PX_S = 0.9;
+  const TX = 2.5; // 트리 중심을 CX=11에 맞추는 x 오프셋
+
+  // 팜 나무 색상
+  const leafDark  = '#1d4a0d';
+  const leafGreen = '#2d6b18';
+  const leafMid   = '#4a8c30';
+  const leafLight = '#6aae48';
+  const trunkBrown= '#8b4513';
+  const trunkDark = '#5c2d0e';
+
+  // 픽셀 렌더러 (farm tree y 좌표에서 4 shift, PX_S 스케일)
+  const px = (x: number, y: number, c: string): string =>
+    `<rect x="${+(x * PX_S + TX).toFixed(1)}" y="${+(y * PX_S).toFixed(1)}" width="${PX_S}" height="${PX_S}" fill="${c}"/>`;
+  const pxs = (coords: [number, number][], c: string): string =>
+    coords.map(([x, y]) => px(x, y, c)).join('');
 
   return `<g>
-    <!-- 기저 타일 (20px 다이아몬드, CX±10) -->
+    <!-- 기저 타일 먼저 (나무 아래에 렌더링) -->
     <polygon points="${CX},${GY} 21,${GY+5} ${CX},${GY+10} 1,${GY+5}" fill="${MC.tileTop}"
              stroke="#1c2d40" stroke-width="0.6"/>
     <polygon points="1,${GY+5} ${CX},${GY+10} ${CX},${GY+12} 1,${GY+7}" fill="${MC.tileLeft}"/>
     <polygon points="${CX},${GY+10} 21,${GY+5} 21,${GY+7} ${CX},${GY+12}" fill="${MC.tileRight}"/>
 
-    <!-- 나무 줄기 (그늘/빛 분할) -->
-    <rect x="${CX-1.5}" y="${GY-5}" width="1.5" height="5" fill="#3d1e08"/>
-    <rect x="${CX}" y="${GY-5}" width="1.5" height="5" fill="#7a4020"/>
+    <!-- 캐노피 외곽 (어두운 그림자) — farm tree row 4→0 으로 시프트 -->
+    ${pxs([[7,0],[8,0],[9,0],[10,0],[11,0],[12,0]], leafDark)}
+    ${pxs([[5,1],[6,1],[12,1],[13,1],[14,1]], leafDark)}
+    ${pxs([[4,2],[5,2],[14,2],[15,2]], leafDark)}
+    ${pxs([[4,7],[5,7],[14,7],[15,7]], leafDark)}
+    ${pxs([[5,8],[6,8],[13,8],[14,8]], leafDark)}
+    ${pxs([[7,9],[8,9],[11,9],[12,9]], leafDark)}
 
-    <!-- 수관 — 세 겹 타원 (둥근 캐노피) -->
-    <ellipse cx="${CX}" cy="${GY-9}" rx="8" ry="7" fill="${MC.pineLeft}"/>
-    <ellipse cx="${CX+1}" cy="${GY-10}" rx="6" ry="5.5" fill="${MC.pineMid}"/>
-    <ellipse cx="${CX+2.5}" cy="${GY-12}" rx="3" ry="3" fill="${MC.pineHigh}" opacity="0.80"/>
+    <!-- 메인 캐노피 -->
+    ${pxs([[6,1],[7,1],[8,1],[9,1],[10,1],[11,1],[12,1],[13,1]], leafGreen)}
+    ${pxs([[5,2],[6,2],[7,2],[8,2],[9,2],[10,2],[11,2],[12,2],[13,2],[14,2]], leafGreen)}
+    ${pxs([[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3],[11,3],[12,3],[13,3],[14,3],[15,3]], leafMid)}
+    ${pxs([[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[10,4],[11,4],[12,4],[13,4],[14,4],[15,4]], leafMid)}
+    ${pxs([[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[10,5],[11,5],[12,5],[13,5],[14,5],[15,5]], leafGreen)}
+    ${pxs([[4,6],[5,6],[6,6],[7,6],[8,6],[9,6],[10,6],[11,6],[12,6],[13,6],[14,6],[15,6]], leafGreen)}
+    ${pxs([[5,7],[6,7],[7,7],[8,7],[9,7],[10,7],[11,7],[12,7],[13,7],[14,7]], leafGreen)}
+    ${pxs([[6,8],[7,8],[8,8],[9,8],[10,8],[11,8],[12,8],[13,8]], leafMid)}
+    ${pxs([[8,9],[9,9],[10,9],[11,9]], leafGreen)}
+
+    <!-- 캐노피 상단 하이라이트 -->
+    ${pxs([[8,0],[9,0],[10,0],[11,0]], leafLight)}
+    ${pxs([[7,1],[8,1],[9,1],[10,1],[11,1],[12,1]], leafLight)}
+    ${pxs([[6,2],[7,2],[8,2],[9,2],[10,2],[11,2]], leafLight)}
+    ${pxs([[5,3],[6,3],[7,3],[8,3]], leafLight)}
+
+    <!-- 나무 줄기 (캐노피 row 11-15, farm tree row 15-19 대응) -->
+    ${pxs([[8,11],[9,11],[10,11],[11,11]], trunkBrown)}
+    ${pxs([[8,12],[9,12],[10,12],[11,12]], trunkBrown)}
+    ${pxs([[8,13],[9,13],[10,13],[11,13]], trunkBrown)}
+    ${pxs([[8,14],[9,14],[10,14],[11,14]], trunkBrown)}
+    ${pxs([[8,15],[9,15],[10,15],[11,15]], trunkBrown)}
+    ${pxs([[9,11],[9,12],[9,13],[9,14]], '#a0522d')}
+    ${pxs([[11,12],[11,13],[11,14],[11,15]], trunkDark)}
   </g>`;
 }
 
 /**
- * Level 2: 민둥산 — 둥근 언덕 (W=30, H=42, GY=27)
- * 베지어 곡선 부드러운 돔. 시각 높이 = GY = 27px.
+ * Level 2: 민둥산 — 둥근 동산 (W=30, H=42, GY=27)
+ * 베지어 + 정상 타원으로 부드러운 돔 형태
  * heightOffset = GY - 7 = 20
  */
 function createRoundedBareHill(): string {
   const GY = 27;
   const CX = 15;
-  const PY = 5; // 정상
+  const PY = 6; // 베지어 수렴점 (실제 정상은 타원)
 
   return `<g>
-    <!-- 기저 타일 (20px 다이아몬드, CX±10) -->
+    <!-- 기저 타일 -->
     <polygon points="${CX},${GY} 25,${GY+5} ${CX},${GY+10} 5,${GY+5}" fill="${MC.tileTop}"/>
     <polygon points="5,${GY+5} ${CX},${GY+10} ${CX},${GY+12} 5,${GY+7}" fill="${MC.tileLeft}"/>
     <polygon points="${CX},${GY+10} 25,${GY+5} 25,${GY+7} ${CX},${GY+12}" fill="${MC.tileRight}"/>
 
-    <!-- 언덕 왼쪽 면 — 베지어 곡선 (그늘) -->
-    <path d="M ${CX},${GY+10} L 5,${GY+5} Q 2,${GY-8} ${CX},${PY} Z" fill="${MC.bareLeft}"/>
-    <!-- 언덕 오른쪽 면 — 베지어 곡선 (빛) -->
-    <path d="M ${CX},${PY} Q 28,${GY-8} 25,${GY+5} L ${CX},${GY+10} Z" fill="${MC.bareRight}"/>
-    <!-- 이끼 터치 -->
-    <path d="M ${CX},${GY+8} L 7,${GY+3} Q 5,${GY-3} ${CX},${PY+8} Z"
-          fill="${MC.bareMoss}" opacity="0.22"/>
+    <!-- 언덕 왼쪽 — 베지어 (그늘), 정상 타원 수렴점으로 -->
+    <path d="M ${CX},${GY+10} L 5,${GY+5} Q 2,${GY-6} ${CX},${PY+2} Z" fill="${MC.bareLeft}"/>
+    <!-- 언덕 오른쪽 — 베지어 (빛) -->
+    <path d="M ${CX},${PY+2} Q 28,${GY-6} 25,${GY+5} L ${CX},${GY+10} Z" fill="${MC.bareRight}"/>
+    <!-- 둥근 정상 돔 — 타원으로 뾰족한 끝 없애기 -->
+    <ellipse cx="${CX}" cy="${PY+2}" rx="8" ry="5.5" fill="${MC.bareRight}"/>
+    <!-- 정상 이끼 (약간의 초록 느낌) -->
+    <ellipse cx="${CX-1}" cy="${PY+1}" rx="5" ry="3.5" fill="${MC.bareMoss}" opacity="0.32"/>
     <!-- 정상 하이라이트 -->
-    <ellipse cx="${CX}" cy="${PY+2}" rx="4.5" ry="2.5" fill="${MC.bareHigh}" opacity="0.60"/>
+    <ellipse cx="${CX+1}" cy="${PY}" rx="4" ry="2.5" fill="${MC.bareHigh}" opacity="0.72"/>
   </g>`;
 }
 
 /**
- * Level 3: 풀 덮힌 산 — 초원 하부 + 암석 상부 (W=36, H=54, GY=39)
- * 시각 높이 = GY = 39px. heightOffset = GY - 7 = 32
+ * Level 3: 풀 덮힌 산 — 전체 초록 (W=36, H=54, GY=39)
+ * 초원 하부 + 짙은 초록 상부 (암석 없음)
+ * heightOffset = GY - 7 = 32
  */
 function createRockyMountain(): string {
   const GY = 39;
@@ -123,23 +149,26 @@ function createRockyMountain(): string {
   const PY = 3;
 
   return `<g>
-    <!-- 기저 타일 (20px 다이아몬드, CX±10) -->
+    <!-- 기저 타일 -->
     <polygon points="${CX},${GY} 28,${GY+6} ${CX},${GY+11} 8,${GY+6}" fill="${MC.tileTop}"/>
     <polygon points="8,${GY+6} ${CX},${GY+11} ${CX},${GY+13} 8,${GY+8}" fill="${MC.tileLeft}"/>
     <polygon points="${CX},${GY+11} 28,${GY+6} 28,${GY+8} ${CX},${GY+13}" fill="${MC.tileRight}"/>
 
-    <!-- 하부 초원 왼쪽 (풀밭) -->
+    <!-- 하부 초원 왼쪽 -->
     <polygon points="${CX},${GY+11} 8,${GY+6} 10,${GY-6} ${CX},${GY}" fill="${MC.meadowL}"/>
-    <!-- 하부 초원 오른쪽 (풀밭) -->
+    <!-- 하부 초원 오른쪽 -->
     <polygon points="${CX},${GY} 26,${GY-6} 28,${GY+6} ${CX},${GY+11}" fill="${MC.meadowR}"/>
 
-    <!-- 상부 암석 왼쪽 (비대칭 어깨) -->
-    <polygon points="${CX},${GY} 10,${GY-6} 12,${GY-16} 14,${GY-28} ${CX},${PY}" fill="${MC.rockLeft}"/>
-    <!-- 상부 암석 오른쪽 -->
-    <polygon points="${CX},${PY} 22,${GY-28} 24,${GY-16} 26,${GY-6} ${CX},${GY}" fill="${MC.rockRight}"/>
+    <!-- 상부 풀 왼쪽 (짙은 초록) -->
+    <polygon points="${CX},${GY} 10,${GY-6} 12,${GY-16} 14,${GY-28} ${CX},${PY}" fill="${MC.grassDark}"/>
+    <!-- 상부 풀 오른쪽 (중간 초록) -->
+    <polygon points="${CX},${PY} 22,${GY-28} 24,${GY-16} 26,${GY-6} ${CX},${GY}" fill="${MC.grassMid}"/>
 
-    <!-- 정상 하이라이트 -->
-    <polygon points="${CX},${PY} ${CX-3},${PY+6} ${CX+3},${PY+6}" fill="${MC.rockHigh}" opacity="0.7"/>
+    <!-- 정상 밝은 초록 하이라이트 -->
+    <polygon points="${CX},${PY} ${CX-3},${PY+6} ${CX+3},${PY+6}" fill="${MC.grassHigh}" opacity="0.85"/>
+    <!-- 정상 둥근 처리 -->
+    <ellipse cx="${CX}" cy="${PY+3}" rx="4" ry="3" fill="${MC.grassMid}"/>
+    <ellipse cx="${CX+1}" cy="${PY+2}" rx="2.5" ry="2" fill="${MC.grassHigh}" opacity="0.7"/>
   </g>`;
 }
 
@@ -155,29 +184,19 @@ function createLushMountain(): string {
   const rBody = `${CX},${PY} 17,${GY-24} 19,${GY-20} 22,${GY-12} 25,${GY-4} 28,${GY+6} ${CX},${GY+11}`;
 
   return `<g>
-    <!-- 기저 타일 -->
     <polygon points="${CX},${GY} 29,${GY+6} ${CX},${GY+11} 1,${GY+6}" fill="${MC.tileTop}"/>
     <polygon points="1,${GY+6} ${CX},${GY+11} ${CX},${GY+13} 1,${GY+8}" fill="${MC.tileLeft}"/>
     <polygon points="${CX},${GY+11} 29,${GY+6} 29,${GY+8} ${CX},${GY+13}" fill="${MC.tileRight}"/>
-
-    <!-- 침엽수림 왼쪽 면 -->
     <polygon points="${lBody}" fill="${MC.pineLeft}"/>
-    <!-- 침엽수림 오른쪽 면 -->
     <polygon points="${rBody}" fill="${MC.pineRight}"/>
-
-    <!-- 침엽수 실루엣 — 왼쪽 사면 -->
     <polygon points="${CX-6},${GY-1} ${CX-10},${GY+5} ${CX-2},${GY+5}" fill="${MC.pineLeft}" opacity="0.95"/>
     <polygon points="${CX-5},${GY-7} ${CX-9},${GY-1} ${CX-1},${GY-1}" fill="${MC.pineMid}" opacity="0.90"/>
     <polygon points="${CX-4},${GY-13} ${CX-8},${GY-7} ${CX},${GY-7}" fill="${MC.pineLeft}" opacity="0.85"/>
     <polygon points="${CX-3},${GY-19} ${CX-7},${GY-13} ${CX+1},${GY-13}" fill="${MC.pineMid}" opacity="0.80"/>
-
-    <!-- 침엽수 실루엣 — 오른쪽 사면 -->
     <polygon points="${CX+6},${GY-1} ${CX+2},${GY+5} ${CX+10},${GY+5}" fill="${MC.pineRight}" opacity="0.82"/>
     <polygon points="${CX+5},${GY-7} ${CX+1},${GY-1} ${CX+9},${GY-1}" fill="${MC.pineHigh}" opacity="0.75"/>
     <polygon points="${CX+4},${GY-13} ${CX},${GY-7} ${CX+8},${GY-7}" fill="${MC.pineRight}" opacity="0.70"/>
     <polygon points="${CX+3},${GY-19} ${CX-1},${GY-13} ${CX+7},${GY-13}" fill="${MC.pineHigh}" opacity="0.65"/>
-
-    <!-- 정상 암석 캡 -->
     <polygon points="${CX},${PY} ${CX-3},${PY+7} ${CX},${PY+10}" fill="${MC.capL}"/>
     <polygon points="${CX},${PY} ${CX+3},${PY+7} ${CX},${PY+10}" fill="${MC.capR}"/>
     <polygon points="${CX},${PY} ${CX-1.5},${PY+3} ${CX+1.5},${PY+3}" fill="${MC.capR}" opacity="0.55"/>
@@ -185,73 +204,76 @@ function createLushMountain(): string {
 }
 
 /**
- * Level 4: 설산 — 알펜글로 다봉 설산 (W=42, H=68, GY=53)
- * 불규칙 빙하 하부 + 눈 경계 + 알펜글로 정상
- * 시각 높이 = GY = 53px. heightOffset = GY - 7 = 46
+ * Level 4: 눈 덮인 산 — 2봉 설산 (W=42, H=68, GY=53)
+ * 두 개의 눈 덮인 봉우리, 차가운 청백색 설면
+ * heightOffset = GY - 7 = 46
  */
 function createSnowMountain(): string {
   const GY = 53;
   const CX = 21;
-  const PY = 1;
-  const SB = 22; // 눈/암석 경계 Y (GY-31)
+  const SB = 22; // 눈/암석 경계 Y
 
-  // 왼쪽 빙하/암석 — 불규칙 산맥 실루엣
-  const lRock = `${CX},${GY+12} 3,${GY+6} 6,${GY-4} 10,${GY-16} 13,${GY-31} ${CX},${SB}`;
-  // 오른쪽 빙하/암석
-  const rRock = `${CX},${SB} 29,${GY-31} 32,${GY-16} 36,${GY-4} 39,${GY+6} ${CX},${GY+12}`;
+  // 좌봉: (CX-7, 3) = (14, 3)
+  // 우봉: (CX+8, 1) = (29, 1)  ← 약간 더 높음
+  // 안부(saddle): (CX, 12) = (21, 12)
+
+  // 빙하/암석 기저 — 왼쪽 (좌봉 아래까지)
+  const lRock = `${CX},${GY+12} 3,${GY+6} 6,${GY-4} 10,${GY-16} 8,${SB} ${CX},${SB}`;
+  // 빙하/암석 기저 — 오른쪽 (우봉 아래까지)
+  const rRock = `${CX},${SB} 35,${SB} 36,${GY-4} 39,${GY+6} ${CX},${GY+12}`;
 
   return `<g>
-    <!-- 기저 타일 (20px 다이아몬드, CX±10) -->
+    <!-- 기저 타일 -->
     <polygon points="${CX},${GY} 31,${GY+6} ${CX},${GY+12} 11,${GY+6}" fill="${MC.tileTop}"/>
     <polygon points="11,${GY+6} ${CX},${GY+12} ${CX},${GY+14} 11,${GY+8}" fill="${MC.tileLeft}"/>
     <polygon points="${CX},${GY+12} 31,${GY+6} 31,${GY+8} ${CX},${GY+14}" fill="${MC.tileRight}"/>
 
-    <!-- 하부 암석/빙하 왼쪽 -->
+    <!-- 빙하/암석 기저 -->
     <polygon points="${lRock}" fill="${MC.iceLeft}"/>
-    <!-- 하부 암석/빙하 오른쪽 -->
     <polygon points="${rRock}" fill="${MC.iceRight}"/>
+    <!-- 좌측 그늘 -->
+    <polygon points="${CX},${SB} 8,${SB} 10,${GY-16} 6,${GY-4} 3,${GY+6} ${CX},${GY+12}"
+             fill="#1e2c38" opacity="0.22"/>
 
-    <!-- 좌측 하부 그늘 -->
-    <polygon points="${CX},${SB} 13,${GY-31} 10,${GY-16} 6,${GY-4} 3,${GY+6} ${CX},${GY+12}"
-             fill="#1e2c38" opacity="0.25"/>
+    <!-- 왼쪽 봉우리 눈 (그늘면 — 차가운 파랑) -->
+    <path d="M 8,${SB} Q 9,6 14,3 Q 19,13 ${CX},${SB} Z"
+          fill="#c0d4f0"/>
+    <!-- 왼쪽 봉우리 밝은 하이라이트 -->
+    <path d="M 14,3 Q 17,1 18,4 Q 17,8 14,6 Z"
+          fill="#eef6ff" opacity="0.85"/>
 
-    <!-- 왼쪽 설면 (알펜글로 노을빛) -->
-    <path d="M ${CX},${SB} L 4,${SB+16} Q 3,${SB+8} ${CX},${PY} Z" fill="${MC.snowLeft}"/>
-    <!-- 알펜글로 상단 밝은 부분 -->
-    <path d="M ${CX},${PY} Q 13,${PY+8} ${CX},${PY+13} Q 15,${PY+5} ${CX},${PY} Z"
-          fill="${MC.glowSoft}" opacity="0.55"/>
+    <!-- 오른쪽 봉우리 눈 (주봉, 밝은 청백색) -->
+    <path d="M ${CX},${SB} Q 23,13 29,1 Q 34,6 35,${SB} Z"
+          fill="#daeeff"/>
+    <!-- 오른쪽 봉우리 최고 밝음 -->
+    <path d="M 29,1 Q 33,3 32,6 Q 28,5 29,1 Z"
+          fill="#ffffff" opacity="0.90"/>
 
-    <!-- 오른쪽 설면 (순백) -->
-    <path d="M ${CX},${PY} Q 39,${SB+8} 38,${SB+16} L ${CX},${SB} Z" fill="${MC.snowTop}"/>
-    <!-- 오른쪽 최고 밝기 -->
-    <path d="M ${CX},${PY} Q 29,${PY+8} ${CX},${PY+13} Q 25,${PY+5} ${CX},${PY} Z"
-          fill="${MC.snowRight}" opacity="0.8"/>
+    <!-- 왼쪽 봉우리 정상 순백 -->
+    <polygon points="14,3 12,7 16,7" fill="#ffffff"/>
+    <!-- 오른쪽 봉우리 정상 순백 -->
+    <polygon points="29,1 27,5 31,5" fill="#ffffff"/>
 
-    <!-- 눈 그늘 (얼음 파랑) -->
-    <polygon points="${CX},${SB} 4,${SB+16} 9,${SB+9}" fill="${MC.snowShade}" opacity="0.50"/>
+    <!-- 안부(saddle) 연결 눈 — 두 봉우리 사이 이음 -->
+    <path d="M 14,6 Q 21,14 29,5 Q 21,16 14,6 Z"
+          fill="#d0e4f8" opacity="0.55"/>
 
-    <!-- 눈골 선 (gully) -->
-    <line x1="${CX-7}" y1="${PY+6}" x2="${CX-5}" y2="${SB}"
-          stroke="${MC.snowLeft}" stroke-width="0.8" opacity="0.40"/>
-    <line x1="${CX+7}" y1="${PY+6}" x2="${CX+5}" y2="${SB}"
-          stroke="${MC.snowTop}" stroke-width="0.8" opacity="0.38"/>
-
-    <!-- 정상 순백 하이라이트 -->
-    <polygon points="${CX},${PY} ${CX-3},${PY+6} ${CX+3},${PY+6}" fill="#ffffff"/>
-
-    <!-- 알펜글로 광채 -->
-    <polygon points="${CX},${PY} ${CX-4},${PY+8} ${CX},${PY+11} ${CX+4},${PY+8}"
-             fill="${MC.glow}" opacity="0.32"/>
+    <!-- 눈골 선 (좌봉) -->
+    <line x1="14" y1="3" x2="10" y2="${SB}"
+          stroke="#a8c8e8" stroke-width="0.7" opacity="0.38"/>
+    <!-- 눈골 선 (우봉) -->
+    <line x1="29" y1="1" x2="32" y2="${SB}"
+          stroke="#e0f0ff" stroke-width="0.7" opacity="0.36"/>
   </g>`;
 }
 
 export function createMountainSprite(level: DragonLevel): string {
   switch (level) {
     case 0: return createFlatGround();
-    case 1: return createSmallMountainTree(); // 소형 나무 (H=30, offset=10)
-    case 2: return createRoundedBareHill();   // 민둥산 (H=42, offset=20)
-    case 3: return createRockyMountain();     // 풀 덮힌 산 (H=54, offset=32)
-    case 4: return createSnowMountain();      // 눈 덮인 산 (H=68, offset=46)
+    case 1: return createSmallMountainTree(); // 소형 나무 픽셀 아트 (H=30, offset=10)
+    case 2: return createRoundedBareHill();   // 둥근 민둥산 (H=42, offset=20)
+    case 3: return createRockyMountain();     // 풀 덮힌 산 전체 초록 (H=54, offset=32)
+    case 4: return createSnowMountain();      // 2봉 설산 (H=68, offset=46)
     default: return '';
   }
 }
@@ -259,10 +281,10 @@ export function createMountainSprite(level: DragonLevel): string {
 export function getMountainSpriteSize(level: DragonLevel): { width: number; height: number } {
   switch (level) {
     case 0: return { width: 20, height: 14 };
-    case 1: return { width: 22, height: 30 };  // 소형 나무
-    case 2: return { width: 30, height: 42 };  // 민둥산
-    case 3: return { width: 36, height: 54 };  // 풀 덮힌 산
-    case 4: return { width: 42, height: 68 };  // 눈 덮인 산
+    case 1: return { width: 22, height: 30 };
+    case 2: return { width: 30, height: 42 };
+    case 3: return { width: 36, height: 54 };
+    case 4: return { width: 42, height: 68 };
     default: return { width: 20, height: 14 };
   }
 }
