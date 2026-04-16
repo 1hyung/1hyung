@@ -1,8 +1,8 @@
-// 설산 테마 등각 투영 스프라이트 — 자연스러운 산 / 산맥 스타일
-// 베지어 곡선 + 다면 폴리곤으로 피라미드 대신 실제 산 형태 구현
-// Level 0: 평지, Level 1: 민둥산(둥근 언덕), Level 2: 바위산, Level 3: 침엽수림 산, Level 4: 설산
+// 설산 테마 등각 투영 스프라이트
+// Level 0: 평지, Level 1: 나무(농장 스프라이트 재사용), Level 2: 민둥산, Level 3: 풀 덮힌 산, Level 4: 눈 덮인 산
 
 import { DragonLevel } from './types';
+import { createTree } from './farm-sprites';
 
 const MC = {
   // 기저 타일 (회청색 석판)
@@ -226,10 +226,10 @@ function createSnowMountain(): string {
 export function createMountainSprite(level: DragonLevel): string {
   switch (level) {
     case 0: return createFlatGround();
-    case 1: return createRoundedBareHill();
-    case 2: return createRockyMountain();
-    case 3: return createLushMountain();
-    case 4: return createSnowMountain();
+    case 1: return createTree().svg;        // 농장 나무 (열매 없음)
+    case 2: return createRoundedBareHill(); // 민둥산
+    case 3: return createRockyMountain();   // 풀 덮힌 산 (초원+암석)
+    case 4: return createSnowMountain();    // 눈 덮인 산
     default: return '';
   }
 }
@@ -237,10 +237,10 @@ export function createMountainSprite(level: DragonLevel): string {
 export function getMountainSpriteSize(level: DragonLevel): { width: number; height: number } {
   switch (level) {
     case 0: return { width: 20, height: 14 };
-    case 1: return { width: 22, height: 28 };
-    case 2: return { width: 26, height: 34 };
-    case 3: return { width: 30, height: 40 };
-    case 4: return { width: 32, height: 46 };
+    case 1: return { width: 32, height: 41 }; // farm tree
+    case 2: return { width: 22, height: 28 }; // 민둥산
+    case 3: return { width: 26, height: 34 }; // 풀 덮힌 산
+    case 4: return { width: 32, height: 46 }; // 눈 덮인 산
     default: return { width: 20, height: 14 };
   }
 }
