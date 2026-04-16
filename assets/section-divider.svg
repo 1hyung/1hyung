@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 30" width="1200" height="30">
-  <!-- 배경 -->
-  <rect x="0" y="0" width="1200" height="30" fill="#4a8c38"/>
+  <!-- 산 테마 구분선 — 네이비 계열 -->
+  <rect x="0" y="0" width="1200" height="30" fill="#0d1b38"/>
 
-  <!-- 물결 잔디 라인 -->
+  <!-- 산맥 능선 파동 라인 -->
   <path d="M 0,15 Q 100,8 200,15 T 400,15 T 600,15 T 800,15 T 1000,15 T 1200,15"
-        stroke="#4caf50"
-        stroke-width="2"
+        stroke="#3a5880"
+        stroke-width="1.5"
         fill="none"
         opacity="0.7">
     <animate attributeName="d"
              values="M 0,15 Q 100,8 200,15 T 400,15 T 600,15 T 800,15 T 1000,15 T 1200,15;
                      M 0,15 Q 100,22 200,15 T 400,15 T 600,15 T 800,15 T 1000,15 T 1200,15;
                      M 0,15 Q 100,8 200,15 T 400,15 T 600,15 T 800,15 T 1000,15 T 1200,15"
-             dur="4s"
+             dur="5s"
              repeatCount="indefinite"/>
   </path>
 
-  <!-- 잎 장식점 -->
-  <g fill="#228b22" opacity="0.6">
-    <circle cx="150" cy="15" r="3"/>
-    <circle cx="350" cy="15" r="2"/>
-    <circle cx="600" cy="15" r="3"/>
-    <circle cx="850" cy="15" r="2"/>
-    <circle cx="1050" cy="15" r="3"/>
+  <!-- 별 장식점 -->
+  <g fill="#a0b8d8" opacity="0.5">
+    <circle cx="150" cy="15" r="1.5"/>
+    <circle cx="350" cy="15" r="1"/>
+    <circle cx="600" cy="15" r="1.5"/>
+    <circle cx="850" cy="15" r="1"/>
+    <circle cx="1050" cy="15" r="1.5"/>
   </g>
 </svg>

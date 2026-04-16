@@ -14,10 +14,14 @@ export function createMountainFilters(): string {
       </feMerge>
     </filter>
     <filter id="titleGlow" x="-20%" y="-80%" width="140%" height="260%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <!-- 그림자: 살짝 아래+오른쪽으로 어두운 파란 그림자 -->
+      <feDropShadow dx="1.5" dy="2" stdDeviation="2" flood-color="#0a1830" flood-opacity="0.85" result="shadow"/>
+      <!-- 글로우: 부드러운 파란빛 후광 -->
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur"/>
       <feColorMatrix in="blur" type="matrix"
-        values="0.5 0.5 1 0 0  0.3 0.5 1 0 0  0.2 0.3 1 0 0.05  0 0 0 0.55 0" result="titleBlur"/>
+        values="0.3 0.4 1 0 0  0.2 0.4 1 0 0  0.1 0.3 1 0 0  0 0 0 0.45 0" result="titleBlur"/>
       <feMerge>
+        <feMergeNode in="shadow"/>
         <feMergeNode in="titleBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
@@ -149,18 +153,7 @@ function drawRightWall(w: number, h: number): string {
 /** 상단 대형 타이틀 — "1hyung's Git Mountain" */
 function drawTitle(cx: number): string {
   return `<g id="mountain-title">
-    <!-- 타이틀 글로우 후광 -->
-    <text
-      x="${cx}" y="55"
-      text-anchor="middle"
-      font-family="monospace"
-      font-size="27"
-      font-weight="bold"
-      fill="#f0f4ff"
-      filter="url(#titleGlow)"
-      opacity="0.5"
-    >1hyung's Git Mountain</text>
-    <!-- 타이틀 본문 -->
+    <!-- 타이틀 본문 (드롭 섀도로 그림자 처리, 텍스트는 1개) -->
     <text
       x="${cx}" y="55"
       text-anchor="middle"
@@ -169,6 +162,7 @@ function drawTitle(cx: number): string {
       font-weight="bold"
       letter-spacing="1.5"
       fill="#f0f4ff"
+      filter="url(#titleGlow)"
     >1hyung's Git Mountain</text>
     <!-- 장식 구분선 -->
     <line x1="${cx - 148}" y1="66" x2="${cx + 148}" y2="66" stroke="#4a6898" stroke-width="0.8" opacity="0.6"/>
