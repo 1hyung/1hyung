@@ -60,12 +60,6 @@ function createSmallMountainTree(): string {
   const trunkDark = '#5c2d0e';
 
   return `<g>
-    <!-- 기저 타일 -->
-    <polygon points="${CX},${GY} 21,${GY+5} ${CX},${GY+10} 1,${GY+5}" fill="${MC.tileTop}"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,${GY+5} ${CX},${GY+10} ${CX},${GY+12} 1,${GY+7}" fill="${MC.tileLeft}"/>
-    <polygon points="${CX},${GY+10} 21,${GY+5} 21,${GY+7} ${CX},${GY+12}" fill="${MC.tileRight}"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="${CX-1.5}" y="${GY-5}" width="1.5" height="5" fill="${trunkDark}"/>
     <rect x="${CX}" y="${GY-5}" width="1.5" height="5" fill="${trunkBrown}"/>
