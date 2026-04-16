@@ -100,53 +100,60 @@ function drawNearRange(w: number): string {
   </g>`;
 }
 
-/** 왼쪽 협곡 벽 */
-function drawLeftWall(h: number): string {
-  // 내측 절벽 엣지 (불규칙한 바위 절벽 형태)
-  const edge = [
-    [118, 0], [98, 28], [122, 56], [102, 84],
-    [126, 115], [95, 148], [118, 180], [90, 215],
-    [114, 252], [84, 292], [108, 335], [78, 378],
-    [102, 422], [74, 468], [96, 516], [80, h],
-  ];
-  const edgePts = edge.map(([x, y]) => `${x},${y}`).join(' ');
-  const fullPts = `0,0 ${edgePts} 0,${h}`;
+/**
+ * 왼쪽 절벽 — 사선 절벽 (등각 투영 방향)
+ * 지그재그 제거, 상단 130px → 하단 75px으로 수렴하는 깔끔한 사선
+ */
+function drawLeftCliff(h: number): string {
+  // 사선 내측 엣지 좌표 (상단 넓고 하단 좁아짐 — 원근감)
+  const topX = 130;
+  const botX = 75;
 
-  // 암석 층 라인 (strata) — 절벽 표면 질감
-  const strata1 = edge.map(([x, y]) => `${x - 10},${y}`).join(' ');
-  const strata2 = edge.map(([x, y]) => `${x - 22},${y}`).join(' ');
+  // 절벽 내측 면 (얇은 밝은 면으로 등각 입체감)
+  const faceOuter = 12;
 
   return `<g>
-    <polygon points="${fullPts}" fill="#0c1420"/>
-    <polyline points="${edgePts}" fill="none" stroke="#1e2d42" stroke-width="3.5" opacity="0.9"/>
-    <polyline points="${strata1}" fill="none" stroke="#18253a" stroke-width="2" opacity="0.6"/>
-    <polyline points="${strata2}" fill="none" stroke="#141e30" stroke-width="1.5" opacity="0.45"/>
-    <!-- 절벽 안쪽 면 미묘한 하이라이트 -->
-    <polyline points="${edgePts}" fill="none" stroke="#2a3d58" stroke-width="1" opacity="0.4"/>
+    <!-- 절벽 본체 -->
+    <polygon points="0,0 ${topX},0 ${botX},${h} 0,${h}" fill="#0a1220"/>
+    <!-- 내측 노출 암석면 (얇은 밝은 사면) -->
+    <polygon points="${topX},0 ${topX + faceOuter},0 ${botX + faceOuter},${h} ${botX},${h}"
+             fill="#162032" opacity="0.9"/>
+    <!-- 암석 층 라인 (strata) — 사선 방향 -->
+    <line x1="${topX}" y1="0" x2="${botX}" y2="${h}"
+          stroke="#1e2d42" stroke-width="2" opacity="0.75"/>
+    <line x1="${topX - 16}" y1="0" x2="${botX - 16}" y2="${h}"
+          stroke="#162030" stroke-width="1.5" opacity="0.5"/>
+    <line x1="${topX - 30}" y1="0" x2="${botX - 30}" y2="${h}"
+          stroke="#0e1826" stroke-width="1" opacity="0.3"/>
+    <!-- 능선 하이라이트 -->
+    <line x1="${topX}" y1="0" x2="${botX}" y2="${h}"
+          stroke="#2a3d58" stroke-width="0.8" opacity="0.3"/>
   </g>`;
 }
 
-/** 오른쪽 협곡 벽 (좌측 미러) */
-function drawRightWall(w: number, h: number): string {
-  const leftEdge = [
-    [118, 0], [98, 28], [122, 56], [102, 84],
-    [126, 115], [95, 148], [118, 180], [90, 215],
-    [114, 252], [84, 292], [108, 335], [78, 378],
-    [102, 422], [74, 468], [96, 516], [80, h],
-  ];
-  const edge = leftEdge.map(([x, y]) => [w - x, y]);
-  const edgePts = edge.map(([x, y]) => `${x},${y}`).join(' ');
-  const fullPts = `${w},0 ${edgePts} ${w},${h}`;
+/**
+ * 오른쪽 절벽 (왼쪽 대칭)
+ */
+function drawRightCliff(w: number, h: number): string {
+  const topX = 130;
+  const botX = 75;
+  const faceOuter = 12;
 
-  const strata1 = edge.map(([x, y]) => `${x + 10},${y}`).join(' ');
-  const strata2 = edge.map(([x, y]) => `${x + 22},${y}`).join(' ');
+  const il = w - topX;   // inner top-left x
+  const bl = w - botX;   // inner bottom-left x
 
   return `<g>
-    <polygon points="${fullPts}" fill="#0c1420"/>
-    <polyline points="${edgePts}" fill="none" stroke="#1e2d42" stroke-width="3.5" opacity="0.9"/>
-    <polyline points="${strata1}" fill="none" stroke="#18253a" stroke-width="2" opacity="0.6"/>
-    <polyline points="${strata2}" fill="none" stroke="#141e30" stroke-width="1.5" opacity="0.45"/>
-    <polyline points="${edgePts}" fill="none" stroke="#2a3d58" stroke-width="1" opacity="0.4"/>
+    <polygon points="${il},0 ${w},0 ${w},${h} ${bl},${h}" fill="#0a1220"/>
+    <polygon points="${il - faceOuter},0 ${il},0 ${bl},${h} ${bl - faceOuter},${h}"
+             fill="#162032" opacity="0.9"/>
+    <line x1="${il}" y1="0" x2="${bl}" y2="${h}"
+          stroke="#1e2d42" stroke-width="2" opacity="0.75"/>
+    <line x1="${il + 16}" y1="0" x2="${bl + 16}" y2="${h}"
+          stroke="#162030" stroke-width="1.5" opacity="0.5"/>
+    <line x1="${il + 30}" y1="0" x2="${bl + 30}" y2="${h}"
+          stroke="#0e1826" stroke-width="1" opacity="0.3"/>
+    <line x1="${il}" y1="0" x2="${bl}" y2="${h}"
+          stroke="#2a3d58" stroke-width="0.8" opacity="0.3"/>
   </g>`;
 }
 
@@ -190,11 +197,11 @@ export function createMountainBackground(config: SVGConfig): string {
     <!-- 근거리 산맥 (설산 포함, 가장 선명) -->
     ${drawNearRange(width)}
 
-    <!-- 왼쪽 협곡 벽 -->
-    ${drawLeftWall(height)}
+    <!-- 왼쪽 사선 절벽 -->
+    ${drawLeftCliff(height)}
 
-    <!-- 오른쪽 협곡 벽 -->
-    ${drawRightWall(width, height)}
+    <!-- 오른쪽 사선 절벽 -->
+    ${drawRightCliff(width, height)}
 
     <!-- 협곡 바닥 안개 (그리드 영역 블렌딩) -->
     <rect x="0" y="${Math.round(height * 0.62)}" width="${width}" height="${Math.round(height * 0.38)}" fill="url(#valleyHaze)"/>

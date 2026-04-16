@@ -225,10 +225,10 @@ function getMountainTheme(): Theme {
     configOverride: {
       height: 600,              // 캔버스 높이 확장 (더 장엄한 비율)
       gridOffsetX: 195,         // 53주 그리드를 850px 캔버스 중앙 정렬
-      gridOffsetY: 155,         // 130→155: 산 스프라이트 정상이 배경 산맥(y=112~268)과 겹쳐 자연스럽게 연결
+      gridOffsetY: 185,         // 155→185: 고립된 Level4 스프라이트 정상이 배경 산맥(y=112~268) 내에 위치
     },
     reverseWeeks: true,         // 최신 주를 좌상단(col=0)에 배치
-    statsPanelY: 530,           // 490→530: 그리드 영역(최대 y=503) 아래로
+    statsPanelY: 548,           // 그리드 영역(최대 y=533) 아래로
     createBackground: createMountainBackground,
     createFilters: createMountainFilters,
     createSprite: createMountainSprite,
