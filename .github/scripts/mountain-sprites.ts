@@ -43,16 +43,15 @@ function createFlatGround(): string {
 
 /**
  * Level 1: 소형 나무 (W=22, H=30, GY=17)
- * 농장 나무 픽셀 아트 스타일 축소 버전 (PX=0.9, 흙 없음)
+ * 농장 나무 색상(leafDark/Green/Mid/Light) + ellipse 렌더링으로 파일 크기 최소화
+ * 픽셀 아트 방식은 rect 90+개/타일 → 수MB 파일 폭증 문제로 ellipse 방식 사용
  * heightOffset = GY - 7 = 10
  */
 function createSmallMountainTree(): string {
   const CX = 11;
   const GY = 17;
-  const PX_S = 0.9;
-  const TX = 2.5; // 트리 중심을 CX=11에 맞추는 x 오프셋
 
-  // 팜 나무 색상
+  // 팜 나무 색상 (farm-colors.ts와 동일)
   const leafDark  = '#1d4a0d';
   const leafGreen = '#2d6b18';
   const leafMid   = '#4a8c30';
@@ -60,52 +59,23 @@ function createSmallMountainTree(): string {
   const trunkBrown= '#8b4513';
   const trunkDark = '#5c2d0e';
 
-  // 픽셀 렌더러 (farm tree y 좌표에서 4 shift, PX_S 스케일)
-  const px = (x: number, y: number, c: string): string =>
-    `<rect x="${+(x * PX_S + TX).toFixed(1)}" y="${+(y * PX_S).toFixed(1)}" width="${PX_S}" height="${PX_S}" fill="${c}"/>`;
-  const pxs = (coords: [number, number][], c: string): string =>
-    coords.map(([x, y]) => px(x, y, c)).join('');
-
   return `<g>
-    <!-- 기저 타일 먼저 (나무 아래에 렌더링) -->
+    <!-- 기저 타일 -->
     <polygon points="${CX},${GY} 21,${GY+5} ${CX},${GY+10} 1,${GY+5}" fill="${MC.tileTop}"
              stroke="#1c2d40" stroke-width="0.6"/>
     <polygon points="1,${GY+5} ${CX},${GY+10} ${CX},${GY+12} 1,${GY+7}" fill="${MC.tileLeft}"/>
     <polygon points="${CX},${GY+10} 21,${GY+5} 21,${GY+7} ${CX},${GY+12}" fill="${MC.tileRight}"/>
 
-    <!-- 캐노피 외곽 (어두운 그림자) — farm tree row 4→0 으로 시프트 -->
-    ${pxs([[7,0],[8,0],[9,0],[10,0],[11,0],[12,0]], leafDark)}
-    ${pxs([[5,1],[6,1],[12,1],[13,1],[14,1]], leafDark)}
-    ${pxs([[4,2],[5,2],[14,2],[15,2]], leafDark)}
-    ${pxs([[4,7],[5,7],[14,7],[15,7]], leafDark)}
-    ${pxs([[5,8],[6,8],[13,8],[14,8]], leafDark)}
-    ${pxs([[7,9],[8,9],[11,9],[12,9]], leafDark)}
+    <!-- 나무 줄기 (그늘/빛 분할) -->
+    <rect x="${CX-1.5}" y="${GY-5}" width="1.5" height="5" fill="${trunkDark}"/>
+    <rect x="${CX}" y="${GY-5}" width="1.5" height="5" fill="${trunkBrown}"/>
 
-    <!-- 메인 캐노피 -->
-    ${pxs([[6,1],[7,1],[8,1],[9,1],[10,1],[11,1],[12,1],[13,1]], leafGreen)}
-    ${pxs([[5,2],[6,2],[7,2],[8,2],[9,2],[10,2],[11,2],[12,2],[13,2],[14,2]], leafGreen)}
-    ${pxs([[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3],[11,3],[12,3],[13,3],[14,3],[15,3]], leafMid)}
-    ${pxs([[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[10,4],[11,4],[12,4],[13,4],[14,4],[15,4]], leafMid)}
-    ${pxs([[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[10,5],[11,5],[12,5],[13,5],[14,5],[15,5]], leafGreen)}
-    ${pxs([[4,6],[5,6],[6,6],[7,6],[8,6],[9,6],[10,6],[11,6],[12,6],[13,6],[14,6],[15,6]], leafGreen)}
-    ${pxs([[5,7],[6,7],[7,7],[8,7],[9,7],[10,7],[11,7],[12,7],[13,7],[14,7]], leafGreen)}
-    ${pxs([[6,8],[7,8],[8,8],[9,8],[10,8],[11,8],[12,8],[13,8]], leafMid)}
-    ${pxs([[8,9],[9,9],[10,9],[11,9]], leafGreen)}
-
-    <!-- 캐노피 상단 하이라이트 -->
-    ${pxs([[8,0],[9,0],[10,0],[11,0]], leafLight)}
-    ${pxs([[7,1],[8,1],[9,1],[10,1],[11,1],[12,1]], leafLight)}
-    ${pxs([[6,2],[7,2],[8,2],[9,2],[10,2],[11,2]], leafLight)}
-    ${pxs([[5,3],[6,3],[7,3],[8,3]], leafLight)}
-
-    <!-- 나무 줄기 (캐노피 row 11-15, farm tree row 15-19 대응) -->
-    ${pxs([[8,11],[9,11],[10,11],[11,11]], trunkBrown)}
-    ${pxs([[8,12],[9,12],[10,12],[11,12]], trunkBrown)}
-    ${pxs([[8,13],[9,13],[10,13],[11,13]], trunkBrown)}
-    ${pxs([[8,14],[9,14],[10,14],[11,14]], trunkBrown)}
-    ${pxs([[8,15],[9,15],[10,15],[11,15]], trunkBrown)}
-    ${pxs([[9,11],[9,12],[9,13],[9,14]], '#a0522d')}
-    ${pxs([[11,12],[11,13],[11,14],[11,15]], trunkDark)}
+    <!-- 수관 — 팜 나무 색상 레이어드 ellipse (leafDark 외곽→Green→Mid→Light 하이라이트) -->
+    <ellipse cx="${CX}" cy="${GY-9}" rx="8.5" ry="7.5" fill="${leafDark}"/>
+    <ellipse cx="${CX}" cy="${GY-9}" rx="7.5" ry="6.5" fill="${leafGreen}"/>
+    <ellipse cx="${CX}" cy="${GY-8.5}" rx="6" ry="5" fill="${leafMid}"/>
+    <ellipse cx="${CX-1}" cy="${GY-11}" rx="4.5" ry="3.5" fill="${leafLight}"/>
+    <ellipse cx="${CX-0.5}" cy="${GY-13}" rx="2.5" ry="2" fill="${leafLight}" opacity="0.75"/>
   </g>`;
 }
 
