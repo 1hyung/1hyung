@@ -25,7 +25,7 @@ import { createMountainSprite, getMountainSpriteSize } from './mountain-sprites'
 
 // 흥부네 커밋 테마 (신규)
 import { HEUNGBU_COLORS } from './heungbu-colors';
-import { createHeungbuFilters, createHeungbuBackground } from './heungbu-background';
+import { createHeungbuFilters, createHeungbuBackground, createHeungbuForeground } from './heungbu-background';
 import { createFlatHeungbuSprite, createHeungbuSprite, getHeungbuSpriteSize } from './heungbu-sprites';
 
 export type ThemeName = 'dragon' | 'farm' | 'mountain' | 'heungbu';
@@ -73,11 +73,13 @@ export interface Theme {
   configOverride?: Partial<SVGConfig>;  // SVGConfig 오버라이드 (캔버스 크기, 그리드 위치)
   statsPanelY?: number;          // 통계 패널 Y 위치 (기본 425)
   reverseWeeks?: boolean;        // true = 최신 주(week)를 좌상단(col=0)에 배치
+  flatGridY?: number;            // flat grid Y 시작 위치 (기본 305)
   createBackground: (config: SVGConfig) => string;
   createFilters: () => string;
   createSprite: (level: DragonLevel) => string;
   getSpriteSize: (level: DragonLevel) => { width: number; height: number };
   createFlatSprite?: (level: DragonLevel) => string;
+  createForeground?: (config: SVGConfig) => string;  // 그리드 위에 렌더링
   flatCellStyle?: FlatCellStyle; // flat grid 셀 색상 (미설정 시 흙색 기본값)
   heightOffsets: number[];
   level4FilterId: string;
@@ -302,6 +304,9 @@ function getHeungbuTheme(): Theme {
     createSprite: createHeungbuSprite,
     getSpriteSize: getHeungbuSpriteSize,
     createFlatSprite: createFlatHeungbuSprite,
+    createForeground: createHeungbuForeground,
+    flatGridY: 140,
+    statsPanelY: 338,
     flatCellStyle: {
       bg0:              HEUNGBU_COLORS.strawDark,      // 빈 초가 (더 어두운 볏짚)
       bgN:              HEUNGBU_COLORS.strawMid,       // 활성 초가
