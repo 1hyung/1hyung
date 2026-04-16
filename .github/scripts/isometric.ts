@@ -152,6 +152,15 @@ export function createFlatGrid(
 
   let svg = '<g id="farm-flat-grid">\n';
 
+  // 셀 색상: 테마 flatCellStyle 우선, 없으면 흙색 기본값
+  const cs = theme.flatCellStyle;
+  const cellBg0   = cs?.bg0              ?? '#6b4423';
+  const cellBgN   = cs?.bgN              ?? '#7a5232';
+  const hlColor   = cs?.highlight        ?? '#c87040';
+  const shColor   = cs?.shadow           ?? '#4a2f17';
+  const hlOpacity = cs?.highlightOpacity ?? '0.5';
+  const shOpacity = cs?.shadowOpacity    ?? '0.6';
+
   sortedCells.forEach(cell => {
     const col = Math.floor(cell.x); // 주 인덱스
     const row = Math.floor(cell.y); // 요일 인덱스
@@ -159,17 +168,17 @@ export function createFlatGrid(
     const cx = gridX + col * cellStep;
     const cy = gridY + row * cellStep;
 
-    // 레벨에 따른 흙 배경색 (레벨 0은 어두운 흙, 1이상은 약간 밝게)
-    const bgColor = cell.level === 0 ? '#6b4423' : '#7a5232';
+    // 레벨에 따른 배경색
+    const bgColor = cell.level === 0 ? cellBg0 : cellBgN;
     svg += `<rect x="${cx}" y="${cy}" width="${cellSize}" height="${cellSize}" fill="${bgColor}" rx="1"/>\n`;
 
     // 상단/좌측 하이라이트
-    svg += `<rect x="${cx}" y="${cy}" width="${cellSize}" height="1" fill="#c87040" opacity="0.5"/>\n`;
-    svg += `<rect x="${cx}" y="${cy}" width="1" height="${cellSize}" fill="#c87040" opacity="0.5"/>\n`;
+    svg += `<rect x="${cx}" y="${cy}" width="${cellSize}" height="1" fill="${hlColor}" opacity="${hlOpacity}"/>\n`;
+    svg += `<rect x="${cx}" y="${cy}" width="1" height="${cellSize}" fill="${hlColor}" opacity="${hlOpacity}"/>\n`;
 
     // 하단/우측 그림자
-    svg += `<rect x="${cx}" y="${cy + cellSize - 1}" width="${cellSize}" height="1" fill="#4a2f17" opacity="0.6"/>\n`;
-    svg += `<rect x="${cx + cellSize - 1}" y="${cy}" width="1" height="${cellSize}" fill="#4a2f17" opacity="0.6"/>\n`;
+    svg += `<rect x="${cx}" y="${cy + cellSize - 1}" width="${cellSize}" height="1" fill="${shColor}" opacity="${shOpacity}"/>\n`;
+    svg += `<rect x="${cx + cellSize - 1}" y="${cy}" width="1" height="${cellSize}" fill="${shColor}" opacity="${shOpacity}"/>\n`;
 
     // 식물 스프라이트 (레벨 1 이상)
     if (cell.level > 0 && theme.createFlatSprite) {
