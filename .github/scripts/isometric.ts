@@ -180,8 +180,8 @@ export function createFlatGrid(
     svg += `<rect x="${cx}" y="${cy + cellSize - 1}" width="${cellSize}" height="1" fill="${shColor}" opacity="${shOpacity}"/>\n`;
     svg += `<rect x="${cx + cellSize - 1}" y="${cy}" width="1" height="${cellSize}" fill="${shColor}" opacity="${shOpacity}"/>\n`;
 
-    // 식물 스프라이트 (레벨 1 이상)
-    if (cell.level > 0 && theme.createFlatSprite) {
+    // 스프라이트 오버레이 (레벨 0 포함 — 볏짚 묶음 텍스처 등)
+    if (theme.createFlatSprite) {
       const sprite = theme.createFlatSprite(cell.level);
       if (sprite) {
         svg += `<g transform="translate(${cx}, ${cy})">${sprite}</g>\n`;

@@ -1,119 +1,218 @@
-// 흥부네 커밋 — 초가집 배경 (지붕=그리드, 아래=집 본체)
-// 레이아웃: 하늘(0~140) | 용마루+박(125~140) | 그리드=지붕(140~252) | 처마(252~272) | 집 본체(272~415) | 기단(415~433) | 지면(433~)
+// 흥부네 커밋 — 초가집 배경 (지붕=그리드, 박/덩굴=용마루 위)
+// 레이아웃: 하늘(0~140) | 용마루+박(85~145) | 그리드=지붕(140~252) | 처마(252~292) | 집 본체(292~428) | 기단(428~448) | 지면(448~)
 
 import { SVGConfig } from './types';
-import { HEUNGBU_COLORS } from './heungbu-colors';
+import { HEUNGBU_COLORS as H } from './heungbu-colors';
 
-const H = HEUNGBU_COLORS;
-
-// 레이아웃 상수 (theme.flatGridY=140 과 일치)
-const GRID_Y      = 140;  // 그리드 시작 = 지붕 타일 시작
-const GRID_BOTTOM = 252;  // GRID_Y + 7행×16px
-const RIDGE_Y     = 130;  // 용마루 시작
-const RIDGE_H     = 10;   // 용마루 높이
+const GRID_Y      = 140;
+const GRID_BOTTOM = 252;
+const RIDGE_Y     = 115;
+const RIDGE_H     = 28;
 const EAVE_Y      = GRID_BOTTOM;
-const EAVE_H      = 22;
-const HOUSE_Y     = EAVE_Y + EAVE_H;  // 274
-const HOUSE_H     = 141;               // 집 본체 높이
-const FOUND_Y     = HOUSE_Y + HOUSE_H; // 415
-const FOUND_H     = 18;
-const GROUND_Y    = FOUND_Y + FOUND_H; // 433
+const EAVE_H      = 40;
+const HOUSE_Y     = EAVE_Y + EAVE_H;   // 292
+const HOUSE_H     = 136;
+const FOUND_Y     = HOUSE_Y + HOUSE_H; // 428
+const FOUND_H     = 20;
+const GROUND_Y    = FOUND_Y + FOUND_H; // 448
 
 export function createHeungbuFilters(): string {
   return `
     <filter id="heungbuGlow" x="-40%" y="-40%" width="180%" height="180%">
       <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="gourdShadow">
-      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#2a1a04" flood-opacity="0.45"/>
+    <filter id="gourdShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#3a1a00" flood-opacity="0.4"/>
     </filter>
   `;
 }
 
-// 박 하나를 SVG로 그리기 (용마루 위 좌표 기준)
-function gourdSVG(gx: number, sz: number): string {
-  const ry  = Math.round(sz * 1.35);
-  const cy  = RIDGE_Y - ry + 3;          // 박 바닥이 용마루 위에 걸침
-  const hlX = Math.round(gx - sz * 0.25);
-  const hlY = Math.round(cy - ry * 0.22);
+function roundGourdSVG(cx: number, cy: number, rx: number, ry: number): string {
+  const cxr = Math.round(cx);
+  const cyr = Math.round(cy);
+  const hlX = Math.round(cx - rx * 0.28);
+  const hlY = Math.round(cy - ry * 0.32);
   return `
-    <ellipse cx="${gx}" cy="${cy}" rx="${sz}" ry="${ry}"
+    <ellipse cx="${cxr}" cy="${cyr}" rx="${rx}" ry="${ry}"
       fill="${H.gourdMid}" filter="url(#gourdShadow)"/>
-    <ellipse cx="${hlX}" cy="${hlY}" rx="${Math.round(sz * 0.55)}" ry="${Math.round(ry * 0.48)}"
-      fill="${H.gourdLight}"/>
-    <ellipse cx="${Math.round(gx - sz * 0.35)}" cy="${Math.round(cy - ry * 0.38)}"
-      rx="${Math.round(sz * 0.28)}" ry="${Math.round(ry * 0.26)}"
-      fill="${H.gourdHighlight}"/>
-    <rect x="${gx - 2}" y="${cy + ry - 2}" width="4" height="6" rx="2"
+    <path d="M${cxr},${cyr - ry} Q${Math.round(cx - rx * 0.45)},${cyr} ${cxr},${cyr + ry}"
+      stroke="${H.gourdDark}" stroke-width="1.2" fill="none" opacity="0.35"/>
+    <path d="M${cxr},${cyr - ry} Q${Math.round(cx + rx * 0.45)},${cyr} ${cxr},${cyr + ry}"
+      stroke="${H.gourdDark}" stroke-width="1.2" fill="none" opacity="0.35"/>
+    <ellipse cx="${hlX}" cy="${hlY}" rx="${Math.round(rx * 0.42)}" ry="${Math.round(ry * 0.3)}"
+      fill="${H.gourdLight}" opacity="0.7"/>
+    <ellipse cx="${Math.round(cx - rx * 0.15)}" cy="${Math.round(cy - ry * 0.5)}"
+      rx="${Math.round(rx * 0.2)}" ry="${Math.round(ry * 0.14)}"
+      fill="${H.gourdHighlight}" opacity="0.6"/>
+    <rect x="${cxr - 3}" y="${cyr - ry - 10}" width="5" height="12" rx="2.5"
+      fill="${H.gourdStem}"/>
+    <path d="M${cxr + 2},${cyr - ry - 4} Q${cxr + 10},${cyr - ry - 14} ${cxr + 8},${cyr - ry - 22}"
+      stroke="${H.gourdStem}" stroke-width="1.8" fill="none"/>
+  `;
+}
+
+function calabashSVG(cx: number, cy: number, sz: number): string {
+  const bR = Math.round(sz * 0.72);
+  const tR = Math.round(sz * 0.44);
+  const bCy = Math.round(cy + tR * 0.3);
+  const tCy = Math.round(cy - bR * 0.58);
+  return `
+    <ellipse cx="${Math.round(cx)}" cy="${bCy}" rx="${bR}" ry="${Math.round(bR * 0.82)}"
+      fill="${H.gourdMid}" filter="url(#gourdShadow)"/>
+    <ellipse cx="${Math.round(cx)}" cy="${tCy}" rx="${tR}" ry="${Math.round(tR * 0.88)}"
+      fill="${H.gourdMid}"/>
+    <rect x="${Math.round(cx - sz * 0.2)}" y="${tCy}" width="${Math.round(sz * 0.4)}" height="${Math.max(1, bCy - tCy)}"
+      fill="${H.gourdMid}"/>
+    <ellipse cx="${Math.round(cx - bR * 0.25)}" cy="${Math.round(bCy - bR * 0.3)}"
+      rx="${Math.round(bR * 0.35)}" ry="${Math.round(bR * 0.22)}"
+      fill="${H.gourdLight}" opacity="0.65"/>
+    <ellipse cx="${Math.round(cx - tR * 0.3)}" cy="${Math.round(tCy - tR * 0.3)}"
+      rx="${Math.round(tR * 0.38)}" ry="${Math.round(tR * 0.24)}"
+      fill="${H.gourdLight}" opacity="0.6"/>
+    <rect x="${Math.round(cx) - 2}" y="${tCy - tR - 8}" width="4" height="10" rx="2"
       fill="${H.gourdStem}"/>
   `;
 }
 
-// 박들과 덩굴선
+function leafSVG(cx: number, cy: number, angle: number, scale: number): string {
+  const w = Math.round(28 * scale);
+  const h = Math.round(17 * scale);
+  return `
+    <ellipse cx="${Math.round(cx)}" cy="${Math.round(cy)}" rx="${w}" ry="${h}"
+      fill="${H.leafMid}"
+      transform="rotate(${angle} ${Math.round(cx)} ${Math.round(cy)})" opacity="0.92"/>
+    <line x1="${Math.round(cx)}" y1="${Math.round(cy - h * 0.65)}"
+          x2="${Math.round(cx)}" y2="${Math.round(cy + h * 0.65)}"
+      stroke="${H.leafDark}" stroke-width="1.2" opacity="0.45"
+      transform="rotate(${angle} ${Math.round(cx)} ${Math.round(cy)})"/>
+  `;
+}
+
 function buildRidge(width: number): string {
-  const gourds: Array<{ x: number; sz: number }> = [
-    { x: 48,   sz: 11 },
-    { x: 140,  sz: 14 },
-    { x: 240,  sz: 12 },
-    { x: 345,  sz: 15 },
-    { x: Math.round(width / 2), sz: 19 },  // 중앙 최대
-    { x: Math.round(width / 2) + 80, sz: 15 },
-    { x: 560,  sz: 13 },
-    { x: 660,  sz: 14 },
-    { x: 760,  sz: 12 },
-    { x: 820,  sz: 10 },
+  const midX = Math.round(width / 2);
+  const gourds: Array<{ x: number; rx: number; ry: number; type: 'round' | 'calabash' }> = [
+    { x: 60,        rx: 22, ry: 18, type: 'round' },
+    { x: 165,       rx: 30, ry: 25, type: 'round' },
+    { x: 265,       rx: 18, ry: 15, type: 'calabash' },
+    { x: 360,       rx: 32, ry: 27, type: 'round' },
+    { x: midX - 30, rx: 38, ry: 32, type: 'round' },
+    { x: midX + 55, rx: 33, ry: 28, type: 'round' },
+    { x: 560,       rx: 20, ry: 17, type: 'calabash' },
+    { x: 650,       rx: 28, ry: 24, type: 'round' },
+    { x: 748,       rx: 19, ry: 16, type: 'calabash' },
+    { x: 820,       rx: 24, ry: 20, type: 'round' },
   ];
 
-  // 덩굴 줄기 (박 사이)
-  const vineLines = gourds.slice(0, -1).map((g, i) => {
+  const ridgeTop = RIDGE_Y + 4;
+  const gourdSVGs = gourds.map(g => {
+    const cy = ridgeTop - g.ry + 4;
+    return g.type === 'calabash'
+      ? calabashSVG(g.x, cy, g.rx * 1.3)
+      : roundGourdSVG(g.x, cy, g.rx, g.ry);
+  }).join('');
+
+  const vines = gourds.slice(0, -1).map((g, i) => {
     const nx = gourds[i + 1].x;
     const mx = Math.round((g.x + nx) / 2);
-    return `<path d="M${g.x},${RIDGE_Y + 2} Q${mx},${RIDGE_Y - 8} ${nx},${RIDGE_Y + 2}"
-      stroke="${H.vineGreen}" stroke-width="2.5" fill="none" opacity="0.85"/>`;
+    const vy = RIDGE_Y + 10;
+    return `<path d="M${g.x},${vy} C${g.x + 20},${vy - 14} ${nx - 20},${vy - 14} ${nx},${vy}"
+      stroke="${H.vineGreen}" stroke-width="3.5" fill="none" opacity="0.9"/>`;
   }).join('\n    ');
 
-  // 잎사귀 장식
-  const leafPositions = [100, 195, 300, 430, width / 2 + 40, 520, 620, 715];
-  const leafs = leafPositions.map(lx => {
-    const angle = (lx % 40 > 20) ? -20 : 20;
-    return `<ellipse cx="${Math.round(lx)}" cy="${RIDGE_Y - 14}"
-      rx="9" ry="5" fill="${H.leafMid}"
-      transform="rotate(${angle}, ${Math.round(lx)}, ${RIDGE_Y - 14})"
-      opacity="0.88"/>`;
-  }).join('\n    ');
-
-  const gourdSVGs = gourds.map(g => gourdSVG(g.x, g.sz)).join('');
+  const leafDefs = [
+    { x: 112, angle: -25, s: 1.1 }, { x: 215, angle: 20,  s: 1.3 },
+    { x: 312, angle: -30, s: 1.0 }, { x: 408, angle: 15,  s: 1.4 },
+    { x: midX + 12, angle: -20, s: 1.2 }, { x: 510, angle: 25, s: 1.1 },
+    { x: 605, angle: -18, s: 1.3 }, { x: 700, angle: 22,  s: 1.0 },
+    { x: 786, angle: -25, s: 1.1 },
+  ];
+  const leafLY = RIDGE_Y - 4;
+  const leaves = leafDefs.map(({ x, angle, s }) => leafSVG(x, leafLY, angle, s)).join('');
 
   return `
     <!-- 덩굴 줄기 -->
-    ${vineLines}
+    ${vines}
     <!-- 잎 -->
-    ${leafs}
+    ${leaves}
     <!-- 박들 -->
     ${gourdSVGs}
   `;
 }
 
-// 창호지 창문 (한국 전통 격자 창)
 function windowSVG(wx: number, wy: number, ww: number, wh: number): string {
-  const cols = 3;
-  const rows = 4;
+  const cols = 3; const rows = 4;
   const vLines = Array.from({ length: cols - 1 }, (_, i) => {
     const lx = Math.round(wx + (ww / cols) * (i + 1));
-    return `<line x1="${lx}" y1="${wy}" x2="${lx}" y2="${wy + wh}" stroke="#7a5030" stroke-width="1.5" opacity="0.7"/>`;
+    return `<line x1="${lx}" y1="${wy + 4}" x2="${lx}" y2="${wy + wh - 4}"
+      stroke="#7A5030" stroke-width="1.5" opacity="0.65"/>`;
   }).join('');
   const hLines = Array.from({ length: rows - 1 }, (_, j) => {
     const ly = Math.round(wy + (wh / rows) * (j + 1));
-    return `<line x1="${wx}" y1="${ly}" x2="${wx + ww}" y2="${ly}" stroke="#7a5030" stroke-width="1" opacity="0.6"/>`;
+    return `<line x1="${wx + 4}" y1="${ly}" x2="${wx + ww - 4}" y2="${ly}"
+      stroke="#7A5030" stroke-width="1" opacity="0.55"/>`;
   }).join('');
   return `
-    <rect x="${wx}" y="${wy}" width="${ww}" height="${wh}" fill="#eedcaa" rx="2" opacity="0.92"/>
-    <rect x="${wx}" y="${wy}" width="${ww}" height="${wh}" fill="none" stroke="#5c3214" stroke-width="2.5" rx="2"/>
+    <rect x="${wx - 6}" y="${wy - 4}" width="${ww + 12}" height="${wh + 8}" rx="2" fill="#5A3218"/>
+    <rect x="${wx}" y="${wy}" width="${ww}" height="${wh}" fill="#EDD4A0" rx="1" opacity="0.94"/>
+    <rect x="${wx}" y="${wy}" width="${ww}" height="${wh}" fill="none" stroke="#5C3214" stroke-width="2" rx="1"/>
     ${vLines}${hLines}
+  `;
+}
+
+function chickenSVG(cx: number, cy: number): string {
+  const px = Math.round(cx);
+  const py = Math.round(cy);
+  return `
+    <ellipse cx="${px}" cy="${py}" rx="14" ry="11" fill="${H.chickenBody}"/>
+    <ellipse cx="${px - 3}" cy="${py + 1}" rx="9" ry="7" fill="${H.chickenDark}" opacity="0.5"/>
+    <circle cx="${px + 13}" cy="${py - 8}" r="8" fill="${H.chickenBody}"/>
+    <ellipse cx="${px + 14}" cy="${py - 17}" rx="4" ry="5" fill="${H.chickenComb}"/>
+    <ellipse cx="${px + 17}" cy="${py - 15}" rx="3" ry="4" fill="${H.chickenComb}"/>
+    <path d="M${px + 20},${py - 9} L${px + 26},${py - 7} L${px + 20},${py - 5}" fill="${H.chickenBeak}"/>
+    <circle cx="${px + 18}" cy="${py - 9}" r="1.5" fill="#1a0800"/>
+    <circle cx="${px + 18.5}" cy="${py - 9.5}" r="0.6" fill="white"/>
+    <line x1="${px - 4}" y1="${py + 10}" x2="${px - 6}" y2="${py + 20}" stroke="${H.chickenLeg}" stroke-width="2.5"/>
+    <line x1="${px + 4}" y1="${py + 10}" x2="${px + 5}" y2="${py + 20}" stroke="${H.chickenLeg}" stroke-width="2.5"/>
+    <line x1="${px - 6}" y1="${py + 20}" x2="${px - 12}" y2="${py + 22}" stroke="${H.chickenLeg}" stroke-width="1.8"/>
+    <line x1="${px - 6}" y1="${py + 20}" x2="${px - 4}" y2="${py + 23}" stroke="${H.chickenLeg}" stroke-width="1.8"/>
+    <line x1="${px + 5}" y1="${py + 20}" x2="${px + 11}" y2="${py + 22}" stroke="${H.chickenLeg}" stroke-width="1.8"/>
+    <line x1="${px + 5}" y1="${py + 20}" x2="${px + 3}" y2="${py + 23}" stroke="${H.chickenLeg}" stroke-width="1.8"/>
+  `;
+}
+
+function bambooPanel(cx: number, py: number, pw: number, ph: number): string {
+  const px = Math.round(cx - pw / 2);
+  const bw = 8;
+  const jointCount = Math.floor(pw / 80);
+  const topJoints = Array.from({ length: jointCount }, (_, i) => {
+    const jx = px + Math.round((pw / (jointCount + 1)) * (i + 1));
+    return `<circle cx="${jx}" cy="${py}" r="5" fill="${H.bambooJoint}"/>
+      <circle cx="${jx}" cy="${py + ph}" r="5" fill="${H.bambooJoint}"/>`;
+  }).join('');
+  const sideJointCount = Math.floor(ph / 40);
+  const sideJoints = Array.from({ length: sideJointCount }, (_, i) => {
+    const jy = py + Math.round((ph / (sideJointCount + 1)) * (i + 1));
+    return `<circle cx="${px}" cy="${jy}" r="5" fill="${H.bambooJoint}"/>
+      <circle cx="${px + pw}" cy="${jy}" r="5" fill="${H.bambooJoint}"/>`;
+  }).join('');
+  return `
+    <rect x="${px}" y="${py}" width="${pw}" height="${ph}"
+      rx="6" fill="${H.statsPanelColor}" opacity="0.88"/>
+    <rect x="${px - bw/2}" y="${py - bw/2}" width="${pw + bw}" height="${bw}"
+      rx="4" fill="${H.bambooGreen}"/>
+    <rect x="${px - bw/2}" y="${py + ph - bw/2}" width="${pw + bw}" height="${bw}"
+      rx="4" fill="${H.bambooGreen}"/>
+    <rect x="${px - bw/2}" y="${py - bw/2}" width="${bw}" height="${ph + bw}"
+      rx="4" fill="${H.bambooGreen}"/>
+    <rect x="${px + pw - bw/2}" y="${py - bw/2}" width="${bw}" height="${ph + bw}"
+      rx="4" fill="${H.bambooGreen}"/>
+    ${topJoints}
+    ${sideJoints}
+    <rect x="${px - bw/2 + 1}" y="${py - bw/2 + 1}" width="${pw + bw - 2}" height="2"
+      rx="1" fill="${H.bambooLight}" opacity="0.5"/>
+    <rect x="${px - bw/2 + 1}" y="${py - bw/2 + 1}" width="2" height="${ph + bw - 2}"
+      rx="1" fill="${H.bambooLight}" opacity="0.5"/>
   `;
 }
 
@@ -121,170 +220,147 @@ export function createHeungbuBackground(config: SVGConfig): string {
   const { width, height } = config;
   const cx = Math.round(width / 2);
 
-  // ─── 처마 (eaves) ─────────────────────────────────────────────
-  const eaves = `
-    <rect x="0" y="${EAVE_Y}" width="${width}" height="${EAVE_H}"
-      fill="${H.strawDark}" opacity="0.97"/>
-    <rect x="0" y="${EAVE_Y}" width="${width}" height="5"
-      fill="${H.strawHighlight}" opacity="0.28"/>
-    <rect x="0" y="${EAVE_Y + EAVE_H - 5}" width="${width}" height="5"
-      fill="#2a1808" opacity="0.55"/>
-    ${/* 처마 서까래 끝 장식 */Array.from({ length: Math.ceil(width / 14) }, (_, i) =>
-      `<rect x="${i * 14 + 1}" y="${EAVE_Y + 5}" width="12" height="${EAVE_H - 10}"
-        rx="1" fill="#7a5020" opacity="0.35"/>`
-    ).join('')}
-  `;
+  const fringeLines = Array.from({ length: Math.ceil(width / 7) }, (_, i) => {
+    const fx = i * 7 + 2;
+    const fh = 14 + (i % 3) * 4 + (i % 7) * 2;
+    const fo = (0.55 + (i % 4) * 0.1).toFixed(2);
+    return `<line x1="${fx}" y1="${EAVE_Y + EAVE_H - 4}" x2="${Math.round(fx + (i%3-1)*1.5)}" y2="${EAVE_Y + EAVE_H - 4 + fh}"
+      stroke="${H.strawLight}" stroke-width="1.2" opacity="${fo}"/>`;
+  }).join('');
 
-  // ─── 집 본체 ──────────────────────────────────────────────────
-  const pillarX = [30, 215, cx - 12, 615, 800];
-  const pillarW = 14;
-  const pillars = pillarX.map(px => `
-    <rect x="${px}" y="${HOUSE_Y}" width="${pillarW}" height="${HOUSE_H}"
-      fill="#4a2810"/>
-    <rect x="${px}" y="${HOUSE_Y}" width="${pillarW}" height="8"
-      fill="#6a3e1e"/>
-    <rect x="${px}" y="${HOUSE_Y + HOUSE_H - 7}" width="${pillarW}" height="7"
-      fill="#2e1608"/>
+  const pillarX = [28, 198, cx - 14, 604, 808];
+  const pillars = pillarX.map(px2 => `
+    <rect x="${px2}" y="${HOUSE_Y}" width="16" height="${HOUSE_H}" fill="#4A2810"/>
+    <rect x="${px2}" y="${HOUSE_Y}" width="16" height="8" fill="#6A3E1E"/>
+    <rect x="${px2}" y="${HOUSE_Y + HOUSE_H - 7}" width="16" height="7" fill="#2E1608"/>
   `).join('');
 
-  // 창문 (왼쪽 · 오른쪽)
-  const winH = 88;
-  const winY = HOUSE_Y + 30;
-  const winW = 155;
+  const winH = 90; const winY = HOUSE_Y + 28; const winW = 155;
   const leftWin  = windowSVG(50, winY, winW, winH);
   const rightWin = windowSVG(width - 50 - winW, winY, winW, winH);
 
-  // 현판 홀더 (통계 패널이 이 위에 겹쳐 그려짐, statsPanelY=338)
-  const hyeonpan = `
-    <!-- 현판 (nameplate holder) — 통계 패널 배경 -->
-    <rect x="${cx - 215}" y="332" width="430" height="66"
-      rx="6" fill="#3c2010" opacity="0.72"/>
-    <rect x="${cx - 210}" y="335" width="420" height="60"
-      rx="5" fill="none" stroke="${H.strawLight}" stroke-width="1.2" opacity="0.45"/>
-  `;
+  const panelH = 68; const panelW = 430; const panelY = 332;
+  const panel = bambooPanel(cx, panelY, panelW, panelH);
 
-  // 중앙문 (현판 아래)
-  const doorX = cx - 80;
-  const doorW = 160;
-  const doorY = 402;
+  const doorX = cx - 82; const doorW = 164; const doorY = 400;
   const doorH = HOUSE_Y + HOUSE_H - doorY;
-  const door = `
-    <rect x="${doorX - 6}" y="${doorY}" width="${doorW + 12}" height="${doorH + 6}"
-      rx="2" fill="#3a1e0a"/>
-    <rect x="${doorX}" y="${doorY + 4}" width="${doorW / 2 - 3}" height="${doorH - 2}"
-      rx="1" fill="#5a3018"/>
-    <rect x="${doorX + doorW / 2 + 3}" y="${doorY + 4}" width="${doorW / 2 - 3}" height="${doorH - 2}"
-      rx="1" fill="#5a3018"/>
-    <circle cx="${doorX + doorW / 2 - 7}" cy="${doorY + doorH / 2}" r="4" fill="#c89040"/>
-    <circle cx="${doorX + doorW / 2 + 7}" cy="${doorY + doorH / 2}" r="4" fill="#c89040"/>
-  `;
 
-  // 상단/하단 가로보 (들보)
-  const beams = `
-    <rect x="0" y="${HOUSE_Y}" width="${width}" height="14" fill="#4a2810" opacity="0.92"/>
-    <rect x="0" y="${HOUSE_Y}" width="${width}" height="4" fill="#6a4020" opacity="0.5"/>
-    <rect x="0" y="${HOUSE_Y + HOUSE_H - 10}" width="${width}" height="10"
-      fill="#3a1c08" opacity="0.9"/>
-  `;
-
-  // ─── 기단 (foundation) ────────────────────────────────────────
-  const stoneW = 58;
-  const stoneCount = Math.ceil(width / stoneW);
-  const foundation = `
-    <rect x="0" y="${FOUND_Y}" width="${width}" height="${FOUND_H}" fill="#7a6a58"/>
-    ${Array.from({ length: stoneCount }, (_, i) =>
-      `<rect x="${i * stoneW + 1}" y="${FOUND_Y + 2}" width="${stoneW - 2}" height="${FOUND_H - 4}"
-        rx="2" fill="#9a8a78" stroke="#5a4a3a" stroke-width="0.8" opacity="0.85"/>`
-    ).join('')}
-  `;
+  const stones = Array.from({ length: Math.ceil(width / 58) }, (_, i) =>
+    `<rect x="${i * 58 + 1}" y="${FOUND_Y + 2}" width="56" height="${FOUND_H - 4}"
+      rx="3" fill="#9A8A78" stroke="#5A4A3A" stroke-width="0.8" opacity="0.85"/>`
+  ).join('');
 
   return `
 <g id="heungbu-background">
   <defs>
     <linearGradient id="hSkyGrad" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%"   stop-color="${H.skyTop}"/>
-      <stop offset="65%"  stop-color="${H.skyMid}"/>
+      <stop offset="60%"  stop-color="${H.skyMid}"/>
       <stop offset="100%" stop-color="${H.skyBottom}"/>
     </linearGradient>
     <linearGradient id="hWallGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#c8a878"/>
-      <stop offset="100%" stop-color="#9a7848"/>
+      <stop offset="0%"   stop-color="#BF9868"/>
+      <stop offset="100%" stop-color="#8A6840"/>
+    </linearGradient>
+    <linearGradient id="hRoofGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#D4B060"/>
+      <stop offset="100%" stop-color="#B89040"/>
     </linearGradient>
   </defs>
 
   <!-- ① 하늘 -->
   <rect x="0" y="0" width="${width}" height="${GRID_Y}" fill="url(#hSkyGrad)"/>
 
-  <!-- 구름 -->
-  <g opacity="0.90">
-    <ellipse cx="75"  cy="42" rx="40" ry="16" fill="white"/>
-    <ellipse cx="105" cy="33" rx="28" ry="12" fill="white"/>
-    <ellipse cx="50"  cy="44" rx="22" ry="10" fill="white"/>
+  <!-- 구름 좌 -->
+  <g opacity="0.93">
+    <ellipse cx="80"  cy="44" rx="46" ry="18" fill="white"/>
+    <ellipse cx="112" cy="32" rx="30" ry="14" fill="white"/>
+    <ellipse cx="52"  cy="46" rx="26" ry="12" fill="white"/>
+    <ellipse cx="128" cy="44" rx="22" ry="11" fill="white"/>
   </g>
-  <g opacity="0.82">
-    <ellipse cx="760" cy="37" rx="46" ry="18" fill="white"/>
-    <ellipse cx="795" cy="28" rx="32" ry="13" fill="white"/>
-    <ellipse cx="728" cy="40" rx="26" ry="11" fill="white"/>
+  <!-- 구름 우 -->
+  <g opacity="0.88">
+    <ellipse cx="762" cy="38" rx="50" ry="20" fill="white"/>
+    <ellipse cx="798" cy="26" rx="34" ry="15" fill="white"/>
+    <ellipse cx="730" cy="40" rx="28" ry="13" fill="white"/>
+    <ellipse cx="818" cy="42" rx="20" ry="10" fill="white"/>
   </g>
-  <g opacity="0.70">
-    <ellipse cx="430" cy="22" rx="38" ry="14" fill="white"/>
-    <ellipse cx="455" cy="13" rx="26" ry="10" fill="white"/>
+  <!-- 구름 중 -->
+  <g opacity="0.72">
+    <ellipse cx="438" cy="22" rx="36" ry="13" fill="white"/>
+    <ellipse cx="462" cy="12" rx="24" ry="10" fill="white"/>
   </g>
 
-  <!-- 타이틀 (하늘) -->
-  <text x="${cx}" y="74"
+  <!-- 타이틀 -->
+  <text x="${cx}" y="70"
     text-anchor="middle" font-family="monospace" font-size="11"
-    fill="${H.textLight}" opacity="0.78">흥부네 커밋 · Heungbu's Commits</text>
-  <text x="${cx}" y="98"
-    text-anchor="middle" font-family="monospace" font-size="20" font-weight="bold"
-    fill="${H.strawLight}">1hyung's Commits</text>
+    fill="${H.textLight}" opacity="0.82">흥부네 커밋 · Heungbu's Commits</text>
+  <text x="${cx}" y="100"
+    text-anchor="middle" font-family="monospace" font-size="22" font-weight="bold"
+    fill="${H.titleColor}">1hyung's Commits</text>
 
-  <!-- ② 용마루 (ridge bar) -->
+  <!-- ② 용마루 -->
   <rect x="0" y="${RIDGE_Y}" width="${width}" height="${RIDGE_H}"
-    fill="#4a2e10" rx="1"/>
-  <rect x="0" y="${RIDGE_Y}" width="${width}" height="3"
-    fill="#7a5028" opacity="0.55"/>
-  <rect x="0" y="${RIDGE_Y + RIDGE_H - 2}" width="${width}" height="2"
-    fill="#1e0e04" opacity="0.65"/>
+    fill="url(#hRoofGrad)" rx="2"/>
+  <rect x="0" y="${RIDGE_Y}" width="${width}" height="4"
+    fill="${H.strawLight}" opacity="0.4"/>
+  <rect x="0" y="${RIDGE_Y + RIDGE_H - 3}" width="${width}" height="3"
+    fill="#1e0e04" opacity="0.5"/>
 
-  <!-- ③ 박 + 덩굴 (용마루 위) -->
+  <!-- ③ 박 + 덩굴 -->
   ${buildRidge(width)}
 
-  <!-- ④ 처마 (그리드 아래) -->
-  ${eaves}
+  <!-- ④ 처마 -->
+  <rect x="0" y="${EAVE_Y}" width="${width}" height="${EAVE_H}"
+    fill="${H.strawMid}" opacity="0.97"/>
+  <rect x="0" y="${EAVE_Y}" width="${width}" height="4"
+    fill="${H.strawLight}" opacity="0.35"/>
+  <rect x="0" y="${EAVE_Y + EAVE_H - 6}" width="${width}" height="6"
+    fill="#2a1808" opacity="0.45"/>
+  ${fringeLines}
 
   <!-- ⑤ 집 본체 -->
   <rect x="0" y="${HOUSE_Y}" width="${width}" height="${HOUSE_H}" fill="url(#hWallGrad)"/>
-  ${beams}
+  <rect x="0" y="${HOUSE_Y}" width="${width}" height="14" fill="#4A2810" opacity="0.95"/>
+  <rect x="0" y="${HOUSE_Y}" width="${width}" height="4" fill="#6A4020" opacity="0.5"/>
+  <rect x="0" y="${HOUSE_Y + HOUSE_H - 10}" width="${width}" height="10" fill="#3A1C08" opacity="0.9"/>
   ${pillars}
   ${leftWin}
   ${rightWin}
-  ${hyeonpan}
-  ${door}
+  ${panel}
+  <rect x="${doorX - 8}" y="${doorY}" width="${doorW + 16}" height="${doorH + 6}" rx="2" fill="#3A1E0A"/>
+  <rect x="${doorX}" y="${doorY + 5}" width="${Math.round(doorW/2) - 4}" height="${doorH - 3}" rx="1" fill="#5A3018"/>
+  <rect x="${doorX + Math.round(doorW/2) + 4}" y="${doorY + 5}" width="${Math.round(doorW/2) - 4}" height="${doorH - 3}" rx="1" fill="#5A3018"/>
+  <circle cx="${doorX + Math.round(doorW/2) - 8}" cy="${doorY + Math.round(doorH/2) + 2}" r="5" fill="#C89040"/>
+  <circle cx="${doorX + Math.round(doorW/2) + 8}" cy="${doorY + Math.round(doorH/2) + 2}" r="5" fill="#C89040"/>
 
   <!-- ⑥ 기단 -->
-  ${foundation}
+  <rect x="0" y="${FOUND_Y}" width="${width}" height="${FOUND_H}" fill="#7A6A58"/>
+  ${stones}
 
-  <!-- ⑦ 지면 -->
+  <!-- ⑦ 닭 -->
+  ${chickenSVG(cx, FOUND_Y - 8)}
+
+  <!-- ⑧ 지면 -->
   <rect x="0" y="${GROUND_Y}" width="${width}" height="${height - GROUND_Y}"
     fill="${H.groundGreen}"/>
   <rect x="0" y="${GROUND_Y}" width="${width}" height="8"
-    fill="${H.hillNear}" opacity="0.6"/>
+    fill="${H.groundEdge}" opacity="0.7"/>
 </g>`.trim();
 }
 
-/** 그리드 위에 그리는 전경: 처마 아래 그림자 선 */
+/** 그리드 위에 그리는 전경 */
 export function createHeungbuForeground(config: SVGConfig): string {
   const { width } = config;
   return `
 <g id="heungbu-foreground">
-  <!-- 처마 상단 그림자 (지붕 아래쪽 깊이감) -->
-  <rect x="0" y="${GRID_BOTTOM - 2}" width="${width}" height="4"
-    fill="#1e0e04" opacity="0.30"/>
-  <!-- 지붕 좌우 테두리 (측면 처마) -->
-  <rect x="0" y="${GRID_Y}" width="3" height="${GRID_BOTTOM - GRID_Y}"
-    fill="#3a1e08" opacity="0.35"/>
-  <rect x="${width - 3}" y="${GRID_Y}" width="3" height="${GRID_BOTTOM - GRID_Y}"
-    fill="#3a1e08" opacity="0.35"/>
+  <rect x="0" y="${GRID_BOTTOM - 3}" width="${width}" height="5"
+    fill="#1e0e04" opacity="0.28"/>
+  <rect x="0" y="${GRID_Y}" width="4" height="${GRID_BOTTOM - GRID_Y + 15}"
+    fill="#2a1400" opacity="0.3"/>
+  <rect x="${width - 4}" y="${GRID_Y}" width="4" height="${GRID_BOTTOM - GRID_Y + 15}"
+    fill="#2a1400" opacity="0.3"/>
+  <rect x="0" y="${GRID_Y - 2}" width="${width}" height="3"
+    fill="#C4983E" opacity="0.6"/>
 </g>`.trim();
 }
