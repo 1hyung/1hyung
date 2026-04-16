@@ -104,8 +104,11 @@ export function generateSVG(
   const calendar = data.user.contributionsCollection.contributionCalendar;
   const repositories = data.user.repositories.nodes;
 
-  // 그리드 셀 생성
-  const gridCells = createGridCells(calendar.weeks, contributionLevelToNumber);
+  // 그리드 셀 생성 (reverseWeeks=true면 최신 주를 col=0에 배치)
+  const weeks = theme.reverseWeeks
+    ? [...calendar.weeks].reverse()
+    : calendar.weeks;
+  const gridCells = createGridCells(weeks, contributionLevelToNumber);
 
   // 레이더 차트 데이터
   const radarData: RadarChartData = {

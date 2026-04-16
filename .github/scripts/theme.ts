@@ -57,6 +57,7 @@ export interface Theme {
   showHeader: boolean;           // false = 배경이 자체 타이틀 포함
   configOverride?: Partial<SVGConfig>;  // SVGConfig 오버라이드 (캔버스 크기, 그리드 위치)
   statsPanelY?: number;          // 통계 패널 Y 위치 (기본 425)
+  reverseWeeks?: boolean;        // true = 최신 주(week)를 좌상단(col=0)에 배치
   createBackground: (config: SVGConfig) => string;
   createFilters: () => string;
   createSprite: (level: DragonLevel) => string;
@@ -223,9 +224,10 @@ function getMountainTheme(): Theme {
     showHeader: false,          // 제목은 배경에 포함
     configOverride: {
       height: 600,              // 캔버스 높이 확장 (더 장엄한 비율)
-      gridOffsetX: 50,
+      gridOffsetX: 195,         // 53주 그리드를 850px 캔버스 중앙 정렬
       gridOffsetY: 130,         // 그리드를 아래로 (제목 영역 확보)
     },
+    reverseWeeks: true,         // 최신 주를 좌상단(col=0)에 배치
     statsPanelY: 490,           // 통계 패널을 최하단으로
     createBackground: createMountainBackground,
     createFilters: createMountainFilters,

@@ -1,6 +1,6 @@
-<!-- Mountain Contribution Graph (메인 비주얼) -->
+<!-- Farm Header (메인 헤더) -->
 <p align="center">
-  <img src="./mountain-contrib/mountain-contrib-animate.svg" width="100%" alt="1hyung's Git Mountain"/>
+  <img src="./assets/farm-header.svg" width="100%" alt="1hyung's Git Farm"/>
 </p>
 
 <!-- Section Divider -->
@@ -80,3 +80,11 @@
     <img src="https://img.shields.io/badge/Velog-1a2d5a?style=for-the-badge&logo=Velog&logoColor=20C997"/>
   </a>
 </div>
+
+<!-- Section Divider -->
+<img src="./assets/section-divider.svg" width="100%"/>
+
+<!-- Mountain Contribution Graph (기여도 시각화) -->
+<p align="center">
+  <img src="./mountain-contrib/mountain-contrib-animate.svg" width="100%" alt="1hyung's Git Mountain"/>
+</p>
