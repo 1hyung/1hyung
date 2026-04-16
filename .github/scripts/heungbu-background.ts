@@ -1,13 +1,13 @@
 // 흥부네 커밋 — 초가집 배경 (지붕=그리드, 박/덩굴=용마루 위)
-// 레이아웃: 하늘(0~140) | 용마루+박(80~145) | 그리드=지붕(140~252) | 처마(252~292) | 집 본체(292~428) | 기단(428~448) | 지면(448~)
+// 레이아웃: 하늘(0~140) | 용마루+박(90~143) | 그리드=지붕(140~252) | 처마(252~292) | 집 본체(292~428) | 기단(428~448) | 지면(448~)
 
 import { SVGConfig } from './types';
 import { HEUNGBU_COLORS as H } from './heungbu-colors';
 
 const GRID_Y      = 140;
 const GRID_BOTTOM = 252;
-const RIDGE_Y     = 118;
-const RIDGE_H     = 25;
+const RIDGE_Y     = 122;
+const RIDGE_H     = 20;
 const EAVE_Y      = GRID_BOTTOM;
 const EAVE_H      = 40;
 const HOUSE_Y     = EAVE_Y + EAVE_H;   // 292
@@ -23,41 +23,35 @@ export function createHeungbuFilters(): string {
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="gourdShadow" x="-25%" y="-25%" width="150%" height="150%">
-      <feDropShadow dx="2" dy="3" stdDeviation="3.5" flood-color="#3a1a00" flood-opacity="0.45"/>
+      <feDropShadow dx="1.5" dy="2.5" stdDeviation="2.5" flood-color="#3a1a00" flood-opacity="0.4"/>
     </filter>
   `;
 }
 
-// ─── 호리병 박 (박 = Lagenaria siceraria, 전통 호리병형) ──────────
-// sz: 기준 크기. 전체 높이 ≈ sz*2.8
+// ─── 호리병 박 (전통 박 = 호리병형) ──────────────────────────────
+// sz: 기준 크기 8~13 — RIDGE_Y 위 80px 이내에 완전히 들어옴
 function calabashGourd(cx: number, cy: number, sz: number): string {
   const cxr = Math.round(cx);
   const cyr = Math.round(cy);
-  // 아래 큰 구
   const bRx = Math.round(sz);
   const bRy = Math.round(sz * 0.88);
   const bCy = Math.round(cy + sz * 0.55);
-  // 위 작은 구
   const tRx = Math.round(sz * 0.55);
   const tRy = Math.round(sz * 0.52);
   const tCy = Math.round(cy - sz * 0.68);
-  // 목 (neck)
   const neckW = Math.round(sz * 0.28);
   const neckY1 = tCy + tRy - 2;
-  const neckY2 = bCy - bRy + 2;
-  const neckH = Math.max(2, neckY2 - neckY1);
+  const neckH = Math.max(2, bCy - bRy + 2 - neckY1);
 
   return `
-    <!-- 아래 큰 구 -->
     <ellipse cx="${cxr}" cy="${bCy}" rx="${bRx}" ry="${bRy}"
       fill="${H.gourdMid}" filter="url(#gourdShadow)"/>
     <ellipse cx="${Math.round(cxr - bRx*0.28)}" cy="${Math.round(bCy - bRy*0.32)}"
       rx="${Math.round(bRx*0.4)}" ry="${Math.round(bRy*0.28)}"
       fill="${H.gourdLight}" opacity="0.72"/>
     <ellipse cx="${Math.round(cxr - bRx*0.14)}" cy="${Math.round(bCy - bRy*0.52)}"
-      rx="${Math.round(bRx*0.2)}" ry="${Math.round(bRy*0.16)}"
+      rx="${Math.round(bRx*0.2)}" ry="${Math.round(bRy*0.15)}"
       fill="${H.gourdHighlight}" opacity="0.6"/>
-    <!-- 위 작은 구 -->
     <ellipse cx="${cxr}" cy="${tCy}" rx="${tRx}" ry="${tRy}"
       fill="${H.gourdMid}"/>
     <ellipse cx="${Math.round(cxr - tRx*0.3)}" cy="${Math.round(tCy - tRy*0.3)}"
@@ -66,94 +60,78 @@ function calabashGourd(cx: number, cy: number, sz: number): string {
     <ellipse cx="${Math.round(cxr - tRx*0.15)}" cy="${Math.round(tCy - tRy*0.5)}"
       rx="${Math.round(tRx*0.22)}" ry="${Math.round(tRy*0.16)}"
       fill="${H.gourdHighlight}" opacity="0.6"/>
-    <!-- 목 -->
     <rect x="${cxr - neckW}" y="${neckY1}" width="${neckW*2}" height="${neckH}"
       fill="${H.gourdMid}"/>
-    <!-- 줄기 -->
-    <rect x="${cxr - 3}" y="${tCy - tRy - 9}" width="6" height="11" rx="3"
+    <rect x="${cxr - 2}" y="${tCy - tRy - 7}" width="4" height="9" rx="2"
       fill="${H.gourdStem}"/>
-    <path d="M${cxr+3},${tCy-tRy-3} Q${cxr+10},${tCy-tRy-12} ${cxr+8},${tCy-tRy-20}"
-      stroke="${H.gourdStem}" stroke-width="2" fill="none"/>
+    <path d="M${cxr+2},${tCy-tRy-2} Q${cxr+7},${tCy-tRy-9} ${cxr+6},${tCy-tRy-16}"
+      stroke="${H.gourdStem}" stroke-width="1.5" fill="none"/>
   `;
 }
 
 // ─── 잎 ──────────────────────────────────────────────────────────
 function leafSVG(cx: number, cy: number, angle: number, scale: number): string {
-  const w = Math.round(30 * scale);
-  const h = Math.round(20 * scale);
+  const w = Math.round(26 * scale);
+  const h = Math.round(17 * scale);
   return `
     <ellipse cx="${Math.round(cx)}" cy="${Math.round(cy)}" rx="${w}" ry="${h}"
       fill="${H.leafMid}"
-      transform="rotate(${angle} ${Math.round(cx)} ${Math.round(cy)})" opacity="0.92"/>
+      transform="rotate(${angle} ${Math.round(cx)} ${Math.round(cy)})" opacity="0.93"/>
     <line x1="${Math.round(cx)}" y1="${Math.round(cy - h*0.7)}"
           x2="${Math.round(cx)}" y2="${Math.round(cy + h*0.7)}"
-      stroke="${H.leafDark}" stroke-width="1.2" opacity="0.45"
-      transform="rotate(${angle} ${Math.round(cx)} ${Math.round(cy)})"/>
-    <line x1="${Math.round(cx - w*0.6)}" y1="${Math.round(cy - h*0.1)}"
-          x2="${Math.round(cx + w*0.5)}" y2="${Math.round(cy + h*0.2)}"
-      stroke="${H.leafDark}" stroke-width="0.7" opacity="0.3"
+      stroke="${H.leafDark}" stroke-width="1" opacity="0.45"
       transform="rotate(${angle} ${Math.round(cx)} ${Math.round(cy)})"/>
   `;
 }
 
 // ─── 용마루 위 박 + 덩굴 ──────────────────────────────────────────
 function buildRidge(width: number): string {
-  const midX = Math.round(width / 2);
-  const ridgeBaseY = RIDGE_Y + 3;
-
-  // 박 배치: sz=기준크기, 박 바닥이 ridgeBaseY에 오도록 cy 계산
-  // 호리병 전체 높이 ≈ sz*2.8, 중심 cy ≈ ridgeBaseY - sz*(0.55+1.0) = ridgeBaseY - sz*1.55 근사
+  const ridgeBaseY = RIDGE_Y + 2;
+  // sz: 8~12 — 하늘 영역(0~85) 침범 안 하도록 조정
+  // 박 cy = ridgeBaseY - sz*1.98 (cy 계산식 기반)
+  // sz=12 → cy=97, gourd top ≈ y=74 (타이틀 y=55 아래에 위치) ✓
   const gourds: Array<{ x: number; sz: number }> = [
-    { x: 52,        sz: 18 },
-    { x: 155,       sz: 25 },
-    { x: 262,       sz: 16 },
-    { x: 360,       sz: 28 },
-    { x: midX - 40, sz: 34 },   // 중앙 최대
-    { x: midX + 60, sz: 30 },
-    { x: 565,       sz: 18 },
-    { x: 658,       sz: 26 },
-    { x: 752,       sz: 17 },
-    { x: 828,       sz: 22 },
+    { x: 52,        sz:  8 },
+    { x: 150,       sz: 10 },
+    { x: 255,       sz:  7 },
+    { x: 350,       sz: 11 },
+    { x: Math.round(width/2) - 35, sz: 12 },  // 중앙 최대
+    { x: Math.round(width/2) + 55, sz: 11 },
+    { x: 560,       sz:  8 },
+    { x: 652,       sz: 10 },
+    { x: 748,       sz:  7 },
+    { x: 828,       sz:  9 },
   ];
 
   const gourdSVGs = gourds.map(g => {
-    // bCy (큰 구 중심) ≈ ridgeBaseY - sz*0.55 - sz*0.88 = ridgeBaseY - sz*1.43
-    // tCy (작은 구 중심) ≈ ridgeBaseY - sz*0.55 - sz*0.88*2 - neckH ≈ ridgeBaseY - sz*2.6
-    // 호리병 전체 꼭대기 ≈ tCy - tRy ≈ ridgeBaseY - sz*3.1
-    // 조정: cy 기준을 bCy로 잡으면 ridgeBaseY - sz*1.43
-    const bCy = ridgeBaseY - Math.round(g.sz * 1.43);
-    return calabashGourd(g.x, bCy - g.sz * 0.55, g.sz);
+    const cy = ridgeBaseY - Math.round(g.sz * 1.98);
+    return calabashGourd(g.x, cy, g.sz);
   }).join('');
 
   const vines = gourds.slice(0, -1).map((g, i) => {
     const nx = gourds[i + 1].x;
-    const mx = Math.round((g.x + nx) / 2);
-    const vy = RIDGE_Y + 8;
-    const droop = 14 + (i % 3) * 4;
-    return `<path d="M${g.x},${vy} C${g.x+20},${vy-droop} ${nx-20},${vy-droop} ${nx},${vy}"
-      stroke="${H.vineGreen}" stroke-width="4" fill="none" opacity="0.9"/>`;
+    const vy = RIDGE_Y + 6;
+    const droop = 10 + (i % 3) * 3;
+    return `<path d="M${g.x},${vy} C${g.x+18},${vy-droop} ${nx-18},${vy-droop} ${nx},${vy}"
+      stroke="${H.vineGreen}" stroke-width="3.5" fill="none" opacity="0.9"/>`;
   }).join('\n    ');
 
   const leafDefs = [
-    { x: 104,       angle: -28, s: 1.2 },
-    { x: 210,       angle:  22, s: 1.4 },
-    { x: 312,       angle: -32, s: 1.1 },
-    { x: 408,       angle:  18, s: 1.5 },
-    { x: midX + 8,  angle: -22, s: 1.3 },
-    { x: 512,       angle:  28, s: 1.2 },
-    { x: 612,       angle: -20, s: 1.4 },
-    { x: 706,       angle:  24, s: 1.1 },
-    { x: 792,       angle: -26, s: 1.2 },
+    { x: 100,  angle: -28, s: 1.1 }, { x: 204,  angle:  22, s: 1.3 },
+    { x: 302,  angle: -30, s: 1.0 }, { x: 400,  angle:  18, s: 1.4 },
+    { x: Math.round(width/2) + 8,  angle: -22, s: 1.2 },
+    { x: 508,  angle:  26, s: 1.1 }, { x: 606,  angle: -20, s: 1.3 },
+    { x: 700,  angle:  22, s: 1.0 }, { x: 790,  angle: -24, s: 1.1 },
   ];
-  const leafLY = RIDGE_Y - 5;
-  const leaves = leafDefs.map(({ x, angle, s }) => leafSVG(x, leafLY, angle, s)).join('');
+  const leaves = leafDefs.map(({ x, angle, s }) =>
+    leafSVG(x, RIDGE_Y - 4, angle, s)).join('');
 
   return `
     <!-- 덩굴 줄기 -->
     ${vines}
     <!-- 잎 -->
     ${leaves}
-    <!-- 박들 (호리병형) -->
+    <!-- 박(호리병) -->
     ${gourdSVGs}
   `;
 }
@@ -173,7 +151,7 @@ function windowSVG(wx: number, wy: number, ww: number, wh: number): string {
   }).join('');
   return `
     <rect x="${wx-6}" y="${wy-4}" width="${ww+12}" height="${wh+8}" rx="2" fill="#5A3218"/>
-    <rect x="${wx}" y="${wy}" width="${ww}" height="${wh}" fill="#EDD4A0" rx="1" opacity="0.93"/>
+    <rect x="${wx}" y="${wy}" width="${ww}" height="${wh}" fill="#EDD4A0" rx="1" opacity="0.94"/>
     <rect x="${wx}" y="${wy}" width="${ww}" height="${wh}" fill="none" stroke="#5C3214" stroke-width="2" rx="1"/>
     ${vLines}${hLines}
   `;
@@ -281,32 +259,28 @@ export function createHeungbuBackground(config: SVGConfig): string {
     </linearGradient>
   </defs>
 
-  <!-- ① 하늘 -->
+  <!-- ① 하늘 (0~140) -->
   <rect x="0" y="0" width="${width}" height="${GRID_Y}" fill="url(#hSkyGrad)"/>
-  <!-- 구름 좌 -->
   <g opacity="0.93">
-    <ellipse cx="80" cy="44" rx="46" ry="18" fill="white"/>
-    <ellipse cx="112" cy="32" rx="30" ry="14" fill="white"/>
-    <ellipse cx="52" cy="46" rx="26" ry="12" fill="white"/>
-    <ellipse cx="128" cy="44" rx="22" ry="11" fill="white"/>
+    <ellipse cx="80" cy="40" rx="46" ry="18" fill="white"/>
+    <ellipse cx="112" cy="28" rx="30" ry="13" fill="white"/>
+    <ellipse cx="52" cy="42" rx="26" ry="11" fill="white"/>
+    <ellipse cx="128" cy="40" rx="22" ry="10" fill="white"/>
   </g>
-  <!-- 구름 우 -->
   <g opacity="0.88">
-    <ellipse cx="762" cy="38" rx="50" ry="20" fill="white"/>
-    <ellipse cx="798" cy="26" rx="34" ry="15" fill="white"/>
-    <ellipse cx="730" cy="40" rx="28" ry="13" fill="white"/>
-    <ellipse cx="818" cy="42" rx="20" ry="10" fill="white"/>
+    <ellipse cx="762" cy="34" rx="50" ry="20" fill="white"/>
+    <ellipse cx="798" cy="22" rx="34" ry="14" fill="white"/>
+    <ellipse cx="730" cy="36" rx="28" ry="12" fill="white"/>
   </g>
-  <!-- 구름 중 -->
   <g opacity="0.72">
-    <ellipse cx="438" cy="22" rx="36" ry="13" fill="white"/>
-    <ellipse cx="462" cy="12" rx="24" ry="10" fill="white"/>
+    <ellipse cx="438" cy="18" rx="36" ry="13" fill="white"/>
+    <ellipse cx="462" cy="8" rx="24" ry="9" fill="white"/>
   </g>
-  <!-- 타이틀 -->
-  <text x="${cx}" y="68"
+  <!-- 타이틀: 하늘 위쪽에 배치 (박 침범 안 하도록 y=36/56) -->
+  <text x="${cx}" y="36"
     text-anchor="middle" font-family="monospace" font-size="11"
     fill="${H.textLight}" opacity="0.82">흥부네 커밋 · Heungbu's Commits</text>
-  <text x="${cx}" y="98"
+  <text x="${cx}" y="60"
     text-anchor="middle" font-family="monospace" font-size="22" font-weight="bold"
     fill="${H.titleColor}">1hyung's Commits</text>
 
