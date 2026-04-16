@@ -765,7 +765,6 @@
     <line x1="29" y1="1" x2="32" y2="22"
           stroke="#e0f0ff" stroke-width="0.7" opacity="0.36"/>
   </g>
-    </g>
   </g>
   <g transform="translate(174.0, 190.0)">
     <g>
@@ -810,7 +809,7 @@
     <rect x="12.4" y="10.8" width="0.9" height="0.9" fill="#5c2d0e"/><rect x="12.4" y="11.7" width="0.9" height="0.9" fill="#5c2d0e"/><rect x="12.4" y="12.6" width="0.9" height="0.9" fill="#5c2d0e"/><rect x="12.4" y="13.5" width="0.9" height="0.9" fill="#5c2d0e"/>
   </g>
   </g>
-  <g transform="translate(190.0, 174.0)">
+  <g transform="translate(194.0, 190.0)">
     <g>
     <!-- 기저 타일 -->
     <polygon points="15,27 25,32 15,37 5,32" fill="#6e8090"/>
@@ -12102,7 +12101,7 @@
   </g>
     </g>
   </g>
-  <g transform="translate(500.0, 408.0)">
+  <g transform="translate(504.0, 424.0)">
     <g>
     <!-- 기저 타일 -->
     <polygon points="15,27 25,32 15,37 5,32" fill="#6e8090"/>
@@ -13257,7 +13256,7 @@
     <rect x="12.4" y="10.8" width="0.9" height="0.9" fill="#5c2d0e"/><rect x="12.4" y="11.7" width="0.9" height="0.9" fill="#5c2d0e"/><rect x="12.4" y="12.6" width="0.9" height="0.9" fill="#5c2d0e"/><rect x="12.4" y="13.5" width="0.9" height="0.9" fill="#5c2d0e"/>
   </g>
   </g>
-  <g transform="translate(577.0, 414.0)">
+  <g transform="translate(580.0, 432.0)">
     <g>
     <!-- 기저 타일 -->
     <polygon points="18,39 28,45 18,50 8,45" fill="#6e8090"/>
@@ -13710,7 +13709,7 @@
     <rect x="12.4" y="10.8" width="0.9" height="0.9" fill="#5c2d0e"/><rect x="12.4" y="11.7" width="0.9" height="0.9" fill="#5c2d0e"/><rect x="12.4" y="12.6" width="0.9" height="0.9" fill="#5c2d0e"/><rect x="12.4" y="13.5" width="0.9" height="0.9" fill="#5c2d0e"/>
   </g>
   </g>
-  <g transform="translate(557.0, 426.0)">
+  <g transform="translate(560.0, 444.0)">
     <g>
     <!-- 기저 타일 -->
     <polygon points="18,39 28,45 18,50 8,45" fill="#6e8090"/>
