@@ -1,40 +1,72 @@
-// 흥부네 커밋 — 볏짚 번들 스프라이트 (flat grid 14×14px 셀)
-// 레벨별로 색이 다른 볏짚 묶음 표현
+// 흥부네 커밋 — 레벨별 박/씨앗 아이콘 (flat grid 14×14px 셀)
+// Lv0: 빈 셀 (투명)
+// Lv1: 씨앗 — 작은 연한 원형
+// Lv2: 낟알 — 중간 황금 원형
+// Lv3: 어린 박 — 호리병 실루엣
+// Lv4: 황금 박 — 크고 빛나는 호리병
 
 import { DragonLevel } from './types';
 import { HEUNGBU_COLORS as H } from './heungbu-colors';
 
-// 레벨별 볏짚 베이스 색상
-const STRAW_COLORS = [
-  H.strawLevel0,  // 0: 창백한 밀짚 (기여 없음)
-  H.strawLevel1,  // 1: 연한 황금빛
-  H.strawLevel2,  // 2: 중간 황금빛
-  H.strawLevel3,  // 3: 진한 황금빛
-  H.strawLevel4,  // 4: 짙은 호박빛
-] as const;
+const BG_DARK = '#0d0800';
+const BG_OP = '0.75';
 
 /**
- * 볏짚 묶음 텍스처 — 14×14px 셀 전체를 채우는 오버레이
- * 가는 수직 선들로 짚단 섬유를 표현, 하단에 묶음 선
+ * Lv1: 씨앗 — 작은 연한 원형 (아직 싹 트지 않음)
  */
+function seedIcon(): string {
+  return `<circle cx="7" cy="7" r="2.6" fill="#D4C060"/>
+<circle cx="5.8" cy="5.8" r="0.9" fill="#F0E090" opacity="0.70"/>`;
+}
+
+/**
+ * Lv2: 낟알 — 중간 황금 원형 (성장 시작)
+ */
+function grainIcon(): string {
+  return `<circle cx="7" cy="7.5" r="3.8" fill="${H.gourdLight}"/>
+<circle cx="5.5" cy="6.2" r="1.4" fill="${H.gourdHighlight}" opacity="0.65"/>`;
+}
+
+/**
+ * Lv3: 어린 박 — 호리병 실루엣 (성장 중)
+ */
+function youngGourdIcon(): string {
+  const col = H.gourdMid;
+  const hl  = H.gourdLight;
+  return `<ellipse cx="7" cy="9.6" rx="3.4" ry="2.7" fill="${col}"/>
+<ellipse cx="7" cy="4.8" rx="2.1" ry="1.7" fill="${col}"/>
+<rect x="6.2" y="6.5" width="1.6" height="1.4" fill="${col}"/>
+<line x1="7" y1="2.9" x2="7" y2="1.3" stroke="${H.gourdStem}" stroke-width="1.4" stroke-linecap="round"/>
+<ellipse cx="5.6" cy="9.0" rx="1.2" ry="0.9" fill="${hl}" opacity="0.55"/>`;
+}
+
+/**
+ * Lv4: 황금 박 — 크고 빛나는 호리병 (수확기)
+ */
+function goldenGourdIcon(): string {
+  return `<ellipse cx="7" cy="9.6" rx="3.9" ry="3.1" fill="#D4A020"/>
+<ellipse cx="7" cy="4.5" rx="2.5" ry="2.0" fill="#D4A020"/>
+<rect x="6.2" y="6.4" width="1.6" height="1.5" fill="#D4A020"/>
+<line x1="7" y1="2.3" x2="7" y2="0.9" stroke="#406020" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="5.4" cy="8.8" rx="1.5" ry="1.1" fill="#FFD840" opacity="0.68"/>
+<ellipse cx="5.5" cy="3.8" rx="1.0" ry="0.8" fill="#FFD840" opacity="0.60"/>
+<rect x="0" y="0" width="14" height="14" fill="none" stroke="#FFD700" stroke-width="0.6" opacity="0.50" rx="1.5"/>`;
+}
+
 export function createFlatHeungbuSprite(level: DragonLevel): string {
-  const base  = STRAW_COLORS[level] ?? H.strawLevel0;
-  const hl    = H.strawHighlight;   // 밝은 섬유 선
-  const sh    = H.strawShadow;      // 묶음 하단 그림자
-  const bandY = 10;                 // 묶음 띠 Y 위치
+  if (level === 0) return '';
 
-  // 레벨에 따라 섬유 선 밀도/불투명도 조정
-  const fiberOpacity = 0.3 + level * 0.06;  // 0.30 ~ 0.54
+  let icon: string;
+  switch (level) {
+    case 1:  icon = seedIcon();       break;
+    case 2:  icon = grainIcon();      break;
+    case 3:  icon = youngGourdIcon(); break;
+    case 4:  icon = goldenGourdIcon();break;
+    default: return '';
+  }
 
-  return `
-<rect x="0" y="0" width="14" height="14" fill="${base}" rx="1"/>
-<line x1="2"  y1="0" x2="2"  y2="14" stroke="${hl}" stroke-width="0.6" opacity="${fiberOpacity.toFixed(2)}"/>
-<line x1="4.5" y1="0" x2="4.5" y2="14" stroke="${hl}" stroke-width="0.5" opacity="${(fiberOpacity*0.8).toFixed(2)}"/>
-<line x1="7"  y1="0" x2="7"  y2="14" stroke="${hl}" stroke-width="0.6" opacity="${fiberOpacity.toFixed(2)}"/>
-<line x1="9.5" y1="0" x2="9.5" y2="14" stroke="${hl}" stroke-width="0.5" opacity="${(fiberOpacity*0.8).toFixed(2)}"/>
-<line x1="12" y1="0" x2="12" y2="14" stroke="${hl}" stroke-width="0.6" opacity="${fiberOpacity.toFixed(2)}"/>
-<rect x="0" y="${bandY}" width="14" height="1.5" fill="${sh}" opacity="0.28"/>
-<rect x="0" y="0" width="14" height="2" fill="${hl}" opacity="0.18"/>`.trim();
+  return `<rect x="0" y="0" width="14" height="14" fill="${BG_DARK}" opacity="${BG_OP}" rx="1.5"/>
+${icon}`;
 }
 
 /** isometric 인터페이스 호환용 */
