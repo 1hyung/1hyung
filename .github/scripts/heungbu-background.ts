@@ -58,9 +58,11 @@ export function createHeungbuBackground(config: SVGConfig): string {
 <g id="heungbu-background">
   <!-- Gemini 배경 이미지 (대형 초가집) -->
   ${bgTag}
+  <!-- Gemini 워터마크(우측하단 다이아몬드) 가리기 — 잔디색 패치 -->
+  <rect x="1110" y="538" width="90" height="62" fill="#4A9820"/>
   <!-- 초가 영역 반투명 오버레이 — 기여 셀 대비 향상 -->
   <rect x="${SIGN.x}" y="${SIGN.y}" width="${SIGN.w}" height="${SIGN.h}"
-    fill="#150900" opacity="0.22" rx="2"/>
+    fill="#150900" opacity="0.52" rx="2"/>
 </g>`.trim();
 }
 

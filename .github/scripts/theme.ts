@@ -316,15 +316,15 @@ function getHeungbuTheme(): Theme {
     // createPumpkins 제거 — 배경 이미지에 이미 박(호리병)이 그려져 있음
     roofClipId: 'heungbu-roof-clip',
     flatGridY: 210,              // 초가 그리드 Y 위치 (초가 y=130~375 중앙)
-    flatCellSize: 10,            // 셀 크기 (step=11, 53×11-1=582px)
+    flatCellSize: 11,            // 셀 크기 (step=12, 53×12-1=635px ≈ SIGN.w 638px)
     flatCellGap: 1,              // 셀 간격 1px
     statsPanelY: 440,            // 집 본체 중앙 (집 y=390~550)
     flatCellStyle: {
-      bg0:              'none',                       // 투명 — Gemini 이미지 비침
-      bgN:              HEUNGBU_COLORS.strawLevel2,
+      bg0:              'none',  // Lv0: 투명 — Gemini 이미지 비침
+      bgN:              'none',  // Lv1+: 스프라이트 내부에서 다크 배경 직접 처리
       highlight:        HEUNGBU_COLORS.strawHighlight,
       shadow:           HEUNGBU_COLORS.strawShadow,
-      highlightOpacity: '0',                         // 스프라이트 내부에서 처리
+      highlightOpacity: '0',
       shadowOpacity:    '0',
     },
     heightOffsets: [0, 3, 8, 12, 18],
