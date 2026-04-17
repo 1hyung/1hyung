@@ -122,16 +122,17 @@ export function createIsometricGrid(
 
 /**
  * 플랫 그리드 생성 (농장 테마용 - 탑뷰 격자)
- * 각 셀: 14×14px, 간격: 2px, 스텝: 16px
+ * 기본 셀: 14×14px, 간격: 2px, 스텝: 16px
+ * 테마에 flatCellSize/flatCellGap 설정 시 해당 값 사용
  */
 export function createFlatGrid(
   cells: GridCell[],
   config: SVGConfig,
   theme: Theme
 ): string {
-  const cellSize = 14;
-  const cellGap = 2;
-  const cellStep = cellSize + cellGap; // 16px
+  const cellSize = (theme as any).flatCellSize ?? 14;
+  const cellGap  = (theme as any).flatCellGap  ?? 2;
+  const cellStep = cellSize + cellGap;
 
   // 최대 주(col) 수 계산
   const numWeeks = cells.length > 0
@@ -161,6 +162,10 @@ export function createFlatGrid(
   const hlOpacity = cs?.highlightOpacity ?? '0.5';
   const shOpacity = cs?.shadowOpacity    ?? '0.6';
 
+  // 스프라이트 스케일 (cellSize가 기본 14와 다를 때 비례 축소)
+  const spriteNativeSize = 14;
+  const spriteScale = cellSize / spriteNativeSize;
+
   sortedCells.forEach(cell => {
     const col = Math.floor(cell.x); // 주 인덱스
     const row = Math.floor(cell.y); // 요일 인덱스
@@ -168,9 +173,11 @@ export function createFlatGrid(
     const cx = gridX + col * cellStep;
     const cy = gridY + row * cellStep;
 
-    // 레벨에 따른 배경색
+    // 레벨에 따른 배경색 — 'none'이면 rect 생략 (배경 이미지가 비침)
     const bgColor = cell.level === 0 ? cellBg0 : cellBgN;
-    svg += `<rect x="${cx}" y="${cy}" width="${cellSize}" height="${cellSize}" fill="${bgColor}" rx="1"/>\n`;
+    if (bgColor !== 'none') {
+      svg += `<rect x="${cx}" y="${cy}" width="${cellSize}" height="${cellSize}" fill="${bgColor}" rx="1"/>\n`;
+    }
 
     // 상단/좌측 하이라이트
     svg += `<rect x="${cx}" y="${cy}" width="${cellSize}" height="1" fill="${hlColor}" opacity="${hlOpacity}"/>\n`;
@@ -180,11 +187,16 @@ export function createFlatGrid(
     svg += `<rect x="${cx}" y="${cy + cellSize - 1}" width="${cellSize}" height="1" fill="${shColor}" opacity="${shOpacity}"/>\n`;
     svg += `<rect x="${cx + cellSize - 1}" y="${cy}" width="1" height="${cellSize}" fill="${shColor}" opacity="${shOpacity}"/>\n`;
 
-    // 스프라이트 오버레이 (레벨 0 포함 — 볏짚 묶음 텍스처 등)
-    if (theme.createFlatSprite) {
+    // 스프라이트 오버레이 — bg0='none'인 경우 level-0 셀은 완전 투명
+    const skipSprite = cell.level === 0 && (cellBg0 === 'none' || cellBg0 === 'transparent');
+    if (theme.createFlatSprite && !skipSprite) {
       const sprite = theme.createFlatSprite(cell.level);
       if (sprite) {
-        svg += `<g transform="translate(${cx}, ${cy})">${sprite}</g>\n`;
+        if (Math.abs(spriteScale - 1) > 0.01) {
+          svg += `<g transform="translate(${cx}, ${cy}) scale(${spriteScale.toFixed(3)})">${sprite}</g>\n`;
+        } else {
+          svg += `<g transform="translate(${cx}, ${cy})">${sprite}</g>\n`;
+        }
       }
     }
   });

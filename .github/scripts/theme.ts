@@ -74,6 +74,8 @@ export interface Theme {
   statsPanelY?: number;          // 통계 패널 Y 위치 (기본 425)
   reverseWeeks?: boolean;        // true = 최신 주(week)를 좌상단(col=0)에 배치
   flatGridY?: number;            // flat grid Y 시작 위치 (기본 305)
+  flatCellSize?: number;         // flat grid 셀 크기 (기본 14px)
+  flatCellGap?: number;          // flat grid 셀 간격 (기본 2px)
   roofClipId?: string;           // flat grid에 적용할 clipPath id (흥부 테마용)
   createBackground: (config: SVGConfig) => string;
   createFilters: () => string;
@@ -300,10 +302,10 @@ function getHeungbuTheme(): Theme {
     title: "1hyung's Commits",
     gridStyle: 'flat',
     showCharts: false,
-    showHeader: false,           // 타이틀은 배경에 포함
+    showHeader: false,           // 타이틀은 배경 이미지에 포함
     configOverride: {
-      width: 1000,               // HTML 템플릿 캔버스 너비
-      height: 600,               // HTML 템플릿 캔버스 높이
+      width: 1200,               // Gemini 배경 이미지 너비
+      height: 600,               // Gemini 배경 이미지 높이
     },
     createBackground: createHeungbuBackground,
     createFilters: createHeungbuFilters,
@@ -313,15 +315,16 @@ function getHeungbuTheme(): Theme {
     createForeground: createHeungbuForeground,
     createPumpkins: createHeungbuPumpkins,
     roofClipId: 'heungbu-roof-clip',
-    flatGridY: 210,              // 지붕 영역 상단(200) + 여백(10)
-    statsPanelY: 438,            // 잔디 시작(520) - 패널 높이 여유
+    flatGridY: 262,              // 현판 내부 그리드 Y 위치 (현판 y=194~372)
+    flatCellSize: 10,            // 현판 너비(624px)에 맞게 소형화
+    flatCellGap: 1,              // 셀 간격 1px (step=11, 53×11-1=582px)
+    statsPanelY: 492,            // 현판 하단(400) + 잔디 중간
     flatCellStyle: {
-      // 스프라이트가 셀 배경 전체를 그리므로 베이스 색은 중간값
-      bg0:              HEUNGBU_COLORS.strawLevel0,
+      bg0:              'none',                       // 투명 — Gemini 이미지 비침
       bgN:              HEUNGBU_COLORS.strawLevel2,
       highlight:        HEUNGBU_COLORS.strawHighlight,
       shadow:           HEUNGBU_COLORS.strawShadow,
-      highlightOpacity: '0',   // 스프라이트 내부에서 처리
+      highlightOpacity: '0',                         // 스프라이트 내부에서 처리
       shadowOpacity:    '0',
     },
     heightOffsets: [0, 3, 8, 12, 18],
