@@ -25,7 +25,7 @@ import { createMountainSprite, getMountainSpriteSize } from './mountain-sprites'
 
 // 흥부네 커밋 테마 (신규)
 import { HEUNGBU_COLORS } from './heungbu-colors';
-import { createHeungbuFilters, createHeungbuBackground, createHeungbuForeground } from './heungbu-background';
+import { createHeungbuFilters, createHeungbuBackground, createHeungbuForeground, createHeungbuPumpkins } from './heungbu-background';
 import { createFlatHeungbuSprite, createHeungbuSprite, getHeungbuSpriteSize } from './heungbu-sprites';
 
 export type ThemeName = 'dragon' | 'farm' | 'mountain' | 'heungbu';
@@ -74,12 +74,14 @@ export interface Theme {
   statsPanelY?: number;          // 통계 패널 Y 위치 (기본 425)
   reverseWeeks?: boolean;        // true = 최신 주(week)를 좌상단(col=0)에 배치
   flatGridY?: number;            // flat grid Y 시작 위치 (기본 305)
+  roofClipId?: string;           // flat grid에 적용할 clipPath id (흥부 테마용)
   createBackground: (config: SVGConfig) => string;
   createFilters: () => string;
   createSprite: (level: DragonLevel) => string;
   getSpriteSize: (level: DragonLevel) => { width: number; height: number };
   createFlatSprite?: (level: DragonLevel) => string;
   createForeground?: (config: SVGConfig) => string;  // 그리드 위에 렌더링
+  createPumpkins?: (totalCommits: number) => string; // 박 덩굴 동적 생성 (흥부 테마)
   flatCellStyle?: FlatCellStyle; // flat grid 셀 색상 (미설정 시 흙색 기본값)
   heightOffsets: number[];
   level4FilterId: string;
@@ -299,14 +301,20 @@ function getHeungbuTheme(): Theme {
     gridStyle: 'flat',
     showCharts: false,
     showHeader: false,           // 타이틀은 배경에 포함
+    configOverride: {
+      width: 1000,               // HTML 템플릿 캔버스 너비
+      height: 600,               // HTML 템플릿 캔버스 높이
+    },
     createBackground: createHeungbuBackground,
     createFilters: createHeungbuFilters,
     createSprite: createHeungbuSprite,
     getSpriteSize: getHeungbuSpriteSize,
     createFlatSprite: createFlatHeungbuSprite,
     createForeground: createHeungbuForeground,
-    flatGridY: 140,
-    statsPanelY: 338,
+    createPumpkins: createHeungbuPumpkins,
+    roofClipId: 'heungbu-roof-clip',
+    flatGridY: 210,              // 지붕 영역 상단(200) + 여백(10)
+    statsPanelY: 438,            // 잔디 시작(520) - 패널 높이 여유
     flatCellStyle: {
       // 스프라이트가 셀 배경 전체를 그리므로 베이스 색은 중간값
       bg0:              HEUNGBU_COLORS.strawLevel0,

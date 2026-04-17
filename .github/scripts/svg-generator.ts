@@ -128,9 +128,17 @@ export function generateSVG(
   const languages = processLanguageData(repositories);
 
   // 테마별 그리드 렌더링 (flat: 탑뷰 격자, isometric: 등각 투영)
-  const gridSVG = theme.gridStyle === 'flat'
+  const rawGridSVG = theme.gridStyle === 'flat'
     ? createFlatGrid(gridCells, effectiveConfig, theme)
     : createIsometricGrid(gridCells, effectiveConfig, theme);
+
+  // roofClipId가 있으면 그리드를 clipPath로 감싸서 지붕 형태 클리핑 적용
+  const gridSVG = theme.roofClipId
+    ? `<g clip-path="url(#${theme.roofClipId})">${rawGridSVG}</g>`
+    : rawGridSVG;
+
+  // 총 커밋 수 (박 덩굴 동적 생성에 사용)
+  const totalCommits = calendar.totalContributions;
 
   // 테마별 차트 위치
   const { radarCx, radarCy, radarR, donutCx, donutCy, donutOuter, donutInner } = theme.layout;
@@ -158,6 +166,9 @@ export function generateSVG(
 
   <!-- 전경 장식 (그리드 위에 렌더링) -->
   ${theme.createForeground ? theme.createForeground(effectiveConfig) : ''}
+
+  <!-- 박 덩굴 (흥부 테마 — 총 커밋 수 비례 동적 생성) -->
+  ${theme.createPumpkins ? theme.createPumpkins(totalCommits) : ''}
 
   <!-- 레이더 차트 (showCharts=true일 때만) -->
   ${theme.showCharts ? `
