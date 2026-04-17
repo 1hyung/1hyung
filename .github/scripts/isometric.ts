@@ -123,7 +123,12 @@ export function createIsometricGrid(
 /**
  * 플랫 그리드 생성 (농장 테마용 - 탑뷰 격자)
  * 기본 셀: 14×14px, 간격: 2px, 스텝: 16px
- * 테마에 flatCellSize/flatCellGap 설정 시 해당 값 사용
+ * 테마에 flatCellSize/flatCellGap/flatBands/flatBandGap 설정 시 해당 값 사용
+ *
+ * flatBands=2 일 때: 53주를 두 행으로 나눠 파란 박스를 채움
+ *   - weeksPerBand = ceil(53/2) = 27
+ *   - Band 0: col 0~26, Band 1: col 27~52
+ *   - cy += band × (7×cellStep - cellGap + bandGap)
  */
 export function createFlatGrid(
   cells: GridCell[],
@@ -133,15 +138,18 @@ export function createFlatGrid(
   const cellSize = (theme as any).flatCellSize ?? 14;
   const cellGap  = (theme as any).flatCellGap  ?? 2;
   const cellStep = cellSize + cellGap;
+  const bands: number    = (theme as any).flatBands    ?? 1;
+  const bandGap: number  = (theme as any).flatBandGap  ?? 0;
 
   // 최대 주(col) 수 계산
   const numWeeks = cells.length > 0
     ? Math.max(...cells.map(c => Math.floor(c.x))) + 1
     : 53;
 
-  // 그리드 전체 너비 계산, 수평 중앙 정렬
-  const gridWidth = numWeeks * cellStep - cellGap;
-  const gridX = Math.round((config.width - gridWidth) / 2);
+  // 밴드별 너비로 수평 중앙 정렬
+  const weeksPerBand = bands > 1 ? Math.ceil(numWeeks / bands) : numWeeks;
+  const bandWidth    = weeksPerBand * cellStep - cellGap;
+  const gridX = Math.round((config.width - bandWidth) / 2);
   const gridY = theme.flatGridY ?? 305; // 테마별 Y 위치 (기본 305)
 
   // 행, 열 순서로 정렬
@@ -162,16 +170,22 @@ export function createFlatGrid(
   const hlOpacity = cs?.highlightOpacity ?? '0.5';
   const shOpacity = cs?.shadowOpacity    ?? '0.6';
 
-  // 스프라이트 스케일 (cellSize가 기본 14와 다를 때 비례 축소)
+  // 스프라이트 스케일 (cellSize가 기본 14와 다를 때 비례 축소/확대)
   const spriteNativeSize = 14;
   const spriteScale = cellSize / spriteNativeSize;
+
+  // 밴드 행 오프셋 = 7행 × cellStep - cellGap + bandGap
+  const bandRowOffset = 7 * cellStep - cellGap + bandGap;
 
   sortedCells.forEach(cell => {
     const col = Math.floor(cell.x); // 주 인덱스
     const row = Math.floor(cell.y); // 요일 인덱스
 
-    const cx = gridX + col * cellStep;
-    const cy = gridY + row * cellStep;
+    const band      = bands > 1 ? Math.floor(col / weeksPerBand) : 0;
+    const colInBand = bands > 1 ? col % weeksPerBand : col;
+
+    const cx = gridX + colInBand * cellStep;
+    const cy = gridY + row * cellStep + band * bandRowOffset;
 
     // 레벨에 따른 배경색 — 'none'이면 rect 생략 (배경 이미지가 비침)
     const bgColor = cell.level === 0 ? cellBg0 : cellBgN;

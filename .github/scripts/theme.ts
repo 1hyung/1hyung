@@ -76,6 +76,8 @@ export interface Theme {
   flatGridY?: number;            // flat grid Y 시작 위치 (기본 305)
   flatCellSize?: number;         // flat grid 셀 크기 (기본 14px)
   flatCellGap?: number;          // flat grid 셀 간격 (기본 2px)
+  flatBands?: number;            // flat grid 밴드 수 (기본 1, 2=2단 배치)
+  flatBandGap?: number;          // 밴드 간 간격 px (기본 0)
   roofClipId?: string;           // flat grid에 적용할 clipPath id (흥부 테마용)
   createBackground: (config: SVGConfig) => string;
   createFilters: () => string;
@@ -315,9 +317,14 @@ function getHeungbuTheme(): Theme {
     createForeground: createHeungbuForeground,
     // createPumpkins 제거 — 배경 이미지에 이미 박(호리병)이 그려져 있음
     roofClipId: 'heungbu-roof-clip',
-    flatGridY: 210,              // 초가 그리드 Y 위치 (초가 y=130~375 중앙)
-    flatCellSize: 11,            // 셀 크기 (step=12, 53×12-1=635px ≈ SIGN.w 638px)
-    flatCellGap: 1,              // 셀 간격 1px
+    // 2단 레이아웃: 53주를 Band0(col 0~26) + Band1(col 27~52)로 분리
+    // weeksPerBand=27 → bandWidth=27×16-2=430px, bandHeight=7×16-2=110px
+    // 전체 높이: 110+21+110=241px (SIGN.h=245 내에 맞춤)
+    flatGridY: 132,              // SIGN.y=130 + 2px 여백
+    flatCellSize: 14,            // 네이티브 사이즈 (spriteScale=1.0, 선명한 아이콘)
+    flatCellGap: 2,              // 셀 간격 2px (step=16)
+    flatBands: 2,                // 2단 배치
+    flatBandGap: 21,             // 두 밴드 사이 간격
     statsPanelY: 440,            // 집 본체 중앙 (집 y=390~550)
     flatCellStyle: {
       bg0:              'none',  // Lv0: 투명 — Gemini 이미지 비침
