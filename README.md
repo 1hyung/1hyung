@@ -1,6 +1,6 @@
 <!-- Heungbu Header -->
 <p align="center">
-  <img src="./assets/heungbu-header.svg" width="100%" alt="1hyung's Commits"/>
+  <img src="./assets/heungbu-header.jpg" width="100%" alt="1hyung's Commits"/>
 </p>
 
 <img src="./assets/section-divider-heungbu.svg" width="100%"/>
