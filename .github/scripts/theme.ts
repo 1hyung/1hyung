@@ -25,7 +25,7 @@ import { createMountainSprite, getMountainSpriteSize } from './mountain-sprites'
 
 // 흥부네 커밋 테마 (신규)
 import { HEUNGBU_COLORS } from './heungbu-colors';
-import { createHeungbuFilters, createHeungbuBackground, createHeungbuForeground, createHeungbuPumpkins } from './heungbu-background';
+import { createHeungbuFilters, createHeungbuBackground, createHeungbuForeground } from './heungbu-background';
 import { createFlatHeungbuSprite, createHeungbuSprite, getHeungbuSpriteSize } from './heungbu-sprites';
 
 export type ThemeName = 'dragon' | 'farm' | 'mountain' | 'heungbu';
@@ -313,12 +313,12 @@ function getHeungbuTheme(): Theme {
     getSpriteSize: getHeungbuSpriteSize,
     createFlatSprite: createFlatHeungbuSprite,
     createForeground: createHeungbuForeground,
-    createPumpkins: createHeungbuPumpkins,
+    // createPumpkins 제거 — 배경 이미지에 이미 박(호리병)이 그려져 있음
     roofClipId: 'heungbu-roof-clip',
-    flatGridY: 262,              // 현판 내부 그리드 Y 위치 (현판 y=194~372)
-    flatCellSize: 10,            // 현판 너비(624px)에 맞게 소형화
-    flatCellGap: 1,              // 셀 간격 1px (step=11, 53×11-1=582px)
-    statsPanelY: 492,            // 현판 하단(400) + 잔디 중간
+    flatGridY: 210,              // 초가 그리드 Y 위치 (초가 y=130~375 중앙)
+    flatCellSize: 10,            // 셀 크기 (step=11, 53×11-1=582px)
+    flatCellGap: 1,              // 셀 간격 1px
+    statsPanelY: 440,            // 집 본체 중앙 (집 y=390~550)
     flatCellStyle: {
       bg0:              'none',                       // 투명 — Gemini 이미지 비침
       bgN:              HEUNGBU_COLORS.strawLevel2,
@@ -352,8 +352,15 @@ function getHeungbuTheme(): Theme {
         0%, 100% { filter: drop-shadow(0 0 3px ${HEUNGBU_COLORS.gourdLight}); }
         50%       { filter: drop-shadow(0 0 7px ${HEUNGBU_COLORS.gourdHighlight}); }
       }
+      @keyframes thatchShimmer {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(1160px); }
+      }
       #farm-flat-grid {
         animation: fadeIn 1.5s ease-in-out;
+      }
+      #thatch-shimmer {
+        animation: thatchShimmer 7s linear infinite;
       }
     `,
     layout: {

@@ -18,10 +18,10 @@ function loadBgImage(): string {
 }
 const BG_IMAGE_B64 = loadBgImage();
 
-// ─── 현판 내부 영역 (1200×600 이미지 실측 기준) ──────────────────
-// 목판 색 픽셀 분석 결과: x=280~904, y=171~392
-// clipPath: 그리드가 현판 밖으로 넘치지 않도록
-const SIGN = { x: 282, y: 194, w: 622, h: 178 };
+// ─── 초가 지붕 그리드 영역 (1200×600 새 Gemini 이미지 기준) ────────
+// 픽셀 분석 결과: 평탄한 초가 밴드 x=282~920, y=130~375
+// clipPath: 기여 그리드를 초가 영역 안으로 제한
+const SIGN = { x: 282, y: 130, w: 638, h: 245 };
 
 // ─── 필터 + ClipPath ──────────────────────────────────────────────
 export function createHeungbuFilters(): string {
@@ -33,10 +33,16 @@ export function createHeungbuFilters(): string {
     <filter id="gourdShadow" x="-25%" y="-25%" width="150%" height="150%">
       <feDropShadow dx="1.5" dy="2.5" stdDeviation="2.5" flood-color="#3a1a00" flood-opacity="0.4"/>
     </filter>
-    <!-- 그리드를 현판 내부로 제한하는 clipPath -->
+    <!-- 그리드를 초가 영역으로 제한하는 clipPath -->
     <clipPath id="heungbu-roof-clip">
       <rect x="${SIGN.x}" y="${SIGN.y}" width="${SIGN.w}" height="${SIGN.h}"/>
     </clipPath>
+    <!-- 초가 shimmer 애니메이션용 그라디언트 -->
+    <linearGradient id="thatchShimmerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="rgba(255,245,200,0)"/>
+      <stop offset="50%"  stop-color="rgba(255,245,200,0.32)"/>
+      <stop offset="100%" stop-color="rgba(255,245,200,0)"/>
+    </linearGradient>
   `;
 }
 
@@ -50,11 +56,11 @@ export function createHeungbuBackground(config: SVGConfig): string {
 
   return `
 <g id="heungbu-background">
-  <!-- Gemini 배경 이미지 -->
+  <!-- Gemini 배경 이미지 (대형 초가집) -->
   ${bgTag}
-  <!-- 현판 내부 반투명 오버레이 — 그리드 대비 향상 -->
+  <!-- 초가 영역 반투명 오버레이 — 기여 셀 대비 향상 -->
   <rect x="${SIGN.x}" y="${SIGN.y}" width="${SIGN.w}" height="${SIGN.h}"
-    fill="#150900" opacity="0.38" rx="2"/>
+    fill="#150900" opacity="0.22" rx="2"/>
 </g>`.trim();
 }
 
@@ -161,7 +167,16 @@ export function createHeungbuPumpkins(totalCommits: number): string {
 </g>`.trim();
 }
 
-// ─── 전경 (그리드 위) — 이미지 테마에서는 불필요 ──────────────────
+// ─── 전경 (그리드 위) — 초가 shimmer 빛 반사 오버레이 ───────────
 export function createHeungbuForeground(_config: SVGConfig): string {
-  return '';
+  return `
+<g id="heungbu-foreground">
+  <!-- 초가 지붕 빛 반사 shimmer — CSS 애니메이션으로 좌→우 이동 -->
+  <g clip-path="url(#heungbu-roof-clip)">
+    <rect id="thatch-shimmer"
+      x="${SIGN.x - 260}" y="${SIGN.y}"
+      width="260" height="${SIGN.h}"
+      fill="url(#thatchShimmerGrad)"/>
+  </g>
+</g>`.trim();
 }
