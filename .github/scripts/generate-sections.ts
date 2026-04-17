@@ -296,20 +296,20 @@ const {
 
 /**
  * 흥부네 커밋 헤더 SVG (1200×420)
- * 나무 간판 + 갓 캐릭터 + 초가집 + 산 배경
+ * 나무 간판 + 갓 캐릭터(1.3×) + 초가집(대형) + 산 배경
  */
 function generateHeungbuHeaderSVG(): string {
   const W = 1200, H = 420;
   const GRASS_Y = 298;
-  // 간판 위치
-  const sx = 370, sy = 80, sw = 460, sh = 210;
+  // 간판 위치 (sy=108로 내려 캐릭터 공간 확보)
+  const sx = 370, sy = 108, sw = 460, sh = 185;
   const scx = sx + Math.round(sw / 2); // 600
 
-  // 무지개 색동 테두리 (6색 × 4px = 24px 폭)
+  // 색동 테두리 (6색 × 2px = 12px 폭 — 얇게)
   const rainbow = ['#E82020','#F07020','#E8C018','#38A028','#2070D0','#7828C0'];
-  const bs = 4;
+  const bs = 2;
   const nb = rainbow.length; // 6
-  const borderH = nb * bs; // 24px
+  const borderH = nb * bs; // 12px
   const rbTop    = rainbow.map((c, i) =>
     `<rect x="${sx}" y="${sy+i*bs}" width="${sw}" height="${bs}" fill="${c}"/>`).join('');
   const rbBottom = rainbow.map((c, i) =>
@@ -320,14 +320,14 @@ function generateHeungbuHeaderSVG(): string {
     `<rect x="${sx+sw-borderH+i*bs}" y="${sy+borderH}" width="${bs}" height="${sh-borderH*2}" fill="${c}"/>`).join('');
 
   // 나뭇결 선
-  const grainLines = Array.from({ length: 10 }, (_, i) => {
+  const grainLines = Array.from({ length: 9 }, (_, i) => {
     const gy = sy + borderH + 8 + i * 18;
     const c2 = (i % 2 === 0) ? 6 : -6;
     return `<path d="M${sx+borderH+8},${gy} Q${scx},${gy+c2} ${sx+sw-borderH-8},${gy}"
       stroke="#5A2808" stroke-width="1.2" fill="none" opacity="0.25"/>`;
   }).join('');
 
-  // 소나무 헬퍼 (3단 레이어로 풍성하게)
+  // 소나무 헬퍼 (3단 레이어)
   const pine = (pcx: number, pcy: number, ph: number) => {
     const pw = ph * 0.42;
     return `
@@ -337,20 +337,18 @@ function generateHeungbuHeaderSVG(): string {
       <rect x="${pcx-6}" y="${pcy+ph*0.74}" width="12" height="${ph*0.30}" rx="2" fill="#3A2008"/>`;
   };
 
-  // 돔형 초가집 — 더 크고 짚 텍스처 포함
+  // 돔형 초가집 (대형 — rx 152, ry 108)
   const domeHouse = (hcx: number, baseY: number) => {
-    const rx = 118, ry = 84;
+    const rx = 152, ry = 108;
     const bx = hcx - Math.round(rx * 0.70);
     const bw = Math.round(rx * 1.40);
-    const bodyH = 70;
-    // 돔 위 가로 짚 줄무늬 (8줄)
-    const thatch = [10,20,30,40,50,62,72].map(di => {
+    const bodyH = 82;
+    const thatch = [10,22,34,46,58,72,86].map(di => {
       const hw = Math.round(rx * Math.sqrt(Math.max(0, 1 - (di / ry) * (di / ry))));
       const ty = baseY - di;
       const op = (0.10 + di * 0.004).toFixed(2);
       return `<line x1="${hcx-hw}" y1="${ty}" x2="${hcx+hw}" y2="${ty}" stroke="#F8D840" stroke-width="2" opacity="${op}"/>`;
     }).join('');
-    // 돔 테두리 하이라이트
     const domePath = `M${hcx-rx},${baseY} A${rx},${ry} 0 0 1 ${hcx+rx},${baseY}`;
     return `
       <path d="${domePath}" fill="#C89020"/>
@@ -358,23 +356,23 @@ function generateHeungbuHeaderSVG(): string {
       ${thatch}
       <path d="M${hcx-rx*0.74},${baseY-ry*0.40} A${rx*0.82},${ry*0.62} 0 0 1 ${hcx+rx*0.74},${baseY-ry*0.40}"
         fill="none" stroke="#F8E060" stroke-width="2.5" opacity="0.28"/>
-      <circle cx="${hcx-rx*0.60}" cy="${baseY-ry*0.36}" r="5" fill="#FFF060" opacity="0.82"/>
-      <circle cx="${hcx}"         cy="${baseY-ry+6}"     r="5" fill="#FFF060" opacity="0.82"/>
-      <circle cx="${hcx+rx*0.60}" cy="${baseY-ry*0.36}" r="5" fill="#FFF060" opacity="0.82"/>
+      <circle cx="${hcx-rx*0.60}" cy="${baseY-ry*0.36}" r="6" fill="#FFF060" opacity="0.82"/>
+      <circle cx="${hcx}"         cy="${baseY-ry+8}"     r="6" fill="#FFF060" opacity="0.82"/>
+      <circle cx="${hcx+rx*0.60}" cy="${baseY-ry*0.36}" r="6" fill="#FFF060" opacity="0.82"/>
       <rect x="${bx}" y="${baseY}" width="${bw}" height="${bodyH}" fill="#7A5030" rx="2"/>
       <rect x="${bx}" y="${baseY}" width="${bw}" height="3" fill="#5A3818" opacity="0.55"/>
-      <line x1="${bx}" y1="${baseY+18}" x2="${bx+bw}" y2="${baseY+18}" stroke="#5A3818" stroke-width="1.5" opacity="0.35"/>
-      <rect x="${hcx-14}" y="${baseY+16}" width="28" height="${bodyH-8}" rx="2" fill="#3C2008"/>
-      <rect x="${hcx+24}" y="${baseY+12}" width="32" height="24" rx="2" fill="#EED898" opacity="0.88"/>
-      <line x1="${hcx+40}" y1="${baseY+12}" x2="${hcx+40}" y2="${baseY+36}" stroke="#6A4020" stroke-width="2"/>
-      <line x1="${hcx+24}" y1="${baseY+24}" x2="${hcx+56}" y2="${baseY+24}" stroke="#6A4020" stroke-width="2"/>
-      <rect x="${hcx-56}" y="${baseY+12}" width="32" height="24" rx="2" fill="#EED898" opacity="0.88"/>
-      <line x1="${hcx-40}" y1="${baseY+12}" x2="${hcx-40}" y2="${baseY+36}" stroke="#6A4020" stroke-width="2"/>
-      <line x1="${hcx-56}" y1="${baseY+24}" x2="${hcx-24}" y2="${baseY+24}" stroke="#6A4020" stroke-width="2"/>
-      <rect x="${hcx-6}" y="${baseY+bodyH-22}" width="12" height="4" rx="1" fill="#8A6040" opacity="0.7"/>`;
+      <line x1="${bx}" y1="${baseY+22}" x2="${bx+bw}" y2="${baseY+22}" stroke="#5A3818" stroke-width="1.5" opacity="0.35"/>
+      <rect x="${hcx-16}" y="${baseY+18}" width="32" height="${bodyH-10}" rx="2" fill="#3C2008"/>
+      <rect x="${hcx+28}" y="${baseY+14}" width="36" height="28" rx="2" fill="#EED898" opacity="0.88"/>
+      <line x1="${hcx+46}" y1="${baseY+14}" x2="${hcx+46}" y2="${baseY+42}" stroke="#6A4020" stroke-width="2"/>
+      <line x1="${hcx+28}" y1="${baseY+28}" x2="${hcx+64}" y2="${baseY+28}" stroke="#6A4020" stroke-width="2"/>
+      <rect x="${hcx-64}" y="${baseY+14}" width="36" height="28" rx="2" fill="#EED898" opacity="0.88"/>
+      <line x1="${hcx-46}" y1="${baseY+14}" x2="${hcx-46}" y2="${baseY+42}" stroke="#6A4020" stroke-width="2"/>
+      <line x1="${hcx-64}" y1="${baseY+28}" x2="${hcx-28}" y2="${baseY+28}" stroke="#6A4020" stroke-width="2"/>
+      <rect x="${hcx-7}" y="${baseY+bodyH-25}" width="14" height="5" rx="1" fill="#8A6040" opacity="0.7"/>`;
   };
 
-  // 삼각형 산 + 설원 (배경)
+  // 삼각형 산 + 설원
   const mountainSVG = (() => {
     const peaks = [
       { cx: 170, py: 48, hw: 245, snowHw: 62 },
@@ -470,8 +468,8 @@ function generateHeungbuHeaderSVG(): string {
   <path d="M${sx+sw-52},${sy+sh} L${sx+sw-40},${H-10}" stroke="#5A3410" stroke-width="22" stroke-linecap="round"/>
   <path d="M${sx+52},${sy+sh} L${sx+40},${H-10}" stroke="#8A5828" stroke-width="6" stroke-linecap="round" opacity="0.40"/>
   <path d="M${sx+sw-52},${sy+sh} L${sx+sw-40},${H-10}" stroke="#8A5828" stroke-width="6" stroke-linecap="round" opacity="0.40"/>
-  <rect x="${sx+28}" y="${sy+sh+90}" width="${sw-56}" height="18" rx="6" fill="#4E3010"/>
-  <rect x="${sx+28}" y="${sy+sh+90}" width="${sw-56}" height="6" rx="4" fill="#7A5020" opacity="0.45"/>
+  <rect x="${sx+28}" y="${sy+sh+74}" width="${sw-56}" height="18" rx="6" fill="#4E3010"/>
+  <rect x="${sx+28}" y="${sy+sh+74}" width="${sw-56}" height="6" rx="4" fill="#7A5020" opacity="0.45"/>
 
   <!-- 간판 보드 -->
   <rect x="${sx}" y="${sy}" width="${sw}" height="${sh}" rx="10"
@@ -480,61 +478,61 @@ function generateHeungbuHeaderSVG(): string {
   <rect x="${sx}" y="${sy}" width="${sw}" height="${sh}" rx="10"
     fill="none" stroke="#2E1408" stroke-width="3.5" opacity="0.35"/>
 
-  <!-- 무지개 색동 테두리 -->
+  <!-- 색동 테두리 (얇게 12px) -->
   ${rbTop}${rbBottom}${rbLeft}${rbRight}
 
-  <!-- 갓 쓴 캐릭터 (간판 위에서 삐죽 나옴) -->
+  <!-- 갓 쓴 캐릭터 (1.3× 크기) -->
   <g filter="url(#charSh)">
-  <!-- 갓 크라운 (검은 원통형 모자) -->
-  <rect x="${scx-24}" y="${sy-78}" width="48" height="55" rx="6" fill="#141414"/>
-  <ellipse cx="${scx}" cy="${sy-78}" rx="26" ry="10" fill="#141414"/>
-  <rect x="${scx-22}" y="${sy-76}" width="9" height="51" rx="3" fill="#2A2A2A" opacity="0.60"/>
-  <!-- 갓 챙 (넓은 평면 브림) -->
-  <ellipse cx="${scx}" cy="${sy-23}" rx="62" ry="15" fill="#141414"/>
-  <ellipse cx="${scx}" cy="${sy-25}" rx="64" ry="12" fill="none" stroke="#282828" stroke-width="2.5"/>
+  <!-- 갓 크라운 -->
+  <rect x="${scx-31}" y="${sy-101}" width="62" height="72" rx="8" fill="#141414"/>
+  <ellipse cx="${scx}" cy="${sy-101}" rx="34" ry="13" fill="#141414"/>
+  <rect x="${scx-29}" y="${sy-99}" width="12" height="67" rx="3" fill="#2A2A2A" opacity="0.60"/>
+  <!-- 갓 챙 -->
+  <ellipse cx="${scx}" cy="${sy-30}" rx="81" ry="20" fill="#141414"/>
+  <ellipse cx="${scx}" cy="${sy-33}" rx="83" ry="16" fill="none" stroke="#282828" stroke-width="2.5"/>
   <!-- 갓끈 -->
-  <path d="M${scx-50},${sy-18} Q${scx-36},${sy-4} ${scx-26},${sy+6}"
-    stroke="#C89018" stroke-width="3" fill="none"/>
-  <path d="M${scx+50},${sy-18} Q${scx+36},${sy-4} ${scx+26},${sy+6}"
-    stroke="#C89018" stroke-width="3" fill="none"/>
+  <path d="M${scx-65},${sy-23} Q${scx-47},${sy-5} ${scx-34},${sy+8}"
+    stroke="#C89018" stroke-width="3.5" fill="none"/>
+  <path d="M${scx+65},${sy-23} Q${scx+47},${sy-5} ${scx+34},${sy+8}"
+    stroke="#C89018" stroke-width="3.5" fill="none"/>
   <!-- 얼굴 -->
-  <circle cx="${scx}" cy="${sy-10}" r="36" fill="#F6CA9A"/>
-  <circle cx="${scx}" cy="${sy-10}" r="36" fill="none" stroke="#D8A870" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="${scx}" cy="${sy-13}" r="47" fill="#F6CA9A"/>
+  <circle cx="${scx}" cy="${sy-13}" r="47" fill="none" stroke="#D8A870" stroke-width="1.5" opacity="0.4"/>
   <!-- 눈썹 -->
-  <path d="M${scx-18},${sy-22} Q${scx-12},${sy-26} ${scx-6},${sy-22}"
-    stroke="#381808" stroke-width="2.2" fill="none"/>
-  <path d="M${scx+6},${sy-22} Q${scx+12},${sy-26} ${scx+18},${sy-22}"
-    stroke="#381808" stroke-width="2.2" fill="none"/>
+  <path d="M${scx-23},${sy-28} Q${scx-16},${sy-34} ${scx-8},${sy-28}"
+    stroke="#381808" stroke-width="2.8" fill="none"/>
+  <path d="M${scx+8},${sy-28} Q${scx+16},${sy-34} ${scx+23},${sy-28}"
+    stroke="#381808" stroke-width="2.8" fill="none"/>
   <!-- 눈 -->
-  <circle cx="${scx-12}" cy="${sy-16}" r="5" fill="#241008"/>
-  <circle cx="${scx+12}" cy="${sy-16}" r="5" fill="#241008"/>
-  <circle cx="${scx-10}" cy="${sy-18}" r="2" fill="white"/>
-  <circle cx="${scx+14}" cy="${sy-18}" r="2" fill="white"/>
+  <circle cx="${scx-16}" cy="${sy-21}" r="7" fill="#241008"/>
+  <circle cx="${scx+16}" cy="${sy-21}" r="7" fill="#241008"/>
+  <circle cx="${scx-13}" cy="${sy-24}" r="2.5" fill="white"/>
+  <circle cx="${scx+19}" cy="${sy-24}" r="2.5" fill="white"/>
   <!-- 코 -->
-  <ellipse cx="${scx}" cy="${sy-6}" rx="4.5" ry="3.5" fill="#D4986A"/>
-  <!-- 입 (활짝 웃음) -->
-  <path d="M${scx-12},${sy+1} Q${scx},${sy+10} ${scx+12},${sy+1}"
-    stroke="#904830" stroke-width="2.5" fill="none"/>
+  <ellipse cx="${scx}" cy="${sy-8}" rx="6" ry="4.5" fill="#D4986A"/>
+  <!-- 입 -->
+  <path d="M${scx-16},${sy+1} Q${scx},${sy+13} ${scx+16},${sy+1}"
+    stroke="#904830" stroke-width="3" fill="none"/>
   <!-- 볼 홍조 -->
-  <ellipse cx="${scx-30}" cy="${sy-8}" rx="9" ry="6" fill="#F8A0A0" opacity="0.50"/>
-  <ellipse cx="${scx+30}" cy="${sy-8}" rx="9" ry="6" fill="#F8A0A0" opacity="0.50"/>
+  <ellipse cx="${scx-39}" cy="${sy-10}" rx="12" ry="8" fill="#F8A0A0" opacity="0.50"/>
+  <ellipse cx="${scx+39}" cy="${sy-10}" rx="12" ry="8" fill="#F8A0A0" opacity="0.50"/>
   </g>
 
   <!-- 간판 텍스트 -->
-  <text x="${scx}" y="${sy + Math.round(sh*0.37)}"
+  <text x="${scx}" y="${sy + Math.round(sh*0.40)}"
     text-anchor="middle" font-family="monospace" font-size="16"
     fill="#F8E8B8" opacity="0.88" letter-spacing="1">흥부네 커밋 · Heungbu's Commits</text>
-  <text x="${scx}" y="${sy + Math.round(sh*0.68)}"
+  <text x="${scx}" y="${sy + Math.round(sh*0.72)}"
     text-anchor="middle"
     font-family="'Arial Black','Arial Bold',Arial,sans-serif"
-    font-size="50" font-weight="bold"
+    font-size="48" font-weight="bold"
     fill="#FFD838"
     filter="url(#textGl)">1HYUNG'S COMMITS</text>
 
   <!-- 하단 장식 닷 3개 -->
-  <circle cx="${scx-28}" cy="${sy+Math.round(sh*0.87)}" r="9" fill="none" stroke="#C8A030" stroke-width="3"/>
-  <circle cx="${scx}"    cy="${sy+Math.round(sh*0.87)}" r="9" fill="#4A7A28"/>
-  <circle cx="${scx+28}" cy="${sy+Math.round(sh*0.87)}" r="9" fill="#284820"/>
+  <circle cx="${scx-28}" cy="${sy+Math.round(sh*0.90)}" r="9" fill="none" stroke="#C8A030" stroke-width="3"/>
+  <circle cx="${scx}"    cy="${sy+Math.round(sh*0.90)}" r="9" fill="#4A7A28"/>
+  <circle cx="${scx+28}" cy="${sy+Math.round(sh*0.90)}" r="9" fill="#284820"/>
 </svg>`;
 }
 
