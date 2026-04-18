@@ -307,7 +307,7 @@ function getHeungbuTheme(): Theme {
     showHeader: false,           // 타이틀은 배경 이미지에 포함
     configOverride: {
       width: 1200,               // Gemini 배경 이미지 너비
-      height: 600,               // Gemini 배경 이미지 높이
+      height: 892,               // Gemini 배경 이미지 전체 높이 (잘림 없음)
     },
     createBackground: createHeungbuBackground,
     createFilters: createHeungbuFilters,
@@ -317,11 +317,12 @@ function getHeungbuTheme(): Theme {
     createForeground: createHeungbuForeground,
     roofClipId: 'heungbu-roof-clip',
     reverseWeeks: true,          // 최신 주를 좌상단(col=0)에 배치
-    // 초가 밴드: SVG y=268~365 (97px) — step=14(cellSize=13+gap=1), 7행×14-1=97px
-    flatGridY: 268,              // SIGN.y=268
-    flatCellSize: 13,            // 13px 셀 (spriteScale≈0.93, 선명)
-    flatCellGap: 1,              // 1px 간격 (step=14)
-    statsPanelY: 465,            // 현판 내부 중앙 (패널 y=450~540)
+    // 초가 밴드: img_y=372~527 (155px) — step=22(cell=20+gap=2), 7행×22-2=152px
+    // 너비=53주×22-2=1164px (이미지 너비 97%), 박 끝~아래 초가 선 사이
+    flatGridY: 374,              // SIGN.y=372 + 2px 여백
+    flatCellSize: 20,            // 20px 셀 (spriteScale≈1.43, 크고 선명)
+    flatCellGap: 2,              // 2px 간격 (step=22)
+    statsPanelY: 610,            // 현판 내부 (892px 캔버스 기준 img_y=596~688)
     flatCellStyle: {
       bg0:              'none',  // Lv0: 투명 — Gemini 이미지 비침
       bgN:              'none',  // Lv1+: 스프라이트 내부에서 다크 배경 직접 처리
@@ -357,7 +358,7 @@ function getHeungbuTheme(): Theme {
       }
       @keyframes thatchShimmer {
         0%   { transform: translateX(0); }
-        100% { transform: translateX(1360px); }
+        100% { transform: translateX(1460px); }
       }
       #farm-flat-grid {
         animation: fadeIn 1.5s ease-in-out;
