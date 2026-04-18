@@ -317,9 +317,9 @@ function getHeungbuTheme(): Theme {
     createForeground: createHeungbuForeground,
     roofClipId: 'heungbu-roof-clip',
     reverseWeeks: true,          // 최신 주를 좌상단(col=0)에 배치
-    // 초가 밴드: img_y=372~527 (155px) — step=22(cell=20+gap=2), 7행×22-2=152px
-    // 너비=53주×22-2=1164px (이미지 너비 97%), 박 끝~아래 초가 선 사이
-    flatGridY: 374,              // SIGN.y=372 + 2px 여백
+    // 초가 밴드: img_y=328~483 (155px) — step=22(cell=20+gap=2), 7행×22-2=152px
+    // 너비=53주×22-2=1164px (이미지 너비 97%), 2셀(44px) 위로 이동
+    flatGridY: 330,              // SIGN.y=328 + 2px 여백
     flatCellSize: 20,            // 20px 셀 (spriteScale≈1.43, 크고 선명)
     flatCellGap: 2,              // 2px 간격 (step=22)
     statsPanelY: 610,            // 현판 내부 (892px 캔버스 기준 img_y=596~688)

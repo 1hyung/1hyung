@@ -21,7 +21,7 @@ const BG_IMAGE_B64 = loadBgImage();
 // ─── 초가 그리드 영역 (1200×892 전체 이미지 기준) ───────────────────
 // 픽셀 분석: 박 끝(img_y≈370) ~ 아래 초가 선(img_y≈527) 사이
 // step=22(cell=20+gap=2) → 높이=152px, 너비=1164px(97% of 1200)
-const SIGN = { x: 0, y: 372, w: 1200, h: 155 };
+const SIGN = { x: 0, y: 328, w: 1200, h: 155 };
 
 // ─── 필터 + ClipPath ──────────────────────────────────────────────
 export function createHeungbuFilters(): string {
