@@ -20,8 +20,9 @@ const BG_IMAGE_B64 = loadBgImage();
 
 // ─── 초가 그리드 영역 (1200×892 전체 이미지 기준) ───────────────────
 // 픽셀 분석: 박 끝(img_y≈370) ~ 아래 초가 선(img_y≈527) 사이
-// step=22(cell=20+gap=2) → 높이=152px, 너비=1164px(97% of 1200)
-const SIGN = { x: 0, y: 328, w: 1200, h: 155 };
+// step=22(cell=20+gap=2) → 7행×22-2=152px 그리드, clipPath로 상하 1행 제거
+// 표시: row1~row5 (y=352~462), 5행×22=110px
+const SIGN = { x: 0, y: 352, w: 1200, h: 110 };
 
 // ─── 필터 + ClipPath ──────────────────────────────────────────────
 export function createHeungbuFilters(): string {
@@ -58,6 +59,8 @@ export function createHeungbuBackground(config: SVGConfig): string {
 <g id="heungbu-background">
   <!-- Gemini 배경 이미지 (전체 크기 — 잘림 없음) -->
   ${bgTag}
+  <!-- Gemini 워터마크 — 주변 잔디색으로 자연스럽게 덮기 -->
+  <rect x="1108" y="808" width="75" height="58" fill="#7CAE4F"/>
   <!-- 초가 밴드 반투명 오버레이 — 기여 아이콘 대비 향상 -->
   <rect x="${SIGN.x}" y="${SIGN.y}" width="${SIGN.w}" height="${SIGN.h}"
     fill="#150900" opacity="0.52" rx="2"/>
