@@ -1,5 +1,5 @@
 // 테마별 기여 레벨 아이템창 SVG 생성
-// 출력: assets/sprite-guide-{mountain|farm|dragon}.svg
+// 출력: assets/sprite-guide-{mountain|farm|dragon|heungbu}.svg
 //       assets/section-divider-mountain.svg
 
 import * as fs from 'fs';
@@ -12,6 +12,7 @@ import {
   createHatchingDragonSprite,
   createAdultDragonSprite,
 } from './sprites';
+import { createFlatHeungbuSprite } from './heungbu-sprites';
 import { DragonLevel } from './types';
 
 // ── 패널 레이아웃 상수 ──────────────────────────────────────────
@@ -73,6 +74,16 @@ const THEME_COLORS: Record<string, ThemeColors> = {
     descColor:    '#6e7681',
     emptyColor:   '#30363d',
   },
+  heungbu: {
+    panelBg:      '#2a1a08',
+    panelBorder:  '#6a4420',
+    boxBg:        '#331e0a',
+    boxBorder:    '#7a5030',
+    boxBorderHigh:'#d4a020',
+    labelColor:   '#e8d0a0',
+    descColor:    '#b09060',
+    emptyColor:   '#6a4420',
+  },
 };
 
 // ── 스프라이트 아이템 ────────────────────────────────────────────
@@ -110,6 +121,17 @@ function getFarmItems(): SpriteItem[] {
       label: labels[lv],
     };
   });
+}
+
+function getHeungbuItems(): SpriteItem[] {
+  const labels = ['빈 초가', '새싹', '덩굴', '작은 박', '황금 박'];
+  return [0, 1, 2, 3, 4].map((lv) => ({
+    level: lv,
+    svg: createFlatHeungbuSprite(lv as DragonLevel),
+    width: 14,
+    height: lv === 0 ? 0 : 14,
+    label: labels[lv],
+  }));
 }
 
 function getDragonItems(): SpriteItem[] {
@@ -185,6 +207,7 @@ function generatePanel(themeName: string): string {
   const items =
     themeName === 'mountain' ? getMountainItems() :
     themeName === 'farm'     ? getFarmItems() :
+    themeName === 'heungbu'  ? getHeungbuItems() :
                                getDragonItems();
   const colors = THEME_COLORS[themeName];
 
@@ -235,7 +258,7 @@ async function main(): Promise<void> {
   }
 
   // 테마별 스프라이트 가이드 생성
-  for (const theme of ['mountain', 'farm', 'dragon']) {
+  for (const theme of ['mountain', 'farm', 'dragon', 'heungbu']) {
     const content = generatePanel(theme);
     const outPath = path.join(assetsDir, `sprite-guide-${theme}.svg`);
     fs.writeFileSync(outPath, content, 'utf8');
