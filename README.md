@@ -69,6 +69,11 @@
 
 <img src="./assets/section-divider-heungbu.svg" width="100%"/>
 
+<!-- 흥부네 커밋 레벨 가이드 -->
+<p align="center">
+  <img src="./assets/sprite-guide-heungbu.svg" width="100%" alt="Heungbu Level Guide"/>
+</p>
+
 <!-- 흥부네 커밋 그래프 -->
 <p align="center">
   <img src="./heungbu-contrib/heungbu-contrib-animate.svg" width="100%" alt="1hyung's Commits"/>
