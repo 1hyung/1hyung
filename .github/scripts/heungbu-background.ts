@@ -18,10 +18,10 @@ function loadBgImage(): string {
 }
 const BG_IMAGE_B64 = loadBgImage();
 
-// ─── 초가 지붕 그리드 영역 (1200×600 새 Gemini 이미지 기준) ────────
-// 픽셀 분석 결과: 평탄한 초가 밴드 x=282~920, y=130~375
-// clipPath: 기여 그리드를 초가 영역 안으로 제한
-const SIGN = { x: 282, y: 130, w: 638, h: 245 };
+// ─── 초가 지붕 그리드 영역 (1200×600 Gemini 이미지 기준) ────────────
+// 픽셀 분석 결과: 평탄한 초가 밴드 x=100~1100, SVG y=268~365 (97px)
+// clipPath: 기여 그리드를 초가 밴드 안으로 제한
+const SIGN = { x: 100, y: 268, w: 1000, h: 97 };
 
 // ─── 필터 + ClipPath ──────────────────────────────────────────────
 export function createHeungbuFilters(): string {
@@ -58,9 +58,9 @@ export function createHeungbuBackground(config: SVGConfig): string {
 <g id="heungbu-background">
   <!-- Gemini 배경 이미지 (대형 초가집) -->
   ${bgTag}
-  <!-- Gemini 워터마크(우측하단 다이아몬드) 가리기 — 잔디색 패치 -->
-  <rect x="1110" y="538" width="90" height="62" fill="#4A9820"/>
-  <!-- 초가 영역 반투명 오버레이 — 기여 셀 대비 향상 -->
+  <!-- 우측 하단 Gemini 워터마크 가리기 -->
+  <rect x="1060" y="525" width="140" height="75" fill="#4A9820"/>
+  <!-- 초가 밴드 반투명 오버레이 — 기여 아이콘 대비 향상 -->
   <rect x="${SIGN.x}" y="${SIGN.y}" width="${SIGN.w}" height="${SIGN.h}"
     fill="#150900" opacity="0.52" rx="2"/>
 </g>`.trim();

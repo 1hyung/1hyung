@@ -315,17 +315,13 @@ function getHeungbuTheme(): Theme {
     getSpriteSize: getHeungbuSpriteSize,
     createFlatSprite: createFlatHeungbuSprite,
     createForeground: createHeungbuForeground,
-    // createPumpkins 제거 — 배경 이미지에 이미 박(호리병)이 그려져 있음
     roofClipId: 'heungbu-roof-clip',
-    // 2단 레이아웃: 53주를 Band0(col 0~26) + Band1(col 27~52)로 분리
-    // weeksPerBand=27 → bandWidth=27×16-2=430px, bandHeight=7×16-2=110px
-    // 전체 높이: 110+21+110=241px (SIGN.h=245 내에 맞춤)
-    flatGridY: 132,              // SIGN.y=130 + 2px 여백
-    flatCellSize: 14,            // 네이티브 사이즈 (spriteScale=1.0, 선명한 아이콘)
-    flatCellGap: 2,              // 셀 간격 2px (step=16)
-    flatBands: 2,                // 2단 배치
-    flatBandGap: 21,             // 두 밴드 사이 간격
-    statsPanelY: 440,            // 집 본체 중앙 (집 y=390~550)
+    reverseWeeks: true,          // 최신 주를 좌상단(col=0)에 배치
+    // 초가 밴드: SVG y=268~365 (97px) — step=14(cellSize=13+gap=1), 7행×14-1=97px
+    flatGridY: 268,              // SIGN.y=268
+    flatCellSize: 13,            // 13px 셀 (spriteScale≈0.93, 선명)
+    flatCellGap: 1,              // 1px 간격 (step=14)
+    statsPanelY: 465,            // 현판 내부 중앙 (패널 y=450~540)
     flatCellStyle: {
       bg0:              'none',  // Lv0: 투명 — Gemini 이미지 비침
       bgN:              'none',  // Lv1+: 스프라이트 내부에서 다크 배경 직접 처리
@@ -348,7 +344,7 @@ function getHeungbuTheme(): Theme {
       statsLabelColor:  HEUNGBU_COLORS.textLight,
       statsDateColor:   HEUNGBU_COLORS.statsDateColor,
       legendTextColor:  HEUNGBU_COLORS.titleColor,
-      statsPanelColor:  HEUNGBU_COLORS.statsPanelColor,
+      statsPanelColor:  'none',   // 배경 이미지(현판) 비침 — rect 불투명 없음
     },
     animationCSS: `
       @keyframes fadeIn {
@@ -361,7 +357,7 @@ function getHeungbuTheme(): Theme {
       }
       @keyframes thatchShimmer {
         0%   { transform: translateX(0); }
-        100% { transform: translateX(1160px); }
+        100% { transform: translateX(1360px); }
       }
       #farm-flat-grid {
         animation: fadeIn 1.5s ease-in-out;
