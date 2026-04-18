@@ -22,7 +22,7 @@ const BG_IMAGE_B64 = loadBgImage();
 // 픽셀 분석: 박 끝(img_y≈370) ~ 아래 초가 선(img_y≈527) 사이
 // step=42(cell=40+gap=2) — 4칸→1칸 병합 효과, 4행×42-2=166px
 // 28주×42-2=1174px (너비 98%)
-const SIGN = { x: 0, y: 330, w: 1200, h: 166 };
+const SIGN = { x: 0, y: 330, w: 1200, h: 150 };  // 90% of 166
 
 // ─── 필터 + ClipPath ──────────────────────────────────────────────
 export function createHeungbuFilters(): string {
@@ -61,9 +61,9 @@ export function createHeungbuBackground(config: SVGConfig): string {
   ${bgTag}
   <!-- Gemini 워터마크 — 주변 잔디색으로 자연스럽게 덮기 -->
   <rect x="1108" y="808" width="75" height="58" fill="#7CAE4F"/>
-  <!-- 초가 밴드 반투명 오버레이 — 기여 아이콘 대비 향상 -->
+  <!-- 초가 밴드 오버레이 — 격자 구분을 위한 극히 미세한 어둠 -->
   <rect x="${SIGN.x}" y="${SIGN.y}" width="${SIGN.w}" height="${SIGN.h}"
-    fill="#150900" opacity="0.52" rx="2"/>
+    fill="#150900" opacity="0.18" rx="2"/>
 </g>`.trim();
 }
 

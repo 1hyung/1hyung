@@ -163,12 +163,15 @@ export function createFlatGrid(
 
   // 셀 색상: 테마 flatCellStyle 우선, 없으면 흙색 기본값
   const cs = theme.flatCellStyle;
-  const cellBg0   = cs?.bg0              ?? '#6b4423';
-  const cellBgN   = cs?.bgN              ?? '#7a5232';
-  const hlColor   = cs?.highlight        ?? '#c87040';
-  const shColor   = cs?.shadow           ?? '#4a2f17';
-  const hlOpacity = cs?.highlightOpacity ?? '0.5';
-  const shOpacity = cs?.shadowOpacity    ?? '0.6';
+  const cellBg0      = cs?.bg0              ?? '#6b4423';
+  const cellBgN      = cs?.bgN              ?? '#7a5232';
+  const hlColor      = cs?.highlight        ?? '#c87040';
+  const shColor      = cs?.shadow           ?? '#4a2f17';
+  const hlOpacity    = cs?.highlightOpacity ?? '0.5';
+  const shOpacity    = cs?.shadowOpacity    ?? '0.6';
+  const borderColor  = cs?.borderColor;
+  const borderOp     = cs?.borderOpacity    ?? '0.55';
+  const borderW      = cs?.borderWidth      ?? 0.8;
 
   // 스프라이트 스케일 (cellSize가 기본 14와 다를 때 비례 축소/확대)
   const spriteNativeSize = 14;
@@ -212,6 +215,11 @@ export function createFlatGrid(
           svg += `<g transform="translate(${cx}, ${cy})">${sprite}</g>\n`;
         }
       }
+    }
+
+    // 격자 테두리 — 모든 셀에 렌더링 (배경 제거 후 셀 구분용)
+    if (borderColor) {
+      svg += `<rect x="${cx}" y="${cy}" width="${cellSize}" height="${cellSize}" fill="none" stroke="${borderColor}" stroke-opacity="${borderOp}" stroke-width="${borderW}" rx="1"/>\n`;
     }
   });
 

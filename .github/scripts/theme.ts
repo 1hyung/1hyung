@@ -62,6 +62,9 @@ export interface FlatCellStyle {
   shadow: string;           // 하단/우측 그림자 색
   highlightOpacity?: string; // 기본 "0.5"
   shadowOpacity?: string;    // 기본 "0.6"
+  borderColor?: string;     // 격자 테두리 색 (없으면 테두리 없음)
+  borderOpacity?: string;   // 테두리 투명도 (기본 "0.55")
+  borderWidth?: number;     // 테두리 두께 (기본 0.8)
 }
 
 export interface Theme {
@@ -326,12 +329,15 @@ function getHeungbuTheme(): Theme {
     flatCellGap: 2,              // 2px 간격 (step=42)
     statsPanelY: 610,            // 현판 내부 (892px 캔버스 기준 img_y=596~688)
     flatCellStyle: {
-      bg0:              'none',  // Lv0: 투명 — Gemini 이미지 비침
-      bgN:              'none',  // Lv1+: 스프라이트 내부에서 다크 배경 직접 처리
-      highlight:        HEUNGBU_COLORS.strawHighlight,
-      shadow:           HEUNGBU_COLORS.strawShadow,
+      bg0:              'none',  // Lv0: 초가 배경 자연스럽게 비침
+      bgN:              'none',  // Lv1+: 스프라이트만 렌더링
+      highlight:        '#000',
+      shadow:           '#000',
       highlightOpacity: '0',
       shadowOpacity:    '0',
+      borderColor:      '#8B6520',  // 황금 갈색 격자 테두리
+      borderOpacity:    '0.50',
+      borderWidth:      1.0,
     },
     heightOffsets: [0, 3, 8, 12, 18],
     level4FilterId: 'heungbuGlow',
