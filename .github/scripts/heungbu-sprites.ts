@@ -65,8 +65,7 @@ export function createFlatHeungbuSprite(level: DragonLevel): string {
     default: return '';
   }
 
-  return `<rect x="0" y="0" width="14" height="14" fill="${BG_DARK}" opacity="${BG_OP}" rx="1.5"/>
-${icon}`;
+  return icon;
 }
 
 /** isometric 인터페이스 호환용 */

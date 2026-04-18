@@ -73,6 +73,7 @@ export interface Theme {
   configOverride?: Partial<SVGConfig>;  // SVGConfig 오버라이드 (캔버스 크기, 그리드 위치)
   statsPanelY?: number;          // 통계 패널 Y 위치 (기본 425)
   reverseWeeks?: boolean;        // true = 최신 주(week)를 좌상단(col=0)에 배치
+  maxWeeks?: number;             // 표시할 최대 주 수 (기본: 전체 53주)
   flatGridY?: number;            // flat grid Y 시작 위치 (기본 305)
   flatCellSize?: number;         // flat grid 셀 크기 (기본 14px)
   flatCellGap?: number;          // flat grid 셀 간격 (기본 2px)
@@ -317,11 +318,12 @@ function getHeungbuTheme(): Theme {
     createForeground: createHeungbuForeground,
     roofClipId: 'heungbu-roof-clip',
     reverseWeeks: true,          // 최신 주를 좌상단(col=0)에 배치
-    // 초가 밴드: img_y=328~483 (155px) — step=22(cell=20+gap=2), 7행×22-2=152px
-    // 너비=53주×22-2=1164px (이미지 너비 97%), 2셀(44px) 위로 이동
-    flatGridY: 330,              // SIGN.y=328 + 2px 여백
-    flatCellSize: 20,            // 20px 셀 (spriteScale≈1.43, 크고 선명)
-    flatCellGap: 2,              // 2px 간격 (step=22)
+    maxWeeks: 28,                // 최근 28주만 표시 (step=42로 너비 맞춤)
+    // 초가 밴드: 4칸→1칸 병합 (cell=40+gap=2=step=42, 기존 step=22의 2배)
+    // 28주×42-2=1174px (이미지 너비 98%), 4행×42-2=166px
+    flatGridY: 330,
+    flatCellSize: 40,            // 40px 셀 (spriteScale≈2.86, 큰 아이콘)
+    flatCellGap: 2,              // 2px 간격 (step=42)
     statsPanelY: 610,            // 현판 내부 (892px 캔버스 기준 img_y=596~688)
     flatCellStyle: {
       bg0:              'none',  // Lv0: 투명 — Gemini 이미지 비침

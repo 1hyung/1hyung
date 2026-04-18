@@ -20,9 +20,9 @@ const BG_IMAGE_B64 = loadBgImage();
 
 // ─── 초가 그리드 영역 (1200×892 전체 이미지 기준) ───────────────────
 // 픽셀 분석: 박 끝(img_y≈370) ~ 아래 초가 선(img_y≈527) 사이
-// step=22(cell=20+gap=2) → 7행×22-2=152px 그리드, clipPath로 상하 1행 제거
-// 표시: row1~row5 (y=352~462), 5행×22=110px
-const SIGN = { x: 0, y: 352, w: 1200, h: 110 };
+// step=42(cell=40+gap=2) — 4칸→1칸 병합 효과, 4행×42-2=166px
+// 28주×42-2=1174px (너비 98%)
+const SIGN = { x: 0, y: 330, w: 1200, h: 166 };
 
 // ─── 필터 + ClipPath ──────────────────────────────────────────────
 export function createHeungbuFilters(): string {

@@ -105,9 +105,13 @@ export function generateSVG(
   const repositories = data.user.repositories.nodes;
 
   // 그리드 셀 생성 (reverseWeeks=true면 최신 주를 col=0에 배치)
-  const weeks = theme.reverseWeeks
+  let weeks = theme.reverseWeeks
     ? [...calendar.weeks].reverse()
     : calendar.weeks;
+  // maxWeeks 제한 (최근 N주만 표시)
+  if (theme.maxWeeks) {
+    weeks = weeks.slice(0, theme.maxWeeks);
+  }
   // 전체 기간의 최대 기여 수로 실시간 레벨 계산 (contributionLevel은 GitHub 서버 캐싱으로 지연될 수 있음)
   const allCounts: number[] = weeks.flatMap((w: any) =>
     w.contributionDays.map((d: any) => d.contributionCount as number)
