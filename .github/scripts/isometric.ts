@@ -140,6 +140,7 @@ export function createFlatGrid(
   const cellStep = cellSize + cellGap;
   const bands: number    = (theme as any).flatBands    ?? 1;
   const bandGap: number  = (theme as any).flatBandGap  ?? 0;
+  const maxRows: number  = (theme as any).flatMaxRows  ?? 7;
 
   // 최대 주(col) 수 계산
   const numWeeks = cells.length > 0
@@ -183,6 +184,8 @@ export function createFlatGrid(
   sortedCells.forEach(cell => {
     const col = Math.floor(cell.x); // 주 인덱스
     const row = Math.floor(cell.y); // 요일 인덱스
+
+    if (row >= maxRows) return; // flatMaxRows 초과 행 스킵
 
     const band      = bands > 1 ? Math.floor(col / weeksPerBand) : 0;
     const colInBand = bands > 1 ? col % weeksPerBand : col;
@@ -273,6 +276,31 @@ export function createIsometricDragonGrid(
 
   gridSVG += '</g>';
   return gridSVG;
+}
+
+/**
+ * 불완전한 주(첫 주/마지막 주)의 누락된 행을 Lv0 셀로 채움
+ * reverseWeeks=true 시 첫 주(현재 주)가 오늘까지만 존재하므로 아래 행이 비어 보임
+ */
+export function padGridCells(cells: GridCell[], maxRows: number): GridCell[] {
+  const colRows = new Map<number, Set<number>>();
+  cells.forEach(c => {
+    const col = Math.floor(c.x);
+    const row = Math.floor(c.y);
+    if (!colRows.has(col)) colRows.set(col, new Set());
+    colRows.get(col)!.add(row);
+  });
+
+  const padding: GridCell[] = [];
+  colRows.forEach((rows, col) => {
+    for (let r = 0; r < maxRows; r++) {
+      if (!rows.has(r)) {
+        padding.push({ x: col, y: r, date: '', count: 0, level: 0 });
+      }
+    }
+  });
+
+  return [...cells, ...padding];
 }
 
 // 그리드 셀 데이터 생성 (주별 데이터를 등각 투영용으로 변환)

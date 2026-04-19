@@ -1,8 +1,8 @@
 // Dragon/Farm/Mountain Contribution 시각화 SVG 생성 (테마 지원)
 
 import { ContributionData, SVGConfig, DEFAULT_CONFIG } from './types';
-import { countToLevel } from './github-api';
-import { createGridCells, createIsometricGrid, createFlatGrid } from './isometric';
+import { countToLevel, contributionLevelToNumber } from './github-api';
+import { createGridCells, createIsometricGrid, createFlatGrid, padGridCells } from './isometric';
 import { createRadarChart, createDonutChart, processLanguageData, RadarChartData } from './charts';
 import { Theme, getTheme } from './theme';
 
@@ -112,12 +112,22 @@ export function generateSVG(
   if (theme.maxWeeks) {
     weeks = weeks.slice(0, theme.maxWeeks);
   }
-  // 전체 기간의 최대 기여 수로 실시간 레벨 계산 (contributionLevel은 GitHub 서버 캐싱으로 지연될 수 있음)
+  // 레벨 계산: useLevelQuartile=true면 GitHub 분기 레벨 사용 (Lv4 더 자주 등장)
+  //            기본은 maxCount 비율 기반 계산
   const allCounts: number[] = weeks.flatMap((w: any) =>
     w.contributionDays.map((d: any) => d.contributionCount as number)
   );
   const maxCount = Math.max(...allCounts, 1);
-  const gridCells = createGridCells(weeks, (_level: string, count: number) => countToLevel(count, maxCount));
+  const levelFn = (theme as any).useLevelQuartile
+    ? (level: string, _count: number) => contributionLevelToNumber(level)
+    : (_level: string, count: number) => countToLevel(count, maxCount);
+  let gridCells = createGridCells(weeks, levelFn);
+
+  // 불완전한 주 패딩 (flatMaxRows가 있을 때만 — 누락 행을 Lv0 셀로 채움)
+  const flatMaxRows: number | undefined = (theme as any).flatMaxRows;
+  if (theme.gridStyle === 'flat' && flatMaxRows) {
+    gridCells = padGridCells(gridCells, flatMaxRows);
+  }
 
   // 레이더 차트 데이터
   const radarData: RadarChartData = {
