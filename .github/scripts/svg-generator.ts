@@ -1,6 +1,6 @@
 // Dragon/Farm/Mountain Contribution 시각화 SVG 생성 (테마 지원)
 
-import { ContributionData, SVGConfig, DEFAULT_CONFIG } from './types';
+import { ContributionData, SVGConfig, DEFAULT_CONFIG, GridCell } from './types';
 import { countToLevel, contributionLevelToNumber } from './github-api';
 import { createGridCells, createIsometricGrid, createFlatGrid, padGridCells } from './isometric';
 import { createRadarChart, createDonutChart, processLanguageData, RadarChartData } from './charts';
@@ -121,16 +121,35 @@ export function generateSVG(
   const levelFn = (theme as any).useLevelQuartile
     ? (level: string, _count: number) => contributionLevelToNumber(level)
     : (_level: string, count: number) => countToLevel(count, maxCount);
-  let gridCells = createGridCells(weeks, levelFn);
 
-  // 불완전한 주 패딩 — 최신 주(현재 주)는 오늘의 커밋만 표시, 나머지 빈 주만 채움
-  const flatMaxRows: number | undefined = (theme as any).flatMaxRows;
-  if (theme.gridStyle === 'flat' && flatMaxRows) {
-    // 최신 주(col 최대값)를 제외하고 패딩 적용
-    const maxCol = Math.max(...gridCells.map(c => Math.floor(c.x)));
-    const pastCells = gridCells.filter(c => Math.floor(c.x) < maxCol);
-    const todayCells = gridCells.filter(c => Math.floor(c.x) === maxCol);
-    gridCells = [...padGridCells(pastCells, flatMaxRows), ...todayCells];
+  let gridCells: GridCell[];
+
+  if ((theme as any).flatDailyMode) {
+    // 일별 모드: 모든 날짜를 평탄화 → 열=1일, 행=0
+    const maxDays: number = (theme as any).maxDays ?? 30;
+    const allDays: any[] = [];
+    calendar.weeks.forEach((w: any) =>
+      w.contributionDays.forEach((d: any) => allDays.push(d))
+    );
+    const recentDays = allDays.slice(-maxDays);
+    gridCells = recentDays.map((day: any, i: number) => ({
+      x: i,
+      y: 0,
+      date: day.date,
+      count: day.contributionCount,
+      level: levelFn(day.contributionLevel, day.contributionCount),
+    }));
+  } else {
+    gridCells = createGridCells(weeks, levelFn);
+
+    // 불완전한 주 패딩 — 최신 주는 오늘 커밋만, 나머지 빈 주만 채움
+    const flatMaxRows: number | undefined = (theme as any).flatMaxRows;
+    if (theme.gridStyle === 'flat' && flatMaxRows) {
+      const maxCol = Math.max(...gridCells.map(c => Math.floor(c.x)));
+      const pastCells = gridCells.filter(c => Math.floor(c.x) < maxCol);
+      const todayCells = gridCells.filter(c => Math.floor(c.x) === maxCol);
+      gridCells = [...padGridCells(pastCells, flatMaxRows), ...todayCells];
+    }
   }
 
   // 레이더 차트 데이터
