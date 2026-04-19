@@ -82,6 +82,8 @@ export interface Theme {
   flatCellGap?: number;          // flat grid 셀 간격 (기본 2px)
   flatBands?: number;            // flat grid 밴드 수 (기본 1, 2=2단 배치)
   flatBandGap?: number;          // 밴드 간 간격 px (기본 0)
+  flatMaxRows?: number;          // flat grid 최대 행 수 (기본 7 — 요일 전체)
+  useLevelQuartile?: boolean;    // true = GitHub 분기(QUARTILE) 레벨 사용 (Lv4 더 자주 등장)
   roofClipId?: string;           // flat grid에 적용할 clipPath id (흥부 테마용)
   createBackground: (config: SVGConfig) => string;
   createFilters: () => string;
@@ -322,11 +324,11 @@ function getHeungbuTheme(): Theme {
     roofClipId: 'heungbu-roof-clip',
     reverseWeeks: true,          // 최신 주를 좌상단(col=0)에 배치
     maxWeeks: 28,                // 최근 28주만 표시 (step=42로 너비 맞춤)
-    // 초가 밴드: 4칸→1칸 병합 (cell=40+gap=2=step=42, 기존 step=22의 2배)
-    // 28주×42-2=1174px (이미지 너비 98%), 4행×42-2=166px
-    flatGridY: 330,
+    flatGridY: 351,              // 330 + 21(제거한 행의 절반 높이)
     flatCellSize: 40,            // 40px 셀 (spriteScale≈2.86, 큰 아이콘)
     flatCellGap: 2,              // 2px 간격 (step=42)
+    flatMaxRows: 3,              // 3행만 표시 (맨 아래줄 제거)
+    useLevelQuartile: true,      // GitHub 분기 레벨 사용 (Lv4 더 자주 등장)
     statsPanelY: 610,            // 현판 내부 (892px 캔버스 기준 img_y=596~688)
     flatCellStyle: {
       bg0:              'none',  // Lv0: 초가 배경 자연스럽게 비침
