@@ -324,7 +324,7 @@ function getHeungbuTheme(): Theme {
     roofClipId: 'heungbu-roof-clip',
     reverseWeeks: true,          // 최신 주를 좌상단(col=0)에 배치
     maxWeeks: 28,                // 최근 28주만 표시 (step=42로 너비 맞춤)
-    flatGridY: 351,              // 330 + 21(제거한 행의 절반 높이)
+    flatGridY: 341,              // 330 + 21 - 10
     flatCellSize: 40,            // 40px 셀 (spriteScale≈2.86, 큰 아이콘)
     flatCellGap: 2,              // 2px 간격 (step=42)
     flatMaxRows: 3,              // 3행만 표시 (맨 아래줄 제거)
