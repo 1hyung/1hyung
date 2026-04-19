@@ -22,7 +22,7 @@ const BG_IMAGE_B64 = loadBgImage();
 // 픽셀 분석: 박 끝(img_y≈370) ~ 아래 초가 선(img_y≈527) 사이
 // step=42(cell=40+gap=2) — 4칸→1칸 병합 효과, 4행×42-2=166px
 // 28주×42-2=1174px (너비 98%)
-const SIGN = { x: 0, y: 351, w: 1200, h: 126 };  // y=351(330+21), h=126(3행×42)
+const SIGN = { x: 0, y: 341, w: 1200, h: 126 };  // y=341(330+21-10), h=126(3행×42)
 
 // ─── 필터 + ClipPath ──────────────────────────────────────────────
 export function createHeungbuFilters(): string {
