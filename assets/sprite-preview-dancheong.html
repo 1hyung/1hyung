@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>흥부네 커밋 — Variant C: Dancheong Pop 아이콘 프리뷰</title>
+  <style>
+    body { background: #1a0f05; color: #e8d0a0; font-family: monospace; padding: 32px; }
+    h1 { color: #F0C040; font-size: 18px; margin-bottom: 4px; }
+    p  { color: #a08040; font-size: 12px; margin-top: 0; margin-bottom: 32px; }
+
+    .row { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
+
+    .card {
+      background: #2a1a08;
+      border: 1px solid #6a4420;
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .card.active { border-color: #d4a020; }
+
+    .label-top { font-size: 11px; color: #c0a060; }
+    .label-bot { font-size: 10px; color: #b09060; }
+
+    /* 실제 그리드 셀 크기: 14×14 그대로 */
+    .scale-1x { width: 14px; height: 14px; }
+    /* 확인용 확대: 4x, 8x, 16x */
+    .scale-4x  { width: 56px;  height: 56px; }
+    .scale-8x  { width: 112px; height: 112px; }
+    .scale-16x { width: 224px; height: 224px; }
+
+    .section-title {
+      font-size: 13px;
+      color: #d4a020;
+      margin: 24px 0 8px;
+      border-bottom: 1px solid #4a2a10;
+      padding-bottom: 4px;
+    }
+
+    /* 짚 배경 패턴 (Lv0 셀 배경 시뮬레이션) */
+    .straw-bg {
+      background: repeating-linear-gradient(
+        90deg,
+        #c8a040 0px, #c8a040 2px,
+        #b89030 2px, #b89030 4px,
+        #d0aa50 4px, #d0aa50 6px,
+        #b89030 6px, #b89030 8px
+      );
+    }
+  </style>
+</head>
+<body>
+
+<h1>흥부네 커밋 — Variant C: Dancheong Pop</h1>
+<p>레벨별 아이콘 프리뷰 | Lv0=짚 노출, Lv1=새싹, Lv2=덩굴, Lv3=작은박, Lv4=황금박</p>
+
+<!-- ─── 원본 크기 (14×14) ─── -->
+<div class="section-title">실제 크기 (14×14px) — 그리드에서 보이는 크기</div>
+<div class="row">
+
+  <div class="card">
+    <span class="label-top">Lv.0</span>
+    <svg class="scale-1x straw-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"></svg>
+    <span class="label-bot">빈 초가</span>
+  </div>
+
+  <div class="card">
+    <span class="label-top">Lv.1</span>
+    <svg class="scale-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" style="background:#b89030">
+      <line x1="7" y1="14" x2="7" y2="8" stroke="#2A5C08" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M7 10 Q 3 9 2.5 6 Q 5 7.5 7 10 Z" fill="#72CB35"/>
+      <path d="M7 10 Q 11 9 11.5 6 Q 9 7.5 7 10 Z" fill="#4A8A30"/>
+      <circle cx="7" cy="7" r="0.9" fill="#D94A4A"/>
+      <circle cx="7" cy="7" r="0.4" fill="#F0C040"/>
+    </svg>
+    <span class="label-bot">새싹</span>
+  </div>
+
+  <div class="card">
+    <span class="label-top">Lv.2</span>
+    <svg class="scale-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" style="background:#b89030">
+      <path d="M1.5 13 Q 4 10 6 8 Q 8 6 12.5 2.5" stroke="#2A5C08" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+      <path d="M3.5 11 Q 1.5 10 1 8 Q 3 9.2 4.5 11 Z" fill="#72CB35"/>
+      <path d="M7 8 Q 5 6.5 5 5 Q 7 6.5 7.8 7.7 Z" fill="#4A8A30"/>
+      <path d="M10.5 4.8 Q 9 3.2 9 1.7 Q 10.8 3 11.3 4.5 Z" fill="#72CB35"/>
+      <path d="M10.8 3.5 Q 12.5 2 13.5 0.8" stroke="#D94A4A" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+      <circle cx="4" cy="11" r="0.5" fill="#F0C040"/>
+    </svg>
+    <span class="label-bot">덩굴</span>
+  </div>
+
+  <div class="card">
+    <span class="label-top">Lv.3</span>
+    <svg class="scale-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" style="background:#b89030">
+      <path d="M1 13 Q 3 10 5.5 8.5 Q 8 7 12.5 5" stroke="#2A5C08" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <path d="M3.5 11 Q 1.5 10 1 8.5 Q 3 9.5 4.2 11 Z" fill="#72CB35"/>
+      <path d="M7 8 Q 5.3 6.6 5.3 5.1 Q 7 6.2 7.8 7.5 Z" fill="#4A8A30"/>
+      <circle cx="10.5" cy="9.5" r="2.2" fill="#E89030"/>
+      <path d="M8.4 9.5 Q 10.5 11 12.6 9.5" stroke="#B8681A" stroke-width=".5" fill="none" opacity=".8"/>
+      <ellipse cx="9.7" cy="8.9" rx="0.9" ry="0.6" fill="#F4D070" opacity=".75"/>
+      <line x1="10.5" y1="7.3" x2="10.5" y2="6" stroke="#2A5C08" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="12.2" cy="9.2" r="0.3" fill="#FFF2B8" opacity=".9"/>
+    </svg>
+    <span class="label-bot">작은 박</span>
+  </div>
+
+  <div class="card active">
+    <span class="label-top">Lv.4</span>
+    <svg class="scale-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" style="background:#b89030">
+      <circle cx="7.5" cy="8.5" r="5.5" fill="#E89030"/>
+      <path d="M2.5 8.5 Q 7.5 11.5 12.5 8.5" stroke="#A84810" stroke-width=".5" fill="none"/>
+      <path d="M2.5 8.5 Q 7.5 5.5 12.5 8.5" stroke="#A84810" stroke-width=".4" fill="none" opacity=".8"/>
+      <ellipse cx="5.5" cy="7" rx="2.3" ry="1.5" fill="#FFD868" opacity=".6"/>
+      <ellipse cx="6" cy="6.3" rx="1.1" ry="0.6" fill="#FFF2B8" opacity=".75"/>
+      <line x1="7.5" y1="3.3" x2="7.5" y2="1.5" stroke="#2A5C08" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M7.8 2 Q 10.5 1.2 12.5 0.4" stroke="#2A5C08" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <path d="M4.5 3.6 Q 3 2.6 2.6 1.2 Q 4 2.2 5 3.4 Z" fill="#4A8A30"/>
+      <circle cx="10.5" cy="10" r="0.6" fill="#D94A4A" opacity=".85"/>
+      <circle cx="10.8" cy="9.7" r="0.25" fill="#F0C040"/>
+      <circle cx="7.5" cy="8.5" r="5.5" fill="none" stroke="#F5C820" stroke-width="0.9" opacity=".7"/>
+    </svg>
+    <span class="label-bot">황금 박</span>
+  </div>
+</div>
+
+<!-- ─── 4× 확대 ─── -->
+<div class="section-title">4× 확대 (56×56px)</div>
+<div class="row">
+
+  <div class="card">
+    <span class="label-top">Lv.0</span>
+    <svg class="scale-4x straw-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"></svg>
+    <span class="label-bot">빈 초가</span>
+  </div>
+
+  <div class="card">
+    <span class="label-top">Lv.1 새싹</span>
+    <svg class="scale-4x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" style="background:#b89030">
+      <line x1="7" y1="14" x2="7" y2="8" stroke="#2A5C08" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M7 10 Q 3 9 2.5 6 Q 5 7.5 7 10 Z" fill="#72CB35"/>
+      <path d="M7 10 Q 11 9 11.5 6 Q 9 7.5 7 10 Z" fill="#4A8A30"/>
+      <circle cx="7" cy="7" r="0.9" fill="#D94A4A"/>
+      <circle cx="7" cy="7" r="0.4" fill="#F0C040"/>
+    </svg>
+    <span class="label-bot">단청 포인트 점</span>
+  </div>
+
+  <div class="card">
+    <span class="label-top">Lv.2 덩굴</span>
+    <svg class="scale-4x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" style="background:#b89030">
+      <path d="M1.5 13 Q 4 10 6 8 Q 8 6 12.5 2.5" stroke="#2A5C08" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+      <path d="M3.5 11 Q 1.5 10 1 8 Q 3 9.2 4.5 11 Z" fill="#72CB35"/>
+      <path d="M7 8 Q 5 6.5 5 5 Q 7 6.5 7.8 7.7 Z" fill="#4A8A30"/>
+      <path d="M10.5 4.8 Q 9 3.2 9 1.7 Q 10.8 3 11.3 4.5 Z" fill="#72CB35"/>
+      <path d="M10.8 3.5 Q 12.5 2 13.5 0.8" stroke="#D94A4A" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+      <circle cx="4" cy="11" r="0.5" fill="#F0C040"/>
+    </svg>
+    <span class="label-bot">S자 + 잎 3장</span>
+  </div>
+
+  <div class="card">
+    <span class="label-top">Lv.3 작은 박</span>
+    <svg class="scale-4x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" style="background:#b89030">
+      <path d="M1 13 Q 3 10 5.5 8.5 Q 8 7 12.5 5" stroke="#2A5C08" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <path d="M3.5 11 Q 1.5 10 1 8.5 Q 3 9.5 4.2 11 Z" fill="#72CB35"/>
+      <path d="M7 8 Q 5.3 6.6 5.3 5.1 Q 7 6.2 7.8 7.5 Z" fill="#4A8A30"/>
+      <circle cx="10.5" cy="9.5" r="2.2" fill="#E89030"/>
+      <path d="M8.4 9.5 Q 10.5 11 12.6 9.5" stroke="#B8681A" stroke-width=".5" fill="none" opacity=".8"/>
+      <ellipse cx="9.7" cy="8.9" rx="0.9" ry="0.6" fill="#F4D070" opacity=".75"/>
+      <line x1="10.5" y1="7.3" x2="10.5" y2="6" stroke="#2A5C08" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="12.2" cy="9.2" r="0.3" fill="#FFF2B8" opacity=".9"/>
+    </svg>
+    <span class="label-bot">덩굴 + 박 하나</span>
+  </div>
+
+  <div class="card active">
+    <span class="label-top">Lv.4 황금 박</span>
+    <svg class="scale-4x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" style="background:#b89030">
+      <circle cx="7.5" cy="8.5" r="5.5" fill="#E89030"/>
+      <path d="M2.5 8.5 Q 7.5 11.5 12.5 8.5" stroke="#A84810" stroke-width=".5" fill="none"/>
+      <path d="M2.5 8.5 Q 7.5 5.5 12.5 8.5" stroke="#A84810" stroke-width=".4" fill="none" opacity=".8"/>
+      <ellipse cx="5.5" cy="7" rx="2.3" ry="1.5" fill="#FFD868" opacity=".6"/>
+      <ellipse cx="6" cy="6.3" rx="1.1" ry="0.6" fill="#FFF2B8" opacity=".75"/>
+      <line x1="7.5" y1="3.3" x2="7.5" y2="1.5" stroke="#2A5C08" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M7.8 2 Q 10.5 1.2 12.5 0.4" stroke="#2A5C08" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <path d="M4.5 3.6 Q 3 2.6 2.6 1.2 Q 4 2.2 5 3.4 Z" fill="#4A8A30"/>
+      <circle cx="10.5" cy="10" r="0.6" fill="#D94A4A" opacity=".85"/>
+      <circle cx="10.8" cy="9.7" r="0.25" fill="#F0C040"/>
+      <circle cx="7.5" cy="8.5" r="5.5" fill="none" stroke="#F5C820" stroke-width="0.9" opacity=".7"/>
+    </svg>
+    <span class="label-bot">황금 테두리</span>
+  </div>
+</div>
+
+<!-- ─── 8× 확대 ─── -->
+<div class="section-title">8× 확대 (112×112px) — 디테일 확인용</div>
+<div class="row">
+
+  <div class="card">
+    <span class="label-top">Lv.1</span>
+    <svg class="scale-8x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" style="background:#b89030">
+      <line x1="7" y1="14" x2="7" y2="8" stroke="#2A5C08" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M7 10 Q 3 9 2.5 6 Q 5 7.5 7 10 Z" fill="#72CB35"/>
+      <path d="M7 10 Q 11 9 11.5 6 Q 9 7.5 7 10 Z" fill="#4A8A30"/>
+      <circle cx="7" cy="7" r="0.9" fill="#D94A4A"/>
+      <circle cx="7" cy="7" r="0.4" fill="#F0C040"/>
+    </svg>
+    <span class="label-bot">새싹 — 단청 포인트</span>
+  </div>
+
+  <div class="card">
+    <span class="label-top">Lv.2</span>
+    <svg class="scale-8x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" style="background:#b89030">
+      <path d="M1.5 13 Q 4 10 6 8 Q 8 6 12.5 2.5" stroke="#2A5C08" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+      <path d="M3.5 11 Q 1.5 10 1 8 Q 3 9.2 4.5 11 Z" fill="#72CB35"/>
+      <path d="M7 8 Q 5 6.5 5 5 Q 7 6.5 7.8 7.7 Z" fill="#4A8A30"/>
+      <path d="M10.5 4.8 Q 9 3.2 9 1.7 Q 10.8 3 11.3 4.5 Z" fill="#72CB35"/>
+      <path d="M10.8 3.5 Q 12.5 2 13.5 0.8" stroke="#D94A4A" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+      <circle cx="4" cy="11" r="0.5" fill="#F0C040"/>
+    </svg>
+    <span class="label-bot">덩굴 — 빨간 덩굴손</span>
+  </div>
+
+  <div class="card">
+    <span class="label-top">Lv.3</span>
+    <svg class="scale-8x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" style="background:#b89030">
+      <path d="M1 13 Q 3 10 5.5 8.5 Q 8 7 12.5 5" stroke="#2A5C08" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <path d="M3.5 11 Q 1.5 10 1 8.5 Q 3 9.5 4.2 11 Z" fill="#72CB35"/>
+      <path d="M7 8 Q 5.3 6.6 5.3 5.1 Q 7 6.2 7.8 7.5 Z" fill="#4A8A30"/>
+      <circle cx="10.5" cy="9.5" r="2.2" fill="#E89030"/>
+      <path d="M8.4 9.5 Q 10.5 11 12.6 9.5" stroke="#B8681A" stroke-width=".5" fill="none" opacity=".8"/>
+      <ellipse cx="9.7" cy="8.9" rx="0.9" ry="0.6" fill="#F4D070" opacity=".75"/>
+      <line x1="10.5" y1="7.3" x2="10.5" y2="6" stroke="#2A5C08" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="12.2" cy="9.2" r="0.3" fill="#FFF2B8" opacity=".9"/>
+    </svg>
+    <span class="label-bot">박 — 하이라이트</span>
+  </div>
+
+  <div class="card active">
+    <span class="label-top">Lv.4</span>
+    <svg class="scale-8x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" style="background:#b89030">
+      <circle cx="7.5" cy="8.5" r="5.5" fill="#E89030"/>
+      <path d="M2.5 8.5 Q 7.5 11.5 12.5 8.5" stroke="#A84810" stroke-width=".5" fill="none"/>
+      <path d="M2.5 8.5 Q 7.5 5.5 12.5 8.5" stroke="#A84810" stroke-width=".4" fill="none" opacity=".8"/>
+      <ellipse cx="5.5" cy="7" rx="2.3" ry="1.5" fill="#FFD868" opacity=".6"/>
+      <ellipse cx="6" cy="6.3" rx="1.1" ry="0.6" fill="#FFF2B8" opacity=".75"/>
+      <line x1="7.5" y1="3.3" x2="7.5" y2="1.5" stroke="#2A5C08" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M7.8 2 Q 10.5 1.2 12.5 0.4" stroke="#2A5C08" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <path d="M4.5 3.6 Q 3 2.6 2.6 1.2 Q 4 2.2 5 3.4 Z" fill="#4A8A30"/>
+      <circle cx="10.5" cy="10" r="0.6" fill="#D94A4A" opacity=".85"/>
+      <circle cx="10.8" cy="9.7" r="0.25" fill="#F0C040"/>
+      <circle cx="7.5" cy="8.5" r="5.5" fill="none" stroke="#F5C820" stroke-width="0.9" opacity=".7"/>
+    </svg>
+    <span class="label-bot">황금 박 — 단청 포인트</span>
+  </div>
+</div>
+
+<!-- ─── 그리드 시뮬레이션 ─── -->
+<div class="section-title">그리드 시뮬레이션 — 실제 배열 느낌 (짚 배경 위)</div>
+<div style="background: repeating-linear-gradient(90deg,#c8a040 0,#c8a040 2px,#b89030 2px,#b89030 4px,#d0aa50 4px,#d0aa50 6px,#b89030 6px,#b89030 8px); display:inline-block; padding:6px; border-radius:4px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="30">
+  <!-- Lv0 (빈 셀 × 3) -->
+  <rect x="2"  y="2" width="14" height="14" fill="none"/>
+  <rect x="18" y="2" width="14" height="14" fill="none"/>
+  <rect x="34" y="2" width="14" height="14" fill="none"/>
+  <!-- Lv1 새싹 -->
+  <g transform="translate(50,2)">
+    <line x1="7" y1="14" x2="7" y2="8" stroke="#2A5C08" stroke-width="1.9" stroke-linecap="round"/>
+    <path d="M7 10 Q 3 9 2.5 6 Q 5 7.5 7 10 Z" fill="#72CB35"/>
+    <path d="M7 10 Q 11 9 11.5 6 Q 9 7.5 7 10 Z" fill="#4A8A30"/>
+    <circle cx="7" cy="7" r="0.9" fill="#D94A4A"/>
+    <circle cx="7" cy="7" r="0.4" fill="#F0C040"/>
+  </g>
+  <!-- Lv1 -->
+  <g transform="translate(66,2)">
+    <line x1="7" y1="14" x2="7" y2="8" stroke="#2A5C08" stroke-width="1.9" stroke-linecap="round"/>
+    <path d="M7 10 Q 3 9 2.5 6 Q 5 7.5 7 10 Z" fill="#72CB35"/>
+    <path d="M7 10 Q 11 9 11.5 6 Q 9 7.5 7 10 Z" fill="#4A8A30"/>
+    <circle cx="7" cy="7" r="0.9" fill="#D94A4A"/>
+    <circle cx="7" cy="7" r="0.4" fill="#F0C040"/>
+  </g>
+  <!-- Lv2 덩굴 -->
+  <g transform="translate(82,2)">
+    <path d="M1.5 13 Q 4 10 6 8 Q 8 6 12.5 2.5" stroke="#2A5C08" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+    <path d="M3.5 11 Q 1.5 10 1 8 Q 3 9.2 4.5 11 Z" fill="#72CB35"/>
+    <path d="M7 8 Q 5 6.5 5 5 Q 7 6.5 7.8 7.7 Z" fill="#4A8A30"/>
+    <path d="M10.5 4.8 Q 9 3.2 9 1.7 Q 10.8 3 11.3 4.5 Z" fill="#72CB35"/>
+    <path d="M10.8 3.5 Q 12.5 2 13.5 0.8" stroke="#D94A4A" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+    <circle cx="4" cy="11" r="0.5" fill="#F0C040"/>
+  </g>
+  <!-- Lv2 -->
+  <g transform="translate(98,2)">
+    <path d="M1.5 13 Q 4 10 6 8 Q 8 6 12.5 2.5" stroke="#2A5C08" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+    <path d="M3.5 11 Q 1.5 10 1 8 Q 3 9.2 4.5 11 Z" fill="#72CB35"/>
+    <path d="M7 8 Q 5 6.5 5 5 Q 7 6.5 7.8 7.7 Z" fill="#4A8A30"/>
+    <path d="M10.5 4.8 Q 9 3.2 9 1.7 Q 10.8 3 11.3 4.5 Z" fill="#72CB35"/>
+    <path d="M10.8 3.5 Q 12.5 2 13.5 0.8" stroke="#D94A4A" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+    <circle cx="4" cy="11" r="0.5" fill="#F0C040"/>
+  </g>
+  <!-- Lv3 작은 박 -->
+  <g transform="translate(114,2)">
+    <path d="M1 13 Q 3 10 5.5 8.5 Q 8 7 12.5 5" stroke="#2A5C08" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <path d="M3.5 11 Q 1.5 10 1 8.5 Q 3 9.5 4.2 11 Z" fill="#72CB35"/>
+    <path d="M7 8 Q 5.3 6.6 5.3 5.1 Q 7 6.2 7.8 7.5 Z" fill="#4A8A30"/>
+    <circle cx="10.5" cy="9.5" r="2.2" fill="#E89030"/>
+    <path d="M8.4 9.5 Q 10.5 11 12.6 9.5" stroke="#B8681A" stroke-width=".5" fill="none" opacity=".8"/>
+    <ellipse cx="9.7" cy="8.9" rx="0.9" ry="0.6" fill="#F4D070" opacity=".75"/>
+    <line x1="10.5" y1="7.3" x2="10.5" y2="6" stroke="#2A5C08" stroke-width="1.2" stroke-linecap="round"/>
+    <circle cx="12.2" cy="9.2" r="0.3" fill="#FFF2B8" opacity=".9"/>
+  </g>
+  <!-- Lv4 황금 박 -->
+  <g transform="translate(130,2)">
+    <circle cx="7.5" cy="8.5" r="5.5" fill="#E89030"/>
+    <path d="M2.5 8.5 Q 7.5 11.5 12.5 8.5" stroke="#A84810" stroke-width=".5" fill="none"/>
+    <path d="M2.5 8.5 Q 7.5 5.5 12.5 8.5" stroke="#A84810" stroke-width=".4" fill="none" opacity=".8"/>
+    <ellipse cx="5.5" cy="7" rx="2.3" ry="1.5" fill="#FFD868" opacity=".6"/>
+    <ellipse cx="6" cy="6.3" rx="1.1" ry="0.6" fill="#FFF2B8" opacity=".75"/>
+    <line x1="7.5" y1="3.3" x2="7.5" y2="1.5" stroke="#2A5C08" stroke-width="1.9" stroke-linecap="round"/>
+    <path d="M7.8 2 Q 10.5 1.2 12.5 0.4" stroke="#2A5C08" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <path d="M4.5 3.6 Q 3 2.6 2.6 1.2 Q 4 2.2 5 3.4 Z" fill="#4A8A30"/>
+    <circle cx="10.5" cy="10" r="0.6" fill="#D94A4A" opacity=".85"/>
+    <circle cx="10.8" cy="9.7" r="0.25" fill="#F0C040"/>
+    <circle cx="7.5" cy="8.5" r="5.5" fill="none" stroke="#F5C820" stroke-width="0.9" opacity=".7"/>
+  </g>
+  <!-- Lv4 -->
+  <g transform="translate(146,2)">
+    <circle cx="7.5" cy="8.5" r="5.5" fill="#E89030"/>
+    <path d="M2.5 8.5 Q 7.5 11.5 12.5 8.5" stroke="#A84810" stroke-width=".5" fill="none"/>
+    <ellipse cx="5.5" cy="7" rx="2.3" ry="1.5" fill="#FFD868" opacity=".6"/>
+    <ellipse cx="6" cy="6.3" rx="1.1" ry="0.6" fill="#FFF2B8" opacity=".75"/>
+    <line x1="7.5" y1="3.3" x2="7.5" y2="1.5" stroke="#2A5C08" stroke-width="1.9" stroke-linecap="round"/>
+    <circle cx="7.5" cy="8.5" r="5.5" fill="none" stroke="#F5C820" stroke-width="0.9" opacity=".7"/>
+  </g>
+  <!-- Lv4 -->
+  <g transform="translate(162,2)">
+    <circle cx="7.5" cy="8.5" r="5.5" fill="#E89030"/>
+    <ellipse cx="5.5" cy="7" rx="2.3" ry="1.5" fill="#FFD868" opacity=".6"/>
+    <line x1="7.5" y1="3.3" x2="7.5" y2="1.5" stroke="#2A5C08" stroke-width="1.9" stroke-linecap="round"/>
+    <circle cx="7.5" cy="8.5" r="5.5" fill="none" stroke="#F5C820" stroke-width="0.9" opacity=".7"/>
+  </g>
+  <!-- Lv3 -->
+  <g transform="translate(178,2)">
+    <path d="M1 13 Q 3 10 5.5 8.5 Q 8 7 12.5 5" stroke="#2A5C08" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <circle cx="10.5" cy="9.5" r="2.2" fill="#E89030"/>
+    <ellipse cx="9.7" cy="8.9" rx="0.9" ry="0.6" fill="#F4D070" opacity=".75"/>
+    <line x1="10.5" y1="7.3" x2="10.5" y2="6" stroke="#2A5C08" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+  <!-- Lv2 -->
+  <g transform="translate(194,2)">
+    <path d="M1.5 13 Q 4 10 6 8 Q 8 6 12.5 2.5" stroke="#2A5C08" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+    <path d="M3.5 11 Q 1.5 10 1 8 Q 3 9.2 4.5 11 Z" fill="#72CB35"/>
+    <path d="M7 8 Q 5 6.5 5 5 Q 7 6.5 7.8 7.7 Z" fill="#4A8A30"/>
+    <circle cx="4" cy="11" r="0.5" fill="#F0C040"/>
+  </g>
+  <!-- Lv0 빈 셀 × 4 -->
+  <rect x="210" y="2" width="14" height="14" fill="none"/>
+  <rect x="226" y="2" width="14" height="14" fill="none"/>
+  <rect x="242" y="2" width="14" height="14" fill="none"/>
+</svg>
+</div>
+
+<br><br>
+<p style="color:#806040; font-size:11px;">
+  브라우저에서 열기: file:// 로 직접 열거나 VS Code Live Preview 사용<br>
+  짚 배경은 CSS 패턴으로 시뮬레이션 — 실제 SVG에서는 sprites.ts 배경 타일로 대체됩니다
+</p>
+
+</body>
+</html>
