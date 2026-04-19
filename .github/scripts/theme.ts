@@ -326,11 +326,11 @@ function getHeungbuTheme(): Theme {
     roofClipId: 'heungbu-roof-clip',
     reverseWeeks: false,
     flatGridY: 341,              // y 위치 (SIGN.y와 동기화)
-    flatCellSize: 38,            // 38px 셀 (30일×40step=1198px, 스프라이트 2.7×)
+    flatCellSize: 38,            // 38px 셀 (30열×40step=1198px, 스프라이트 2.7×)
     flatCellGap: 2,              // 2px 간격 (step=40)
-    flatMaxRows: 1,              // 1행 (일별 모드)
+    flatMaxRows: 3,              // 3행 (행당 30일 = 총 90일)
     flatDailyMode: true,         // 열=1일 모드
-    maxDays: 30,                 // 최근 30일
+    maxDays: 90,                 // 최근 90일 (우측 하단=오늘)
     useLevelQuartile: true,      // GitHub 분기 레벨 사용 (Lv4 더 자주 등장)
     statsPanelY: 610,            // 현판 내부 (892px 캔버스 기준 img_y=596~688)
     flatCellStyle: {
