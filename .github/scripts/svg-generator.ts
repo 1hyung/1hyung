@@ -123,10 +123,14 @@ export function generateSVG(
     : (_level: string, count: number) => countToLevel(count, maxCount);
   let gridCells = createGridCells(weeks, levelFn);
 
-  // 불완전한 주 패딩 (flatMaxRows가 있을 때만 — 누락 행을 Lv0 셀로 채움)
+  // 불완전한 주 패딩 — 최신 주(현재 주)는 오늘의 커밋만 표시, 나머지 빈 주만 채움
   const flatMaxRows: number | undefined = (theme as any).flatMaxRows;
   if (theme.gridStyle === 'flat' && flatMaxRows) {
-    gridCells = padGridCells(gridCells, flatMaxRows);
+    // 최신 주(col 최대값)를 제외하고 패딩 적용
+    const maxCol = Math.max(...gridCells.map(c => Math.floor(c.x)));
+    const pastCells = gridCells.filter(c => Math.floor(c.x) < maxCol);
+    const todayCells = gridCells.filter(c => Math.floor(c.x) === maxCol);
+    gridCells = [...padGridCells(pastCells, flatMaxRows), ...todayCells];
   }
 
   // 레이더 차트 데이터

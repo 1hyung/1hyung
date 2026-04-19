@@ -322,7 +322,7 @@ function getHeungbuTheme(): Theme {
     createFlatSprite: createFlatHeungbuSprite,
     createForeground: createHeungbuForeground,
     roofClipId: 'heungbu-roof-clip',
-    reverseWeeks: true,          // 최신 주를 좌상단(col=0)에 배치
+    reverseWeeks: false,         // 오래된 주 왼쪽, 최신 주 오른쪽
     maxWeeks: 28,                // 최근 28주만 표시 (step=42로 너비 맞춤)
     flatGridY: 341,              // 330 + 21 - 10
     flatCellSize: 40,            // 40px 셀 (spriteScale≈2.86, 큰 아이콘)
