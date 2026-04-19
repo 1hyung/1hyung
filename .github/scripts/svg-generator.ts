@@ -125,16 +125,19 @@ export function generateSVG(
   let gridCells: GridCell[];
 
   if ((theme as any).flatDailyMode) {
-    // 일별 모드: 모든 날짜를 평탄화 → 열=1일, 행=0
-    const maxDays: number = (theme as any).maxDays ?? 30;
+    // 일별 모드: 모든 날짜를 평탄화 → 행당 daysPerRow일씩 배치
+    // 우측 하단 = 오늘 (가장 최근)
+    const maxDays: number = (theme as any).maxDays ?? 90;
+    const maxRows: number = (theme as any).flatMaxRows ?? 1;
+    const daysPerRow = Math.ceil(maxDays / maxRows);
     const allDays: any[] = [];
     calendar.weeks.forEach((w: any) =>
       w.contributionDays.forEach((d: any) => allDays.push(d))
     );
     const recentDays = allDays.slice(-maxDays);
     gridCells = recentDays.map((day: any, i: number) => ({
-      x: i,
-      y: 0,
+      x: i % daysPerRow,
+      y: Math.floor(i / daysPerRow),
       date: day.date,
       count: day.contributionCount,
       level: levelFn(day.contributionLevel, day.contributionCount),
