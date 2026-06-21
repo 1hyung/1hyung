@@ -1,5 +1,5 @@
 // 테마 전환 스크립트
-// 사용법: npx ts-node switch-theme.ts <dragon|succulent|mountain> [--commit] [--push]
+// 사용법: npx ts-node switch-theme.ts <dragon|succulent|mountain|heungbu> [--commit] [--push]
 //
 // --commit : README.md + yml + assets를 자동으로 git commit
 // --push   : commit 후 push 및 워크플로우 트리거 (--commit 포함)
@@ -8,13 +8,13 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { execSync } from 'child_process';
 
-const THEMES = ['dragon', 'succulent', 'mountain'] as const;
+const THEMES = ['dragon', 'succulent', 'mountain', 'heungbu'] as const;
 type ThemeName = typeof THEMES[number];
 
 // ── 인수 파싱 ───────────────────────────────────────────────────
 const theme = process.argv[2] as ThemeName;
 if (!theme || !THEMES.includes(theme)) {
-  console.error('사용법: npx ts-node switch-theme.ts <dragon|succulent|mountain> [--commit] [--push]');
+  console.error('사용법: npx ts-node switch-theme.ts <dragon|succulent|mountain|heungbu> [--commit] [--push]');
   console.error('예시:');
   console.error('  npx ts-node switch-theme.ts mountain');
   console.error('  npx ts-node switch-theme.ts succulent --commit --push');
@@ -36,12 +36,14 @@ const OUTPUT_DIR: Record<ThemeName, string> = {
   dragon:    'dragon-contrib',
   succulent: 'succulent-contrib',
   mountain:  'mountain-contrib',
+  heungbu:   'heungbu-contrib',
 };
 
 const COMMIT_MSG: Record<ThemeName, string> = {
   dragon:    'Update dragon contribution visualization',
   succulent: 'Update succulent garden contribution visualization',
   mountain:  'Update mountain contribution visualization',
+  heungbu:   'Update heungbu contribution visualization',
 };
 
 // ── 1. README 업데이트 ──────────────────────────────────────────

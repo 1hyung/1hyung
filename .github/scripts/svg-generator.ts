@@ -118,17 +118,17 @@ export function generateSVG(
     w.contributionDays.map((d: any) => d.contributionCount as number)
   );
   const maxCount = Math.max(...allCounts, 1);
-  const levelFn = (theme as any).useLevelQuartile
+  const levelFn = theme.useLevelQuartile
     ? (level: string, _count: number) => contributionLevelToNumber(level)
     : (_level: string, count: number) => countToLevel(count, maxCount);
 
   let gridCells: GridCell[];
 
-  if ((theme as any).flatDailyMode) {
+  if (theme.flatDailyMode) {
     // 일별 모드: 모든 날짜를 평탄화 → 행당 daysPerRow일씩 배치
     // 우측 하단 = 오늘 (가장 최근)
-    const maxDays: number = (theme as any).maxDays ?? 90;
-    const maxRows: number = (theme as any).flatMaxRows ?? 1;
+    const maxDays: number = theme.maxDays ?? 90;
+    const maxRows: number = theme.flatMaxRows ?? 1;
     const daysPerRow = Math.ceil(maxDays / maxRows);
     const allDays: any[] = [];
     calendar.weeks.forEach((w: any) =>
@@ -146,7 +146,7 @@ export function generateSVG(
     gridCells = createGridCells(weeks, levelFn);
 
     // 불완전한 주 패딩 — 최신 주는 오늘 커밋만, 나머지 빈 주만 채움
-    const flatMaxRows: number | undefined = (theme as any).flatMaxRows;
+    const flatMaxRows: number | undefined = theme.flatMaxRows;
     if (theme.gridStyle === 'flat' && flatMaxRows) {
       const maxCol = Math.max(...gridCells.map(c => Math.floor(c.x)));
       const pastCells = gridCells.filter(c => Math.floor(c.x) < maxCol);

@@ -135,12 +135,12 @@ export function createFlatGrid(
   config: SVGConfig,
   theme: Theme
 ): string {
-  const cellSize = (theme as any).flatCellSize ?? 14;
-  const cellGap  = (theme as any).flatCellGap  ?? 2;
+  const cellSize = theme.flatCellSize ?? 14;
+  const cellGap  = theme.flatCellGap  ?? 2;
   const cellStep = cellSize + cellGap;
-  const bands: number    = (theme as any).flatBands    ?? 1;
-  const bandGap: number  = (theme as any).flatBandGap  ?? 0;
-  const maxRows: number  = (theme as any).flatMaxRows  ?? 7;
+  const bands: number    = theme.flatBands    ?? 1;
+  const bandGap: number  = theme.flatBandGap  ?? 0;
+  const maxRows: number  = theme.flatMaxRows  ?? 7;
 
   // 최대 주(col) 수 계산
   const numWeeks = cells.length > 0

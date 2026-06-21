@@ -1,7 +1,7 @@
 {
   "name": "dragon-contrib",
   "version": "1.0.0",
-  "description": "Dragon-themed GitHub contribution visualization",
+  "description": "Themed GitHub contribution visualizations (dragon · succulent · mountain · heungbu)",
   "main": "generate-dragon.ts",
   "scripts": {
     "generate": "ts-node generate-dragon.ts",

@@ -203,12 +203,15 @@ function renderBox(
 }
 
 // ── 패널 SVG 생성 ────────────────────────────────────────────────
+const ITEMS_BY_THEME: Record<string, () => SpriteItem[]> = {
+  mountain:  getMountainItems,
+  succulent: getSucculentItems,
+  heungbu:   getHeungbuItems,
+  dragon:    getDragonItems,
+};
+
 function generatePanel(themeName: string): string {
-  const items =
-    themeName === 'mountain' ? getMountainItems() :
-    themeName === 'succulent'     ? getSucculentItems() :
-    themeName === 'heungbu'  ? getHeungbuItems() :
-                               getDragonItems();
+  const items = (ITEMS_BY_THEME[themeName] ?? getDragonItems)();
   const colors = THEME_COLORS[themeName];
 
   let boxes = '';

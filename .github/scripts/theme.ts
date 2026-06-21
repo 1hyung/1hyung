@@ -407,6 +407,6 @@ export function getTheme(name: ThemeName): Theme {
     case 'succulent':     return getSucculentTheme();
     case 'mountain': return getMountainTheme();
     case 'heungbu':  return getHeungbuTheme();
-    default:         return getHeungbuTheme();
+    default:         throw new Error(`Unknown theme: "${name}" (지원: dragon | succulent | mountain | heungbu)`);
   }
 }
