@@ -25,5 +25,10 @@ jobs:
           git config user.name 1hyung
           git config user.email dev.1hyung@gmail.com
           git add -A .
+          # 변경 없으면 스킵 (빈 커밋 실패 방지)
+          git diff --cached --quiet && echo "변경 없음 — 스킵" && exit 0
           git commit -m "generated"
+          # 푸시 전 원격 변경 통합 (동시 워크플로 푸시 충돌 방지)
+          git fetch origin main
+          git rebase -X ours origin/main
           git push
