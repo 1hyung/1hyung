@@ -20,12 +20,6 @@
   <text x="261" y="17" text-anchor="middle"
         font-family="monospace" font-size="9" fill="#c0d4f0" opacity="0.65">Lv.1</text>
   <g transform="translate(238.3,22.0) scale(2.067)"><g>
-    <!-- 기저 타일 -->
-    <polygon points="11,17 21,22 11,27 1,22" fill="#6e8090"
-             stroke="#1c2d40" stroke-width="0.6"/>
-    <polygon points="1,22 11,27 11,29 1,24" fill="#3e5060"/>
-    <polygon points="11,27 21,22 21,24 11,29" fill="#90a8b8"/>
-
     <!-- 나무 줄기 (그늘/빛 분할) -->
     <rect x="9.5" y="12" width="1.5" height="5" fill="#5c2d0e"/>
     <rect x="11" y="12" width="1.5" height="5" fill="#8b4513"/>
