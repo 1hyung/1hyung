@@ -5,13 +5,18 @@ on:
     - cron: "0 18 * * *"
   workflow_dispatch:
 
+# 최소 권한 명시 (체크아웃 토큰으로 커밋/푸시)
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     name: generate-github-profile-3d-contrib
     steps:
-      - uses: actions/checkout@v3
-      - uses: yoshi389111/github-profile-3d-contrib@0.7.1
+      # 공급망 안전: 액션을 커밋 SHA로 핀 (주석은 사람이 읽는 버전)
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: yoshi389111/github-profile-3d-contrib@fd54cf20784ed9a86dc7be48bb5eb1f74e92b4f8 # 0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           USERNAME: ${{ github.repository_owner }}
