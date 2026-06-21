@@ -14,14 +14,14 @@
         fill="#331e0a" stroke="#7a5030" stroke-width="1" rx="3"/>
   <text x="261" y="17" text-anchor="middle"
         font-family="monospace" font-size="9" fill="#e8d0a0" opacity="0.65">Lv.1</text>
-  <g transform="translate(243.5,35.5) scale(2.500)"><ellipse cx="7" cy="12.9" rx="3.3" ry="0.85" fill="#33240f" opacity="0.20"/>
-<line x1="7" y1="12.6" x2="7" y2="8" stroke="#1F4406" stroke-width="2.3" stroke-linecap="round"/>
-<line x1="7" y1="12.2" x2="7" y2="8.3" stroke="#5AA828" stroke-width="1.0" stroke-linecap="round"/>
-<path d="M7 10 Q 3 9 2.5 6 Q 5 7.5 7 10 Z" fill="#5AA828" stroke="#2A5C08" stroke-width="0.45"/>
-<path d="M7 10 Q 11 9 11.5 6 Q 9 7.5 7 10 Z" fill="#3D7A26" stroke="#2A5C08" stroke-width="0.45"/>
-<path d="M6.4 9.3 Q 4.3 8.4 3.4 6.7" stroke="#9BD85A" stroke-width="0.5" fill="none" opacity="0.75"/>
-<circle cx="7" cy="6.7" r="0.95" fill="#D94A4A"/>
-<circle cx="7" cy="6.7" r="0.4" fill="#F0C040"/></g>
+  <g transform="translate(243.5,35.5) scale(2.500)"><ellipse cx="7" cy="12.9" rx="2.8" ry="0.8" fill="#33240f" opacity="0.20"/>
+<path d="M6.8 13 Q 5.5 10 7 8.1 Q 8.4 6.4 7.2 5" stroke="#1F4406" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M6.8 13 Q 5.5 10 7 8.1 Q 8.4 6.4 7.2 5" stroke="#5AA828" stroke-width="0.95" fill="none" stroke-linecap="round"/>
+<path d="M7.2 5 Q 8.7 4.5 8.6 3.2 Q 8.5 2.4 7.8 2.7" stroke="#3D7A14" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+<path d="M6 9.3 Q 3.2 8.6 2.6 6.2 Q 4.8 7.2 6 9.3 Z" fill="#5AA828" stroke="#2A5C08" stroke-width="0.4"/>
+<path d="M5.3 8.6 Q 3.9 7.9 3.1 6.6" stroke="#9BD85A" stroke-width="0.4" fill="none" opacity="0.75"/>
+<circle cx="7.4" cy="6.4" r="0.85" fill="#D94A4A"/>
+<circle cx="7.4" cy="6.4" r="0.38" fill="#F0C040"/></g>
   <text x="261" y="98" text-anchor="middle"
         font-family="monospace" font-size="8" fill="#b09060">새싹</text>
   <rect x="347" y="5" width="156" height="102"

@@ -17,16 +17,16 @@ const LEAF_HI = '#5AA828';
 const LEAF_MD = '#4A8A30';
 const LEAF_DK = '#3D7A26';
 
-/** Lv1: 새싹 — 줄기 + 두 잎 + 단청 포인트 (접지 그림자·외곽선·하이라이트) */
+/** Lv1: 새싹 — 막 돋은 어린 넝쿨 (휜 줄기 + 잎 + 덩굴손 컬, 접지 그림자) */
 function sproutIcon(): string {
-  return `<ellipse cx="7" cy="12.9" rx="3.3" ry="0.85" fill="#33240f" opacity="0.20"/>
-<line x1="7" y1="12.6" x2="7" y2="8" stroke="${STEM_DK}" stroke-width="2.3" stroke-linecap="round"/>
-<line x1="7" y1="12.2" x2="7" y2="8.3" stroke="${LEAF_HI}" stroke-width="1.0" stroke-linecap="round"/>
-<path d="M7 10 Q 3 9 2.5 6 Q 5 7.5 7 10 Z" fill="${LEAF_HI}" stroke="${STEM}" stroke-width="0.45"/>
-<path d="M7 10 Q 11 9 11.5 6 Q 9 7.5 7 10 Z" fill="${LEAF_DK}" stroke="${STEM}" stroke-width="0.45"/>
-<path d="M6.4 9.3 Q 4.3 8.4 3.4 6.7" stroke="#9BD85A" stroke-width="0.5" fill="none" opacity="0.75"/>
-<circle cx="7" cy="6.7" r="0.95" fill="#D94A4A"/>
-<circle cx="7" cy="6.7" r="0.4" fill="#F0C040"/>`;
+  return `<ellipse cx="7" cy="12.9" rx="2.8" ry="0.8" fill="#33240f" opacity="0.20"/>
+<path d="M6.8 13 Q 5.5 10 7 8.1 Q 8.4 6.4 7.2 5" stroke="${STEM_DK}" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M6.8 13 Q 5.5 10 7 8.1 Q 8.4 6.4 7.2 5" stroke="${LEAF_HI}" stroke-width="0.95" fill="none" stroke-linecap="round"/>
+<path d="M7.2 5 Q 8.7 4.5 8.6 3.2 Q 8.5 2.4 7.8 2.7" stroke="#3D7A14" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+<path d="M6 9.3 Q 3.2 8.6 2.6 6.2 Q 4.8 7.2 6 9.3 Z" fill="${LEAF_HI}" stroke="${STEM}" stroke-width="0.4"/>
+<path d="M5.3 8.6 Q 3.9 7.9 3.1 6.6" stroke="#9BD85A" stroke-width="0.4" fill="none" opacity="0.75"/>
+<circle cx="7.4" cy="6.4" r="0.85" fill="#D94A4A"/>
+<circle cx="7.4" cy="6.4" r="0.38" fill="#F0C040"/>`;
 }
 
 /** Lv2: 덩굴 — S자 덩굴 + 잎 3장 + 빨간 덩굴손 (외곽선·접지 그림자) */
