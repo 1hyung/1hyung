@@ -12,6 +12,10 @@ on:
       - ".github/scripts/**"
       - ".github/workflows/dragon-contrib.yml"
 
+# 최소 권한 명시 (체크아웃 토큰으로 커밋/푸시)
+permissions:
+  contents: write
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -28,7 +32,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: .github/scripts
-        run: npm install
+        run: npm ci
 
       - name: Generate Heungbu Contribution SVG
         working-directory: .github/scripts
