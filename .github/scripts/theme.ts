@@ -350,7 +350,7 @@ function getHeungbuTheme(): Theme {
       highlightOpacity: '0',
       shadowOpacity:    '0',
       borderColor:      '#8B6520',  // 황금 갈색 격자 테두리
-      borderOpacity:    '0.50',
+      borderOpacity:    '0.15',
       borderWidth:      1.0,
     },
     heightOffsets: [0, 3, 8, 12, 18],
