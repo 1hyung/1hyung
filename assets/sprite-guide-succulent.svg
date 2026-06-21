@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 112" width="850" height="112">
+  <rect width="850" height="112" fill="#2e1d18" rx="4"/>
+  <rect width="850" height="112" fill="none" stroke="#5c3a2a" stroke-width="1.5" rx="4"/>
+  
+  <rect x="19" y="5" width="156" height="102"
+        fill="#3a2418" stroke="#7a3f28" stroke-width="1" rx="3"/>
+  <text x="97" y="17" text-anchor="middle"
+        font-family="monospace" font-size="9" fill="#fbeee3" opacity="0.65">Lv.0</text>
+  <text x="97" y="58" text-anchor="middle" font-family="monospace" font-size="20" fill="#5c3a2a" opacity="0.5">—</text>
+  <text x="97" y="98" text-anchor="middle"
+        font-family="monospace" font-size="8" fill="#caa078">빈 모래</text>
+  <rect x="183" y="5" width="156" height="102"
+        fill="#3a2418" stroke="#7a3f28" stroke-width="1" rx="3"/>
+  <text x="261" y="17" text-anchor="middle"
+        font-family="monospace" font-size="9" fill="#fbeee3" opacity="0.65">Lv.1</text>
+  <g transform="translate(243.5,35.5) scale(2.500)"><g class="flat-seedling">
+    <rect x="6" y="13" width="1" height="1" fill="#5f7048"/><rect x="7" y="13" width="1" height="1" fill="#5f7048"/>
+    <rect x="6" y="12" width="1" height="1" fill="#8aa06a"/><rect x="7" y="12" width="1" height="1" fill="#8aa06a"/>
+    <rect x="5" y="11" width="1" height="1" fill="#5f7048"/><rect x="6" y="11" width="1" height="1" fill="#8aa06a"/><rect x="7" y="11" width="1" height="1" fill="#8aa06a"/><rect x="8" y="11" width="1" height="1" fill="#5f7048"/>
+    <rect x="6" y="10" width="1" height="1" fill="#b3c48f"/><rect x="7" y="10" width="1" height="1" fill="#8aa06a"/>
+  </g></g>
+  <text x="261" y="98" text-anchor="middle"
+        font-family="monospace" font-size="8" fill="#caa078">새싹</text>
+  <rect x="347" y="5" width="156" height="102"
+        fill="#3a2418" stroke="#7a3f28" stroke-width="1" rx="3"/>
+  <text x="425" y="17" text-anchor="middle"
+        font-family="monospace" font-size="9" fill="#fbeee3" opacity="0.65">Lv.2</text>
+  <g transform="translate(407.5,35.5) scale(2.500)"><g class="flat-succulent">
+    <rect x="5" y="13" width="1" height="1" fill="#5f7048"/><rect x="6" y="13" width="1" height="1" fill="#5f7048"/><rect x="7" y="13" width="1" height="1" fill="#5f7048"/><rect x="8" y="13" width="1" height="1" fill="#5f7048"/>
+    <rect x="4" y="12" width="1" height="1" fill="#5f7048"/><rect x="5" y="12" width="1" height="1" fill="#8aa06a"/><rect x="6" y="12" width="1" height="1" fill="#8aa06a"/><rect x="7" y="12" width="1" height="1" fill="#8aa06a"/><rect x="8" y="12" width="1" height="1" fill="#8aa06a"/><rect x="9" y="12" width="1" height="1" fill="#5f7048"/>
+    <rect x="5" y="11" width="1" height="1" fill="#8aa06a"/><rect x="6" y="11" width="1" height="1" fill="#b3c48f"/><rect x="7" y="11" width="1" height="1" fill="#b3c48f"/><rect x="8" y="11" width="1" height="1" fill="#8aa06a"/>
+    <rect x="5" y="10" width="1" height="1" fill="#5f7048"/><rect x="6" y="10" width="1" height="1" fill="#8aa06a"/><rect x="7" y="10" width="1" height="1" fill="#8aa06a"/><rect x="8" y="10" width="1" height="1" fill="#5f7048"/>
+    <rect x="6" y="9" width="1" height="1" fill="#b3c48f"/><rect x="7" y="9" width="1" height="1" fill="#b3c48f"/>
+  </g></g>
+  <text x="425" y="98" text-anchor="middle"
+        font-family="monospace" font-size="8" fill="#caa078">다육</text>
+  <rect x="511" y="5" width="156" height="102"
+        fill="#3a2418" stroke="#7a3f28" stroke-width="1" rx="3"/>
+  <text x="589" y="17" text-anchor="middle"
+        font-family="monospace" font-size="9" fill="#fbeee3" opacity="0.65">Lv.3</text>
+  <g transform="translate(571.5,35.5) scale(2.500)"><g class="flat-cactus-bud">
+    <rect x="5" y="13" width="1" height="1" fill="#5f7048"/><rect x="6" y="13" width="1" height="1" fill="#5f7048"/><rect x="7" y="13" width="1" height="1" fill="#5f7048"/><rect x="8" y="13" width="1" height="1" fill="#5f7048"/>
+    <rect x="4" y="12" width="1" height="1" fill="#5f7048"/><rect x="5" y="12" width="1" height="1" fill="#8aa06a"/><rect x="6" y="12" width="1" height="1" fill="#8aa06a"/><rect x="7" y="12" width="1" height="1" fill="#8aa06a"/><rect x="8" y="12" width="1" height="1" fill="#8aa06a"/><rect x="9" y="12" width="1" height="1" fill="#5f7048"/>
+    <rect x="4" y="11" width="1" height="1" fill="#5f7048"/><rect x="5" y="11" width="1" height="1" fill="#8aa06a"/><rect x="6" y="11" width="1" height="1" fill="#8aa06a"/><rect x="7" y="11" width="1" height="1" fill="#8aa06a"/><rect x="8" y="11" width="1" height="1" fill="#8aa06a"/><rect x="9" y="11" width="1" height="1" fill="#5f7048"/>
+    <rect x="5" y="10" width="1" height="1" fill="#5f7048"/><rect x="6" y="10" width="1" height="1" fill="#8aa06a"/><rect x="7" y="10" width="1" height="1" fill="#8aa06a"/><rect x="8" y="10" width="1" height="1" fill="#5f7048"/>
+    <rect x="6" y="10" width="1" height="1" fill="#b3c48f"/>
+    <rect x="6" y="9" width="1" height="1" fill="#b3c48f"/><rect x="7" y="9" width="1" height="1" fill="#b3c48f"/>
+    <rect x="6" y="8" width="1" height="1" fill="#c83a52"/><rect x="7" y="8" width="1" height="1" fill="#c83a52"/>
+    <rect x="6" y="7" width="1" height="1" fill="#e84a5f"/>
+  </g></g>
+  <text x="589" y="98" text-anchor="middle"
+        font-family="monospace" font-size="8" fill="#caa078">봉오리 선인장</text>
+  <rect x="675" y="5" width="156" height="102"
+        fill="#3a2418" stroke="#e84a5f" stroke-width="1.5" rx="3"/>
+  <text x="753" y="17" text-anchor="middle"
+        font-family="monospace" font-size="9" fill="#fbeee3" opacity="0.65">Lv.4</text>
+  <g transform="translate(735.5,35.5) scale(2.500)"><g class="flat-cactus-bloom">
+    <rect x="5" y="13" width="1" height="1" fill="#5f7048"/><rect x="6" y="13" width="1" height="1" fill="#5f7048"/><rect x="7" y="13" width="1" height="1" fill="#5f7048"/><rect x="8" y="13" width="1" height="1" fill="#5f7048"/>
+    <rect x="4" y="12" width="1" height="1" fill="#5f7048"/><rect x="5" y="12" width="1" height="1" fill="#8aa06a"/><rect x="6" y="12" width="1" height="1" fill="#8aa06a"/><rect x="7" y="12" width="1" height="1" fill="#8aa06a"/><rect x="8" y="12" width="1" height="1" fill="#8aa06a"/><rect x="9" y="12" width="1" height="1" fill="#5f7048"/>
+    <rect x="4" y="11" width="1" height="1" fill="#5f7048"/><rect x="5" y="11" width="1" height="1" fill="#8aa06a"/><rect x="6" y="11" width="1" height="1" fill="#8aa06a"/><rect x="7" y="11" width="1" height="1" fill="#8aa06a"/><rect x="8" y="11" width="1" height="1" fill="#8aa06a"/><rect x="9" y="11" width="1" height="1" fill="#5f7048"/>
+    <rect x="5" y="10" width="1" height="1" fill="#5f7048"/><rect x="6" y="10" width="1" height="1" fill="#8aa06a"/><rect x="7" y="10" width="1" height="1" fill="#8aa06a"/><rect x="8" y="10" width="1" height="1" fill="#5f7048"/><rect x="6" y="10" width="1" height="1" fill="#b3c48f"/>
+    <g filter="url(#bloomGlow)">
+      <rect x="5" y="9" width="1" height="1" fill="#e84a5f"/><rect x="6" y="9" width="1" height="1" fill="#ff8aa0"/><rect x="7" y="9" width="1" height="1" fill="#ff8aa0"/><rect x="8" y="9" width="1" height="1" fill="#e84a5f"/>
+      <rect x="4" y="8" width="1" height="1" fill="#c83a52"/><rect x="5" y="8" width="1" height="1" fill="#e84a5f"/><rect x="6" y="8" width="1" height="1" fill="#ffd7df"/><rect x="7" y="8" width="1" height="1" fill="#ffd7df"/><rect x="8" y="8" width="1" height="1" fill="#e84a5f"/><rect x="9" y="8" width="1" height="1" fill="#c83a52"/>
+      <rect x="5" y="7" width="1" height="1" fill="#ff8aa0"/><rect x="6" y="7" width="1" height="1" fill="#e84a5f"/><rect x="7" y="7" width="1" height="1" fill="#e84a5f"/><rect x="8" y="7" width="1" height="1" fill="#ff8aa0"/>
+      <rect x="6" y="6" width="1" height="1" fill="#ff8aa0"/><rect x="7" y="6" width="1" height="1" fill="#ff8aa0"/>
+    </g>
+  </g></g>
+  <text x="753" y="98" text-anchor="middle"
+        font-family="monospace" font-size="8" fill="#caa078">만개</text>
+</svg>

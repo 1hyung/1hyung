@@ -1,11 +1,11 @@
 // 테마별 기여 레벨 아이템창 SVG 생성
-// 출력: assets/sprite-guide-{mountain|farm|dragon|heungbu}.svg
+// 출력: assets/sprite-guide-{mountain|succulent|dragon|heungbu}.svg
 //       assets/section-divider-mountain.svg
 
 import * as fs from 'fs';
 import * as path from 'path';
 import { createMountainSprite, getMountainSpriteSize } from './mountain-sprites';
-import { createFarmSprite, getFarmSpriteSize } from './farm-sprites';
+import { createSucculentSprite, getSucculentSpriteSize } from './succulent-sprites';
 import {
   createDragonEggSprite,
   createDragonEggGlowSprite,
@@ -54,15 +54,15 @@ const THEME_COLORS: Record<string, ThemeColors> = {
     descColor:    '#6888b0',
     emptyColor:   '#2a3d5a',
   },
-  farm: {
-    panelBg:      '#1a3d10',
-    panelBorder:  '#3a6020',
-    boxBg:        '#1e4812',
-    boxBorder:    '#3a6020',
-    boxBorderHigh:'#90d840',
-    labelColor:   '#d8e8c0',
-    descColor:    '#80b060',
-    emptyColor:   '#3a6020',
+  succulent: {
+    panelBg:      '#2e1d18',
+    panelBorder:  '#5c3a2a',
+    boxBg:        '#3a2418',
+    boxBorder:    '#7a3f28',
+    boxBorderHigh:'#e84a5f',
+    labelColor:   '#fbeee3',
+    descColor:    '#caa078',
+    emptyColor:   '#5c3a2a',
   },
   dragon: {
     panelBg:      '#0d1117',
@@ -109,13 +109,13 @@ function getMountainItems(): SpriteItem[] {
   });
 }
 
-function getFarmItems(): SpriteItem[] {
-  const labels = ['빈 밭', '새싹', '묘목', '나무', '사과나무'];
+function getSucculentItems(): SpriteItem[] {
+  const labels = ['빈 모래', '새싹', '다육', '봉오리 선인장', '만개'];
   return [0, 1, 2, 3, 4].map((lv) => {
-    const size = getFarmSpriteSize(lv as DragonLevel);
+    const size = getSucculentSpriteSize(lv as DragonLevel);
     return {
       level: lv,
-      svg: createFarmSprite(lv as DragonLevel),
+      svg: createSucculentSprite(lv as DragonLevel),
       width: size.width,
       height: size.height,
       label: labels[lv],
@@ -206,7 +206,7 @@ function renderBox(
 function generatePanel(themeName: string): string {
   const items =
     themeName === 'mountain' ? getMountainItems() :
-    themeName === 'farm'     ? getFarmItems() :
+    themeName === 'succulent'     ? getSucculentItems() :
     themeName === 'heungbu'  ? getHeungbuItems() :
                                getDragonItems();
   const colors = THEME_COLORS[themeName];
@@ -258,7 +258,7 @@ async function main(): Promise<void> {
   }
 
   // 테마별 스프라이트 가이드 생성
-  for (const theme of ['mountain', 'farm', 'dragon', 'heungbu']) {
+  for (const theme of ['mountain', 'succulent', 'dragon', 'heungbu']) {
     const content = generatePanel(theme);
     const outPath = path.join(assetsDir, `sprite-guide-${theme}.svg`);
     fs.writeFileSync(outPath, content, 'utf8');

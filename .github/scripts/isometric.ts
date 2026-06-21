@@ -72,7 +72,7 @@ export function createDragonSprite(level: DragonLevel): string {
 
 /**
  * 테마를 사용하는 등각 투영 그리드 생성 (신규)
- * dragon/farm 양쪽 모두 지원
+ * dragon/succulent 양쪽 모두 지원
  */
 export function createIsometricGrid(
   cells: GridCell[],
@@ -87,7 +87,7 @@ export function createIsometricGrid(
   let gridSVG = '<g id="isometric-dragon-grid">\n';
 
   sortedCells.forEach(cell => {
-    // renderLevel0=false(dragon)이면 level 0 스킵, true(farm)이면 렌더링
+    // renderLevel0=false(dragon)이면 level 0 스킵, true(succulent)이면 렌더링
     if (!theme.renderLevel0 && cell.level === 0) return;
 
     const row = Math.floor(cell.y);
@@ -160,7 +160,7 @@ export function createFlatGrid(
     return Math.floor(a.x) - Math.floor(b.x);
   });
 
-  let svg = '<g id="farm-flat-grid">\n';
+  let svg = '<g id="contrib-flat-grid">\n';
 
   // 셀 색상: 테마 flatCellStyle 우선, 없으면 흙색 기본값
   const cs = theme.flatCellStyle;

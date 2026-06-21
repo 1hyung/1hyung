@@ -51,7 +51,7 @@ function createSmallMountainTree(): string {
   const CX = 11;
   const GY = 17;
 
-  // 팜 나무 색상 (farm-colors.ts와 동일)
+  // 팜 나무 색상 (succulent-colors.ts와 동일)
   const leafDark  = '#1d4a0d';
   const leafGreen = '#2d6b18';
   const leafMid   = '#4a8c30';

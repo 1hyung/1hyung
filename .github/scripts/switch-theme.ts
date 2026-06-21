@@ -1,5 +1,5 @@
 // 테마 전환 스크립트
-// 사용법: npx ts-node switch-theme.ts <dragon|farm|mountain> [--commit] [--push]
+// 사용법: npx ts-node switch-theme.ts <dragon|succulent|mountain> [--commit] [--push]
 //
 // --commit : README.md + yml + assets를 자동으로 git commit
 // --push   : commit 후 push 및 워크플로우 트리거 (--commit 포함)
@@ -8,16 +8,16 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { execSync } from 'child_process';
 
-const THEMES = ['dragon', 'farm', 'mountain'] as const;
+const THEMES = ['dragon', 'succulent', 'mountain'] as const;
 type ThemeName = typeof THEMES[number];
 
 // ── 인수 파싱 ───────────────────────────────────────────────────
 const theme = process.argv[2] as ThemeName;
 if (!theme || !THEMES.includes(theme)) {
-  console.error('사용법: npx ts-node switch-theme.ts <dragon|farm|mountain> [--commit] [--push]');
+  console.error('사용법: npx ts-node switch-theme.ts <dragon|succulent|mountain> [--commit] [--push]');
   console.error('예시:');
   console.error('  npx ts-node switch-theme.ts mountain');
-  console.error('  npx ts-node switch-theme.ts farm --commit --push');
+  console.error('  npx ts-node switch-theme.ts succulent --commit --push');
   process.exit(1);
 }
 
@@ -33,15 +33,15 @@ const templatePath = path.join(rootDir, '.github/templates', `readme-${theme}.md
 
 // 테마별 워크플로우 설정
 const OUTPUT_DIR: Record<ThemeName, string> = {
-  dragon:   'dragon-contrib',
-  farm:     'farm-contrib',
-  mountain: 'mountain-contrib',
+  dragon:    'dragon-contrib',
+  succulent: 'succulent-contrib',
+  mountain:  'mountain-contrib',
 };
 
 const COMMIT_MSG: Record<ThemeName, string> = {
-  dragon:   'Update dragon contribution visualization',
-  farm:     'Update farm contribution visualization',
-  mountain: 'Update mountain contribution visualization',
+  dragon:    'Update dragon contribution visualization',
+  succulent: 'Update succulent garden contribution visualization',
+  mountain:  'Update mountain contribution visualization',
 };
 
 // ── 1. README 업데이트 ──────────────────────────────────────────

@@ -2,7 +2,7 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { FARM_COLORS } from './farm-colors';
+import { SUCCULENT_COLORS } from './succulent-colors';
 import { HEUNGBU_COLORS } from './heungbu-colors';
 
 const {
@@ -11,108 +11,83 @@ const {
   leafGreen, leafDark, leafLight, leafMid,
   trunkBrown, appleRed, sunYellow, sunOrange,
   grassMid, soilDark,
-} = FARM_COLORS;
+} = SUCCULENT_COLORS;
+
+/** 헤더 장식용 사구아로 선인장 (cx=중심, baseY=밑동, s=배율) */
+function headerCactus(cx: number, baseY: number, s: number): string {
+  const { succDark, succBody, succLight, bloom, bloomLight } = SUCCULENT_COLORS;
+  const w = Math.round(16 * s);
+  const h = Math.round(96 * s);
+  const x = cx - Math.round(w / 2);
+  const top = baseY - h;
+  const armY = top + Math.round(h * 0.4);
+  return `<g opacity="0.92">
+    <ellipse cx="${cx}" cy="${baseY + 3}" rx="${Math.round(w * 1.1)}" ry="${Math.round(5 * s)}" fill="${SUCCULENT_COLORS.soilDeep}" opacity="0.4"/>
+    <rect x="${x}" y="${top}" width="${w}" height="${h}" rx="${Math.round(w / 2)}" fill="${succBody}"/>
+    <rect x="${x}" y="${top}" width="${Math.round(w * 0.35)}" height="${h}" rx="${Math.round(w * 0.18)}" fill="${succLight}" opacity="0.8"/>
+    <rect x="${x + w - Math.round(w * 0.3)}" y="${top}" width="${Math.round(w * 0.3)}" height="${h}" rx="${Math.round(w * 0.15)}" fill="${succDark}" opacity="0.8"/>
+    <rect x="${x - Math.round(w * 0.9)}" y="${armY}" width="${Math.round(w * 0.7)}" height="${Math.round(28 * s)}" rx="${Math.round(w * 0.35)}" fill="${succBody}"/>
+    <rect x="${x - Math.round(w * 0.9)}" y="${armY - Math.round(20 * s)}" width="${Math.round(w * 0.7)}" height="${Math.round(24 * s)}" rx="${Math.round(w * 0.35)}" fill="${succBody}"/>
+    <rect x="${x + w + Math.round(w * 0.2)}" y="${armY + Math.round(10 * s)}" width="${Math.round(w * 0.7)}" height="${Math.round(26 * s)}" rx="${Math.round(w * 0.35)}" fill="${succBody}"/>
+    <rect x="${x + w + Math.round(w * 0.2)}" y="${armY - Math.round(12 * s)}" width="${Math.round(w * 0.7)}" height="${Math.round(24 * s)}" rx="${Math.round(w * 0.35)}" fill="${succDark}"/>
+    <circle cx="${cx - Math.round(2 * s)}" cy="${top - Math.round(3 * s)}" r="${Math.round(6 * s)}" fill="${bloom}"/>
+    <circle cx="${cx - Math.round(2 * s)}" cy="${top - Math.round(3 * s)}" r="${Math.round(3 * s)}" fill="${bloomLight}"/>
+  </g>`;
+}
 
 /**
- * 헤더 SVG 생성 (GIT FARM)
+ * 헤더 SVG 생성 (SUCCULENT GARDEN — 노을 사막 정원)
  */
-function generateHeaderSVG(): string {
+function generateSucculentHeaderSVG(): string {
+  const C = SUCCULENT_COLORS;
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
   <defs>
-    <!-- 제목 텍스트 그라디언트 -->
-    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:${sunYellow}"/>
-      <stop offset="50%" style="stop-color:#fffde0"/>
-      <stop offset="100%" style="stop-color:${sunYellow}"/>
+    <linearGradient id="sgHeaderSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="${C.skyTop}"/>
+      <stop offset="52%" stop-color="${C.skyMid}"/>
+      <stop offset="100%" stop-color="${C.skyLow}"/>
     </linearGradient>
-
-    <!-- 텍스트 그림자 -->
-    <filter id="textShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="${bgDark}" flood-opacity="0.6"/>
-    </filter>
-
-    <!-- 잔디 텍스처 -->
-    <filter id="grassNoise">
-      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise"/>
-      <feColorMatrix in="noise" type="saturate" values="0.3"/>
-      <feBlend in="SourceGraphic" in2="noise" mode="overlay" result="blend"/>
-      <feComposite in="blend" in2="SourceGraphic" operator="in"/>
+    <radialGradient id="sgHeaderSun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${C.sunCore}"/>
+      <stop offset="45%" stop-color="${C.sunHalo}"/>
+      <stop offset="100%" stop-color="${C.skyLow}" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sgTextShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="${C.soilDeep}" flood-opacity="0.55"/>
     </filter>
   </defs>
 
-  <!-- 메인 잔디 배경 -->
-  <rect x="0" y="0" width="1200" height="300" fill="${bgGreen}"/>
-  <rect x="0" y="0" width="1200" height="300" fill="${bgLight}" opacity="0.12" filter="url(#grassNoise)"/>
+  <!-- 노을 하늘 -->
+  <rect x="0" y="0" width="1200" height="300" fill="url(#sgHeaderSky)"/>
+  <!-- 저무는 해 -->
+  <circle cx="600" cy="250" r="180" fill="url(#sgHeaderSun)"/>
+
+  <!-- 메사 실루엣 -->
+  <path d="M0,250 L0,210 L140,210 L160,190 L320,190 L320,250 Z" fill="${C.mesaFar}" opacity="0.85"/>
+  <path d="M880,250 L880,196 L1040,196 L1060,176 L1200,176 L1200,250 Z" fill="${C.mesaFar}" opacity="0.85"/>
+  <rect x="0" y="248" width="1200" height="52" fill="${C.soilBase}"/>
+  <rect x="0" y="248" width="1200" height="3" fill="${C.soilEdge}" opacity="0.8"/>
+
+  <!-- 좌우 사구아로 선인장 -->
+  ${headerCactus(72, 250, 1.05)}
+  ${headerCactus(1128, 250, 1.0)}
 
   <!-- 테두리 -->
-  <rect x="0" y="0" width="1200" height="300" fill="none" stroke="${borderBrown}" stroke-width="4" opacity="0.8"/>
-  <rect x="3" y="3" width="1194" height="294" fill="none" stroke="${bgLight}" stroke-width="1" opacity="0.3"/>
-
-  <!-- 좌측 나무 장식 -->
-  <g opacity="0.7">
-    <!-- 나무 줄기 -->
-    <rect x="58" y="190" width="8" height="60" fill="${trunkBrown}"/>
-    <!-- 캐노피 -->
-    <ellipse cx="62" cy="160" rx="40" ry="35" fill="${leafDark}"/>
-    <ellipse cx="62" cy="155" rx="35" ry="30" fill="${leafGreen}"/>
-    <ellipse cx="55" cy="148" rx="22" ry="18" fill="${leafLight}"/>
-    <!-- 사과 -->
-    <circle cx="75" cy="165" r="5" fill="${appleRed}"/>
-    <circle cx="52" cy="170" r="4" fill="${appleRed}"/>
-  </g>
-
-  <!-- 우측 나무 장식 -->
-  <g opacity="0.7">
-    <rect x="1134" y="190" width="8" height="60" fill="${trunkBrown}"/>
-    <ellipse cx="1138" cy="160" rx="40" ry="35" fill="${leafDark}"/>
-    <ellipse cx="1138" cy="155" rx="35" ry="30" fill="${leafGreen}"/>
-    <ellipse cx="1131" cy="148" rx="22" ry="18" fill="${leafLight}"/>
-    <circle cx="1151" cy="165" r="5" fill="${appleRed}"/>
-    <circle cx="1128" cy="170" r="4" fill="${appleRed}"/>
-  </g>
+  <rect x="0" y="0" width="1200" height="300" fill="none" stroke="${C.soilEdge}" stroke-width="3" opacity="0.7"/>
 
   <!-- 메인 타이틀 -->
-  <text x="600" y="125" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="40" font-weight="bold" fill="url(#textGradient)" filter="url(#textShadow)">
-    WELCOME TO 1HYUNG'S
+  <text x="600" y="118" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="34" font-weight="bold" fill="${C.sgSubtitle}" filter="url(#sgTextShadow)" letter-spacing="2">
+    1HYUNG'S
   </text>
-  <text x="600" y="185" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="58" font-weight="bold" fill="url(#textGradient)" filter="url(#textShadow)">
-    GIT FARM
+  <text x="600" y="180" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="60" font-weight="bold" fill="${C.sgTitle}" filter="url(#sgTextShadow)" letter-spacing="3">
+    SUCCULENT GARDEN
   </text>
 
   <!-- 서브타이틀 -->
-  <text x="600" y="230" text-anchor="middle" font-family="monospace" font-size="16" fill="${titleColor}" opacity="0.9">
-    Where commits grow into trees 🌱
+  <text x="600" y="222" text-anchor="middle" font-family="monospace" font-size="16" fill="${C.sgSubtitle}" opacity="0.92">
+    Where every commit takes root 🌵
   </text>
-
-  <!-- 떠다니는 잎 파티클 -->
-  <g fill="${leafLight}" opacity="0.8">
-    <ellipse cx="200" cy="250" rx="6" ry="3">
-      <animate attributeName="cx" values="200;210;200" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="250;220;250" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.8;0;0.8" dur="4s" repeatCount="indefinite"/>
-    </ellipse>
-    <ellipse cx="380" cy="270" rx="4" ry="2">
-      <animate attributeName="cx" values="380;395;380" dur="3.5s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="270;235;270" dur="3.5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.8;0;0.8" dur="3.5s" repeatCount="indefinite"/>
-    </ellipse>
-    <ellipse cx="820" cy="260" rx="5" ry="2.5">
-      <animate attributeName="cx" values="820;835;820" dur="3.8s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="260;225;260" dur="3.8s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.8;0;0.8" dur="3.8s" repeatCount="indefinite"/>
-    </ellipse>
-    <ellipse cx="1000" cy="255" rx="4" ry="2">
-      <animate attributeName="cx" values="1000;1012;1000" dur="4.2s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="255;220;255" dur="4.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.8;0;0.8" dur="4.2s" repeatCount="indefinite"/>
-    </ellipse>
-  </g>
-
-  <!-- 하단 잔디 라인 -->
-  <rect x="0" y="292" width="1200" height="8" fill="${leafGreen}" opacity="0.6">
-    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite"/>
-  </rect>
 </svg>`;
 }
 
@@ -591,7 +566,7 @@ async function main(): Promise<void> {
   console.log('Generating section SVGs...');
 
   const files = [
-    { name: 'farm-header.svg',              content: generateHeaderSVG() },
+    { name: 'succulent-header.svg',              content: generateSucculentHeaderSVG() },
     { name: 'experience-section.svg',        content: generateExperienceSVG() },
     { name: 'tech-stack-section.svg',        content: generateTechStackSVG() },
     { name: 'social-section.svg',            content: generateSocialSVG() },

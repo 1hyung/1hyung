@@ -8,7 +8,7 @@ import { getTheme, ThemeName } from './theme';
 async function main(): Promise<void> {
   const token = process.env.GITHUB_TOKEN;
   const username = process.env.USERNAME || '1hyung';
-  const themeName = (process.env.THEME || 'farm') as ThemeName;
+  const themeName = (process.env.THEME || 'succulent') as ThemeName;
 
   if (!token) {
     console.error('Error: GITHUB_TOKEN environment variable is required');

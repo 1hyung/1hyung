@@ -1,4 +1,4 @@
-// Dragon/Farm/Mountain Contribution 시각화 SVG 생성 (테마 지원)
+// Dragon/Succulent/Mountain Contribution 시각화 SVG 생성 (테마 지원)
 
 import { ContributionData, SVGConfig, DEFAULT_CONFIG, GridCell } from './types';
 import { countToLevel, contributionLevelToNumber } from './github-api';
@@ -94,7 +94,7 @@ function getDateRangeText(calendar: any): string {
 export function generateSVG(
   data: ContributionData,
   config: SVGConfig = DEFAULT_CONFIG,
-  theme: Theme = getTheme('farm')
+  theme: Theme = getTheme('succulent')
 ): string {
   // configOverride 적용 (캔버스 크기, 그리드 위치 등 테마별 오버라이드)
   const effectiveConfig: SVGConfig = theme.configOverride
@@ -238,7 +238,7 @@ export function generateSVG(
 export function generateAnimatedSVG(
   data: ContributionData,
   config: SVGConfig = DEFAULT_CONFIG,
-  theme: Theme = getTheme('farm')
+  theme: Theme = getTheme('succulent')
 ): string {
   const baseSVG = generateSVG(data, config, theme);
 

@@ -1,7 +1,7 @@
-// 테마 시스템: dragon | farm | mountain | heungbu 전환 지원
+// 테마 시스템: dragon | succulent | mountain | heungbu 전환 지원
 
 import { SVGConfig, DragonLevel } from './types';
-import { createFlatFarmSprite } from './farm-sprites';
+import { createFlatSucculentSprite } from './succulent-sprites';
 
 // 드래곤 테마 (기존)
 import { DRAGON_COLORS } from './colors';
@@ -14,9 +14,9 @@ import {
 } from './sprites';
 
 // 농장 테마 (신규)
-import { FARM_COLORS } from './farm-colors';
-import { createFarmFilters, createFarmBackground } from './farm-background';
-import { createFarmSprite, getFarmSpriteSize } from './farm-sprites';
+import { SUCCULENT_COLORS } from './succulent-colors';
+import { createSucculentFilters, createSucculentBackground } from './succulent-background';
+import { createSucculentSprite, getSucculentSpriteSize } from './succulent-sprites';
 
 // 설산 테마 (신규)
 import { MOUNTAIN_COLORS } from './mountain-colors';
@@ -28,7 +28,7 @@ import { HEUNGBU_COLORS } from './heungbu-colors';
 import { createHeungbuFilters, createHeungbuBackground, createHeungbuForeground } from './heungbu-background';
 import { createFlatHeungbuSprite, createHeungbuSprite, getHeungbuSpriteSize } from './heungbu-sprites';
 
-export type ThemeName = 'dragon' | 'farm' | 'mountain' | 'heungbu';
+export type ThemeName = 'dragon' | 'succulent' | 'mountain' | 'heungbu';
 
 export interface ThemeColors {
   titleColor: string;
@@ -188,59 +188,68 @@ function getDragonTheme(): Theme {
 /**
  * 농장 테마 (신규)
  */
-function getFarmTheme(): Theme {
+function getSucculentTheme(): Theme {
   return {
-    name: 'farm',
-    title: 'MY FARM',
+    name: 'succulent',
+    title: 'SUCCULENT GARDEN',
     gridStyle: 'flat',
     showCharts: false,
     showHeader: true,
-    createBackground: createFarmBackground,
-    createFilters: createFarmFilters,
-    createSprite: createFarmSprite,
-    getSpriteSize: getFarmSpriteSize,
-    createFlatSprite: createFlatFarmSprite,
+    createBackground: createSucculentBackground,
+    createFilters: createSucculentFilters,
+    createSprite: createSucculentSprite,
+    getSpriteSize: getSucculentSpriteSize,
+    createFlatSprite: createFlatSucculentSprite,
     heightOffsets: [0, 3, 8, 14, 18],
-    level4FilterId: 'sunGlow',
+    level4FilterId: 'bloomGlow',
     renderLevel0: true,
+    // 그리드 셀 = 흙 화단(테라스). Lv0은 화분 없이 빈 흙, Lv1+는 스프라이트가 화분을 그림.
+    flatCellStyle: {
+      bg0:              SUCCULENT_COLORS.soilBase,   // 빈 셀: 짙은 흙
+      bgN:              SUCCULENT_COLORS.soilTill,   // 식물 셀: 경작된 밝은 흙
+      highlight:        SUCCULENT_COLORS.soilEdge,
+      shadow:           SUCCULENT_COLORS.soilDeep,
+      highlightOpacity: '0.55',
+      shadowOpacity:    '0.5',
+      borderColor:      SUCCULENT_COLORS.soilDeep,
+      borderOpacity:    '0.45',
+      borderWidth:      0.8,
+    },
     colors: {
-      titleColor: FARM_COLORS.titleColor,
-      subtitleColor: FARM_COLORS.titleColor,  // 초록 배경에서 잘 보이도록 크림색
-      radarFillColor: '#e8a33c',
-      radarLabelColor: FARM_COLORS.textDark,
-      radarGridColor: '#3d6a2a',
-      donutStrokeColor: FARM_COLORS.bgGreen,
-      statsTextColor: FARM_COLORS.titleColor,
-      statsLabelColor: FARM_COLORS.textLight,
-      statsDateColor: FARM_COLORS.textLight,  // 어두운 패널 위에 밝은 색
-      legendTextColor: FARM_COLORS.textDark,
-      statsPanelColor: '#1e4a10',
+      titleColor: SUCCULENT_COLORS.sgTitle,
+      subtitleColor: SUCCULENT_COLORS.sgSubtitle,
+      radarFillColor: SUCCULENT_COLORS.bloom,
+      radarLabelColor: SUCCULENT_COLORS.sgTitle,
+      radarGridColor: SUCCULENT_COLORS.mesaFar,
+      donutStrokeColor: SUCCULENT_COLORS.soilBase,
+      statsTextColor: SUCCULENT_COLORS.sgTitle,
+      statsLabelColor: SUCCULENT_COLORS.sgSubtitle,
+      statsDateColor: SUCCULENT_COLORS.sgSubtitle,
+      legendTextColor: SUCCULENT_COLORS.sgTitle,
+      statsPanelColor: SUCCULENT_COLORS.sgPanel,
     },
     animationCSS: `
       @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
       }
-      @keyframes sunGlow {
-        0%, 100% { filter: drop-shadow(0 0 3px ${FARM_COLORS.sunYellow}); }
-        50% { filter: drop-shadow(0 0 6px ${FARM_COLORS.sunOrange}); }
+      @keyframes bloomGlow {
+        0%, 100% { filter: drop-shadow(0 0 2px ${SUCCULENT_COLORS.bloom}); }
+        50% { filter: drop-shadow(0 0 6px ${SUCCULENT_COLORS.bloomLight}); }
       }
-      #farm-flat-grid {
+      .flat-cactus-bloom {
+        animation: bloomGlow 3s ease-in-out infinite;
+      }
+      #contrib-flat-grid {
         animation: fadeIn 1.5s ease-in-out;
-      }
-      .radar-chart {
-        animation: fadeIn 2s ease-in-out;
-      }
-      .donut-chart {
-        animation: fadeIn 2.5s ease-in-out;
       }
     `,
     layout: {
       radarCx: 685, radarCy: 340, radarR: 100,
       donutCx: 145, donutCy: 340, donutOuter: 80, donutInner: 45,
     },
-    outputDir: 'farm-contrib',
-    outputPrefix: 'farm-contrib',
+    outputDir: 'succulent-contrib',
+    outputPrefix: 'succulent-contrib',
   };
 }
 
@@ -373,7 +382,7 @@ function getHeungbuTheme(): Theme {
         0%   { transform: translateX(0); }
         100% { transform: translateX(1460px); }
       }
-      #farm-flat-grid {
+      #contrib-flat-grid {
         animation: fadeIn 1.5s ease-in-out;
       }
       #thatch-shimmer {
@@ -395,7 +404,7 @@ function getHeungbuTheme(): Theme {
 export function getTheme(name: ThemeName): Theme {
   switch (name) {
     case 'dragon':   return getDragonTheme();
-    case 'farm':     return getFarmTheme();
+    case 'succulent':     return getSucculentTheme();
     case 'mountain': return getMountainTheme();
     case 'heungbu':  return getHeungbuTheme();
     default:         return getHeungbuTheme();
